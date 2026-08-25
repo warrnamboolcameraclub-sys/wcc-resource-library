@@ -1,0 +1,384 @@
+<style type="text/css">
+.wcc-weekly {
+  --teal:#176b6b;--dark-teal:#10484d;--navy:#183f70;--red:#b42318;
+  --text:#253238;--muted:#5f7075;--soft-teal:#edf7f6;--soft-red:#fff5f4;
+  --soft-grey:#f5f6f7;--border:#d6e1e1;--white:#ffffff;
+  max-width:1100px;margin:0 auto;background:var(--white);color:var(--text)!important;
+  font-family:Arial,Helvetica,sans-serif;line-height:1.65;
+}
+.wcc-weekly p,.wcc-weekly li,.wcc-weekly td{color:var(--text)!important}
+.wcc-weekly .hero{background:linear-gradient(135deg,#10484d,#176b6b);color:#fff!important;padding:46px 40px 40px;border-bottom:7px solid var(--red)}
+.wcc-weekly .hero *{color:#fff!important}
+.wcc-weekly .hero-kicker{text-transform:uppercase;letter-spacing:2px;font-size:14px;font-weight:bold;opacity:.9}
+.wcc-weekly .hero h1{margin:5px 0;font-size:42px;line-height:1.1}
+.wcc-weekly .hero h2{margin:4px 0 14px;font-size:22px;font-weight:normal}
+.wcc-weekly .tagline{font-size:17px;font-weight:bold}
+.wcc-weekly .quick-links{background:var(--soft-teal);padding:12px 28px;border-bottom:1px solid var(--border)}
+.wcc-weekly .quick-links details{border:0;margin:0;background:transparent;overflow:visible}
+.wcc-weekly .quick-links summary{cursor:pointer;padding:8px 0;background:transparent;color:var(--dark-teal)!important;font-size:16px;font-weight:bold;list-style:none}
+.wcc-weekly .quick-links summary::-webkit-details-marker{display:none}
+.wcc-weekly .quick-links summary:before{content:"+";color:var(--red);font-size:19px;font-weight:bold;display:inline-block;width:22px}
+.wcc-weekly .quick-links details[open] summary:before{content:"−"}
+.wcc-weekly .issue-nav-links{padding:8px 0 12px 22px}
+.wcc-weekly .issue-nav-links a{display:inline-block;margin:5px 18px 5px 0;color:var(--navy)!important;font-size:14px;font-weight:bold;text-decoration:none}
+.wcc-weekly .content{padding:32px 36px}
+.wcc-weekly section{margin:0 0 42px}
+.wcc-weekly h2.section-title{color:var(--dark-teal)!important;font-size:28px;line-height:1.25;margin:0 0 18px;padding-bottom:8px;border-bottom:3px solid var(--teal)}
+.wcc-weekly h3{color:var(--navy)!important;margin-top:20px}
+.wcc-weekly .lead{font-size:18px;color:#41555b!important}
+.wcc-weekly .feature-card{background:var(--soft-teal);border-left:6px solid var(--teal);padding:22px 25px;margin:20px 0;border-radius:5px;color:var(--text)!important}
+.wcc-weekly .feature-card.red{background:var(--soft-red);border-left-color:var(--red)}
+.wcc-weekly .feature-card.navy{background:#f1f5fa;border-left-color:var(--navy)}
+.wcc-weekly .feature-card *{color:var(--text)!important}
+.wcc-weekly details{border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:18px 0;background:#fff}
+.wcc-weekly summary{cursor:pointer;padding:16px 20px;background:var(--soft-teal);color:var(--dark-teal)!important;font-weight:bold;list-style:none}
+.wcc-weekly summary::-webkit-details-marker{display:none}
+.wcc-weekly summary:before{content:"+";color:var(--red);font-size:20px;font-weight:bold;display:inline-block;width:24px}
+.wcc-weekly details[open] summary:before{content:"−"}
+.wcc-weekly .rollup{padding:22px 24px}
+.wcc-weekly .photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:22px 0;align-items:start}
+.wcc-weekly .photo-card{background:var(--soft-grey);border:1px solid var(--border);border-radius:6px;padding:12px;box-sizing:border-box;min-width:0;overflow:hidden}
+.wcc-weekly .photo-card img,.wcc-weekly section img{display:block!important;width:100%!important;max-width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;object-position:center center!important;margin:0 auto 10px!important;box-sizing:border-box!important}
+.wcc-weekly .caption{color:var(--muted)!important;font-size:13px}
+.wcc-weekly ul,.wcc-weekly ol{padding-left:24px}
+.wcc-weekly .event{display:grid;grid-template-columns:185px minmax(0,1fr);gap:18px;padding:15px 0;border-bottom:1px solid var(--border)}
+.wcc-weekly .event-date{color:var(--teal)!important;font-weight:bold}
+.wcc-weekly .wcc-newsletter-footer{display:block!important;width:100%!important;box-sizing:border-box!important;background:#10484d!important;color:#fff!important;padding:32px!important;margin:0!important;text-align:center!important}
+.wcc-weekly .wcc-newsletter-footer,.wcc-weekly .wcc-newsletter-footer *{color:#fff!important}
+.wcc-weekly [id^="wcc-"]{scroll-margin-top:150px}
+@media(max-width:760px){
+ .wcc-weekly .hero{padding:34px 22px 30px}.wcc-weekly .hero h1{font-size:34px}
+ .wcc-weekly .content{padding:26px 18px}.wcc-weekly h2.section-title{font-size:24px}
+ .wcc-weekly .photo-grid{grid-template-columns:1fr}.wcc-weekly .event{grid-template-columns:1fr;gap:4px}
+}
+</style>
+
+<div class="wcc-weekly" data-publication="weekly-update" data-issue="005" data-published="2026-07-06" data-url="https://warrnamboolcameraclub.zenfolio.com/weekly-newsletter-005">
+
+<div class="hero">
+<div class="hero-kicker">Warrnambool Camera Club</div>
+<h1>Weekly Update</h1>
+<h2>Issue 005 | Monday, 6 July 2026</h2>
+<div class="tagline">Learn • Create • Share • Inspire</div>
+</div>
+
+<div class="quick-links">
+<details><summary>In this issue</summary>
+<div class="issue-nav-links">
+<a href="#wcc-2026-005-editor">From the Editor</a>
+<a href="#wcc-2026-005-competition-wrap-up">Competition Results</a>
+<a href="#wcc-2026-005-wellness-walk">Walk for Wellness</a>
+<a href="#wcc-event-2026-07-11-peter-workshop">Black &amp; White Workshop</a>
+<a href="#wcc-2026-005-mat-cutting">Mat Cutting</a>
+<a href="#wcc-2026-005-competition-rules">Competition Rules</a>
+<a href="#wcc-2026-005-low-key">September: Low Key</a>
+<a href="#wcc-2026-005-ethical-bird-photography-002">Ethical Bird Photography</a>
+</div></details>
+</div>
+
+<div class="content">
+
+<section id="wcc-2026-005-editor"
+ data-index="article"
+ data-category="club-news"
+ data-tags="weekly-update,competition,walk-for-wellness,black-and-white,club-activities">
+<h2 class="section-title">🏠 From the Editor</h2>
+<p>Hi everyone,</p>
+<p>Welcome to Issue 005 of the Warrnambool Camera Club Weekly Update.</p>
+<p>It has been another busy week for our photography community. Thursday night's club meeting attracted an excellent turnout, the Photography Walk for Wellness was another enjoyable success, and there's plenty happening over the coming weeks.</p>
+</section>
+
+<section id="wcc-2026-005-competition-wrap-up"
+ data-index="article"
+ data-category="competition"
+ data-people="lin-richards,phillip-morris,jason-carter"
+ data-event-date="2026-07-02"
+ data-event-status="confirmed"
+ data-tags="competition,judging,lin-richards,landscape-minimalism,open-monochrome,club-meeting">
+<h2 class="section-title">🏆 Club Meeting Wrap-Up</h2>
+
+<p>It was fantastic to see such a strong turnout at Thursday night's meeting.</p>
+
+<p>A big thank you to Lin Richards for judging this month's competitions. Lin provided thoughtful and constructive feedback throughout the evening before sharing a wonderful collection of his own photographs and the stories behind many of them.</p>
+
+<p>Whether you agreed with every comment or not, evenings like these are one of the best learning opportunities our club offers. Every judge brings their own experience and perspective, encouraging us to look at our own photography through fresh eyes.</p>
+
+<h3>Congratulations to our Winners</h3>
+<p>Congratulations to everyone who entered this month's competition.</p>
+<p>A special congratulations to our section winners:</p>
+
+<div class="photo-grid">
+
+<div class="photo-card"
+ id="wcc-2026-005-winner-landscape-minimalism-edpi"
+ data-index="article"
+ data-category="competition"
+ data-people="phillip-morris"
+ data-tags="competition-winner,landscape-minimalism,edpi,grampians,clouds">
+<img src="/img/s/v-10/p1585778233-3.jpg"
+ alt="Grampians Clouds by Phillip Morris, winner of Landscape Minimalism EDPI"
+ loading="lazy" decoding="async" />
+<div class="caption"><strong>Landscape Minimalism (EDPI)</strong><br>Phillip Morris – Grampians Clouds</div>
+</div>
+
+<div class="photo-card"
+ id="wcc-2026-005-winner-landscape-minimalism-print"
+ data-index="article"
+ data-category="competition"
+ data-people="jason-carter"
+ data-tags="competition-winner,landscape-minimalism,print,lake-macdonnell">
+<img src="/img/s/v-10/p1585778236-3.jpg"
+ alt="Lake Macdonnell by Jason Carter, winner of Landscape Minimalism Print"
+ loading="lazy" decoding="async" />
+<div class="caption"><strong>Landscape Minimalism (Print)</strong><br>Jason Carter – Lake Macdonnell</div>
+</div>
+
+<div class="photo-card"
+ id="wcc-2026-005-winner-open-monochrome-edpi"
+ data-index="article"
+ data-category="competition"
+ data-people="phillip-morris"
+ data-tags="competition-winner,open-monochrome,edpi,time-to-fly">
+<img src="/img/s/v-10/p1585778230-3.jpg"
+ alt="Time To Fly by Phillip Morris, winner of Open Monochrome EDPI"
+ loading="lazy" decoding="async" />
+<div class="caption"><strong>Open Monochrome (EDPI)</strong><br>Phillip Morris – Time To Fly</div>
+</div>
+
+<div class="photo-card"
+ id="wcc-2026-005-winner-open-monochrome-print"
+ data-index="article"
+ data-category="competition"
+ data-people="phillip-morris"
+ data-tags="competition-winner,open-monochrome,print,my-eyes-are-on-you">
+<img src="/img/s/v-10/p1585778182-3.jpg"
+ alt="My Eyes Are On You by Phillip Morris, winner of Open Monochrome Print"
+ loading="lazy" decoding="async" />
+<div class="caption"><strong>Open Monochrome (Print)</strong><br>Phillip Morris – My Eyes Are On You</div>
+</div>
+
+</div>
+
+<p>A special congratulations also to Phil, who enjoyed an outstanding evening by taking three of the four section wins.</p>
+
+<h3>Judge's Takeaway</h3>
+<p>One of the recurring themes throughout Lin's judging was the importance of strong technical execution. Sharpness, thoughtful composition and careful cropping featured regularly in his comments.</p>
+
+<p>Every judge brings a different perspective to a competition. Some place greater emphasis on technical excellence, while others are drawn more strongly to concept, storytelling or emotional impact. Listening carefully to those recurring themes and applying them to our own photography is one of the best ways to continue improving.</p>
+</section>
+
+<section id="wcc-2026-005-wellness-walk"
+ data-index="article"
+ data-category="community"
+ data-event-date="2026-07-04"
+ data-event-status="confirmed"
+ data-locations="warrnambool-library,fish-tales-cafe,warrnambool"
+ data-tags="photography-walk-for-wellness,warrnambool-library,letters,community,wellbeing">
+<h2 class="section-title">🚶 Photography Walk for Wellness Update</h2>
+
+<p>Around 16–17 photographers joined us for this month's Photography Walk for Wellness.</p>
+
+<p>With this month's destination centred on the Warrnambool Library, our walk ran from 10:00 am, giving everyone the opportunity to explore both inside and around the library precinct.</p>
+
+<p>Our optional theme for the morning was Letters, encouraging members to see familiar surroundings from a different perspective.</p>
+
+<p>Wally set himself the ambitious challenge of photographing every letter of the alphabet using naturally occurring shapes and objects, while I spent the morning searching for enough letterforms to spell WARRNAMBOOL.</p>
+
+<p>Others simply photographed whatever inspired them, which is exactly what these walks are all about. The monthly theme is there purely as a creative prompt for anyone looking for a different challenge.</p>
+
+<p>Afterwards, everyone gathered at Fish Tales Café for coffee, cake and plenty of conversation.</p>
+
+<p>For me, that's always one of the highlights of the morning. Photography brings us together, but it's the friendships, conversations and shared enthusiasm over coffee that keep people coming back.</p>
+</section>
+
+<section id="wcc-event-2026-07-11-peter-workshop"
+ data-index="event"
+ data-category="events"
+ data-event-date="2026-07-11"
+ data-event-status="confirmed"
+ data-tags="black-and-white,monochrome,workshop,breakwater,photography">
+<h2 class="section-title">⚫ Looking Ahead – Peter's Black &amp; White Photography Workshop</h2>
+
+<p>Peter's Black &amp; White Photography Workshop is scheduled for this Saturday.</p>
+
+<p>We're keeping a close eye on the weather forecast, which is suggesting conditions may be a little wet and windy.</p>
+
+<p>At this stage the workshop is still planned to proceed. However, we're also exploring an alternative indoor option should the weather make the Breakwater less suitable.</p>
+
+<p>We'll keep members informed as soon as plans are confirmed.</p>
+
+<div class="feature-card navy"
+ id="wcc-event-2026-07-11-bojangles-dinner"
+ data-index="event"
+ data-category="events"
+ data-event-date="2026-07-11"
+ data-event-status="confirmed"
+ data-locations="bojangles,warrnambool"
+ data-tags="club-dinner,social,black-and-white-workshop">
+<p>Regardless of the venue, members are invited to join us at dinner at Bojangles from <strong>6:00 pm</strong>. Please let me know if you have not already confirmed with Tania.</p>
+</div>
+</section>
+
+<section id="wcc-2026-005-mat-cutting"
+ data-index="article"
+ data-category="club-news"
+ data-event-status="planning"
+ data-tags="mat-cutting,print-presentation,competition,printing,member-training">
+<h2 class="section-title">✂️ New Initiative – Print Mat Cutting Sessions</h2>
+
+<p>For some time we've talked about running regular mat cutting sessions to help members prepare prints for competition.</p>
+
+<p>I'm pleased to say we're now actively moving forward with the idea.</p>
+
+<p>Preparing prints for competition can seem daunting if you don't have access to a quality mat cutter or haven't mounted a print before. We know this can be one of the barriers preventing members from entering our Print competitions.</p>
+
+<p>These sessions will provide members with the opportunity to measure borders, cut mat board to size and use a professional mat cutter to complete the final window, with experienced members on hand to help throughout the process.</p>
+
+<p>The current plan is to run small group sessions around a large work table, giving everyone plenty of room to prepare and trim their mat boards before using the cutter. We think this will provide a relaxed environment where members can learn from one another while gaining confidence in preparing prints for competition.</p>
+
+<p>More details will be announced soon, but we hope this initiative encourages even more members to give the Print sections a try.</p>
+</section>
+
+<section id="wcc-2026-005-competition-rules"
+ data-index="article"
+ data-category="competition"
+ data-tags="competition-rules,agm,member-feedback,rule-review,governance">
+<h2 class="section-title">📋 Competition Rules Review</h2>
+
+<p>Thank you to everyone who collected a printed copy of the proposed Competition Rules at Thursday night's meeting.</p>
+
+<p>An additional amendment was identified that should have been included in the printed version. I'll be sending an updated version, together with the additional information clearly highlighted, to members over the next 24–48 hours.</p>
+
+<p>This will ensure everyone has the complete set of proposed changes well before the AGM and plenty of time to review them and provide feedback.</p>
+</section>
+
+<section id="wcc-2026-005-low-key"
+ data-index="article"
+ data-category="competition"
+ data-tags="low-key,set-subject,september-competition,high-key,lighting">
+<h2 class="section-title">🌑 Looking Ahead – September Set Subject</h2>
+<div class="feature-card navy">
+<h3>Low Key</h3>
+<p>Although entries won't be submitted until our August meeting, now is a great time to revisit the techniques from our recent High Key and Low Key workshop and start thinking about your entry.</p>
+</div>
+</section>
+
+<section id="wcc-2026-005-ethical-bird-photography-002"
+ data-index="article"
+ data-category="education"
+ data-series="ethical-bird-photography"
+ data-part="2"
+ data-people="kim-wormald"
+ data-tags="bird-photography,ethics,four-fs,feeding,fighting,flying,breeding,wildlife">
+<h2 class="section-title">📷 Convention Corner</h2>
+<h3>Ethical Bird Photography</h3>
+<h3>The Four F's: Spectacular Images at What Cost?</h3>
+
+<p>During her VAPS Convention presentation, Kim Wormald introduced a simple framework that quickly resonated with the audience: The Four F's.</p>
+
+<p>These are the types of bird photographs that naturally attract attention, perform well in competitions and often receive thousands of likes on social media:</p>
+
+<ul>
+<li>Feeding</li>
+<li>Fighting</li>
+<li>Flying</li>
+<li>F... (breeding behaviour)</li>
+</ul>
+
+<p>There is nothing inherently wrong with photographing any of these behaviours. In fact, when captured naturally they can produce some of the most spectacular wildlife images a photographer will ever make.</p>
+
+<p>The problem begins when photographers try to manufacture the moment rather than patiently waiting for it to occur.</p>
+
+<p>Kim shared examples where photographers deliberately influence bird behaviour to create dramatic images. Birds may be flushed from their perch to capture a flight shot. Territorial calls may be played through speakers to provoke an aggressive response. Birds may be lured with food, while predators are sometimes baited to produce hunting photographs.</p>
+
+<p>Other practices include removing branches around nests for a cleaner composition, repeatedly using flash on nocturnal species, or publicising the location of rare birds, leading to increased pressure from photographers on already vulnerable wildlife.</p>
+
+<p>Many of these practices are well known within the bird photography community. Others occur simply because photographers are unaware of the consequences. As Kim reminded us, not every unethical photograph is taken with bad intentions. Education is often the most effective solution.</p>
+
+<p>One of the strongest messages from the presentation was simple:</p>
+
+<div class="feature-card red">
+<p><strong>The welfare of the bird must always come before the photograph.</strong></p>
+</div>
+
+<p>A spectacular image may be admired for a few seconds on social media, but the consequences for the bird can last much longer. A disturbed nest may be abandoned. A breeding bird may expend valuable energy defending what it believes is a real intruder. A bird repeatedly flushed into flight loses energy it needs simply to survive.</p>
+
+<p>As photographers, we all enjoy capturing those once-in-a-lifetime moments. The challenge is ensuring they remain genuine moments rather than scenes we have created ourselves. Look out for the next article in this series as it explores an alternative approach to the four F's.</p>
+
+<div id="wcc-2026-005-challenge-wildlife-behaviour"
+ class="feature-card navy"
+ data-index="article"
+ data-category="challenge"
+ data-tags="camera-challenge,bird-photography,wildlife,ethics,behaviour">
+<h3>📸 This Week's Camera Challenge</h3>
+<p>The next time you're photographing birds or wildlife, pause for a moment before pressing the shutter.</p>
+<p>Ask yourself:</p>
+<ul>
+<li>Am I changing this animal's behaviour?</li>
+<li>Would this moment have happened if I wasn't here?</li>
+<li>Can I achieve the photograph simply by waiting a little longer?</li>
+</ul>
+<p><strong>Sometimes the best wildlife photograph is the one we choose not to take.</strong></p>
+</div>
+</section>
+
+<section id="wcc-2026-005-coming-next-week">
+<h2 class="section-title">🔭 Coming Next Week</h2>
+<div class="feature-card">
+<ul>
+<li>Final details and wrap-up from Peter's Black &amp; White Photography Workshop.</li>
+<li>Further updates on the Competition Rules Review.</li>
+<li>Convention Corner: Long Exposure Photography – Choosing the Right Shutter Speed.</li>
+<li>Club news and upcoming events.</li>
+</ul>
+</div>
+</section>
+
+<section id="wcc-2026-005-contributions">
+<h2 class="section-title">📬 Contributions Welcome</h2>
+<div class="feature-card navy">
+<p>Know of an exhibition?</p>
+<p>Had success in a competition?</p>
+<p>Planning a photographic trip?</p>
+<p>Captured an image you're particularly proud of?</p>
+<p>Or perhaps you have an idea for a future workshop or club activity.</p>
+<p>We'd love to hear from you.</p>
+<p>If you know of anyone that has not received this newsletter in there inbox and would like to get a copy, please get them to send me their details and I will endeavour to add them to the email list.</p>
+</div>
+
+<p>Cheers,<br><strong>Stan</strong><br>on behalf of the Warrnambool Camera Club</p>
+<p><em>Published every Monday for the members of the Warrnambool Camera Club.</em></p>
+</section>
+
+</div>
+
+<div class="wcc-newsletter-footer">
+<strong>Warrnambool Camera Club</strong><br>
+Weekly Update | Issue 005<br><br>
+<strong>Compiled &amp; edited by Stan McCullagh</strong><br><br>
+Learn • Create • Share • Inspire
+</div>
+</div>
+
+<script>
+(function(){
+function jumpToWeeklyAnchor(){
+ if(!window.location.hash)return;
+ var targetId;
+ try{targetId=decodeURIComponent(window.location.hash.substring(1));}
+ catch(e){targetId=window.location.hash.substring(1);}
+ if(!targetId)return;
+ var attempts=0,maxAttempts=40;
+ function tryScroll(){
+  var target=document.getElementById(targetId);
+  if(target){target.scrollIntoView({behavior:"auto",block:"start"});return;}
+  attempts+=1;if(attempts<maxAttempts){window.setTimeout(tryScroll,150);}
+ }
+ tryScroll();
+}
+if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",function(){window.setTimeout(jumpToWeeklyAnchor,100);});}
+else{window.setTimeout(jumpToWeeklyAnchor,100);}
+window.addEventListener("load",function(){window.setTimeout(jumpToWeeklyAnchor,200);});
+window.addEventListener("hashchange",function(){window.setTimeout(jumpToWeeklyAnchor,25);});
+})();
+</script>

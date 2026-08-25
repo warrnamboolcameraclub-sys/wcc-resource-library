@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "site": {
+    "title": "Warrnambool Camera Club Photography Resource Library",
+    "recent_editions_limit": 12,
+    "generated_output_dir": "_site"
+  },
+  "sources": {
+    "newsletter_glob": "content/newsletters/*.html",
+    "page_glob": "content/pages/*.html",
+    "newsletter_publication_value": "weekly-update"
+  },
+  "validation": {
+    "categories": [
+      "club-news",
+      "education",
+      "editing",
+      "photography-tips",
+      "challenge",
+      "competition",
+      "events",
+      "community",
+      "members-on-the-move",
+      "feature"
+    ],
+    "series": [
+      "mastering-long-exposure-photography",
+      "ethical-bird-photography",
+      "lightroom-basics",
+      "using-your-camera"
+    ],
+    "item_types": [
+      "article",
+      "tip",
+      "event",
+      "resource"
+    ],
+    "tip_levels": [
+      "beginner",
+      "intermediate",
+      "advanced"
+    ],
+    "event_statuses": [
+      "confirmed",
+      "planning"
+    ],
+    "required_newsletter_page_fields": [
+      "data-publication",
+      "data-issue",
+      "data-published",
+      "data-url"
+    ],
+    "required_index_item_fields": [
+      "id",
+      "data-index",
+      "data-category"
+    ]
+  },
+  "identity": {
+    "record_id_pattern": "{source_type}:{issue}:{anchor_id}",
+    "html_id_unique_scope": "document",
+    "tip_code_global_unique": true,
+    "repeated_anchor_ids_across_issues_allowed": true
+  },
+  "deep_links": {
+    "prefer_data_source_anchor": true,
+    "fallback_to_nearest_visible_anchor": true,
+    "fallback_to_indexed_element_id": true
+  },
+  "resources": {
+    "preserve_historical_occurrences": true,
+    "duplicate_download_urls_are_warnings": true
+  },
+  "legacy": {
+    "public_url_map": "baseline/public-url-map.json",
+    "public_url_map_is_authoritative": false
+  }
+}

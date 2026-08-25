@@ -1,0 +1,1092 @@
+<style type="text/css">
+/* =========================================================
+   WARRNAMBOOL CAMERA CLUB
+   WEEKLY UPDATE - ISSUE 012
+   Canonical layout based on Issue 011
+   WCC Weekly Update Metadata Standard v1
+   First implemented: Issue 012 | 2026-08-24
+   ========================================================= */
+
+.wcc-weekly {
+    --teal: #176b6b;
+    --dark-teal: #10484d;
+    --navy: #183f70;
+    --red: #b42318;
+    --text: #253238;
+    --muted: #5f7075;
+    --soft-teal: #edf7f6;
+    --soft-red: #fff5f4;
+    --soft-grey: #f5f6f7;
+    --border: #d6e1e1;
+    --white: #ffffff;
+
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--white);
+    color: var(--text) !important;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+}
+
+.wcc-weekly p,
+.wcc-weekly li,
+.wcc-weekly td {
+    color: var(--text) !important;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.wcc-weekly .hero {
+    background: linear-gradient(135deg, #10484d, #176b6b);
+    color: white !important;
+    padding: 46px 40px 40px;
+    border-bottom: 7px solid var(--red);
+}
+
+.wcc-weekly .hero * {
+    color: white !important;
+}
+
+.wcc-weekly .hero-kicker {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+.wcc-weekly .hero h1 {
+    margin: 5px 0;
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+.wcc-weekly .hero h2 {
+    margin: 4px 0 14px;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.wcc-weekly .tagline {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* =========================================================
+   ISSUE NAVIGATION
+   ========================================================= */
+
+.wcc-weekly .quick-links {
+    background: var(--soft-teal);
+    padding: 12px 28px;
+    border-bottom: 1px solid var(--border);
+}
+
+.wcc-weekly .quick-links details {
+    border: 0;
+    margin: 0;
+    background: transparent;
+    overflow: visible;
+}
+
+.wcc-weekly .quick-links summary {
+    cursor: pointer;
+    padding: 8px 0;
+    background: transparent;
+    color: var(--dark-teal) !important;
+    font-size: 16px;
+    font-weight: bold;
+    list-style: none;
+}
+
+.wcc-weekly .quick-links summary::-webkit-details-marker {
+    display: none;
+}
+
+.wcc-weekly .quick-links summary:before {
+    content: "+";
+    color: var(--red);
+    font-size: 19px;
+    font-weight: bold;
+    display: inline-block;
+    width: 22px;
+}
+
+.wcc-weekly .quick-links details[open] summary:before {
+    content: "−";
+}
+
+.wcc-weekly .issue-nav-links {
+    padding: 8px 0 12px 22px;
+}
+
+.wcc-weekly .issue-nav-links a {
+    display: inline-block;
+    margin: 5px 18px 5px 0;
+    color: var(--navy) !important;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.wcc-weekly .issue-nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.wcc-weekly .content {
+    padding: 32px 36px;
+}
+
+.wcc-weekly section {
+    margin: 0 0 42px;
+}
+
+.wcc-weekly h2.section-title {
+    color: var(--dark-teal) !important;
+    font-size: 28px;
+    line-height: 1.25;
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--teal);
+}
+
+.wcc-weekly h3 {
+    color: var(--navy) !important;
+    margin-top: 20px;
+}
+
+.wcc-weekly .lead {
+    font-size: 18px;
+    color: #41555b !important;
+}
+
+/* =========================================================
+   FEATURE BOXES
+   ========================================================= */
+
+.wcc-weekly .feature-card {
+    background: var(--soft-teal);
+    border-left: 6px solid var(--teal);
+    padding: 22px 25px;
+    margin: 20px 0;
+    border-radius: 5px;
+    color: var(--text) !important;
+}
+
+.wcc-weekly .feature-card.red {
+    background: var(--soft-red);
+    border-left-color: var(--red);
+}
+
+.wcc-weekly .feature-card.navy {
+    background: #f1f5fa;
+    border-left-color: var(--navy);
+}
+
+.wcc-weekly .feature-card *,
+.wcc-weekly .feature-card p,
+.wcc-weekly .feature-card strong,
+.wcc-weekly .feature-card h3 {
+    color: var(--text) !important;
+}
+
+/* =========================================================
+   ROLL UPS
+   ========================================================= */
+
+.wcc-weekly details {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 18px 0;
+    background: white;
+}
+
+.wcc-weekly summary {
+    cursor: pointer;
+    padding: 16px 20px;
+    background: var(--soft-teal);
+    color: var(--dark-teal) !important;
+    font-weight: bold;
+    list-style: none;
+}
+
+.wcc-weekly summary::-webkit-details-marker {
+    display: none;
+}
+
+.wcc-weekly summary:before {
+    content: "+";
+    color: var(--red);
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    width: 24px;
+}
+
+.wcc-weekly details[open] summary:before {
+    content: "−";
+}
+
+.wcc-weekly .rollup {
+    padding: 22px 24px;
+}
+
+/* =========================================================
+   PHOTOS & GALLERIES
+   ========================================================= */
+
+.wcc-weekly .photo {
+    margin: 20px 0;
+}
+
+.wcc-weekly .photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.wcc-weekly .caption {
+    color: var(--muted) !important;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+.wcc-weekly .photo-placeholder {
+    background: #e8eeee;
+    border: 1px dashed #94a8a8;
+    padding: 55px 20px;
+    text-align: center;
+    color: #586d70 !important;
+    border-radius: 5px;
+}
+
+.wcc-weekly .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 22px 0;
+    align-items: start;
+}
+
+.wcc-weekly .photo-card {
+    background: var(--soft-grey);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px;
+    box-sizing: border-box;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.wcc-weekly .photo-card .photo-placeholder {
+    padding: 48px 14px;
+    margin: 0 0 10px;
+}
+
+.wcc-weekly .photo-card img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    margin: 0 0 10px !important;
+    box-sizing: border-box !important;
+}
+
+.wcc-weekly .photo-grid.seven .photo-card:last-child {
+    grid-column: 2;
+}
+
+.wcc-weekly .travel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 18px 0;
+}
+
+.wcc-weekly .travel-grid.three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.wcc-weekly .button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 12px 0;
+    padding: 15px 20px;
+    background: var(--navy);
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.wcc-weekly .button.teal {
+    background: var(--teal);
+}
+
+.wcc-weekly .button.red {
+    background: var(--red);
+}
+
+/* =========================================================
+   PHOTOGRAPHER'S TIPS
+   ========================================================= */
+
+.wcc-weekly .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.wcc-weekly .tip {
+    background: var(--soft-grey);
+    border-top: 5px solid var(--teal);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.wcc-weekly .tip h3 {
+    margin-top: 0;
+}
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+
+.wcc-weekly .event {
+    display: grid;
+    grid-template-columns: 165px 1fr;
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid #e2e6e7;
+}
+
+.wcc-weekly .event-date {
+    color: var(--red) !important;
+    font-weight: bold;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.wcc-weekly .wcc-newsletter-footer {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: #10484d !important;
+    color: #ffffff !important;
+    padding: 32px !important;
+    margin: 0 !important;
+    text-align: center !important;
+}
+
+.wcc-weekly .wcc-newsletter-footer,
+.wcc-weekly .wcc-newsletter-footer * {
+    color: #ffffff !important;
+}
+
+/* =========================================================
+   RESPONSIVE STANDARD IMAGES
+   Prevent Zenfolio theme rules from cropping images on mobile
+   ========================================================= */
+
+.wcc-weekly .rollup img,
+.wcc-weekly section img {
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    margin: 20px auto !important;
+    box-sizing: border-box !important;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .wcc-weekly .hero {
+        padding: 32px 22px;
+    }
+
+    .wcc-weekly .hero-kicker {
+        font-size: 12px;
+        letter-spacing: 1.7px;
+    }
+
+    .wcc-weekly .hero h1 {
+        font-size: 32px;
+    }
+
+    .wcc-weekly .hero h2 {
+        font-size: 20px;
+        line-height: 1.45;
+    }
+
+    .wcc-weekly .tagline {
+        font-size: 16px;
+    }
+
+    .wcc-weekly .quick-links {
+        padding: 10px 20px;
+    }
+
+    .wcc-weekly .quick-links summary {
+        font-size: 16px;
+    }
+
+    .wcc-weekly .issue-nav-links {
+        padding-left: 22px;
+    }
+
+    .wcc-weekly .issue-nav-links a {
+        display: block;
+        margin: 8px 0;
+        font-size: 15px;
+    }
+
+    .wcc-weekly .content {
+        padding: 24px 18px;
+    }
+
+    .wcc-weekly h2.section-title {
+        font-size: 25px;
+    }
+
+    .wcc-weekly .tips-grid,
+    .wcc-weekly .photo-grid,
+    .wcc-weekly .travel-grid,
+    .wcc-weekly .travel-grid.three {
+        grid-template-columns: 1fr;
+    }
+
+    .wcc-weekly .photo-grid.seven .photo-card:last-child {
+        grid-column: auto;
+    }
+
+    .wcc-weekly .event {
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+
+    .wcc-weekly .rollup {
+        padding: 18px;
+    }
+
+    .wcc-weekly .button {
+        width: 100%;
+        padding: 16px 14px;
+        font-size: 15px;
+    }
+
+    .wcc-weekly .rollup img,
+    .wcc-weekly section img {
+        width: auto !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .wcc-weekly .photo-card img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 0 0 10px !important;
+    }
+}
+
+/* Reliable deep-link positioning when opened from the Resource Library. */
+.wcc-weekly [id^="wcc-"] {
+    scroll-margin-top: 150px;
+}
+
+</style>
+<!-- ======================================================
+     PAGE-LEVEL METADATA
+     WCC Weekly Update Metadata Standard v1
+     ====================================================== -->
+<div class="wcc-weekly" data-issue="012" data-publication="weekly-update" data-published="2026-08-24" data-url="https://warrnamboolcameraclub.zenfolio.com/weekly-newsletter-012">
+<!-- ======================================================
+     HERO
+     ====================================================== -->
+<div class="hero">
+<div class="hero-kicker">Warrnambool Camera Club</div>
+<h1>Weekly Update</h1>
+<h2>Issue 012 | Monday, 24 August 2026</h2>
+<div class="tagline">Learn • Create • Share • Inspire</div>
+</div>
+<!-- ======================================================
+     IN THIS ISSUE
+     ====================================================== -->
+<div class="quick-links">
+<details class="issue-nav">
+<summary>In this issue</summary>
+<div class="issue-nav-links">
+<a href="#wcc-2026-012-editor">From the Editor</a>
+<a href="#wcc-2026-012-world-photography-day">World Photography Day</a>
+<a href="#wcc-2026-012-survey">Member Survey</a>
+<a href="#wcc-2026-012-long-exposure-006">Convention Corner</a>
+<a href="#wcc-2026-012-lightroom-005">Editing Corner</a>
+<a href="#wcc-2026-012-tips">Photographer's Tips</a>
+<a href="#wcc-2026-012-challenge">Camera Challenge</a>
+<a href="#wcc-2026-012-travellers">Members on the Move</a>
+<a href="#wcc-2026-012-coming-up">Coming Up</a>
+<a href="#wcc-2026-012-contributions">Contributions</a>
+</div>
+</details>
+</div>
+<div class="content">
+<!-- ======================================================
+     FROM THE EDITOR
+     ====================================================== -->
+<section data-category="club-news" data-index="article" data-tags="weekly-update,world-photography-day,member-news" id="wcc-2026-012-editor">
+<h2 class="section-title">🏡 From the Editor</h2>
+<p class="lead">Welcome to Issue 012 of the Warrnambool Camera Club Weekly Update.</p>
+<p>Last week we set members a simple World Photography Day challenge: get out and make a photograph. The response gave us exactly the mix we hoped for, with <strong>five members sending seven photographs</strong> covering everything from flowers and snails to the Twelve Apostles, Tower Hill, breakfast and a butterfly photographed during a Singapore stopover.</p>
+<p>It is a nice reminder that worthwhile photographs can turn up almost anywhere, which is also the idea behind this week's Camera Challenge: <strong>Make the Ordinary Interesting</strong>.</p>
+<p>A big thank you as well to everyone who completed our recent member survey. The Committee will sit down with the responses this <strong>Thursday, 27 August</strong> and start working through the themes and ideas members have raised.</p>
+<p>Our learning series continue this week too. In Convention Corner we return to Ian van der Wolde's long exposure presentation with <strong>Part 6: Getting the Focus Right</strong>, while Editing Corner moves to <strong>Lightroom Basics Part 5: Sharpening Without Halos</strong>.</p>
+<p>And with September approaching, there are a few dates to start thinking about, particularly our judging night with Johanna Botman, helping at the Warrnambool Running Festival and a proposed Club outing to Werribee Open Range Zoo on 24 October.</p>
+<p><strong>Enjoy the issue, and hopefully find an excuse to get the camera out this week.</strong></p>
+<p>Stan</p>
+</section>
+<!-- ======================================================
+     WORLD PHOTOGRAPHY DAY
+     ====================================================== -->
+<section data-category="feature" data-index="article" data-locations="twelve-apostles,singapore,tower-hill" data-people="vivian-carter,debbie-iverach,craig-homberg,andrew-iverach,mark-wishart" data-tags="world-photography-day,world-photography-week,member-images,photography" id="wcc-2026-012-world-photography-day">
+<h2 class="section-title">📷 World Photography Day – What Our Members Saw</h2>
+<p class="lead">Last week we set members a very simple challenge: make a photograph for World Photography Day and send it through for the Weekly Update.</p>
+<p><strong>Five members responded, sending us seven photographs</strong>, and the results could hardly be more varied.</p>
+<p>Vivian Carter found subjects in the small details around her, with two flower studies and a photograph of snails. Debbie Iverach took us beneath the night sky at the Twelve Apostles. Craig Homberg found a butterfly during the journey home at the Butterfly Enclosure in Singapore. Andrew Iverach discovered that even breakfast can have personality, while Mark Wishart encountered a kangaroo and joey at Tower Hill.</p>
+<div class="feature-card">
+<p>There is no single type of subject, camera or location represented here, and that is probably the best part of the exercise. Photography does not always require an exotic destination or elaborate setup. Sometimes it simply requires noticing something worth photographing.</p>
+</div>
+<!-- PHOTO GALLERY: Keep these images outside <details> when inserting in Zenfolio. -->
+<div class="photo-grid seven">
+<div class="photo-card">
+<img alt="Twelve Apostles at night photographed by Debbie Iverach" decoding="async" loading="lazy" src="/img/s/v-10/p1585007657-3.jpg" style="display:block;width:auto;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:center center;margin:0 auto 10px;border-radius:5px;box-sizing:border-box;"/>
+<div class="caption"><strong>Debbie Iverach</strong> | Twelve Apostles at Night</div>
+</div>
+<div class="photo-card">
+<img alt="Close-up flower photograph by Vivian Carter" decoding="async" loading="lazy" src="/img/s/v-10/p1585007662-3.jpg" style="display:block;width:auto;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:center center;margin:0 auto 10px;border-radius:5px;box-sizing:border-box;"/>
+<div class="caption"><strong>Vivian Carter</strong> | Close Up Flower</div>
+</div>
+<div class="photo-card">
+<img alt="Kangaroo and joey at Tower Hill photographed by Mark Wishart" decoding="async" loading="lazy" src="/img/s/v-10/p1585007670-3.jpg" style="display:block;width:auto;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:center center;margin:0 auto 10px;border-radius:5px;box-sizing:border-box;"/>
+<div class="caption"><strong>Mark Wishart</strong> | What Ya Looking At | Tower Hill</div>
+</div>
+<div class="photo-card">
+<img alt="Butterfly at the Butterfly Enclosure in Singapore photographed by Craig Homberg" decoding="async" loading="lazy" src="/img/s/v-10/p1585007665-3.jpg" style="display:block;width:auto;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:center center;margin:0 auto 10px;border-radius:5px;box-sizing:border-box;"/>
+<div class="caption"><strong>Craig Homberg</strong> | Butterfly Enclosure, Singapore</div>
+</div>
+<div class="photo-card">
+<img alt="Friendly sausage roll breakfast photographed by Andrew Iverach" decoding="async" loading="lazy" src="/img/s/v-10/p1585007672-3.jpg" style="display:block;width:auto;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:center center;margin:0 auto 10px;border-radius:5px;box-sizing:border-box;"/>
+<div class="caption"><strong>Andrew Iverach</strong> | Friendly Sausage Roll at the Freckle Duck</div>
+</div>
+<div class="photo-card">
+<img alt="Yellow flower photograph by Vivian Carter" decoding="async" loading="lazy" src="/img/s/v-10/p1585007661-3.jpg" style="display:block;width:auto;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:center center;margin:0 auto 10px;border-radius:5px;box-sizing:border-box;"/>
+<div class="caption"><strong>Vivian Carter</strong> | Yellow Flower</div>
+</div>
+<div class="photo-card">
+<img alt="Snails photographed by Vivian Carter" decoding="async" loading="lazy" src="/img/s/v-10/p1585007668-3.jpg" style="display:block;width:auto;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:center center;margin:0 auto 10px;border-radius:5px;box-sizing:border-box;"/>
+<div class="caption"><strong>Vivian Carter</strong> | Snails</div>
+</div>
+</div>
+<p>And there is still a little time left to use the occasion as motivation: <strong>World Photography Week continues until Wednesday, 26 August</strong>.</p>
+</section>
+<!-- ======================================================
+     MEMBER SURVEY
+     ====================================================== -->
+<section data-category="club-news" data-index="article" data-tags="member-survey,committee,member-feedback,club-planning" id="wcc-2026-012-survey">
+<h2 class="section-title">📋 Member Survey Update</h2>
+<p class="lead">A big thank you to everyone who took the time to complete our recent member survey.</p>
+<p>The responses have given us a much clearer picture of what members value, what they would like to see more of, and where there may be opportunities to improve the way the Club communicates, organises activities and supports members.</p>
+<div class="feature-card navy">
+<p>The Committee will be discussing the survey feedback at its meeting this <strong>Thursday, 27 August</strong>.</p>
+</div>
+<p>We will then provide members with a summary of the main themes and let you know what actions or ideas may come from the discussion.</p>
+<p><strong>Thank you again to everyone who contributed. Your feedback is helping shape the direction of the Club.</strong></p>
+</section>
+<!-- ======================================================
+     CONVENTION CORNER - LONG EXPOSURE PART 6
+     ====================================================== -->
+<section data-category="education" data-index="article" data-part="6" data-people="ian-van-der-wolde" data-series="mastering-long-exposure-photography" data-tags="long-exposure,focus,nd-filters,tripod,live-view,landscape" id="wcc-2026-012-long-exposure-006">
+<h2 class="section-title">📷 Convention Corner</h2>
+<h3>Mastering Long Exposure Photography</h3>
+<h3>Part 6: Getting the Focus Right</h3>
+<p>You can get the exposure perfect, choose the ideal shutter speed and capture beautifully smooth water, but if the important parts of the photograph aren't sharp, there's very little you can do afterwards to rescue the image.</p>
+<p>During his VAPS Convention presentation, <strong>Ian van der Wolde</strong> spent some time discussing focus because it was something he had learned through experience with his own early long exposure photographs.</p>
+<p>The good news is that achieving accurate focus isn't particularly difficult. The trick is to do it <strong>before the ND filter goes on the camera.</strong></p>
+<details>
+<summary>Read Part 6: Getting the Focus Right</summary>
+<div class="rollup">
+<h3>Why ND Filters Make Focusing Difficult</h3>
+<p>A strong ND filter dramatically reduces the amount of light reaching the camera.</p>
+<p>A 10-stop filter, for example, allows only about <strong>1/1000th of the original light</strong> through.</p>
+<p>That's exactly what we want when we're trying to turn a normal exposure into a long exposure, but it can make focusing considerably more difficult.</p>
+<p>Depending on the camera and conditions, autofocus may struggle or fail completely once a strong ND filter is fitted.</p>
+<p>Ian's solution is straightforward:</p>
+<div class="feature-card"><strong>Compose and focus first. Add the ND filter afterwards.</strong></div>
+<h3>Start Without the Filter</h3>
+<p>Before fitting the ND filter:</p>
+<ol>
+<li>Set up the tripod.</li>
+<li>Compose the photograph.</li>
+<li>Focus carefully.</li>
+<li>Check the focus at high magnification.</li>
+<li>Switch to manual focus if necessary.</li>
+<li>Only then attach the ND filter.</li>
+</ol>
+<p>Once you've established focus, the objective is to make sure nothing changes.</p>
+<p>Be particularly careful when screwing a filter onto the lens. It's surprisingly easy to accidentally move the focusing ring while fitting the filter.</p>
+<p>If you're using a filter holder, slide the filter into position carefully without disturbing the camera.</p>
+<h3>Don't Just Trust the Autofocus Confirmation</h3>
+<p>Ian explained that some of his early long exposure images weren't as sharp as he expected.</p>
+<p>He had been relying on autofocus.</p>
+<p>His approach changed to manually checking focus using the camera's Live View display.</p>
+<p>With a DSLR, Ian recommended switching to Live View, magnifying the image on the rear screen to <strong>100%</strong>, and manually adjusting focus until the detail visibly snaps into focus.</p>
+<p>He also demonstrated a focusing loupe that can be placed over the rear LCD. Apart from magnifying the display, the loupe blocks surrounding light, making the screen much easier to examine outdoors.</p>
+<h3>Mirrorless Cameras Make This Easier</h3>
+<p>One advantage of modern mirrorless cameras is the electronic viewfinder.</p>
+<p>You can magnify part of the scene inside the viewfinder and inspect critical focus without surrounding daylight making the image difficult to see.</p>
+<p>Many mirrorless cameras also offer <strong>focus peaking</strong>, which highlights areas the camera believes are in focus.</p>
+<p>These tools are extremely useful, but the principle remains the same:</p>
+<div class="feature-card navy"><strong>Check the focus yourself rather than simply assuming the camera has got it right.</strong></div>
+<h3>What Should You Focus On?</h3>
+<p>This depends entirely on the photograph.</p>
+<p>It isn't automatically infinity.</p>
+<p>If the photograph contains an important foreground object, simply focusing on the horizon may leave that foreground noticeably soft.</p>
+<p>Likewise, focusing on something immediately in front of the camera may sacrifice distant detail.</p>
+<p>For landscapes containing both foreground and distant subjects, consider where the available depth of field needs to fall through the scene.</p>
+<p>Ian often works around apertures such as <strong>f/11</strong>, where sufficient depth of field can be achieved while retaining excellent image quality.</p>
+<p>The important thing is to make a deliberate decision about <strong>where you want maximum sharpness</strong>, rather than simply turning the lens to infinity and hoping everything will be sharp.</p>
+<h3>Image Stabilisation: Check Your Camera</h3>
+<p>Ian also recommended turning image stabilisation off when working from a tripod.</p>
+<p>That has traditionally been good advice because some stabilisation systems can attempt to compensate for movement that isn't actually occurring, potentially introducing blur during a long exposure.</p>
+<p>However, camera technology has changed considerably.</p>
+<p>Some modern cameras and lenses automatically recognise when they're mounted on a tripod, while manufacturers of some systems recommend leaving particular stabilisation modes active.</p>
+<p>So rather than applying one rule to every camera:</p>
+<div class="feature-card"><strong>Check the manufacturer's instructions for your particular camera and lens.</strong></div>
+<p>The objective is the same regardless of the system: eliminate anything that could introduce unwanted movement during the exposure.</p>
+<h3>Check Again Before Starting a Very Long Exposure</h3>
+<p>This becomes increasingly important as exposure times grow.</p>
+<p>If you're about to make a 30-second exposure, checking focus takes only a few moments.</p>
+<p>If you're about to make a 10-minute exposure followed by another 10 minutes of long exposure noise reduction, discovering afterwards that the image is out of focus becomes considerably more frustrating.</p>
+<p>Before opening the shutter, run through a quick mental checklist:</p>
+<p><strong>Composition. Focus. Stability. Exposure. Filter. Light leaks.</strong></p>
+<p>Then take the photograph.</p>
+<h3>Don't Forget the Tripod</h3>
+<p>Accurate focus and camera stability go hand in hand.</p>
+<p>You can focus perfectly and still produce a soft photograph if the camera moves during the exposure.</p>
+<p>Once focus is established:</p>
+<ul>
+<li>Avoid touching the camera.</li>
+<li>Make sure the tripod is stable.</li>
+<li>Secure any loose remote-release cables.</li>
+<li>Be careful on boardwalks, bridges and other surfaces that can vibrate.</li>
+<li>Allow the camera to settle after fitting the filter.</li>
+<li>Use a remote release or suitable shutter delay.</li>
+</ul>
+<p>These little details become increasingly important as exposures become longer.</p>
+<h3>Ian's Simple Focusing Workflow</h3>
+<p>For anyone beginning with long exposure photography, Ian's approach can be reduced to a very simple sequence:</p>
+<div class="feature-card red"><strong>Compose → Focus → Magnify → Check → Manual Focus → Add Filter → Expose</strong></div>
+<p>It's worth turning that into a habit.</p>
+<p>After a while, you'll perform the sequence automatically.</p>
+<h3>Try It This Week</h3>
+<p>You don't even need an ND filter for this week's exercise.</p>
+<p>Put your camera on a tripod and choose a landscape containing both near and distant detail.</p>
+<p>Focus as you normally would and take a photograph.</p>
+<p>Now switch to Live View or your electronic viewfinder and magnify an important part of the scene as far as your camera allows.</p>
+<p>Manually refine the focus.</p>
+<p>Take another photograph.</p>
+<p>Back at the computer, compare the two images at 100%.</p>
+<p>Can you see a difference?</p>
+<p>Then repeat the exercise at several different focusing distances and observe what happens to the foreground and background.</p>
+<p>It's a simple exercise, but understanding exactly where your camera is focusing and how depth of field extends around that point is an important skill for every landscape photographer, not just those shooting long exposures.</p>
+<div class="feature-card navy">
+<h3>Quick Tip</h3>
+<p><strong>Focus before fitting a strong ND filter.</strong></p>
+<p>Once you've established critical focus, switch to manual focus so the camera doesn't attempt to refocus when you press the shutter.</p>
+<p>Then carefully fit the ND filter without touching the focusing ring.</p>
+<p>It's one small habit that can save a very long wait for a very disappointing photograph.</p>
+</div>
+</div>
+</details>
+<p><strong>Coming Next:</strong> Part 7 – Exposure and the Histogram: Don't Trust the Picture on the Back of Your Camera.</p>
+</section>
+<!-- ======================================================
+     EDITING CORNER - LIGHTROOM PART 5
+     ====================================================== -->
+<section data-category="editing" data-index="article" data-part="5" data-series="lightroom-basics" data-tags="lightroom,sharpening,masking,halos,detail-panel,editing" id="wcc-2026-012-lightroom-005">
+<h2 class="section-title">💻 Editing Corner</h2>
+<h3>Lightroom Basics – Part 5</h3>
+<h3>Sharpening Without Halos</h3>
+<p>Sharpening is one of those Lightroom adjustments that can improve almost every photograph, but it is also very easy to overdo.</p>
+<p>The aim of sharpening is not to make an out-of-focus photograph sharp. Instead, sharpening increases contrast along existing edges so that detail appears clearer and more defined.</p>
+<p>Too much sharpening can produce obvious bright or dark outlines around edges, commonly called <strong>halos</strong>. It can also make noise, skin texture and backgrounds look harsh.</p>
+<details>
+<summary>Read Lightroom Basics Part 5: Sharpening Without Halos</summary>
+<div class="rollup">
+<h3>A Simple Lightroom Sharpening Process</h3>
+<h3>1. Zoom to 100%</h3>
+<p>Open the photograph in Lightroom Classic's Develop module and zoom to 1:1 or 100%.</p>
+<p>Choose an area containing useful fine detail, such as:</p>
+<ul>
+<li>Eyes and eyelashes in a portrait.</li>
+<li>Feathers on a bird.</li>
+<li>Fur.</li>
+<li>Tree bark.</li>
+<li>Rock texture.</li>
+<li>Lettering or architectural detail.</li>
+</ul>
+<p>Do not judge sharpening while viewing the entire photograph fitted to the screen.</p>
+<h3>2. Open the Detail Panel</h3>
+<p>In Lightroom Classic, open the Detail panel.</p>
+<p>Under Sharpening you will find four main controls:</p>
+<ul>
+<li><strong>Amount</strong></li>
+<li><strong>Radius</strong></li>
+<li><strong>Detail</strong></li>
+<li><strong>Masking</strong></li>
+</ul>
+<p>Each performs a different job.</p>
+<h3>Amount – How Much Sharpening?</h3>
+<p>The Amount slider controls the overall strength of the sharpening effect.</p>
+<p>Moving it to the right increases the contrast Lightroom applies around edges. Setting Amount to 0 switches sharpening off.</p>
+<p>Start modestly and increase it until the important detail looks clearer.</p>
+<p>Then back it off slightly if the result begins to look harsh.</p>
+<div class="feature-card"><strong>Beginner rule:</strong> If you can obviously see the sharpening effect, you may already have gone too far.</div>
+<h3>Radius – How Wide Are the Sharpened Edges?</h3>
+<p>Radius controls the width of the area around an edge affected by sharpening.</p>
+<p>Fine-detail photographs generally suit a smaller Radius, while photographs containing larger details can tolerate a larger setting. A Radius that is too large can make the result look unnatural.</p>
+<p>For beginners, there is rarely a need to make large Radius adjustments. Small movements are usually enough.</p>
+<h3>Detail – How Much Fine Texture?</h3>
+<p>The Detail slider determines how much fine texture Lightroom attempts to sharpen.</p>
+<p>Lower settings concentrate mainly on edges.</p>
+<p>Higher settings emphasise more fine detail and texture.</p>
+<p>That can be useful for subjects such as feathers, fur, rocks and detailed landscapes, but high Detail settings can also exaggerate noise and unwanted texture.</p>
+<p>For portraits, particularly skin, a more restrained Detail setting is usually preferable.</p>
+<h3>Masking – The Beginner's Best Friend</h3>
+<p>Of all the sharpening controls, Masking is probably the most useful one for beginners.</p>
+<p>At 0, Lightroom applies sharpening throughout virtually the entire photograph.</p>
+<p>As Masking approaches 100, sharpening becomes increasingly restricted to the strongest edges.</p>
+<p>This means you can sharpen the important edges without unnecessarily sharpening smooth areas such as:</p>
+<ul>
+<li>Blue skies.</li>
+<li>Blurred backgrounds.</li>
+<li>Smooth water.</li>
+<li>Skin.</li>
+<li>Out-of-focus areas.</li>
+</ul>
+<h3>See Exactly What Masking Is Doing</h3>
+<p>Hold <strong>Alt on Windows</strong> or <strong>Option on Mac</strong> while moving the Masking slider.</p>
+<p>Lightroom displays a temporary black-and-white preview:</p>
+<ul>
+<li><strong>White areas</strong> will be sharpened.</li>
+<li><strong>Black areas</strong> will be protected from sharpening.</li>
+</ul>
+<p>For a bird photograph, for example, you might increase Masking until the bird's edges and feather detail remain white while most of the smooth sky becomes black.</p>
+<p>That allows the bird to be sharpened without also making noise in the sky more obvious.</p>
+<h3>Watch for Halos</h3>
+<p>One of the clearest signs of excessive sharpening is a bright or dark line appearing along a high-contrast edge.</p>
+<p>Look closely around:</p>
+<ul>
+<li>Buildings against the sky.</li>
+<li>Tree branches.</li>
+<li>Bird outlines.</li>
+<li>Mountain ridges.</li>
+<li>Dark objects against bright backgrounds.</li>
+</ul>
+<p>If you see halos, reduce Amount, Radius, or both.</p>
+<h3>Sharpening Does Not Fix Missed Focus</h3>
+<p>Sharpening can improve the appearance of detail that already exists.</p>
+<p>It cannot restore detail that the camera never captured.</p>
+<p>If the subject is badly out of focus or heavily affected by camera movement, simply increasing sharpening will usually create a harsher-looking blurry photograph rather than a genuinely sharp one.</p>
+<p>Knowing when to stop is part of good editing.</p>
+<h3>A Simple Beginner Method</h3>
+<ul>
+<li>Zoom to 100%.</li>
+<li>Open the Detail panel.</li>
+<li>Increase Amount gradually.</li>
+<li>Keep Radius modest.</li>
+<li>Use Detail carefully.</li>
+<li>Hold Alt/Option while increasing Masking.</li>
+<li>Concentrate sharpening on the important edges.</li>
+<li>Check carefully for halos.</li>
+<li>Compare with sharpening temporarily reduced or switched off.</li>
+</ul>
+<p>There is no single correct set of numbers because different photographs contain different amounts and types of detail.</p>
+<h3>Final Check</h3>
+<p>Before moving on, ask:</p>
+<ul>
+<li>Does the important subject look clearer?</li>
+<li>Have fine details improved without becoming crunchy?</li>
+<li>Are smooth areas still smooth?</li>
+<li>Have I made noise more obvious?</li>
+<li>Can I see bright or dark halos around edges?</li>
+<li>Does the photograph still look natural?</li>
+</ul>
+<p>If you are unsure, reduce the sharpening slightly.</p>
+<div class="feature-card navy">
+<h3>Remember</h3>
+<p><strong>Sharpen the subject, not every pixel.</strong></p>
+<p>Masking is often the easiest way to achieve that.</p>
+</div>
+</div>
+</details>
+<div class="feature-card">
+<p><strong>📄 This Week's Guide:</strong> The accompanying Lightroom Basics guide provides a visual reference to Amount, Radius, Detail and Masking, including the Alt/Option masking preview.</p>
+</div>
+<a class="button teal"
+   id="wcc-resource-2026-012-lightroom-005-guide"
+   data-index="resource"
+   data-category="editing"
+   data-series="lightroom-basics"
+   data-part="5"
+   data-tags="lightroom,sharpening,masking,halos,pdf,downloadable-guide"
+   href="https://warrnamboolcameraclub.zenfolio.com/lr_005_sharpening.pdf"
+   rel="noopener"
+   target="_blank">Download Lightroom Basics Part 5 – Sharpening Without Halos</a>
+<p><strong>Coming Next:</strong> Lightroom Basics – Part 6: Noise Reduction Without Losing Detail.</p>
+</section>
+<!-- ======================================================
+     PHOTOGRAPHER'S TIPS
+     ====================================================== -->
+<section id="wcc-2026-012-tips">
+<h2 class="section-title">📸 Photographer's Tips</h2>
+<div class="tips-grid">
+<article class="tip" data-category="photography-tips" data-code="B008" data-index="tip" data-level="beginner" data-tags="iso,exposure,noise,camera-basics" id="wcc-tip-b008">
+<h3>🌱 Beginner Tip – B008</h3>
+<strong>Understand What ISO Does</strong>
+<p>ISO controls how sensitive your camera is to the light being recorded.</p>
+<p>A lower ISO, such as ISO 100, will generally give you the cleanest image quality. Raising the ISO allows you to use a faster shutter speed or shoot in lower light, but it can also introduce more visible noise into the photograph.</p>
+<p>Don't be afraid to raise your ISO when you need to. A sharp photograph at ISO 1600 is usually far more useful than a blurry photograph at ISO 100.</p>
+<p>Try photographing the same scene at several ISO settings and compare the results on your computer.</p>
+</article>
+<article class="tip" data-category="photography-tips" data-code="I008" data-index="tip" data-level="intermediate" data-tags="composition,movement,gaze,subject-placement" id="wcc-tip-i008">
+<h3>📷 Intermediate Tip – I008</h3>
+<strong>Use the Direction of Movement</strong>
+<p>When photographing a person, animal, vehicle or anything else moving across the frame, consider leaving more space <strong>in front of the subject than behind it</strong>.</p>
+<p>This gives the subject somewhere to move into and often makes the composition feel more natural.</p>
+<p>The same principle can apply to where a person or animal is looking. Leaving space in the direction of their gaze can help guide the viewer through the photograph.</p>
+<p>Of course, breaking this convention can create tension, but it works best when you do it deliberately.</p>
+</article>
+<article class="tip" data-category="photography-tips" data-code="A008" data-index="tip" data-level="advanced" data-tags="tone,tonal-separation,monochrome,composition" id="wcc-tip-a008">
+<h3>⭐ Advanced Tip – A008</h3>
+<strong>Look for Tonal Separation</strong>
+<p>Two objects can be completely different colours yet merge together if they have similar brightness.</p>
+<p>When composing an image, consider not only colour but also <strong>tone</strong>. A dark subject against a dark background may lose definition, while placing that same subject against a lighter area can immediately create separation.</p>
+<p>One useful technique is to imagine the scene in black and white. If your subject still stands out clearly without colour, you probably have good tonal separation.</p>
+<p>This becomes particularly important when creating monochrome images, where differences in brightness must do much of the work that colour normally provides.</p>
+</article>
+</div>
+</section>
+<!-- ======================================================
+     CAMERA CHALLENGE
+     ====================================================== -->
+<section data-category="challenge" data-index="article" data-tags="camera-challenge,creativity,composition,seeing,ordinary-subjects" id="wcc-2026-012-challenge">
+<h2 class="section-title">📷 This Week's Camera Challenge</h2>
+<h3>Make the Ordinary Interesting</h3>
+<p>One thing our World Photography Day photographs showed is that you don't need to travel somewhere spectacular to find something worth photographing.</p>
+<p>A flower, breakfast, a snail, wildlife close to home or something you notice while going about your normal day can all become worthwhile photographs if you stop and look carefully.</p>
+<div class="feature-card red">
+<p><strong>This week's challenge:</strong> Photograph something you would normally walk straight past.</p>
+</div>
+<p>It might be something around the house, in the backyard, on your morning walk, at work or somewhere you visit regularly.</p>
+<p>The challenge is not simply to record it. Try to make an interesting photograph from an ordinary subject.</p>
+<p>Think about changing your viewpoint, moving closer, using light and shadow, simplifying the background, looking for colour, shape, texture or pattern, or trying the photograph in black and white.</p>
+<div class="feature-card navy">
+<p>Before pressing the shutter, ask yourself:</p>
+<p><strong>“What made me notice this?”</strong></p>
+<p>Then try to make that the strongest part of your photograph.</p>
+</div>
+<p>You don't need special equipment. Your camera or phone is perfectly adequate.</p>
+<p><strong>Sometimes improving your photography isn't about finding better subjects. It's about getting better at seeing the subjects already around you.</strong></p>
+</section>
+<!-- ======================================================
+     MEMBERS ON THE MOVE
+     ====================================================== -->
+<section id="wcc-2026-012-travellers">
+<h2 class="section-title">✈️ Members on the Move</h2>
+<p class="lead">Our travelling members continue to keep us supplied with photographs from very different parts of the world. Craig and Sharon Homberg are now safely home, while Bob and Kerrie have continued through central Australia and are currently in Alice Springs.</p>
+<!-- CRAIG & SHARON -->
+<article data-category="members-on-the-move" data-index="article" data-locations="iceland,singapore" data-people="craig-homberg,sharon-homberg" data-tags="travel,iceland,festival,glamping,singapore" id="wcc-2026-012-travel-craig-sharon">
+<h3>🇮🇸 Craig &amp; Sharon: One Last Stop in Iceland</h3>
+<p>Craig and Sharon are now home safe and sound after their overseas adventure, although Craig reports that jet lag has provided one final souvenir from the trip.</p>
+<p>Before heading home, they made it to their Iceland festival accommodation, where the Warrnambool Camera Club even managed to establish a small international presence.</p>
+<!-- Keep Zenfolio-inserted photos outside the roll-up. -->
+<div class="travel-grid three">
+<div class="photo-card"><img alt="Glamping camp site at the Iceland festival photographed by Craig Homberg" decoding="async" loading="lazy" src="/img/s/v-10/p1585012073-3.jpg" style="display:block;width:auto;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:center center;margin:0 auto 10px;border-radius:5px;box-sizing:border-box;"/><div class="caption">Festival glamping area, Iceland | Craig Homberg</div></div>
+<div class="photo-card"><img alt="Mountain landscape behind the Iceland festival glamping tents photographed by Craig Homberg" decoding="async" loading="lazy" src="/img/s/v-10/p1585012084-3.jpg" style="display:block;width:auto;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:center center;margin:0 auto 10px;border-radius:5px;box-sizing:border-box;"/><div class="caption">Iceland festival landscape | Craig Homberg</div></div>
+<div class="photo-card"><img alt="Craig Homberg wearing a Warrnambool Camera Club cap at the Iceland festival" decoding="async" loading="lazy" src="/img/s/v-10/p1585012085-3.jpg" style="display:block;width:auto;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:center center;margin:0 auto 10px;border-radius:5px;box-sizing:border-box;"/><div class="caption">Warrnambool Camera Club makes an appearance in Iceland | Craig Homberg</div></div>
+</div>
+<details>
+<summary>Craig &amp; Sharon's final Iceland update</summary>
+<div class="rollup">
+<p>Craig described the festival area as a glamping setup, with tents spread across the landscape and mountains forming a fairly impressive backdrop.</p>
+<p>The weather had improved considerably by this stage. Craig noted one day that it was only around 13°C but somehow felt considerably warmer, which was a welcome change after some of the conditions earlier in the trip.</p>
+<p>They missed the eclipse itself, but as Craig put it, they certainly didn't miss the atmosphere.</p>
+<p>One photograph also confirms that the Warrnambool Camera Club had a presence at the festival, courtesy of Craig and his Club hat. 😁</p>
+<p>On the journey home, a layover in Singapore provided one final photographic opportunity at the <strong>Butterfly Enclosure</strong>. Craig's butterfly photograph appears in our World Photography Day gallery above.</p>
+<p><strong>Welcome home Craig and Sharon, and thanks for keeping us supplied with photographs along the way.</strong></p>
+</div>
+</details>
+</article>
+<!-- BOB & KERRIE -->
+<article data-category="members-on-the-move" data-index="article" data-locations="karumba,alice-springs" data-people="bob-artis,kerrie-artis" data-tags="travel,karumba,sunset,alice-springs,australia" id="wcc-2026-012-travel-bob-kerrie">
+<h3>🇦🇺 Bob &amp; Kerrie: From the Gulf to Alice Springs</h3>
+<p>Last time we were waiting for photographic evidence that Bob had completed one particularly important assignment at Karumba: photographing the sun setting over the Gulf.</p>
+<p><strong>Bob has delivered.</strong></p>
+<!-- Keep the photo outside the roll-up so it remains visible when the details section is closed. -->
+<div class="photo-card" style="max-width:760px;margin:20px auto;">
+<img alt="Sunset at Karumba photographed by Bob Artis" decoding="async" loading="lazy" src="/img/s/v-10/p1585012074-3.jpg" style="display:block;width:100%;max-width:100%;height:auto;max-height:none;object-fit:contain;object-position:center center;margin:0 auto 10px;border-radius:5px;box-sizing:border-box;"/>
+<div class="caption"><strong>Karumba Sunset | Bob Artis</strong></div>
+</div>
+<details>
+<summary>Bob &amp; Kerrie's latest update</summary>
+<div class="rollup">
+<p>While at <strong>Karumba on the Gulf of Carpentaria</strong>, Bob captured exactly the photograph we had been waiting for, with the sun setting beyond the water and the mangroves silhouetted against the last colour of the day.</p>
+<p>It is a considerably better response than simply emailing back to say, “Yes Stan, the sun did set.” 😁</p>
+<p>Bob and Kerrie have now continued on and are currently in <strong>Alice Springs</strong>, adding another very different part of Australia to an already impressive journey.</p>
+<p>Safe travels to them both, and we look forward to seeing what appears next.</p>
+</div>
+</details>
+</article>
+</section>
+<!-- ======================================================
+     WHAT'S COMING UP
+     ====================================================== -->
+<section id="wcc-2026-012-coming-up">
+<h2 class="section-title">📅 What's Coming Up</h2>
+<!-- SEPTEMBER JUDGING NIGHT -->
+<article data-category="competition" data-event-date="2026-09-03" data-event-status="confirmed" data-index="event" data-people="johanna-botman" data-tags="competition,judging,johanna-botman,september" id="wcc-2026-012-event-2026-09-03-judging">
+<div class="feature-card navy">
+<h3>🏆 September Judging Night – Thursday, 3 September</h3>
+<p>Our next Club meeting is <strong>Thursday, 3 September</strong>, when we'll hold our September Competition Judging Night.</p>
+<p>We'll be welcoming <strong>Johanna Botman</strong> from the <strong>Bacchus Marsh and Districts Photography Club</strong> as our judge for the evening.</p>
+<p>Johanna is an experienced competition judge who is happy to judge for both city and country camera clubs, either in person or via Zoom. Her own photographic interests are wide and varied, although she notes that deliberate camera movement and abstract photography are not particular areas of interest.</p>
+<p>As always, judging night is about much more than scores or awards. Listening to an experienced judge discuss composition, technique, impact and possible improvements is one of the best opportunities we have to learn from a wide range of photographs.</p>
+</div>
+</article>
+<!-- WARRNAMBOOL RUNNING FESTIVAL -->
+<article data-category="community" data-event-date="2026-09-19" data-event-status="confirmed" data-index="event" data-locations="lake-pertobe,warrnambool" data-tags="warrnambool-running-festival,volunteering,fundraising,community,marathon" id="wcc-2026-012-event-2026-09-19-running-festival">
+<div class="feature-card red">
+<h3>🏃 Warrnambool Running Festival – 19–20 September</h3>
+<p>A reminder that the <strong>Warrnambool Running Festival</strong> is coming up on <strong>Saturday, 19 and Sunday, 20 September</strong> at Lake Pertobe.</p>
+<p>The event is a <strong>great fundraiser for the Camera Club</strong>, and once again we'll need members willing to lend a hand.</p>
+<p>At our Judging Night on <strong>Thursday, 3 September</strong>, we'll be asking for volunteers, so please give some thought beforehand to whether you might be available to help.</p>
+<p>If you can spare some time over the weekend, we'd really appreciate your support. It is a good way to help the Club while also being part of a major local community event.</p>
+</div>
+</article>
+<!-- WERRIBEE OPEN RANGE ZOO -->
+<article data-category="events" data-event-date="2026-10-24" data-event-status="planning" data-index="event" data-locations="werribee-open-range-zoo,werribee" data-tags="outing,werribee-open-range-zoo,bus,photography,family-friends" id="wcc-2026-012-event-2026-10-24-werribee-zoo">
+<div class="feature-card">
+<h3>🦒 Werribee Open Range Zoo – Saturday, 24 October</h3>
+<p>Planning is continuing for a Club outing to <strong>Werribee Open Range Zoo on Saturday, 24 October</strong>.</p>
+<p>The outing is still subject to final confirmation, but <strong>24 October is the date we are currently planning around</strong>.</p>
+<p>At our next Club meeting, we'll be asking members to indicate whether they would be interested in attending. This will help us properly gauge numbers and determine what size bus we may need.</p>
+<p><strong>Family and friends are also very welcome</strong>, subject to space being available once we know how many Club members are interested.</p>
+<p>There will be a <strong>small contribution towards the bus cost</strong>, while <strong>entry to Werribee Open Range Zoo will be at each person's own expense</strong>.</p>
+<p>If you're interested in coming along on 24 October, please give it some thought before the next meeting so we can get a realistic indication of numbers.</p>
+</div>
+</article>
+</section>
+<!-- ======================================================
+     CONTRIBUTIONS
+     ====================================================== -->
+<section id="wcc-2026-012-contributions">
+<div class="feature-card navy">
+<h3>📬 Have Something to Share?</h3>
+<p>The Weekly Update works best when it's about <strong>our members</strong>, not simply the Committee telling everyone what's happening.</p>
+<p>If you've been somewhere interesting, captured an image you're particularly pleased with, discovered a great photographic location, learned something worth sharing, tried some interesting equipment, won an award or simply have a good photography story, send it through.</p>
+<p>The more members contribute, the more the Weekly Update becomes a reflection of the photography and people that make up the Warrnambool Camera Club.</p>
+</div>
+</section>
+</div>
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
+<div class="wcc-newsletter-footer">
+<strong>Warrnambool Camera Club</strong><br/>
+Weekly Update | Issue 012<br/><br/>
+<strong>Compiled &amp; edited by Stan McCullagh</strong><br/><br/>
+Learn • Create • Share • Inspire
+</div>
+</div>
+
+<script>
+(function () {
+    function jumpToWeeklyAnchor() {
+        if (!window.location.hash) return;
+
+        var targetId;
+        try {
+            targetId = decodeURIComponent(window.location.hash.substring(1));
+        } catch (e) {
+            targetId = window.location.hash.substring(1);
+        }
+        if (!targetId) return;
+
+        var attempts = 0;
+        var maxAttempts = 40;
+
+        function tryScroll() {
+            var target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({behavior: "auto", block: "start"});
+                return;
+            }
+
+            attempts += 1;
+            if (attempts < maxAttempts) {
+                window.setTimeout(tryScroll, 150);
+            }
+        }
+
+        tryScroll();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
+            window.setTimeout(jumpToWeeklyAnchor, 100);
+        });
+    } else {
+        window.setTimeout(jumpToWeeklyAnchor, 100);
+    }
+
+    window.addEventListener("load", function () {
+        window.setTimeout(jumpToWeeklyAnchor, 200);
+    });
+
+    window.addEventListener("hashchange", function () {
+        window.setTimeout(jumpToWeeklyAnchor, 25);
+    });
+})();
+</script>
+

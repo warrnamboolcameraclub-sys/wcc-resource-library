@@ -1,0 +1,1050 @@
+<style type="text/css">
+/* =========================================================
+   WARRNAMBOOL CAMERA CLUB
+   WEEKLY UPDATE - ISSUE 007
+   BASED ON THE APPROVED ISSUE 011 WEB TEMPLATE
+   ========================================================= */
+
+.wcc-weekly {
+    --teal: #176b6b;
+    --dark-teal: #10484d;
+    --navy: #183f70;
+    --red: #b42318;
+    --text: #253238;
+    --muted: #5f7075;
+    --soft-teal: #edf7f6;
+    --soft-red: #fff5f4;
+    --soft-grey: #f5f6f7;
+    --border: #d6e1e1;
+    --white: #ffffff;
+
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--white);
+    color: var(--text) !important;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+}
+
+.wcc-weekly p,
+.wcc-weekly li,
+.wcc-weekly td {
+    color: var(--text) !important;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.wcc-weekly .hero {
+    background: linear-gradient(135deg, #10484d, #176b6b);
+    color: white !important;
+    padding: 46px 40px 40px;
+    border-bottom: 7px solid var(--red);
+}
+
+.wcc-weekly .hero * {
+    color: white !important;
+}
+
+.wcc-weekly .hero-kicker {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+.wcc-weekly .hero h1 {
+    margin: 5px 0;
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+.wcc-weekly .hero h2 {
+    margin: 4px 0 14px;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.wcc-weekly .tagline {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* =========================================================
+   ISSUE NAVIGATION
+   ========================================================= */
+
+.wcc-weekly .quick-links {
+    background: var(--soft-teal);
+    padding: 12px 28px;
+    border-bottom: 1px solid var(--border);
+}
+
+.wcc-weekly .quick-links details {
+    border: 0;
+    margin: 0;
+    background: transparent;
+    overflow: visible;
+}
+
+.wcc-weekly .quick-links summary {
+    cursor: pointer;
+    padding: 8px 0;
+    background: transparent;
+    color: var(--dark-teal) !important;
+    font-size: 16px;
+    font-weight: bold;
+    list-style: none;
+}
+
+.wcc-weekly .quick-links summary::-webkit-details-marker {
+    display: none;
+}
+
+.wcc-weekly .quick-links summary:before {
+    content: "+";
+    color: var(--red);
+    font-size: 19px;
+    font-weight: bold;
+    display: inline-block;
+    width: 22px;
+}
+
+.wcc-weekly .quick-links details[open] summary:before {
+    content: "−";
+}
+
+.wcc-weekly .issue-nav-links {
+    padding: 8px 0 12px 22px;
+}
+
+.wcc-weekly .issue-nav-links a {
+    display: inline-block;
+    margin: 5px 18px 5px 0;
+    color: var(--navy) !important;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.wcc-weekly .issue-nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.wcc-weekly .content {
+    padding: 32px 36px;
+}
+
+.wcc-weekly section {
+    margin: 0 0 42px;
+}
+
+.wcc-weekly h2.section-title {
+    color: var(--dark-teal) !important;
+    font-size: 28px;
+    line-height: 1.25;
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--teal);
+}
+
+.wcc-weekly h3 {
+    color: var(--navy) !important;
+    margin-top: 20px;
+}
+
+.wcc-weekly .lead {
+    font-size: 18px;
+    color: #41555b !important;
+}
+
+/* =========================================================
+   FEATURE BOXES
+   ========================================================= */
+
+.wcc-weekly .feature-card {
+    background: var(--soft-teal);
+    border-left: 6px solid var(--teal);
+    padding: 22px 25px;
+    margin: 20px 0;
+    border-radius: 5px;
+    color: var(--text) !important;
+}
+
+.wcc-weekly .feature-card.red {
+    background: var(--soft-red);
+    border-left-color: var(--red);
+}
+
+.wcc-weekly .feature-card.navy {
+    background: #f1f5fa;
+    border-left-color: var(--navy);
+}
+
+.wcc-weekly .feature-card *,
+.wcc-weekly .feature-card p,
+.wcc-weekly .feature-card strong,
+.wcc-weekly .feature-card h3 {
+    color: var(--text) !important;
+}
+
+/* =========================================================
+   ROLL UPS
+   ========================================================= */
+
+.wcc-weekly details {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 18px 0;
+    background: white;
+}
+
+.wcc-weekly summary {
+    cursor: pointer;
+    padding: 16px 20px;
+    background: var(--soft-teal);
+    color: var(--dark-teal) !important;
+    font-weight: bold;
+    list-style: none;
+}
+
+.wcc-weekly summary::-webkit-details-marker {
+    display: none;
+}
+
+.wcc-weekly summary:before {
+    content: "+";
+    color: var(--red);
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    width: 24px;
+}
+
+.wcc-weekly details[open] summary:before {
+    content: "−";
+}
+
+.wcc-weekly .rollup {
+    padding: 22px 24px;
+}
+
+.wcc-weekly .rollup *,
+.wcc-weekly .rollup p,
+.wcc-weekly .rollup li {
+    color: var(--text) !important;
+}
+
+/* =========================================================
+   PHOTOS
+   ========================================================= */
+
+.wcc-weekly .photo {
+    margin: 20px 0;
+}
+
+.wcc-weekly .photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.wcc-weekly .caption {
+    color: var(--muted) !important;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+.wcc-weekly .photo-placeholder {
+    background: #e8eeee;
+    border: 1px dashed #94a8a8;
+    padding: 46px 20px;
+    text-align: center;
+    color: #586d70 !important;
+    border-radius: 5px;
+    margin: 18px 0;
+    font-weight: bold;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.wcc-weekly .button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 12px 0;
+    padding: 15px 20px;
+    background: var(--navy);
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.wcc-weekly .button.teal {
+    background: var(--teal);
+}
+
+.wcc-weekly .button.red {
+    background: var(--red);
+}
+
+.wcc-weekly .button:hover {
+    opacity: 0.92;
+}
+
+/* =========================================================
+   PHOTOGRAPHER'S TIPS
+   ========================================================= */
+
+.wcc-weekly .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.wcc-weekly .tip {
+    background: var(--soft-grey);
+    border-top: 5px solid var(--teal);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.wcc-weekly .tip h3 {
+    margin-top: 0;
+}
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+
+.wcc-weekly .event {
+    display: grid;
+    grid-template-columns: 185px 1fr;
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid #e2e6e7;
+}
+
+.wcc-weekly .event-date {
+    color: var(--red) !important;
+    font-weight: bold;
+}
+
+/* =========================================================
+   RESPONSIVE STANDARD IMAGES
+   Prevent Zenfolio theme rules from cropping images on mobile
+   ========================================================= */
+
+.wcc-weekly .rollup img,
+.wcc-weekly section img {
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    margin: 20px auto !important;
+    box-sizing: border-box !important;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.wcc-weekly .wcc-newsletter-footer {
+    background: var(--dark-teal);
+    color: white !important;
+    padding: 32px;
+    text-align: center;
+}
+
+.wcc-weekly .wcc-newsletter-footer * {
+    color: white !important;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .wcc-weekly .hero {
+        padding: 32px 22px;
+    }
+
+    .wcc-weekly .hero-kicker {
+        font-size: 12px;
+        letter-spacing: 1.7px;
+    }
+
+    .wcc-weekly .hero h1 {
+        font-size: 32px;
+    }
+
+    .wcc-weekly .hero h2 {
+        font-size: 20px;
+        line-height: 1.45;
+    }
+
+    .wcc-weekly .tagline {
+        font-size: 16px;
+    }
+
+    .wcc-weekly .quick-links {
+        padding: 10px 20px;
+    }
+
+    .wcc-weekly .quick-links summary {
+        font-size: 16px;
+    }
+
+    .wcc-weekly .issue-nav-links {
+        padding-left: 22px;
+    }
+
+    .wcc-weekly .issue-nav-links a {
+        display: block;
+        margin: 8px 0;
+        font-size: 15px;
+    }
+
+    .wcc-weekly .content {
+        padding: 24px 18px;
+    }
+
+    .wcc-weekly h2.section-title {
+        font-size: 25px;
+    }
+
+    .wcc-weekly .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wcc-weekly .event {
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+
+    .wcc-weekly .rollup {
+        padding: 18px;
+    }
+
+    .wcc-weekly .button {
+        width: 100%;
+        padding: 16px 14px;
+        font-size: 15px;
+    }
+
+    .wcc-weekly .rollup img,
+    .wcc-weekly section img {
+        width: auto !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/* Reliable deep-link positioning when opened from the Resource Library. */
+.wcc-weekly [id^="wcc-"] {
+    scroll-margin-top: 150px;
+}
+
+</style>
+<div class="wcc-weekly" data-issue="007" data-publication="weekly-update" data-published="2026-07-21" data-url="https://warrnamboolcameraclub.zenfolio.com/weekly-newsletter-007">
+<!-- ======================================================
+     HERO
+     ====================================================== -->
+<div class="hero">
+<div class="hero-kicker">Warrnambool Camera Club</div>
+<h1>Weekly Update</h1>
+<h2>Issue 007 | Tuesday, 21 July 2026</h2>
+<div class="tagline">Learn • Create • Share • Inspire</div>
+</div>
+<!-- ======================================================
+     IN THIS ISSUE
+     ====================================================== -->
+<div class="quick-links">
+<details class="issue-nav">
+<summary>In this issue</summary>
+<div class="issue-nav-links">
+<a href="#wcc-2026-007-editor">From the Editor</a>
+<a href="#wcc-2026-007-craig-richards-preview">Craig Richards</a>
+<a href="#wcc-2026-007-mat-cutting-workshop">Workshop Corner</a>
+<a href="#wcc-2026-007-competition-rules-update">Competition Rules</a>
+<a href="#wcc-2026-007-walk-for-wellness-anniversary">Walk for Wellness</a>
+<a href="#wcc-2026-007-ethical-bird-photography-003">Convention Corner</a>
+<a href="#wcc-2026-007-photographers-tips">Photographer's Tips</a>
+<a href="#wcc-2026-007-challenge-local-landscape">Camera Challenge</a>
+<a href="#wcc-2026-007-coming-up">Upcoming Events</a>
+<a href="#wcc-2026-007-contributions">Contributions Welcome</a>
+</div>
+</details>
+</div>
+<div class="content">
+<!-- ======================================================
+     FROM THE EDITOR
+     ====================================================== -->
+<section data-category="club-news" data-index="article" data-tags="weekly-update,craig-richards,competition-rules,walk-for-wellness,ethical-bird-photography" id="wcc-2026-007-editor">
+<h2 class="section-title">🏡 From the Editor</h2>
+<p class="lead">
+As we move into August, there is certainly no shortage of activity both within
+the Warrnambool Camera Club and throughout our local photographic community.
+</p>
+<p>
+In this edition, we're delighted to introduce another outstanding guest
+presenter who will be visiting the club next month, celebrate a significant
+milestone for the Photography Walk for Wellness, provide an update on our
+Competition Rules review, and continue our educational journey with the final
+instalment of our Ethical Bird Photography series from the VAPS Convention.
+</p>
+<p>
+Whether your passion is landscapes, wildlife, portraiture or simply enjoying
+photography with friends, we hope this week's edition provides plenty of
+inspiration to get out with your camera.
+</p>
+<p><strong>Happy shooting!</strong></p>
+</section>
+<!-- ======================================================
+     CRAIG RICHARDS
+     ====================================================== -->
+<section data-category="education" data-index="article" data-locations="warrnambool,great-ocean-road,otway-national-park,twelve-apostles" data-people="craig-richards" data-tags="landscape-photography,astrophotography,seascapes,guest-speaker,workshop" id="wcc-2026-007-craig-richards-preview">
+<h2 class="section-title">🌄 Craig Richards Visits the Warrnambool Camera Club</h2>
+<p>
+The Warrnambool Camera Club is delighted to welcome Craig Richards as our
+guest presenter and workshop leader during August.
+</p>
+<p>
+Craig is an Australian landscape photographer based in Warrnambool,
+Victoria, specialising in dramatic coastal landscapes, nature and
+astrophotography.
+</p>
+<details>
+<summary>Read the full Craig Richards preview</summary>
+<div class="rollup">
+<p>
+Inspired by the ever-changing scenery of the Great Ocean Road, Otway National
+Park, New Zealand, Norway and beyond, his work captures the beauty of wild
+places through exceptional light, weather and those fleeting moments that
+landscape photographers spend years chasing.
+</p>
+<p>
+Many photographers will already recognise Craig's work from the Australian
+Geographic website, including his spectacular image of bioluminescent waves
+beneath the Milky Way at the Twelve Apostles.
+</p>
+<p>
+Craig is equally passionate about sharing his knowledge. His presentations are
+renowned for combining practical techniques with the stories behind the
+photographs, providing inspiration for photographers of every experience
+level.
+</p>
+<div class="feature-card">
+<h3>📅 Club Presentation</h3>
+<p><strong>Thursday, 6 August</strong></p>
+<p>
+Craig will share his photographic journey, creative approach and the stories
+behind many of his favourite landscape and astrophotography images.
+Whether you're interested in seascapes, waterfalls, forests or photographing
+the night sky, this promises to be an inspiring and informative evening.
+</p>
+</div>
+<div class="feature-card navy">
+<h3>📷 Landscape Photography Workshop</h3>
+<p><strong>Saturday, 15 August<br/>4:00 pm – 6:20 pm</strong></p>
+<p>
+Craig will also lead a practical outdoor workshop where members will have
+the opportunity to put theory into practice while learning his approach to
+planning, composing and capturing compelling landscape photographs.
+</p>
+<p><strong>Please bring:</strong></p>
+<ul>
+<li>Camera</li>
+<li>Fully charged batteries</li>
+<li>Memory cards</li>
+<li>Tripod</li>
+<li>Cable or remote shutter release</li>
+<li>Any filters you wish to use</li>
+<li>A wide-angle lens (recommended if available)</li>
+</ul>
+<p>
+As we'll be working outdoors, please dress appropriately for the weather and
+wear sturdy footwear or gumboots.
+</p>
+</div>
+<div class="feature-card red">
+<h3>🍽 Dinner Afterwards</h3>
+<p>
+Following the workshop, members are invited to continue the evening over
+dinner at <strong>The Liebig Thai Restaurant from 7:00 pm</strong>.
+</p>
+<p>
+If you would like to attend the workshop and/or dinner, please RSVP by
+<strong>Thursday, 6 August</strong>.
+</p>
+</div>
+</div>
+</details>
+<span data-category="education" data-event-date="2026-08-06" data-event-status="confirmed" data-index="event" data-people="craig-richards" data-tags="landscape-photography,astrophotography,guest-speaker,presentation" id="wcc-event-2026-08-06-craig-richards-presentation" style="display:none"></span><span data-category="events" data-event-date="2026-08-15" data-event-status="confirmed" data-index="event" data-people="craig-richards" data-tags="landscape-photography,workshop,guest-speaker,photography" id="wcc-event-2026-08-15-craig-richards-workshop" style="display:none"></span></section>
+<!-- ======================================================
+     MAT CUTTING
+     ====================================================== -->
+<section data-category="education" data-index="article" data-tags="mat-cutting,print-presentation,competition,printing,workshop" id="wcc-2026-007-mat-cutting-workshop">
+<h2 class="section-title">✂️ Workshop Corner</h2>
+<h3>Mat Cutting Workshop – Learning the Art of Presentation</h3>
+<p>
+Our first Mat Cutting Workshop was recently held, giving members the
+opportunity to learn the skills required to professionally prepare prints for
+competition.
+</p>
+<details>
+<summary>Read the mat cutting workshop update</summary>
+<div class="rollup">
+<p>
+The smaller group created an ideal learning environment, allowing plenty of
+one-on-one instruction and hands-on time with the club's professional mat
+cutter. Members worked through measuring borders, cutting mats accurately
+and mounting their images using techniques that produce a clean,
+professional presentation.
+</p>
+<p>
+Print presentation plays an important role in competition success, and these
+workshops are designed to give members the confidence to prepare their own
+entries rather than relying on others.
+</p>
+<p>
+To allow more members to take advantage of this practical session, we'll be
+holding another workshop during the week beginning 3 August, most likely
+on Monday or Wednesday evening. The final date will be confirmed shortly.
+</p>
+<p>
+If you've been thinking about entering print competitions, this is a great
+opportunity to learn new skills in a relaxed and supportive environment.
+</p>
+</div>
+</details>
+</section>
+<!-- ======================================================
+     COMPETITION RULES
+     ====================================================== -->
+<section data-category="competition" data-index="article" data-tags="competition-rules,ai-guidelines,member-feedback,governance,competition" id="wcc-2026-007-competition-rules-update">
+<h2 class="section-title">📋 Competition Rules Update</h2>
+<p>
+Thank you to everyone who took the time to review the proposed
+Competition Rules and provide constructive feedback.
+</p>
+<p>
+The committee received a wide range of thoughtful suggestions and
+comments, resulting in a number of refinements to improve both the clarity
+and practicality of the rules.
+</p>
+<details>
+<summary>Read the Competition Rules update</summary>
+<div class="rollup">
+<p>
+The quality of feedback received reflects the passion our members have for
+ensuring competitions remain fair, enjoyable and educational.
+</p>
+<p>
+One of the more significant discussions centred around the use of Artificial
+Intelligence in photography. Rather than introducing restrictive rules now
+before we have practical experience, I think it may be better to look at them as
+advisory. This is just my view as I feel that this is moving very quickly and not
+a lot of clubs have adopted any type of rule as yet.
+</p>
+<p>
+The members may well decide to have them as official rules next year and that
+is fine. I feel that by having advisory rules it gives everyone a chance to
+observe how AI-assisted editing tools are used within the club, which will help
+us provide guidance where required and gather real-world experience before
+considering any future actual rule changes.
+</p>
+<p>
+Thank you again to everyone who contributed. Your feedback has helped
+produce a stronger set of rules that will continue to support our competitions
+into the future.
+</p>
+<p>
+I have updated some of the rules given the feedback and given the discussion
+at the last committee meeting. Please take the chance to look at the changes
+and continue to provide feedback. Please take time to read the attached update.
+</p>
+</div>
+</details>
+<a class="button teal" data-category="competition" data-index="resource" data-tags="competition-rules,ai-guidelines,downloadable-guide,pdf" href="https://warrnamboolcameraclub.zenfolio.com/issue_007_competition_rules.pdf" id="wcc-resource-2026-007-competition-rules-update" style="display:block; width:100%; box-sizing:border-box; text-align:center;" target="_blank">DOWNLOAD THE COMPETITION RULES UPDATE'S GUIDE </a>
+</section>
+<!-- ======================================================
+     WALK FOR WELLNESS
+     ====================================================== -->
+<section data-category="community" data-index="article" data-locations="warrnambool" data-people="stan-mccullagh" data-tags="photography-walk-for-wellness,anniversary,wellbeing,community,photography" id="wcc-2026-007-walk-for-wellness-anniversary">
+<h2 class="section-title">🚶 Photography Walk for Wellness</h2>
+<h3>Celebrating Two Years</h3>
+<p>
+On Saturday, 1 August, the Photography Walk for Wellness celebrates its
+second anniversary.
+</p>
+<p>
+What began two years ago as a simple idea to combine photography, fresh air
+and good company has grown into a welcoming community where
+photographers of all experience levels can enjoy the outdoors, develop their
+photography and connect with like-minded people.
+</p>
+<details>
+<summary>Read the two-year anniversary preview</summary>
+<div class="rollup">
+<p>
+Although independent of the Warrnambool Camera Club, many club
+members have joined the walks over the past two years, with several new
+friendships—and even a number of new club memberships—growing from
+those shared mornings with cameras in hand.
+</p>
+<p>
+To mark this special milestone, I'm hoping The Warrnambool Weekly will
+join us to document the anniversary walk and tell the story of how a small
+community initiative has evolved into a regular gathering promoting
+photography, wellbeing and social connection.
+</p>
+<p>
+Whether you've walked with us from the very beginning or are considering
+joining for the first time, you're most welcome.
+</p>
+<p>
+As always, we'll finish the morning with coffee, conversation and the chance to
+share a few of our favourite images.
+</p>
+<p>
+Thank you to everyone who has been part of the journey over the past two
+years. Here's to many more walks together.
+</p>
+</div>
+</details>
+</section>
+<!-- ======================================================
+     CONVENTION CORNER
+     ====================================================== -->
+<section data-category="education" data-index="article" data-part="3" data-people="kim-wormald" data-series="ethical-bird-photography" data-tags="bird-photography,ethics,four-ps,perching,preening,posing,portraits,wildlife" id="wcc-2026-007-ethical-bird-photography-003">
+<h2 class="section-title">📷 Convention Corner</h2>
+<h3>Ethical Bird Photography Series – Article 3</h3>
+<h3>The Four P's: Finding Beauty in Everyday Behaviour</h3>
+<p><em>Based on a presentation by Kim Wormald at the 2026 VAPS Convention</em></p>
+<p>
+In the last article in this series, we explored The Four F's—behaviours that
+ethical photographers should avoid encouraging or manipulating in pursuit of
+a dramatic image.
+</p>
+<p>
+This time, we turn our attention to a far more rewarding approach.
+</p>
+<details>
+<summary>Read The Four P's: Finding Beauty in Everyday Behaviour</summary>
+<div class="rollup">
+<p>Rather than chasing action, Kim encouraged photographers to embrace <strong>The Four P's:</strong></p>
+<ul>
+<li>Perching</li>
+<li>Preening</li>
+<li>Posing</li>
+<li>Portraits</li>
+</ul>
+<p>
+At first glance, these subjects may sound ordinary. They certainly won't
+generate the same excitement as a bird in flight or a dramatic territorial battle.
+But that's exactly the point.
+</p>
+<p>
+Some of the most memorable wildlife photographs are those that capture an
+animal simply being itself.
+</p>
+<p>
+A bird quietly perched on a branch can reveal its preferred habitat, the quality
+of the light and the environment it calls home. A preening bird demonstrates
+trust and contentment, often allowing photographers to observe fascinating
+behaviour that many people never notice. A natural pose can communicate
+confidence, curiosity or alertness, while a carefully composed portrait
+showcases the remarkable detail, colour and texture of feathers, along with
+the character reflected in the bird's eyes.
+</p>
+<p>
+These images aren't created by forcing behaviour. They are earned through
+<strong>patience, careful observation and an understanding of wildlife.</strong>
+</p>
+<p>Sometimes, simply waiting allows nature to provide something extraordinary.</p>
+<p>
+The accompanying image of the <strong>Reddish Egret</strong> (borrowed from the internet
+just as an example) is a perfect example. At first glance it appears to be a
+spectacular action photograph. In reality, the bird is simply displaying its
+natural hunting behaviour, running through shallow water with wings spread
+to confuse and trap fish. The photographer didn't create the moment—they
+recognised the behaviour, anticipated what was about to happen and were
+ready when it unfolded.
+</p>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin:20px 0;"><img alt="Craig and Sharon in Ireland" src="/img/s/v-10/p1583649412-5.jpg" style="display:block;width:100% !important;max-width:400px !important;height:auto !important;object-fit:contain;margin:20px auto;border-radius:5px;box-sizing:border-box;"/> </div>
+<p>
+Likewise, a portrait can often tell a story without any action at all. The
+accompanying image of the <strong>Canada Goose</strong> (also borrowed from the
+internet), captures a moment of curiosity and personality. There is no
+dramatic behaviour, yet the image invites the viewer to pause and connect
+with the subject.
+</p>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin:20px 0;"><img alt="Craig and Sharon London" src="/img/s/v-10/p1583649414-5.jpg" style="display:block;width:100% !important;max-width:500px !important;height:auto !important;object-fit:contain;margin:20px auto;border-radius:5px;box-sizing:border-box;"/></div>
+<p>
+As Kim reminded us throughout her presentation, ethical wildlife photography
+isn't about creating spectacular moments—it's about recognising them when
+nature provides them.
+</p>
+<h3>Takeaway</h3>
+<p>
+The next time you're photographing wildlife, spend more time watching than
+shooting. Look for moments of calm, natural behaviour and ask yourself,
+<em>"What story is this animal telling me right now?"</em> You may discover that the
+simplest moments often produce the most meaningful photographs.
+</p>
+<p>
+<em>Thank you to Kim Wormald for sharing her knowledge and passion for ethical
+wildlife photography. We hope this three-part series has inspired you to slow
+down, observe more carefully and appreciate the beauty of natural behaviour.</em>
+</p>
+</div>
+</details>
+</section>
+<!-- ======================================================
+     PHOTOGRAPHER'S TIPS
+     ====================================================== -->
+<section id="wcc-2026-007-photographers-tips">
+<h2 class="section-title">📸 Photographer's Tips</h2>
+<div class="tips-grid">
+<div class="tip" data-category="photography-tips" data-code="B003" data-index="tip" data-level="beginner" data-tags="single-focus-point,autofocus,sharpness,wildlife,portraits" id="wcc-tip-b003">
+<h3>🌱 Beginner Tip (B003)</h3>
+<strong>Choose a Single Focus Point</strong>
+<p>
+Many cameras default to automatically choosing where to focus, but they don't
+always pick the subject you intended.
+</p>
+<p>
+Instead, select a <strong>single focus point</strong> and place it over the most important part
+of your subject—usually the eye when photographing wildlife, birds or people.
+</p>
+<p>
+Taking control of your focus point is one of the quickest ways to produce
+consistently sharper images.
+</p>
+</div>
+<div class="tip" data-category="photography-tips" data-code="I003" data-index="tip" data-level="intermediate" data-tags="foreground,landscape,composition,depth,scale" id="wcc-tip-i003">
+<h3>📷 Intermediate Tip (I003)</h3>
+<strong>Use Foreground Interest to Add Depth</strong>
+<p>
+Landscape photographs can sometimes appear flat because everything seems
+to be the same distance from the viewer.
+</p>
+<p>
+Look for rocks, flowers, driftwood or other interesting objects to include in the
+foreground. These elements help draw the viewer into the scene and create a
+stronger sense of depth and scale.
+</p>
+<p>
+Just be sure the foreground complements the image rather than competing
+with your main subject.
+</p>
+</div>
+<div class="tip" data-category="photography-tips" data-code="A003" data-index="tip" data-level="advanced" data-tags="timing,decisive-moment,patience,light,wildlife,composition" id="wcc-tip-a003">
+<h3>⭐ Advanced Tip (A003)</h3>
+<strong>Wait for the Right Moment</strong>
+<p>
+The difference between a good photograph and an outstanding one is often
+timing.
+</p>
+<p>
+Rather than taking the first image you see, spend a little longer observing the
+scene. Wait for the person to enter the frame, the bird to turn towards the
+camera, the wave to break, or the light to fall exactly where you want it.
+</p>
+<p>
+Experienced photographers often create memorable images not because they
+take more photographs, but because they recognise the decisive moment—and
+have the patience to wait for it.
+</p>
+</div>
+</div>
+</section>
+<!-- ======================================================
+     CAMERA CHALLENGE
+     ====================================================== -->
+<section data-category="challenge" data-index="article" data-tags="camera-challenge,landscape,foreground,light,leading-lines,composition" id="wcc-2026-007-challenge-local-landscape">
+<h2 class="section-title">🎯 Camera Challenge</h2>
+<h3>Capture the Landscape You Know Best</h3>
+<p>
+With Craig Richards visiting the club in August, this fortnight's challenge is to
+photograph a landscape close to home.
+</p>
+<p>
+It doesn't have to be an iconic location. In fact, the challenge is to find beauty
+in somewhere familiar—whether it's the coastline, a country road, a favourite
+beach, a local river, a stand of old trees or even a quiet corner of your own
+neighbourhood.
+</p>
+<div class="feature-card">
+<p><strong>As you compose your image, think about:</strong></p>
+<ul>
+<li>Strong foreground interest.</li>
+<li>The quality and direction of the light.</li>
+<li>Leading lines that guide the viewer through the scene.</li>
+<li>Simplicity and clean composition.</li>
+<li>Waiting for the right moment rather than settling for the first photograph.</li>
+</ul>
+</div>
+<p>
+Bring your favourite image along to Craig's presentation or workshop and see
+how his ideas might inspire you to look at the same scene differently next time.
+</p>
+</section>
+<!-- ======================================================
+     UPCOMING EVENTS
+     ====================================================== -->
+<section id="wcc-2026-007-coming-up">
+<h2 class="section-title">📅 Upcoming Events</h2>
+<div class="event" data-category="community" data-event-date="2026-08-01" data-event-status="confirmed" data-index="event" data-locations="warrnambool" data-tags="photography-walk-for-wellness,anniversary,community,wellbeing,photography" id="wcc-event-2026-08-01-walk-for-wellness">
+<div class="event-date">Saturday, 1 August</div>
+<div><strong>Photography Walk for Wellness – Celebrating Two Years</strong></div>
+</div>
+<div class="event" data-category="events" data-event-status="planning" data-index="event" data-tags="mat-cutting,print-presentation,competition,workshop" id="wcc-event-2026-08-03-mat-cutting-planning">
+<div class="event-date">Week Beginning 3 August</div>
+<div><strong>Mat Cutting Workshop</strong><br/>Date to be confirmed</div>
+</div>
+<div class="event" data-category="education" data-event-date="2026-08-06" data-event-status="confirmed" id="wcc-event-2026-08-06-craig-richards-presentation-summary">
+<div class="event-date">Thursday, 6 August</div>
+<div><strong>Warrnambool Camera Club Meeting – Guest Presenter Craig Richards</strong></div>
+</div>
+<div class="event" data-category="events" data-event-date="2026-08-06" data-event-status="confirmed" id="wcc-deadline-2026-08-06-craig-richards-workshop">
+<div class="event-date">Thursday, 6 August</div>
+<div><strong>RSVP closes for Craig Richards' Workshop and Dinner</strong></div>
+</div>
+<div class="event" data-category="events" data-event-date="2026-08-15" data-event-status="confirmed" id="wcc-event-2026-08-15-craig-richards-workshop-summary">
+<div class="event-date">Saturday, 15 August</div>
+<div><strong>Craig Richards Landscape Photography Workshop</strong></div>
+</div>
+<div class="event" data-category="events" data-event-date="2026-08-15" data-event-status="confirmed" data-index="event" data-locations="the-liebig-thai-restaurant,warrnambool" data-tags="club-dinner,social,craig-richards,workshop" id="wcc-event-2026-08-15-craig-richards-dinner">
+<div class="event-date">Saturday, 15 August – 7:00 pm</div>
+<div><strong>Dinner at The Liebig Thai Restaurant</strong></div>
+</div>
+<p>
+Please keep an eye on your email and the club Facebook page for any updates
+or additional activities.
+</p>
+</section>
+<!-- ======================================================
+     CONTRIBUTIONS
+     ====================================================== -->
+<section id="wcc-2026-007-contributions">
+<h2 class="section-title">📬 Contributions Welcome</h2>
+<div class="feature-card navy">
+<p>
+The Warrnambool Camera Club Weekly Update is your newsletter, and we'd
+love to showcase more of our members' photography and stories.
+</p>
+<p>If you have something you'd like to share, we'd love to hear from you. This might include:</p>
+<ul>
+<li>A favourite image and the story behind it.</li>
+<li>A recent photographic trip or adventure.</li>
+<li>Competition or exhibition success.</li>
+<li>Camera or lens reviews.</li>
+<li>Photography tips you've found helpful.</li>
+<li>Ideas for future workshops or newsletter topics.</li>
+</ul>
+<p>
+Every member has something to contribute, whether you're just starting your
+photographic journey or have many years of experience behind the camera.
+</p>
+<p>
+If you'd like to be featured in a future edition, simply send your images or
+story to the editor.
+</p>
+<p>
+<strong>
+Until next week... enjoy your photography, keep experimenting, and don't
+forget to share your passion with others. Happy shooting! 📷
+</strong>
+</p>
+<p>
+Cheers<br/>
+<strong>Stan</strong><br/>
+on behalf of the Warrnambool Camera Club
+</p>
+<p><em>Published every Monday (yeah ok I’m a day late) for the members of the Warrnambool Camera Club.</em></p>
+</div>
+</section>
+</div>
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
+<div class="wcc-newsletter-footer">
+<strong>Warrnambool Camera Club</strong><br/>
+Weekly Update | Issue 007<br/><br/>
+Learn • Create • Share • Inspire
+</div>
+</div>
+
+<script>
+(function () {
+    function jumpToWeeklyAnchor() {
+        if (!window.location.hash) return;
+
+        var targetId;
+        try {
+            targetId = decodeURIComponent(window.location.hash.substring(1));
+        } catch (e) {
+            targetId = window.location.hash.substring(1);
+        }
+        if (!targetId) return;
+
+        var attempts = 0;
+        var maxAttempts = 40;
+
+        function tryScroll() {
+            var target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({behavior: "auto", block: "start"});
+                return;
+            }
+
+            attempts += 1;
+            if (attempts < maxAttempts) {
+                window.setTimeout(tryScroll, 150);
+            }
+        }
+
+        tryScroll();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
+            window.setTimeout(jumpToWeeklyAnchor, 100);
+        });
+    } else {
+        window.setTimeout(jumpToWeeklyAnchor, 100);
+    }
+
+    window.addEventListener("load", function () {
+        window.setTimeout(jumpToWeeklyAnchor, 200);
+    });
+
+    window.addEventListener("hashchange", function () {
+        window.setTimeout(jumpToWeeklyAnchor, 25);
+    });
+})();
+</script>
+

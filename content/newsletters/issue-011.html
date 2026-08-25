@@ -1,0 +1,916 @@
+<style type="text/css">/* =========================================================
+   WARRNAMBOOL CAMERA CLUB
+   WEEKLY UPDATE - ISSUE 011
+   ========================================================= */
+
+.wcc-weekly {
+    --teal: #176b6b;
+    --dark-teal: #10484d;
+    --navy: #183f70;
+    --red: #b42318;
+    --text: #253238;
+    --muted: #5f7075;
+    --soft-teal: #edf7f6;
+    --soft-red: #fff5f4;
+    --soft-grey: #f5f6f7;
+    --border: #d6e1e1;
+    --white: #ffffff;
+
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--white);
+    color: var(--text) !important;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+}
+
+.wcc-weekly p,
+.wcc-weekly li,
+.wcc-weekly td {
+    color: var(--text) !important;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.wcc-weekly .hero {
+    background: linear-gradient(135deg, #10484d, #176b6b);
+    color: white !important;
+    padding: 46px 40px 40px;
+    border-bottom: 7px solid var(--red);
+}
+
+.wcc-weekly .hero * {
+    color: white !important;
+}
+
+.wcc-weekly .hero-kicker {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+.wcc-weekly .hero h1 {
+    margin: 5px 0;
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+.wcc-weekly .hero h2 {
+    margin: 4px 0 14px;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.wcc-weekly .tagline {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* =========================================================
+   ISSUE NAVIGATION
+   ========================================================= */
+
+.wcc-weekly .quick-links {
+    background: var(--soft-teal);
+    padding: 12px 28px;
+    border-bottom: 1px solid var(--border);
+}
+
+.wcc-weekly .quick-links details {
+    border: 0;
+    margin: 0;
+    background: transparent;
+    overflow: visible;
+}
+
+.wcc-weekly .quick-links summary {
+    cursor: pointer;
+    padding: 8px 0;
+    background: transparent;
+    color: var(--dark-teal) !important;
+    font-size: 16px;
+    font-weight: bold;
+    list-style: none;
+}
+
+.wcc-weekly .quick-links summary::-webkit-details-marker {
+    display: none;
+}
+
+.wcc-weekly .quick-links summary:before {
+    content: "+";
+    color: var(--red);
+    font-size: 19px;
+    font-weight: bold;
+    display: inline-block;
+    width: 22px;
+}
+
+.wcc-weekly .quick-links details[open] summary:before {
+    content: "−";
+}
+
+.wcc-weekly .issue-nav-links {
+    padding: 8px 0 12px 22px;
+}
+
+.wcc-weekly .issue-nav-links a {
+    display: inline-block;
+    margin: 5px 18px 5px 0;
+    color: var(--navy) !important;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.wcc-weekly .issue-nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.wcc-weekly .content {
+    padding: 32px 36px;
+}
+
+.wcc-weekly section {
+    margin: 0 0 42px;
+}
+
+.wcc-weekly h2.section-title {
+    color: var(--dark-teal) !important;
+    font-size: 28px;
+    line-height: 1.25;
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--teal);
+}
+
+.wcc-weekly h3 {
+    color: var(--navy) !important;
+    margin-top: 20px;
+}
+
+.wcc-weekly .lead {
+    font-size: 18px;
+    color: #41555b !important;
+}
+
+/* =========================================================
+   FEATURE BOXES
+   ========================================================= */
+
+.wcc-weekly .feature-card {
+    background: var(--soft-teal);
+    border-left: 6px solid var(--teal);
+    padding: 22px 25px;
+    margin: 20px 0;
+    border-radius: 5px;
+    color: var(--text) !important;
+}
+
+.wcc-weekly .feature-card.red {
+    background: var(--soft-red);
+    border-left-color: var(--red);
+}
+
+.wcc-weekly .feature-card.navy {
+    background: #f1f5fa;
+    border-left-color: var(--navy);
+}
+
+.wcc-weekly .feature-card *,
+.wcc-weekly .feature-card p,
+.wcc-weekly .feature-card strong,
+.wcc-weekly .feature-card h3 {
+    color: var(--text) !important;
+}
+
+/* =========================================================
+   ROLL UPS
+   ========================================================= */
+
+.wcc-weekly details {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 18px 0;
+    background: white;
+}
+
+.wcc-weekly summary {
+    cursor: pointer;
+    padding: 16px 20px;
+    background: var(--soft-teal);
+    color: var(--dark-teal) !important;
+    font-weight: bold;
+    list-style: none;
+}
+
+.wcc-weekly summary::-webkit-details-marker {
+    display: none;
+}
+
+.wcc-weekly summary:before {
+    content: "+";
+    color: var(--red);
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    width: 24px;
+}
+
+.wcc-weekly details[open] summary:before {
+    content: "−";
+}
+
+.wcc-weekly .rollup {
+    padding: 22px 24px;
+}
+
+/* =========================================================
+   PHOTOS
+   ========================================================= */
+
+.wcc-weekly .photo {
+    margin: 20px 0;
+}
+
+.wcc-weekly .photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.wcc-weekly .caption {
+    color: var(--muted) !important;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+.wcc-weekly .photo-placeholder {
+    background: #e8eeee;
+    border: 1px dashed #94a8a8;
+    padding: 55px 20px;
+    text-align: center;
+    color: #586d70 !important;
+    border-radius: 5px;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.wcc-weekly .button {
+    display: inline-block;
+    margin: 8px 8px 8px 0;
+    padding: 12px 20px;
+    background: var(--navy);
+    color: white !important;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.wcc-weekly .button.teal {
+    background: var(--teal);
+}
+
+.wcc-weekly .button.red {
+    background: var(--red);
+}
+
+/* =========================================================
+   PHOTOGRAPHER'S TIPS
+   ========================================================= */
+
+.wcc-weekly .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.wcc-weekly .tip {
+    background: var(--soft-grey);
+    border-top: 5px solid var(--teal);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.wcc-weekly .tip h3 {
+    margin-top: 0;
+}
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+
+.wcc-weekly .event {
+    display: grid;
+    grid-template-columns: 165px 1fr;
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid #e2e6e7;
+}
+
+.wcc-weekly .event-date {
+    color: var(--red) !important;
+    font-weight: bold;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.wcc-weekly .wcc-newsletter-footer {
+    background: var(--dark-teal);
+    color: white !important;
+    padding: 32px;
+    text-align: center;
+}
+
+.wcc-weekly .wcc-newsletter-footer * {
+    color: white !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE STANDARD IMAGES
+   Prevent Zenfolio theme rules from cropping images on mobile
+   ========================================================= */
+
+.wcc-weekly .rollup img,
+.wcc-weekly section img {
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    margin: 20px auto !important;
+    box-sizing: border-box !important;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .wcc-weekly .hero {
+        padding: 32px 22px;
+    }
+
+    .wcc-weekly .hero-kicker {
+        font-size: 12px;
+        letter-spacing: 1.7px;
+    }
+
+    .wcc-weekly .hero h1 {
+        font-size: 32px;
+    }
+
+    .wcc-weekly .hero h2 {
+        font-size: 20px;
+        line-height: 1.45;
+    }
+
+    .wcc-weekly .tagline {
+        font-size: 16px;
+    }
+
+    .wcc-weekly .quick-links {
+        padding: 10px 20px;
+    }
+
+    .wcc-weekly .quick-links summary {
+        font-size: 16px;
+    }
+
+    .wcc-weekly .issue-nav-links {
+        padding-left: 22px;
+    }
+
+    .wcc-weekly .issue-nav-links a {
+        display: block;
+        margin: 8px 0;
+        font-size: 15px;
+    }
+
+    .wcc-weekly .content {
+        padding: 24px 18px;
+    }
+
+    .wcc-weekly h2.section-title {
+        font-size: 25px;
+    }
+
+    .wcc-weekly .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wcc-weekly .event {
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+
+    .wcc-weekly .rollup {
+        padding: 18px;
+    }
+
+    .wcc-weekly .rollup img,
+    .wcc-weekly section img {
+        width: auto !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/* Reliable deep-link positioning when opened from the Resource Library. */
+.wcc-weekly [id^="wcc-"] {
+    scroll-margin-top: 150px;
+}
+
+</style>
+<div class="wcc-weekly" data-issue="011" data-publication="weekly-update" data-published="2026-08-17" data-url="https://warrnamboolcameraclub.zenfolio.com/weekly-newsletter-011"><!-- ======================================================
+     HERO
+     ====================================================== -->
+<div class="hero">
+<div class="hero-kicker">Warrnambool Camera Club</div>
+<h1>Weekly Update</h1>
+<h2>Issue 011 | Monday, 17 August 2026</h2>
+<div class="tagline">Learn • Create • Share • Inspire</div>
+</div>
+<!-- ======================================================
+     IN THIS ISSUE
+     ====================================================== -->
+<div class="quick-links">
+<details class="issue-nav"><summary>In this issue</summary>
+<div class="issue-nav-links"><a href="#wcc-2026-011-editor">From the Editor</a> <a href="#wcc-2026-011-world-photography-week">Photography Week</a> <a href="#wcc-2026-011-world-photography-day">Photography Day</a> <a href="#wcc-2026-011-craig-richards-middle-island">Craig Richards</a> <a href="#wcc-2026-011-ethical-bird-photography-005">Bird Photography</a> <a href="#wcc-2026-011-lightroom-004">Editing Corner</a> <a href="#wcc-2026-011-photographers-tips">Tips</a> <a href="#wcc-2026-011-members-on-the-move">Members on the Move</a> <a href="#wcc-2026-011-coming-up">Coming Up</a></div>
+</details>
+</div>
+<div class="content"><!-- ======================================================
+     FROM THE EDITOR
+     ====================================================== -->
+<section data-category="club-news" data-index="article" data-tags="weekly-update,club-news,website,member-communication" id="wcc-2026-011-editor">
+<h2 class="section-title">🏡 From the Editor</h2>
+<p class="lead">Welcome to Issue 011 of the Warrnambool Camera Club Weekly Update.</p>
+<p>Another busy week has passed, with members getting out in the field for <strong>Craig Richards' landscape photography workshop at Middle Island</strong> on Saturday. Judging by the conversations during the workshop and over dinner afterwards, there were certainly plenty of ideas, questions and techniques being shared.</p>
+<p>This week also gives photographers everywhere an extra excuse to pick up the camera. We're currently in <strong>World Photography Week</strong>, with <strong>World Photography Day this Wednesday, 19 August</strong>.</p>
+<p>September and October are also shaping up nicely, with competition judging, two practical flash sessions, the Warrnambool Marathon, the Warrnambool Show Photography Competition and a Club outing to <strong>Werribee Open Range Zoo on Saturday, 24 October</strong>.</p>
+<p>You'll also notice we're beginning to change the way the Weekly Update is presented. Rather than putting an increasingly long publication entirely into an email, our refreshed website gives us somewhere to permanently house the full articles, tutorials, photographs and downloadable guides.</p>
+<p>The Monday email can then become a shorter summary pointing members towards the things they want to read.</p>
+<p><strong>Hopefully that means less scrolling and more photography!</strong></p>
+<p>Stan</p>
+</section>
+<!-- ======================================================
+     WORLD PHOTOGRAPHY WEEK
+     ====================================================== -->
+<section data-category="feature" data-index="article" data-tags="world-photography-week,photography,creativity,photographic-practice" id="wcc-2026-011-world-photography-week">
+<h2 class="section-title">🌏 World Photography Week</h2>
+<p>We're currently in the middle of <strong>World Photography Week, 12–26 August</strong>, with World Photography Day sitting right at its centre.</p>
+<p>It's a good opportunity to remember that photography doesn't need to involve an exotic destination, expensive equipment or an award-winning subject.</p>
+<p>Sometimes it's simply about slowing down long enough to notice something.</p>
+<div class="feature-card">
+<p>Photograph your neighbourhood. Take a camera on your normal walk. Try a technique you've been meaning to practise. Photograph a family member. Head down to the beach. Look for interesting light around the house.</p>
+<p><strong>The important thing is to make photographs.</strong></p>
+</div>
+</section>
+<!-- ======================================================
+     WORLD PHOTOGRAPHY DAY
+     ====================================================== -->
+<section data-category="feature" data-event-date="2026-08-19" data-index="article" data-tags="world-photography-day,daguerreotype,photography-history,camera-challenge" id="wcc-2026-011-world-photography-day">
+<h2 class="section-title">📷 World Photography Day</h2>
+<div class="feature-card red">
+<h3>Wednesday, 19 August</h3>
+<p>World Photography Day is celebrated every year on 19 August, recognising one of the most significant moments in the development of photography.</p>
+</div>
+<details><summary>Why do photographers celebrate 19 August?</summary>
+<div class="rollup">
+<p>On 19 August 1839, details of the <strong>daguerreotype photographic process</strong> were publicly presented in France, helping make practical photography available to the wider world.</p>
+<p>Photography has changed enormously since then.</p>
+<p>Glass plates became film. Film became digital. Cameras became smaller, faster and considerably smarter. Today, almost everyone carries a capable camera in their pocket.</p>
+<p>Yet the basic purpose remains remarkably similar.</p>
+<p>A photograph allows us to preserve a moment and show somebody else <strong>how we saw the world</strong>.</p>
+</div>
+</details>
+<div class="feature-card navy" data-category="challenge" data-event-date="2026-08-19" data-index="article" data-tags="camera-challenge,world-photography-day,creativity,photographic-practice" id="wcc-2026-011-challenge-world-photography-day">
+<h3>📸 Our World Photography Day Challenge</h3>
+<p>We're setting every member one very simple challenge for Wednesday:</p>
+<p><strong>Take one photograph specifically for World Photography Day.</strong></p>
+<p>It doesn't matter whether you use a DSLR, mirrorless camera, compact camera or your phone. It doesn't need to be spectacular and it certainly doesn't need to win a competition.</p>
+<p>The only requirement is that you deliberately make the photograph on <strong>Wednesday, 19 August 2026</strong>.</p>
+<p>Send us your favourite image and, if we receive enough, we'll feature a selection in next week's Weekly Update.</p>
+</div>
+</section>
+<!-- ======================================================
+     CRAIG RICHARDS
+     ====================================================== -->
+<section data-category="education" data-index="article" data-locations="middle-island,warrnambool" data-people="craig-richards,debbie-iverach" data-tags="landscape-photography,long-exposure,bulb-mode,remote-release,workshop" id="wcc-2026-011-craig-richards-middle-island">
+<h2 class="section-title">🌄 Craig Richards at Middle Island</h2>
+<details><summary>Read the full workshop story</summary>
+<div class="rollup">
+<h3>Putting Long Exposure into Practice</h3>
+<p>There were plenty of jackets, beanies and tripods out on Saturday when members joined <strong>Craig Richards at Middle Island</strong> for his practical landscape photography workshop.</p>
+<p>Following Craig's very well received presentation at our August meeting, the workshop gave members the opportunity to get out with their cameras, ask questions and put some of those landscape photography ideas into practice.</p>
+<img alt="Warrnambool Camera Club members at Craig Richards' Middle Island workshop" src="/img/s/v-10/p1577318182-3.jpg" style="display:block;width:auto;max-width:100%;height:auto;max-height:none;object-fit:contain;margin:20px auto;border-radius:5px;box-sizing:border-box;"/>
+<p>Craig spent time moving amongst the group, talking individually with members and helping people work through different approaches to photographing the local landscape and seascape.</p>
+<p>The changing conditions provided plenty of opportunities to experiment with composition, shutter speed and the movement of water.</p>
+<h3>📸 What Members Created</h3>
+<p>Craig later shared one of his favourite photographs from the afternoon, showing the soft movement of the water and the changing light around Middle Island.</p>
+<img alt="Craig Richards photograph from the Middle Island workshop" src="/img/s/v-10/p1577318175-3.jpg" style="display:block;width:auto;max-width:100%;height:auto;max-height:none;object-fit:contain;margin:20px auto;border-radius:5px;box-sizing:border-box;"/>
+<p>Club member <strong>Debbie Iverach</strong> also produced a lovely image from the workshop, using the old timber groyne as a strong leading line towards the islands while the longer exposure softened the movement of the water.</p>
+<img alt="Debbie Iverach photograph from the Middle Island workshop" src="/img/s/v-10/p1577318174-3.jpg" style="display:block;width:auto;max-width:100%;height:auto;max-height:none;object-fit:contain;margin:20px auto;border-radius:5px;box-sizing:border-box;"/>
+<p>It's always interesting to see how photographers standing in the same general location can return with completely different interpretations of the scene.</p>
+<h3>⏱️ Getting Beyond 30 Seconds</h3>
+<p>Some of the best discussion actually continued over dinner afterwards.</p>
+<p>One topic that generated plenty of conversation was <strong>very long exposures</strong>.</p>
+<p>Some photographers were discussing exposures running for several minutes, including exposures around eight minutes, while others found that their cameras appeared to stop at around 30 seconds.</p>
+<p>That led to a useful discussion about <strong>Bulb mode, remote releases and using phones connected to cameras as remote triggers</strong>.</p>
+<p>For many cameras, 30 seconds is simply the longest shutter speed available through the normal shutter-speed settings. Switching to Bulb mode, or a dedicated long-exposure mode depending on the camera, allows the shutter to remain open considerably longer.</p>
+<p>Using a remote trigger or compatible phone app also means the photographer can start and finish the exposure without touching the camera and introducing movement.</p>
+<p>Once exposures start running for several minutes, a phone also has another very useful function: <strong>a timer!</strong> 😊</p>
+<p>It was a good reminder that workshops don't necessarily finish when the cameras are packed away. Sometimes just as much is learnt afterwards when everyone sits down and starts asking:</p>
+<p><strong>"How did you do that?"</strong></p>
+<h3>🍜 Dinner and More Photography Talk</h3>
+<p>After the workshop, the conversation continued over dinner at <strong>Liebig Thai &amp; Asian Restaurant</strong>, with plenty more questions, stories and photography discussion around the table.</p>
+<p>A big thank you again to <strong>Craig Richards</strong> for generously giving his time to the Club, both for his presentation and Saturday's workshop.</p>
+<p>We're hoping to bring you more from Craig in future editions once we've had an opportunity to work through some of the many topics raised during his presentation.</p>
+</div>
+</details>
+</section>
+<!-- ======================================================
+     CONVENTION CORNER
+     ====================================================== -->
+<section data-category="education" data-index="article" data-part="5" data-people="kim-wormald" data-series="ethical-bird-photography" data-tags="bird-photography,ethics,conservation,wildlife,habitat,citizen-science" id="wcc-2026-011-ethical-bird-photography-005">
+<h2 class="section-title">📷 Convention Corner</h2>
+<h3>Ethical Bird Photography Series - Part 5</h3>
+<h3>Photography That Makes a Difference</h3>
+<p>As photographers, we often think about creating images that impress judges, earn awards or look great on the wall.</p>
+<p>Kim Wormald challenged us to think about another purpose for our photographs: <strong>Can our images help protect the wildlife we love to photograph?</strong></p>
+<details><summary>Read Part 5: Photography That Makes a Difference</summary>
+<div class="rollup">
+<p>Throughout her presentation, Kim shared numerous examples of how her bird photography has contributed to conservation efforts across Australia.</p>
+<p>Her photographs have been used by wildlife organisations, conservation groups, researchers and advocacy campaigns to educate the public, document threatened species and promote habitat protection.</p>
+<p>Sometimes a single image can tell a story that words struggle to convey.</p>
+<p>Photographs of endangered Hooded Plovers encourage beachgoers to respect nesting areas. Images of banded birds provide valuable information to researchers tracking migration and longevity.</p>
+<p>Pictures taken after bushfires document both the devastation and the remarkable resilience of Australia's wildlife as habitats begin to recover.</p>
+<p>Kim also spoke about the responsibility photographers have when sharing images.</p>
+<p>While it is exciting to discover a rare species, publicly revealing its exact location can unintentionally attract large numbers of photographers and birdwatchers, placing additional pressure on an already vulnerable bird.</p>
+<p>Waiting until the bird has moved on, or simply omitting the precise location, is often the more responsible choice.</p>
+<p>Another important message was that conservation photography is not always about beautiful images.</p>
+<p>Some of Kim's most powerful photographs document the darker side of wildlife conservation, including birds injured by fishing line, the impacts of habitat loss and the consequences of human activity.</p>
+<p>These images may be confronting, but they help start conversations that can lead to meaningful change.</p>
+<p>For most of us, conservation photography doesn't require travelling to remote wilderness or working with research organisations. It can begin much closer to home.</p>
+<p>Photograph the birds in your local reserve throughout the seasons. Record unusual visitors. Share images that celebrate native habitats. Support local conservation projects with your photographs. Submit observations to citizen science programs.</p>
+<p>Every image has the potential to contribute to a broader understanding and appreciation of our natural environment.</p>
+<p>Perhaps the greatest lesson from Kim's presentation was that wildlife photography is about far more than collecting images.</p>
+<p><strong>It is about building a connection with nature.</strong></p>
+<p>When we spend time quietly observing birds, learning their behaviour and respecting their space, we become ambassadors for the wildlife around us.</p>
+<p>Our photographs begin to tell honest stories, stories that inspire others to appreciate, protect and care for the remarkable birds that share our landscapes.</p>
+<p>A stunning photograph may capture someone's attention for a moment.</p>
+<p><strong>A photograph with purpose can change the way they see the natural world.</strong></p>
+<div class="feature-card">
+<p><strong>Photography Tip:</strong> Next time you're out with your camera, think beyond the individual image.</p>
+<p>Ask yourself: <strong>"What story about this bird, its habitat or its conservation could this photograph help tell?"</strong></p>
+<p>Sometimes the most valuable photograph isn't the most dramatic. It's the one that encourages someone else to care.</p>
+</div>
+</div>
+</details>
+<p><strong>Looking Ahead:</strong> Next week we'll switch back to our Mastering Long Exposure Photography series.</p>
+</section>
+<!-- ======================================================
+     EDITING CORNER
+     ====================================================== -->
+<section data-category="editing" data-index="article" data-part="4" data-series="lightroom-basics" data-tags="lightroom,white-balance,colour,temperature,tint,raw" id="wcc-2026-011-lightroom-004">
+<h2 class="section-title">💻 Editing Corner</h2>
+<h3>Lightroom Basics - Part 4</h3>
+<h3>White Balance Made Easy</h3>
+<p>Have you ever opened a photograph in Lightroom and thought the colours just didn't look right? Perhaps an indoor photograph looks too orange, a shaded scene looks too blue, or skin tones simply don't look natural.</p>
+<p>This is usually where <strong>White Balance</strong> comes in.</p>
+<details><summary>Read White Balance Made Easy</summary>
+<div class="rollup">
+<p>White balance is Lightroom's way of correcting the colour cast created by different types of light.</p>
+<p>The good news is that you do not need to understand colour temperature in great detail to make useful corrections.</p>
+<h3>1. Start with the Photograph</h3>
+<p>Before touching any sliders, ask yourself:</p>
+<ul>
+<li>Does the photograph look too blue?</li>
+<li>Does it look too yellow or orange?</li>
+<li>Is there a green or magenta colour cast?</li>
+<li>Do whites actually look white?</li>
+<li>Do skin tones look believable?</li>
+</ul>
+<p>The aim is not necessarily to make every photograph completely neutral. Sometimes warm evening light or cool early-morning light is part of what makes the photograph work.</p>
+<h3>2. Find White Balance in Lightroom</h3>
+<p>In Lightroom Classic, open the Develop module and look near the top of the Basic panel.</p>
+<p>You will see:</p>
+<ul>
+<li>WB</li>
+<li>Temp</li>
+<li>Tint</li>
+</ul>
+<p>Lightroom can use the camera's original white balance with <strong>As Shot</strong>, or calculate its own interpretation using <strong>Auto</strong>.</p>
+<p>RAW files also provide additional preset choices such as Daylight, Cloudy, Shade, Tungsten, Fluorescent and Flash.</p>
+<p><strong>Try Auto first.</strong></p>
+<p>Sometimes that may be all the photograph needs.</p>
+<h3>3. Use the Temperature Slider</h3>
+<p>The Temp slider controls the photograph's overall warm-to-cool balance.</p>
+<ul>
+<li>Move left to make the photograph cooler and more blue.</li>
+<li>Move right to make it warmer and more yellow or golden.</li>
+</ul>
+<p>Make small adjustments.</p>
+<p>If an indoor photograph looks strongly orange, move Temp slightly left. If a shaded photograph looks unnaturally blue, move it slightly right.</p>
+<h3>4. Use Tint Only If You Need It</h3>
+<p>The Tint slider deals mainly with the green-to-magenta balance.</p>
+<ul>
+<li>Move left to add green.</li>
+<li>Move right to add magenta.</li>
+</ul>
+<p>For many photographs, you may hardly need to touch Tint at all.</p>
+<h3>Try the Eyedropper</h3>
+<p>Lightroom also includes the White Balance Selector, normally shown as an eyedropper.</p>
+<p>Select it and click an area in the photograph that should be neutral.</p>
+<p>A neutral area could be:</p>
+<ul>
+<li>Grey.</li>
+<li>White with visible detail.</li>
+<li>A genuinely colourless surface.</li>
+</ul>
+<p>Lightroom then adjusts Temperature and Tint to neutralise that area.</p>
+<p>This can be an excellent starting point, but still look at the entire photograph afterwards. The technically neutral result is not always the most visually pleasing one.</p>
+<h3>RAW Gives You More Flexibility</h3>
+<p>White balance is especially forgiving when working with a RAW file.</p>
+<p>Lightroom provides more white balance options for RAW photographs than for JPEGs, and RAW processing gives considerably more latitude for changing the colour balance after the photograph has been taken.</p>
+<h3>Don't Automatically Remove the Mood</h3>
+<p>Imagine a sunset photographed in beautiful warm light.</p>
+<p>A technically neutral white balance could remove much of that warmth and leave the photograph looking flat.</p>
+<p>Likewise, the blue feeling of an early winter morning may be completely appropriate.</p>
+<p><strong>White balance should correct unwanted colour, not automatically remove the colour of the light. </strong></p>
+<h3>A Simple Beginner Method</h3>
+<ol>
+<li>Try As Shot.</li>
+<li>Try Auto.</li>
+<li>Try the Eyedropper.</li>
+<li>Adjust Temp until the photograph looks believable.</li>
+<li>Adjust Tint only if there is an obvious green or magenta cast.</li>
+<li>Compare the result with the original.</li>
+</ol>
+<p>Then choose the version that best represents the scene.</p>
+<h3>Final Check</h3>
+<p>Before moving on to the next stage of your edit, ask:</p>
+<ul>
+<li>Do whites look believable?</li>
+<li>Do people have natural-looking skin?</li>
+<li>Has an unwanted blue, orange, green or magenta cast disappeared?</li>
+<li>Have I accidentally removed the atmosphere of the original light?</li>
+<li>Does the photograph simply look right?</li>
+</ul>
+<p>If the answer is yes, stop adjusting.</p>
+<h3>Remember</h3>
+<p><strong>White balance is not about making every photograph neutral. It is about making the colour believable. </strong></p>
+<p>Small adjustments are normally all that is required.</p>
+</div>
+</details>
+<a class="button teal" data-category="editing" data-index="resource" data-part="4" data-series="lightroom-basics" data-tags="lightroom,white-balance,downloadable-guide,pdf" href="https://warrnamboolcameraclub.zenfolio.com/LR_004_white_balance.pdf" id="wcc-resource-2026-011-lightroom-004-guide" style="display:block; width:100%; box-sizing:border-box; text-align:center;" target="_blank">
+   DOWNLOAD THIS WEEK'S GUIDE
+</a>
+<p><strong>Coming Next:</strong> Lightroom Basics - Part 5: Sharpening Without Halos</p>
+</section>
+<!-- ======================================================
+     PHOTOGRAPHER'S TIPS
+     ====================================================== -->
+<section id="wcc-2026-011-photographers-tips">
+<h2 class="section-title">📸 Photographer's Tips</h2>
+<div class="tips-grid">
+<div class="tip" data-category="photography-tips" data-code="B007" data-index="tip" data-level="beginner" data-tags="aperture,depth-of-field,exposure,camera-basics" id="wcc-tip-b007">
+<h3>🌱 Beginner Tip</h3>
+<strong>Understand What Aperture Does</strong>
+<p>Aperture controls how much light passes through your lens, but it also affects how much of your photograph appears in focus.</p>
+<p>A wide aperture, such as f/2.8, can help blur the background and isolate your subject. A smaller aperture, such as f/8 or f/11, can keep more of the scene acceptably sharp.</p>
+<p>Try photographing the same subject at several apertures without changing your position. Comparing the results is one of the easiest ways to understand how aperture changes the look of a photograph.</p>
+</div>
+<div class="tip" data-category="photography-tips" data-code="I007" data-index="tip" data-level="intermediate" data-tags="composition,layers,foreground,middle-ground,background,depth" id="wcc-tip-i007">
+<h3>📷 Intermediate Tip</h3>
+<strong>Build Your Image in Layers</strong>
+<p>Strong photographs often have more than just a subject and a background.</p>
+<p>Look for opportunities to create foreground, middle ground and background elements within the same composition.</p>
+<p>These layers can give a two-dimensional photograph a much stronger sense of depth.</p>
+<p>The important part is that each layer contributes something.</p>
+</div>
+<div class="tip" data-category="photography-tips" data-code="A007" data-index="tip" data-level="advanced" data-tags="composition,separation,overlap,subject-placement,camera-position" id="wcc-tip-a007">
+<h3>⭐ Advanced Tip</h3>
+<strong>Create Separation Between Elements</strong>
+<p>When two important objects overlap or touch awkwardly, they can visually merge and make the composition harder to read.</p>
+<p>Before pressing the shutter, look carefully at the relationships between elements.</p>
+<p>A small change in camera position may only require moving a few centimetres, but that small movement can make the final composition considerably cleaner and more deliberate.</p>
+</div>
+</div>
+</section>
+<!-- ======================================================
+     MEMBERS ON THE MOVE
+     ====================================================== -->
+<section id="wcc-2026-011-members-on-the-move">
+<h2 class="section-title">✈️ Members on the Move</h2>
+<p>Things are a little quieter from our travelling members this week, so we'll keep this one short rather than repeat their entire journeys.</p>
+<details data-category="members-on-the-move" data-index="article" data-locations="iceland" data-people="craig-homberg,sharon-homberg" data-tags="travel,iceland,solar-eclipse,member-travel" id="wcc-2026-011-travel-craig-sharon"><summary>🇮🇸 Craig &amp; Sharon</summary>
+<div class="rollup">
+<p>Our last update had Craig and Sharon Homberg in Iceland, where Craig had finally managed to get some photographs after several days of rain, cloud and persistent strong winds.</p>
+<p>Their visit also happened to coincide with the total solar eclipse that crossed Iceland on 12 August.</p>
+<p>Those who know Craig's interest in photographing eclipses may be wondering whether that timing was entirely accidental!</p>
+<p>We don't actually know, so we'll wait for Craig to fill us in when we next hear from him. 😊</p>
+<p>Hopefully we'll have another update, and perhaps some photographic evidence, soon.</p>
+</div>
+</details>
+<details data-category="members-on-the-move" data-index="article" data-locations="karumba,alice-springs" data-people="bob-artis,kerrie-artis" data-tags="travel,karumba,alice-springs,gulf-of-carpentaria,member-travel" id="wcc-2026-011-travel-bob-kerrie"><summary>🇦🇺 Bob &amp; Kerrie</summary>
+<div class="rollup">
+<p>We haven't had a fresh travel report from Bob and Kerrie either.</p>
+<p>At last report they were making their way west towards Karumba on the Gulf of Carpentaria, before eventually continuing towards Alice Springs later in the month.</p>
+<p>Bob was also given one important assignment for Karumba:</p>
+<p><strong>Fish and chips beside the Gulf while photographing the sunset over the water. </strong></p>
+<p>Photographic evidence remains outstanding!</p>
+<p>Hopefully they've simply been too busy enjoying themselves to send an update.</p>
+</div>
+</details>
+</section>
+<!-- ======================================================
+     FLASH WORKSHOPS
+     ====================================================== -->
+<section data-category="events" data-index="article" data-tags="flash,off-camera-flash,flash-triggers,high-key,workshops" id="wcc-2026-011-flash-workshops">
+<h2 class="section-title">⚡ Two Flash Workshops Coming Up</h2>
+<p>We've now got two practical flash sessions planned across September and October.</p>
+<p>Rather than jumping straight into complicated lighting setups, the idea is to spend the first evening simply getting comfortable with the equipment before putting those skills into practice the following week.</p>
+<div class="feature-card" data-category="events" data-event-date="2026-09-24" data-event-status="confirmed" data-index="event" data-tags="flash,flash-triggers,off-camera-flash,equipment,workshop" id="wcc-event-2026-09-24-flash-triggers">
+<h3>Thursday, 24 September</h3>
+<strong>Flash Triggers - Getting to Know the Equipment</strong>
+<p>This will be a hands-on session aimed at helping members become comfortable with:</p>
+<ul>
+<li>Flash triggers.</li>
+<li>Pairing flashes and transmitters.</li>
+<li>Channels and groups.</li>
+<li>Getting off-camera flash working reliably.</li>
+<li>Basic light positioning.</li>
+<li>Troubleshooting when things don't fire as expected.</li>
+</ul>
+<p>The aim isn't to create finished studio masterpieces.</p>
+<p>It's simply to become comfortable enough with the equipment that you're not fighting with it when you actually want to make a photograph.</p>
+</div>
+<div class="feature-card navy" data-category="events" data-event-date="2026-10-01" data-event-status="confirmed" data-index="event" data-tags="flash,high-key,lighting,off-camera-flash,workshop" id="wcc-event-2026-10-01-high-key-flash">
+<h3>Thursday, 1 October</h3>
+<strong>High Key Flash Workshop</strong>
+<p>The following week we'll build on that knowledge with a <strong>High Key Photography Workshop</strong>.</p>
+<p>This session will put the equipment into practice and explore how flash can be used to produce a bright, clean high-key lighting style.</p>
+<p>We'll provide more information about both evenings as the dates get closer.</p>
+</div>
+</section>
+<!-- ======================================================
+     WERRIBEE
+     ====================================================== -->
+<section data-category="events" data-event-date="2026-10-24" data-event-status="confirmed" data-index="event" data-locations="werribee-open-range-zoo" data-tags="outing,werribee-open-range-zoo,wildlife,photography,club-outing" id="wcc-event-2026-10-24-werribee-zoo">
+<h2 class="section-title">🦁 Werribee Open Range Zoo</h2>
+<div class="feature-card red">
+<h3>Save the Date - Saturday, 24 October</h3>
+<p>Our Club outing to <strong>Werribee Open Range Zoo</strong> is now looking locked in.</p>
+<p>This should provide a fantastic day of photographic opportunities, from animal portraits and wildlife behaviour to environmental images showing animals within their surroundings.</p>
+<p>We'll provide full details over the coming weeks, including:</p>
+<ul>
+<li>Meeting arrangements.</li>
+<li>Transport options.</li>
+<li>Entry information.</li>
+<li>Timing.</li>
+<li>Suggested equipment.</li>
+</ul>
+<p><strong>For now, save the date.</strong></p>
+</div>
+</section>
+<!-- ======================================================
+     COMING UP
+     ====================================================== -->
+<section id="wcc-2026-011-coming-up">
+<h2 class="section-title">📅 Coming Up</h2>
+<div class="event">
+<div class="event-date">19 August</div>
+<div><strong>World Photography Day</strong><br/>
+Take at least one photograph especially for the day.</div>
+</div>
+<div class="event" data-category="competition" data-event-status="confirmed" data-index="event" data-people="johanna-botman" data-tags="competition,judging,johanna-botman,september" id="wcc-event-2026-09-judging-johanna-botman">
+<div class="event-date">September</div>
+<div><strong>Competition Judging with Johanna Botman</strong></div>
+</div>
+<div class="event">
+<div class="event-date">24 September</div>
+<div><strong>Flash Trigger Workshop</strong><br/>
+Getting to know the equipment.</div>
+</div>
+<div class="event" data-category="community" data-event-status="confirmed" data-index="event" data-locations="warrnambool" data-tags="warrnambool-marathon,community,fundraising,september" id="wcc-event-2026-09-warrnambool-marathon">
+<div class="event-date">Late September</div>
+<div><strong>Warrnambool Marathon</strong></div>
+</div>
+<div class="event">
+<div class="event-date">1 October</div>
+<div><strong>High Key Flash Workshop</strong></div>
+</div>
+<div class="event" data-category="competition" data-event-status="confirmed" data-index="event" data-locations="warrnambool" data-tags="warrnambool-show,photography-competition,print-stewards,competition" id="wcc-event-2026-10-warrnambool-show-photography">
+<div class="event-date">October</div>
+<div><strong>Warrnambool Show Photography Competition</strong><br/>
+Warrnambool Camera Club providing the Print Stewards.</div>
+</div>
+<div class="event">
+<div class="event-date">24 October</div>
+<div><strong>Werribee Open Range Zoo Club Outing</strong></div>
+</div>
+</section>
+<!-- ======================================================
+     CONTRIBUTIONS
+     ====================================================== -->
+<section>
+<div class="feature-card navy">
+<h3>📬 Have Something to Share?</h3>
+<p>The Weekly Update works best when it's about <strong>our members</strong>, not simply the Committee telling everyone what's happening.</p>
+<p>If you've been somewhere interesting, captured an image you're particularly pleased with, discovered a great photographic location, learned something worth sharing, tried some interesting equipment, won an award or simply have a good photography story, send it through.</p>
+<p>The more members contribute, the more the Weekly Update becomes a reflection of the photography and people that make up the Warrnambool Camera Club.</p>
+</div>
+</section>
+<!-- ======================================================
+     UNTIL NEXT WEEK
+     ====================================================== -->
+<section>
+<h2 class="section-title">Until Next Week</h2>
+<p>Enjoy World Photography Week, make sure you get the camera out on Wednesday and remember:</p>
+<div class="feature-card"><strong>Photography doesn't require somewhere spectacular. Sometimes it simply requires us to notice what's already there. </strong></div>
+<p><strong>Stan McCullagh</strong><br/>
+On behalf of the Warrnambool Camera Club</p>
+</section>
+</div>
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
+<div class="wcc-newsletter-footer"><strong>Warrnambool Camera Club</strong><br/>
+Weekly Update | Issue 011<br/>
+<br/>
+Learn • Create • Share • Inspire</div>
+</div>
+
+<script>
+(function () {
+    function jumpToWeeklyAnchor() {
+        if (!window.location.hash) return;
+
+        var targetId;
+        try {
+            targetId = decodeURIComponent(window.location.hash.substring(1));
+        } catch (e) {
+            targetId = window.location.hash.substring(1);
+        }
+        if (!targetId) return;
+
+        var attempts = 0;
+        var maxAttempts = 40;
+
+        function tryScroll() {
+            var target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({behavior: "auto", block: "start"});
+                return;
+            }
+
+            attempts += 1;
+            if (attempts < maxAttempts) {
+                window.setTimeout(tryScroll, 150);
+            }
+        }
+
+        tryScroll();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
+            window.setTimeout(jumpToWeeklyAnchor, 100);
+        });
+    } else {
+        window.setTimeout(jumpToWeeklyAnchor, 100);
+    }
+
+    window.addEventListener("load", function () {
+        window.setTimeout(jumpToWeeklyAnchor, 200);
+    });
+
+    window.addEventListener("hashchange", function () {
+        window.setTimeout(jumpToWeeklyAnchor, 25);
+    });
+})();
+</script>
+

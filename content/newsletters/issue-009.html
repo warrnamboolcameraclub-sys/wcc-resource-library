@@ -1,0 +1,450 @@
+<style type="text/css">.wcc-weekly{--teal:#176b6b;--dark-teal:#10484d;--navy:#183f70;--red:#b42318;--text:#253238;--muted:#5f7075;--soft-teal:#edf7f6;--soft-red:#fff5f4;--soft-grey:#f5f6f7;--border:#d6e1e1;--white:#fff;max-width:1100px;margin:0 auto;background:#fff;color:var(--text)!important;font-family:Arial,Helvetica,sans-serif;line-height:1.65}
+.wcc-weekly p,.wcc-weekly li,.wcc-weekly td{color:var(--text)!important}
+.wcc-weekly .hero{background:linear-gradient(135deg,#10484d,#176b6b);color:#fff!important;padding:46px 40px 40px;border-bottom:7px solid var(--red)}
+.wcc-weekly .hero *{color:#fff!important}.wcc-weekly .hero-kicker{text-transform:uppercase;letter-spacing:2px;font-size:14px;font-weight:bold}.wcc-weekly .hero h1{margin:5px 0;font-size:42px;line-height:1.1}.wcc-weekly .hero h2{margin:4px 0 14px;font-size:22px;font-weight:normal}.wcc-weekly .tagline{font-size:17px;font-weight:bold}
+.wcc-weekly .quick-links{background:var(--soft-teal);padding:12px 28px;border-bottom:1px solid var(--border)}.wcc-weekly .quick-links details{border:0;margin:0;background:transparent;overflow:visible}.wcc-weekly .quick-links summary{cursor:pointer;padding:8px 0;background:transparent;color:var(--dark-teal)!important;font-size:16px;font-weight:bold;list-style:none}.wcc-weekly .quick-links summary::-webkit-details-marker{display:none}.wcc-weekly .quick-links summary:before{content:"+";color:var(--red);font-size:19px;font-weight:bold;display:inline-block;width:22px}.wcc-weekly .quick-links details[open] summary:before{content:"−"}.wcc-weekly .issue-nav-links{padding:8px 0 12px 22px}.wcc-weekly .issue-nav-links a{display:inline-block;margin:5px 18px 5px 0;color:var(--navy)!important;font-size:14px;font-weight:bold;text-decoration:none}
+.wcc-weekly .content{padding:32px 36px}.wcc-weekly section{margin:0 0 42px}.wcc-weekly h2.section-title{color:var(--dark-teal)!important;font-size:28px;line-height:1.25;margin:0 0 18px;padding-bottom:8px;border-bottom:3px solid var(--teal)}.wcc-weekly h3{color:var(--navy)!important;margin-top:20px}
+.wcc-weekly details{border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:18px 0;background:#fff}.wcc-weekly summary{cursor:pointer;padding:16px 20px;background:var(--soft-teal);color:var(--dark-teal)!important;font-weight:bold;list-style:none}.wcc-weekly summary::-webkit-details-marker{display:none}.wcc-weekly summary:before{content:"+";color:var(--red);font-size:20px;font-weight:bold;display:inline-block;width:24px}.wcc-weekly details[open] summary:before{content:"−"}.wcc-weekly .rollup{padding:22px 24px}.wcc-weekly .rollup *{color:var(--text)!important}
+.wcc-weekly .photo-placeholder{background:#e8eeee;border:1px dashed #94a8a8;padding:46px 20px;text-align:center;color:#586d70!important;border-radius:5px;margin:18px 0;font-weight:bold}
+.wcc-weekly .rollup img,.wcc-weekly section img{display:block!important;width:auto!important;max-width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;object-position:center!important;margin:20px auto!important;box-sizing:border-box!important}
+
+/* =========================================================
+   FEATURE BOXES
+   ========================================================= */
+
+.wcc-weekly .feature-card {
+    background: var(--soft-teal);
+    border-left: 6px solid var(--teal);
+    padding: 22px 25px;
+    margin: 20px 0;
+    border-radius: 5px;
+    color: var(--text) !important;
+}
+
+.wcc-weekly .feature-card.red {
+    background: var(--soft-red);
+    border-left-color: var(--red);
+}
+
+.wcc-weekly .feature-card.navy {
+    background: #f1f5fa;
+    border-left-color: var(--navy);
+}
+
+.wcc-weekly .feature-card *,
+.wcc-weekly .feature-card p,
+.wcc-weekly .feature-card strong,
+.wcc-weekly .feature-card h3 {
+    color: var(--text) !important;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.wcc-weekly .button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 12px 0;
+    padding: 15px 20px;
+    background: var(--navy);
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.wcc-weekly .button.teal {
+    background: var(--teal);
+}
+
+.wcc-weekly .button.red {
+    background: var(--red);
+}
+
+.wcc-weekly .button:hover {
+    opacity: 0.92;
+}
+
+/* =========================================================
+   PHOTOGRAPHER'S TIPS
+   ========================================================= */
+
+.wcc-weekly .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.wcc-weekly .tip {
+    background: var(--soft-grey);
+    border-top: 5px solid var(--teal);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.wcc-weekly .tip h3 {
+    margin-top: 0;
+}
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+
+.wcc-weekly .event {
+    display: grid;
+    grid-template-columns: 165px 1fr;
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid #e2e6e7;
+}
+
+.wcc-weekly .event-date {
+    color: var(--red) !important;
+    font-weight: bold;
+}
+
+.wcc-weekly .wcc-newsletter-footer{background:var(--dark-teal);color:#fff!important;padding:32px;text-align:center}.wcc-weekly .wcc-newsletter-footer *{color:#fff!important}
+@media(max-width:760px){.wcc-weekly .hero{padding:32px 22px}.wcc-weekly .hero h1{font-size:32px}.wcc-weekly .hero h2{font-size:20px}.wcc-weekly .content{padding:24px 18px}.wcc-weekly h2.section-title{font-size:25px}.wcc-weekly .issue-nav-links a{display:block;margin:8px 0}.wcc-weekly .rollup{padding:18px}
+.wcc-weekly .tips-grid{grid-template-columns:1fr}
+.wcc-weekly .event{grid-template-columns:1fr;gap:3px}
+.wcc-weekly .button{width:100%;padding:16px 14px;font-size:15px}
+.wcc-weekly .rollup img,.wcc-weekly section img{width:auto!important;max-width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important}}
+
+/* Reliable deep-link positioning when opened from the Resource Library. */
+.wcc-weekly [id^="wcc-"] {
+    scroll-margin-top: 150px;
+}
+
+</style>
+<div class="wcc-weekly" data-issue="009" data-publication="weekly-update" data-published="2026-08-03" data-url="https://warrnamboolcameraclub.zenfolio.com/weekly-newsletter-009">
+<div class="hero">
+<div class="hero-kicker">Warrnambool Camera Club</div>
+<h1>Weekly Update</h1>
+<h2>Issue 009 | Monday, 3 August 2026</h2>
+<div class="tagline">Learn • Create • Share • Inspire</div>
+</div>
+<div class="quick-links">
+<details class="issue-nav"><summary>In this issue</summary>
+<div class="issue-nav-links"><a href="#wcc-2026-009-editor">From the Editor</a> <a href="#wcc-2026-009-walk-for-wellness-anniversary">Community Connections</a> <a href="#wcc-2026-009-craig-richards-presentation">Craig Richards</a> <a href="#wcc-2026-009-agm">Annual General Meeting</a> <a href="#wcc-event-2026-08-03-mat-cutting-workshop">Workshop Corner</a> <a href="#wcc-2026-009-ethical-bird-photography-004">Convention Corner</a> <a href="#wcc-2026-009-lightroom-002">Editing Corner</a> <a href="#wcc-2026-009-photographers-tips">Photographer's Tips</a> <a href="#wcc-2026-009-challenge-natural-frames">Camera Challenge</a> <a href="#wcc-2026-009-members-on-the-move">Members on the Move</a> <a href="#wcc-2026-009-coming-up">What's Coming Up</a> <a href="#wcc-2026-009-contributions">Contributions Welcome</a></div>
+</details>
+</div>
+<div class="content">
+<section data-category="club-news" data-index="article" data-tags="weekly-update,walk-for-wellness,agm,craig-richards,club-activities" id="wcc-2026-009-editor">
+<h2 class="section-title">🏡 From the Editor</h2>
+<p>Welcome to <strong>Issue 009</strong> of the Warrnambool Camera Club Weekly Update.</p>
+<p>What a fantastic weekend it's been for photography.</p>
+<p>On Saturday we celebrated the <strong>second anniversary of the Warrnambool Photography Walk for Wellness</strong>, with fifteen photographers joining us for our 25th monthly walk. It was a wonderful morning of photography, conversation and friendship, topped off with a surprise anniversary cake organised by Tania.</p>
+<p>The group also received some wonderful media exposure over the past few days. The Warrnambool Weekly has featured the Walk for Wellness, and this morning Tania and I joined Jeremy Lee on ABC South West Victoria to talk about how the group began and why it continues to attract photographers from across the region.</p>
+<p>Tonight (3rd August) we'll be holding another Mat Cutting Workshop to help members prepare their prints before Thursday night's competition. Then, on Thursday, we'll hold our Annual General Meeting, commencing at 7:00 PM, before welcoming award-winning landscape photographer <strong>Craig Richards</strong> for what promises to be an outstanding presentation.</p>
+<p>It's shaping up to be another exciting week.</p>
+</section>
+<section data-category="community" data-index="article" data-locations="warrnambool,south-west-victoria,south-australia,ireland" data-people="stan-mccullagh,tania-jacobson,vivian-carter,jeremy-lee" data-tags="photography-walk-for-wellness,wellbeing,community,anniversary,photography,abc-south-west-victoria" id="wcc-2026-009-walk-for-wellness-anniversary">
+<h2 class="section-title">🌏 Community Connections</h2>
+<h3>Photography Walk for Wellness Celebrates Two Years</h3>
+<p>The Warrnambool Photography Walk for Wellness reached an important milestone this week, celebrating its <strong>second anniversary and 25th monthly walk</strong>.</p>
+<p>Fifteen photographers joined the anniversary walk, while the growing community also attracted coverage from the <em>Warrnambool Weekly</em> and ABC South West Victoria.</p>
+<details><summary>Read the full anniversary story</summary>
+<div class="rollup">
+<h3>Photography Walk for Wellness Celebrates Two Years</h3>
+<p>Two years ago, I started the Warrnambool Photography Walk for Wellness with a simple idea—to bring people together through photography, fresh air and good company.</p>
+<img alt="Warrnambool Camera Club photograph" src="/img/s/v-10/p1582585910-6.jpg" style="display:block;width:100% !important;max-width:300px !important;height:auto !important;object-fit:contain;margin:20px auto;border-radius:5px;box-sizing:border-box;"/>
+<p>Twenty-five monthly walks later, that simple idea has grown into a thriving Facebook community of more than <strong>195 members</strong>, with photographers regularly travelling from across south-west Victoria and south-east South Australia to take part.</p>
+<p>Saturday's anniversary walk attracted <strong>15 photographers</strong>, who spent an hour exploring Warrnambool before regrouping over coffee and morning tea.</p>
+<img alt="Warrnambool Camera Club photograph" src="/img/s/v-10/p1582602023-5.jpg" style="display:block;width:100% !important;max-width:500px !important;height:auto !important;object-fit:contain;margin:20px auto;border-radius:5px;box-sizing:border-box;"/>
+<p>One of the things that makes the Walk for Wellness a little different is that, after a short welcome, everyone heads off in their own direction for around an hour. Rather than following a leader or photographing the same subjects, participants are encouraged to explore independently and photograph whatever captures their imagination. It's always fascinating to see how fifteen photographers can return from the same location with fifteen completely different collections of images.</p>
+<p>The anniversary celebrations were made even more special thanks to <strong>Tania Jacobson</strong> who kindly organised a beautiful anniversary cake for everyone to enjoy after the walk. Thanks also to <strong>Vivian Carter</strong> who supplied the candle</p>
+<p>The milestone also attracted welcome media attention, with a feature appearing in this week's <strong><em>Warrnambool Weekly</em></strong> and an interview on <strong>ABC South West Victoria</strong> with Jeremy Lee, where <strong>Tania</strong> <strong>Jacobson </strong>and I had the opportunity to share the story behind the Walk for Wellness.</p>
+<p>To everyone who has joined us over the past two years, —thank you. Here's to many more walks, many more photographs and many more friendships.</p>
+<h3>Walk by the Numbers</h3>
+<ul>
+<li><strong>25</strong> Monthly walks completed</li>
+<li><strong>2</strong> Years since the first walk</li>
+<li><strong>Almost 200</strong> Facebook community members</li>
+<li><strong>15</strong> Photographers joined our anniversary walk</li>
+<li><strong>2</strong> States represented (Victoria &amp; South Australia)</li>
+<li><strong>International </strong>Participation – Dianne Byron is currently on Holidays in Ireland and has posted photos from Saturdays walk.</li>
+<li><strong>10s of kilometres</strong> explored together... one photograph at a time.</li>
+</ul>
+<img alt="Newspaper Clipping - Warrnambool Weekly" src="/img/s/v-10/p1582602029-5.jpg" style="display:block;width:100% !important;max-width:500px !important;height:auto !important;object-fit:contain;margin:20px auto;border-radius:5px;box-sizing:border-box;"/></div>
+</details>
+</section>
+<section data-category="education" data-index="article" data-people="craig-richards" data-tags="landscape-photography,seascapes,night-photography,guest-speaker,presentation" id="wcc-2026-009-craig-richards-presentation">
+<h2 class="section-title">🌄 This Thursday – Craig Richards Visits the Club</h2>
+<img alt="Craig Richards Self Portrait" src="/img/s/v-10/p1582608009-3.jpg" style="display:block;width:100% !important;max-width:300px !important;height:auto !important;object-fit:contain;margin:20px auto;border-radius:5px;box-sizing:border-box;"/>
+<p>This Thursday promises to be one of the highlights of our club calendar as we welcome <strong>Craig Richards</strong> to the Warrnambool Camera Club.</p>
+<p>Craig is an award-winning landscape photographer whose work has featured in <strong>Australian Geographic</strong>, and he is well known for capturing the dramatic coastlines, seascapes and night skies of south-west Victoria and beyond.</p>
+<p>During the evening Craig will share his photographic journey, discuss his approach to landscape photography and reveal the techniques behind many of his remarkable images.</p>
+<p>Whether your passion is landscapes, seascapes, travel or simply creating stronger compositions, this presentation promises to inspire photographers of every experience level.</p>
+<p>Craig will also conduct his <strong>Landscape Photography Workshop</strong> on <strong>Saturday, 15 August</strong>, giving members the opportunity to put his ideas into practice in the field.</p>
+<p>This is one presentation you won't want to miss.</p>
+<p>Members are encouraged to bring along any questions—they'll have the opportunity to hear directly from Craig about his techniques, equipment and creative approach.</p>
+</section>
+<section data-category="club-news" data-index="article" data-tags="agm,club-rules,governance,competition,member-feedback" id="wcc-2026-009-agm">
+<h2 class="section-title">🏛️ Annual General Meeting</h2>
+<p>Our <strong>Annual General Meeting</strong> will also be held this Thursday evening before Craig's presentation.</p>
+<p>Thank you to everyone who has taken the time to read through the proposed amendments to the Club Rules and provide constructive feedback.</p>
+<p>If you haven't yet had the opportunity, there's still time to review the document before Thursday night's meeting. Your comments and suggestions are always appreciated as we work towards adopting a clear, fair and contemporary set of Rules for the Club.</p>
+<p>Your Club. Your Rules. Your Voice.</p>
+<p><strong>A reminder that competition images are also due on Thursday evening</strong>, so please ensure your entries have been uploaded before the deadline.</p>
+</section>
+<section data-category="events" data-event-date="2026-08-03" data-event-status="confirmed" data-index="event" data-people="stan-mccullagh" data-tags="mat-cutting,print-presentation,competition,workshop,printing" id="wcc-event-2026-08-03-mat-cutting-workshop">
+<h2 class="section-title">🛠️ Workshop Corner</h2>
+<h3>Mat Cutting Workshop – Tonight</h3>
+<p>If you're preparing prints for Thursday night's competition, tonight's Mat Cutting Workshop is a practical chance to work through presentation, border sizes and getting your print sitting neatly in the mat.</p>
+<details><summary>View the mat cutting workshop details</summary>
+<div class="rollup">
+<h3>Mat Cutting Workshop – Tonight</h3>
+<p>If you're preparing prints for Thursday night's competition, don't forget our <strong>Mat Cutting Workshop tonight</strong>.</p>
+<p>We'll cover:</p>
+<ul>
+<li>Choosing the correct opening size.</li>
+<li>Positioning your print accurately.</li>
+<li>Creating consistent borders.</li>
+<li>Making the best use of mat board.</li>
+<li>Practical techniques for producing professional-looking presentation.</li>
+</ul>
+<p>Whether this is your first print competition or you're simply looking to improve your presentation, everyone is welcome.</p>
+<h3>Tonight (3rd Aug) – From 7:00 pm</h3>
+<h3>Stan's place</h3>
+<h3>If you're planning on coming along, please send me a quick email so I have an idea of numbers.</h3>
+</div>
+</details>
+</section>
+<section data-category="education" data-index="article" data-part="4" data-people="kim-wormald" data-series="ethical-bird-photography" data-tags="bird-photography,ethics,patience,fieldcraft,wildlife,bird-behaviour" id="wcc-2026-009-ethical-bird-photography-004">
+<h2 class="section-title">📷 Convention Corner</h2>
+<details><summary>Read Ethical Bird Photography Part 4</summary>
+<div class="rollup">
+<h3>Ethical Bird Photography Series – Part 4</h3>
+<h3>The Photographer's Greatest Tool Isn't a Longer Lens</h3>
+<p>When photographers talk about improving their bird photography, the conversation often turns to longer lenses, faster cameras or improved autofocus. While better equipment can certainly help, Kim Wormald suggested that the most valuable tool in any wildlife photographer's kit bag is something that costs nothing at all:</p>
+<h3>Patience.</h3>
+<p>Throughout her presentation, Kim returned to the same principle again and again. Rather than chasing birds, she allows the birds to decide whether they are comfortable with her presence. Instead of moving closer until they fly away, she waits. Instead of trying to force a photograph, she becomes part of the environment.</p>
+<p>It is a simple philosophy, but one that fundamentally changes both the experience and the photographs.</p>
+<p>Kim shared the story of photographing Hooded Plovers while lying quietly on the beach. She remained still for over an hour, watching the family go about their daily routine. Eventually, the tiny chicks wandered towards her of their own accord, providing intimate photographs that simply would not have been possible had she approached them.</p>
+<p>The lesson was clear: sometimes the best way to get closer is not to move at all.</p>
+<p>Understanding bird behaviour is equally important. Learning how different species feed, rest, preen, defend territory and interact with each other helps photographers anticipate moments before they happen. Rather than reacting to behaviour, experienced wildlife photographers begin to predict it.</p>
+<p>Kim encouraged photographers to spend time watching birds without even raising the camera. Observe how they move through their habitat. Notice favourite perches, feeding areas and flight paths. Listen for alarm calls that may indicate a bird is becoming uncomfortable. The more time spent observing, the more natural opportunities present themselves.</p>
+<p>She also reminded us that fieldcraft extends beyond the subject itself. Small adjustments in position can completely transform an image. Moving only a metre or two may replace a cluttered background with soft colour, eliminate distracting branches or improve the angle of the light. Often, changing your position is far more effective than changing your lens.</p>
+<p>Perhaps the most reassuring message was that not every outing needs to end with a full memory card. Some days the birds simply won't cooperate. Other days the conditions aren't right. Spending time immersed in nature is never wasted, even if the camera stays quiet.</p>
+<p>As Kim observed, the magic of bird photography comes from becoming part of the landscape rather than disturbing it. When birds accept your presence and continue behaving naturally, the photographs that follow are not only more authentic, they are often the ones you'll treasure most.</p>
+<p><strong>Photography Tip:</strong> The next time you're out photographing birds, challenge yourself to spend the first 15 minutes simply watching. Leave the camera by your side, study the birds' behaviour, and let the photographs come to you rather than chasing them.</p>
+<h3>Looking Ahead</h3>
+<p>Next week we return to our <strong>Mastering Long Exposure Photography series with Part 5</strong> – <strong>Neutral Density Filters</strong>: <strong>Opening the Door to Long Exposure Photography.</strong></p>
+<p>We'll explain how ND filters work, compare the different strengths available and help you decide which filter is the best place to start if you're ready to explore longer shutter speeds.</p>
+</div>
+</details>
+</section>
+<section data-category="editing" data-index="article" data-part="2" data-series="lightroom-basics" data-tags="lightroom,cropping,composition,aspect-ratio,straightening,editing" id="wcc-2026-009-lightroom-002">
+<h2 class="section-title">💻 Editing Corner</h2>
+<details><summary>Read Cropping for Better Composition</summary>
+<div class="rollup">
+<p><em>Although this guide demonstrates the process using Adobe Lightroom, the same principles apply in most editing software. Whether you use Lightroom, Photoshop, Capture One, ON1, Luminar or another editor, understanding why you crop is far more important than which software you use.</em></p>
+<h3>Lightroom Basics – Part 2</h3>
+<h3>Cropping for Better Composition</h3>
+<p>Cropping is one of the simplest ways to strengthen a photograph. A careful crop can remove distractions, improve balance and make the main subject much clearer.</p>
+<p>In the example accompanying this article, the original photograph contains a large amount of empty water and foreground. The tighter crop places greater emphasis on the rescue boat and crew while still leaving enough room around the action.</p>
+<h3>A Simple Cropping Process in Lightroom</h3>
+<h3>1. Open the Crop tool</h3>
+<p>In Lightroom Classic, press <strong>R</strong> or select <strong>Crop Overlay</strong> from the Develop module.</p>
+<h3>2. Check the edges</h3>
+<p>Before changing the composition, look carefully around all four edges of the photograph.</p>
+<p>Watch for:</p>
+<ul>
+<li>Empty or unnecessary space</li>
+<li>Partial objects entering the frame</li>
+<li>Bright areas that attract attention</li>
+<li>Distracting background elements</li>
+<li>Too much foreground or sky</li>
+</ul>
+<p>In this photograph, some of the empty water and foreground can be removed without losing anything important.</p>
+<h3>3. Straighten the photograph</h3>
+<p>Check whether the horizon is level.</p>
+<p>Use the <strong>Angle</strong> slider, the <strong>Straighten tool</strong>, or Lightroom’s <strong>Auto</strong> option. A slightly tilted horizon can make an otherwise strong photograph look unfinished.</p>
+<h3>4. Choose an aspect ratio</h3>
+<p>The aspect ratio determines the shape of the finished photograph.</p>
+<p>Common choices include:</p>
+<ul>
+<li><strong>Original</strong> to retain the camera’s original proportions</li>
+<li><strong>3 × 2</strong> for a standard camera format</li>
+<li><strong>4 × 5</strong> for many print and social-media uses</li>
+<li><strong>1 × 1</strong> for a square composition</li>
+<li><strong>16 × 9</strong> for a wide presentation or screen</li>
+</ul>
+<p>Choose the ratio according to how the photograph will be displayed or printed.</p>
+<h3>5. Recompose gently</h3>
+<p>Drag the edges or corners of the crop frame inward.</p>
+<p>Keep the main subject prominent, but avoid cropping so tightly that the photograph feels cramped. For moving subjects, leave some room in front of the direction of travel. This gives the action somewhere to move within the frame.</p>
+<h3>6. Compare before and after</h3>
+<p>Press the backslash key <strong>\\</strong> to compare the edited photograph with the original.</p>
+<p>Ask yourself:</p>
+<ul>
+<li>Is the subject now easier to identify?</li>
+<li>Have unnecessary areas been removed?</li>
+<li>Does the photograph feel better balanced?</li>
+<li>Is there still enough room around the action?</li>
+<li>Has the crop removed anything important?</li>
+</ul>
+<h3>Beginner Warning</h3>
+<p>Cropping closer does not automatically improve a photograph. An overly tight crop can remove context, reduce image quality and leave the subject feeling boxed in.</p>
+<p>Small, deliberate changes usually work better than dramatic crops.</p>
+<h3>Final Check</h3>
+<p>A successful crop should make the subject clearer and the edges of the frame quieter.</p>
+<p>The editing should not be the first thing the viewer notices. Their attention should go directly to the photograph’s main subject.</p>
+<h3>Useful shortcuts</h3>
+<p><strong>R</strong> — Open the Crop tool <strong>X</strong> — Change the crop between horizontal and vertical orientation <strong>\ </strong>— Compare the edited photograph with the original</p>
+<p>The accompanying Lightroom Basics PowerPoint provides a visual before-and-after example and a quick reference version of these steps.</p>
+</div>
+</details>
+</section>
+<a class="button teal" data-category="editing" data-index="resource" data-part="2" data-series="lightroom-basics" data-tags="lightroom,cropping,downloadable-guide,pdf" href="https://warrnamboolcameraclub.zenfolio.com/LR_002_cropping.pdf" id="wcc-resource-2026-009-lightroom-002-guide" style="display:block; width:100%; box-sizing:border-box; text-align:center;" target="_blank">DOWNLOAD THIS WEEK'S GUIDE </a>
+<p><strong>Coming Next Week:</strong> <em>Understanding the Histogram.</em></p>
+<section id="wcc-2026-009-photographers-tips">
+<h2 class="section-title">📸 Photographer's Tips</h2>
+<div class="tips-grid">
+<div class="tip" data-category="photography-tips" data-code="B005" data-index="tip" data-level="beginner" data-tags="camera-holding,stability,sharpness,shutter-technique" id="wcc-tip-b005">
+<h3>🌱 Beginner Tip</h3>
+<strong>Hold Your Camera Steady</strong>
+<p>Even the sharpest lens can't compensate for camera movement.</p>
+<p>Stand with your feet shoulder-width apart, tuck your elbows into your body and gently squeeze the shutter rather than jabbing at it. If you're shooting at slower shutter speeds, lean against a wall, rest the camera on a fence or use a tripod whenever possible.</p>
+<p>Good camera technique costs nothing but can noticeably improve the sharpness of your photographs.</p>
+</div>
+<div class="tip" data-category="photography-tips" data-code="I005" data-index="tip" data-level="intermediate" data-tags="natural-frames,composition,depth,visual-guidance" id="wcc-tip-i005">
+<h3>📷 Intermediate Tip</h3>
+<strong>Use Natural Frames</strong>
+<p>A frame within your photograph can draw attention to your subject and add depth to the image.</p>
+<p>Look for doorways, windows, tree branches, arches or even gaps in foliage that naturally surround your subject. The frame shouldn't overpower the image—it should simply help guide the viewer's eye to what matters most.</p>
+<p>Before taking the shot, ask yourself whether the frame strengthens the story or merely adds clutter.</p>
+</div>
+<div class="tip" data-category="photography-tips" data-code="A005" data-index="tip" data-level="advanced" data-tags="visual-weight,balance,composition,colour,brightness" id="wcc-tip-a005">
+<h3>⭐ Advanced Tip</h3>
+<strong>Balance the Visual Weight</strong>
+<p>Not every photograph needs perfect symmetry, but every strong image needs balance.</p>
+<p>Large, bright or colourful objects naturally attract the eye more than smaller or darker ones. If your main subject sits on one side of the frame, look for another element that subtly balances the composition without competing for attention.</p>
+<p>Understanding visual weight helps create images that feel harmonious and encourages the viewer to spend more time exploring the photograph.</p>
+</div>
+</div>
+</section>
+<section data-category="challenge" data-index="article" data-tags="camera-challenge,natural-frames,composition,depth,visual-guidance" id="wcc-2026-009-challenge-natural-frames">
+<h2 class="section-title">📷 This Week's Camera Challenge</h2>
+<p>Use Natural Frames</p>
+<p>A frame within your photograph can draw attention to your subject and add depth to the image.</p>
+<p>Look for doorways, windows, tree branches, arches or even gaps in foliage that naturally surround your subject. The frame shouldn't overpower the image—it should simply help guide the viewer's eye to what matters most.</p>
+<p>Before taking the shot, ask yourself whether the frame strengthens the story or merely adds clutter.</p>
+</section>
+<section id="wcc-2026-009-members-on-the-move">
+<h2 class="section-title">✈️ Members on the Move</h2>
+<p>Our travelling members are covering some serious distance this week. Bob and Kerrie have safely completed their camping adventure to the Tip of Cape York and are now enjoying the comforts of the caravan again, while Craig and Sharon continue their European adventure before heading to Iceland.</p>
+<p>Open either update below for the latest from the road.</p>
+<details data-category="members-on-the-move" data-index="article" data-locations="cape-york,atherton-tablelands,queensland,northern-territory,alice-springs" data-people="bob-artis,kerrie-artis" data-tags="travel,cape-york,atherton-tablelands,alice-springs,member-travel" id="wcc-2026-009-travel-bob-kerrie"><summary>🇦🇺 Bob &amp; Kerrie Conquer the Tip of Australia</summary>
+<div class="rollup">
+<p>Bob and Kerrie have safely completed their camping adventure to the <strong>Tip of Cape York</strong> and are now enjoying a well-earned break in the beautiful <strong>Atherton Tablelands</strong> before continuing the next leg of their adventure.</p>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin:20px 0;"><img alt="Warrnambool Camera Club photograph" src="/img/s/v-10/p1582623261-6.jpg" style="display:block;width:100% !important;max-width:400px !important;height:auto !important;object-fit:contain;margin:20px auto;border-radius:5px;box-sizing:border-box;"/> <img alt="Warrnambool Camera Club photograph" src="/img/s/v-10/p1582623265-6.jpg" style="display:block;width:100% !important;max-width:400px !important;height:auto !important;object-fit:contain;margin:20px auto;border-radius:5px;box-sizing:border-box;"/></div>
+<p>After spending 18 nights in a tent, they're now back enjoying the comforts of the caravan. As Kerrie put it, <strong>"the caravan is definitely luxury compared to the tent!"</strong> Bob, however, couldn't resist pointing out that the tent may actually have been a little more spacious! 😊</p>
+<p>They're in no particular hurry, planning to meander their way across <strong>Queensland</strong> and the <strong>Northern Territory</strong> over the coming month before arriving in <strong>Alice Springs</strong> in September. Knowing Bob and Kerrie, there will be plenty of spectacular scenery, interesting stories and photographic opportunities discovered along the way.</p>
+<p>Bob also shared one observation from the journey to the Tip. Apparently, tackling <strong>Cape York's rugged tracks</strong> is much easier if your vehicle has three pedals and two gear levers.</p>
+<p>Unfortunately, his four-wheel drive came with considerably more electronics than that, and he admitted to being more than a little envious of another traveller's simpler setup, which seemed to tackle everything with ease.</p>
+<p>Perhaps it's proof that, every now and then, less technology really is more... especially if you're just a little technically challenged! 😊</p>
+<p>Safe travels, Bob and Kerrie. We look forward to following your journey over the coming weeks and, of course, seeing plenty of photographs as you make your way towards Alice Springs.</p>
+</div>
+</details>
+<details data-category="members-on-the-move" data-index="article" data-locations="london,ireland,frankfurt,eltville,iceland" data-people="craig-homberg,sharon-homberg" data-tags="travel,europe,iceland,london,germany,member-travel" id="wcc-2026-009-travel-craig-sharon"><summary>🇪🇺 Craig &amp; Sharon Continue Their European Adventure</summary>
+<div class="rollup">
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin:20px 0;"><img alt="Craig and Sharon in Ireland" src="/img/s/v-10/p1582623262-6.jpg" style="display:block;width:100% !important;max-width:400px !important;height:auto !important;object-fit:contain;margin:20px auto;border-radius:5px;box-sizing:border-box;"/> <img alt="Craig and Sharon London" src="/img/s/v-10/p1582623275-6.jpg" style="display:block;width:100% !important;max-width:500px !important;height:auto !important;object-fit:contain;margin:20px auto;border-radius:5px;box-sizing:border-box;"/></div>
+<p><strong>Craig and Sharon Homberg</strong> are certainly making the most of their overseas adventure.</p>
+<p>So far their travels have taken them through <strong>London, Ireland and Frankfurt</strong>.</p>
+<p>From the bustling streets of London to the picturesque Rhine Valley at Eltville in Germany, their journey has already produced some wonderful memories and, no doubt, plenty of photographs.</p>
+<p>By the time you read this, they'll be back in London for a few days before heading off on the next leg of their adventure to <strong>Iceland</strong>, where we're sure there'll be no shortage of spectacular landscapes to photograph.</p>
+<p>We hope you both continue to enjoy your travels and look forward to seeing your favourite images and hearing a few stories when you return home.</p>
+<div class="feature-card">
+<p><strong>Heading away with your camera?</strong> We'd love to follow your adventure. Send us a photo and a short update, and you might find yourself featured in a future edition of Members on the Move.</p>
+</div>
+</div>
+</details>
+</section>
+<section id="wcc-2026-009-coming-up">
+<h2 class="section-title">📅 What's Coming Up</h2>
+<div class="event" data-category="events" data-event-date="2026-08-03" data-event-status="confirmed" id="wcc-event-2026-08-03-mat-cutting-workshop-summary">
+<div class="event-date">Tonight – Monday, 3 August</div>
+<div><strong>Mat Cutting Workshop</strong><br/>
+7:00 PM onwards at Stan's place</div>
+</div>
+<div class="event" data-category="events" id="wcc-2026-009-event-summary-2026-08-06">
+<div class="event-date">Thursday, 6 August</div>
+<div><strong>Annual General Meeting – 7:00 PM</strong><br/>
+Competition Images Due<br/>
+<strong>Craig Richards – Landscape Photography Presentation – 8:00 PM</strong><span data-category="club-news" data-event-date="2026-08-06" data-event-status="confirmed" data-index="event" data-tags="agm,club-rules,governance,competition" id="wcc-event-2026-08-06-agm" style="display:none"></span><span data-category="education" data-event-date="2026-08-06" data-event-status="confirmed" data-index="event" data-people="craig-richards" data-tags="landscape-photography,guest-speaker,presentation" id="wcc-event-2026-08-06-craig-richards-presentation" style="display:none"></span></div>
+</div>
+<div class="event" data-category="events" data-event-date="2026-08-15" data-event-status="confirmed" data-index="event" data-people="craig-richards" data-tags="landscape-photography,workshop,guest-speaker,photography" id="wcc-event-2026-08-15-craig-richards-workshop">
+<div class="event-date">Saturday, 15 August</div>
+<div><strong>Craig Richards Landscape Photography Workshop</strong></div>
+</div>
+</section>
+<section id="wcc-2026-009-contributions">
+<h2 class="section-title">📬 Contributions Welcome</h2>
+<div class="feature-card navy">
+<p>Have you captured a photograph you're proud of? Returned from a trip? Discovered a great location or learned a new technique?</p>
+<p>The <em>Warrnambool Camera Club Weekly Update</em> is your newsletter, and we'd love to feature more of our members' stories, photographs and experiences.</p>
+<p>If you have something you'd like to share, please let us know.</p>
+</div>
+</section>
+</div>
+<div class="wcc-newsletter-footer"><strong>Warrnambool Camera Club</strong><br/>
+Weekly Update | Issue 009<br/>
+<br/>
+Learn • Create • Share • Inspire</div>
+</div>
+
+<script>
+(function () {
+    function jumpToWeeklyAnchor() {
+        if (!window.location.hash) return;
+
+        var targetId;
+        try {
+            targetId = decodeURIComponent(window.location.hash.substring(1));
+        } catch (e) {
+            targetId = window.location.hash.substring(1);
+        }
+        if (!targetId) return;
+
+        var attempts = 0;
+        var maxAttempts = 40;
+
+        function tryScroll() {
+            var target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({behavior: "auto", block: "start"});
+                return;
+            }
+
+            attempts += 1;
+            if (attempts < maxAttempts) {
+                window.setTimeout(tryScroll, 150);
+            }
+        }
+
+        tryScroll();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
+            window.setTimeout(jumpToWeeklyAnchor, 100);
+        });
+    } else {
+        window.setTimeout(jumpToWeeklyAnchor, 100);
+    }
+
+    window.addEventListener("load", function () {
+        window.setTimeout(jumpToWeeklyAnchor, 200);
+    });
+
+    window.addEventListener("hashchange", function () {
+        window.setTimeout(jumpToWeeklyAnchor, 25);
+    });
+})();
+</script>
+

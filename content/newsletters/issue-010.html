@@ -1,0 +1,878 @@
+<style type="text/css">/* =========================================================
+   WARRNAMBOOL CAMERA CLUB
+   WEEKLY UPDATE - ISSUE 010
+   ========================================================= */
+
+.wcc-weekly {
+    --teal: #176b6b;
+    --dark-teal: #10484d;
+    --navy: #183f70;
+    --red: #b42318;
+    --text: #253238;
+    --muted: #5f7075;
+    --soft-teal: #edf7f6;
+    --soft-red: #fff5f4;
+    --soft-grey: #f5f6f7;
+    --border: #d6e1e1;
+    --white: #ffffff;
+
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--white);
+    color: var(--text) !important;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+}
+
+.wcc-weekly p,
+.wcc-weekly li,
+.wcc-weekly td,
+.wcc-weekly div,
+.wcc-weekly span {
+    color: var(--text);
+}
+
+.wcc-weekly .hero,
+.wcc-weekly .hero *,
+.wcc-weekly .wcc-newsletter-footer,
+.wcc-weekly .wcc-newsletter-footer * {
+    color: white !important;
+}
+
+/* HERO */
+.wcc-weekly .hero {
+    background: linear-gradient(135deg, #10484d, #176b6b);
+    padding: 46px 40px 40px;
+    border-bottom: 7px solid var(--red);
+}
+
+.wcc-weekly .hero-kicker {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+.wcc-weekly .hero h1 {
+    margin: 5px 0;
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+.wcc-weekly .hero h2 {
+    margin: 4px 0 14px;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.wcc-weekly .tagline {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* ISSUE NAVIGATION */
+.wcc-weekly .quick-links {
+    background: var(--soft-teal);
+    padding: 12px 28px;
+    border-bottom: 1px solid var(--border);
+}
+
+.wcc-weekly .quick-links details {
+    border: 0;
+    margin: 0;
+    background: transparent;
+    overflow: visible;
+}
+
+.wcc-weekly .quick-links summary {
+    cursor: pointer;
+    padding: 8px 0;
+    background: transparent;
+    color: var(--dark-teal) !important;
+    font-size: 16px;
+    font-weight: bold;
+    list-style: none;
+}
+
+.wcc-weekly .quick-links summary::-webkit-details-marker {
+    display: none;
+}
+
+.wcc-weekly .quick-links summary:before {
+    content: "+";
+    color: var(--red);
+    font-size: 19px;
+    font-weight: bold;
+    display: inline-block;
+    width: 22px;
+}
+
+.wcc-weekly .quick-links details[open] summary:before {
+    content: "−";
+}
+
+.wcc-weekly .issue-nav-links {
+    padding: 8px 0 12px 22px;
+}
+
+.wcc-weekly .issue-nav-links a {
+    display: inline-block;
+    margin: 5px 18px 5px 0;
+    color: var(--navy) !important;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* MAIN CONTENT */
+.wcc-weekly .content {
+    padding: 32px 36px;
+}
+
+.wcc-weekly section {
+    margin: 0 0 42px;
+}
+
+.wcc-weekly h2.section-title {
+    color: var(--dark-teal) !important;
+    font-size: 28px;
+    line-height: 1.25;
+    margin: 0 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--teal);
+}
+
+.wcc-weekly h3 {
+    color: var(--navy) !important;
+    margin-top: 20px;
+}
+
+.wcc-weekly .lead {
+    font-size: 18px;
+    color: #41555b !important;
+}
+
+/* FEATURE BOXES */
+.wcc-weekly .feature-card {
+    background: var(--soft-teal);
+    border-left: 6px solid var(--teal);
+    padding: 22px 25px;
+    margin: 20px 0;
+    border-radius: 5px;
+    color: var(--text) !important;
+}
+
+.wcc-weekly .feature-card.red {
+    background: var(--soft-red);
+    border-left-color: var(--red);
+}
+
+.wcc-weekly .feature-card.navy {
+    background: #f1f5fa;
+    border-left-color: var(--navy);
+}
+
+.wcc-weekly .feature-card *,
+.wcc-weekly .feature-card p,
+.wcc-weekly .feature-card strong,
+.wcc-weekly .feature-card h3,
+.wcc-weekly .feature-card li {
+    color: var(--text) !important;
+}
+
+/* ROLL UPS */
+.wcc-weekly details {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 18px 0;
+    background: white;
+}
+
+.wcc-weekly summary {
+    cursor: pointer;
+    padding: 16px 20px;
+    background: var(--soft-teal);
+    color: var(--dark-teal) !important;
+    font-weight: bold;
+    list-style: none;
+}
+
+.wcc-weekly summary::-webkit-details-marker {
+    display: none;
+}
+
+.wcc-weekly summary:before {
+    content: "+";
+    color: var(--red);
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    width: 24px;
+}
+
+.wcc-weekly details[open] summary:before {
+    content: "−";
+}
+
+.wcc-weekly .rollup {
+    padding: 22px 24px;
+}
+
+.wcc-weekly .rollup *,
+.wcc-weekly .rollup p,
+.wcc-weekly .rollup li,
+.wcc-weekly .rollup td {
+    color: var(--text) !important;
+}
+
+/* COMMITTEE GRID */
+.wcc-weekly .committee-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 12px;
+}
+
+.wcc-weekly .committee-card {
+    background: var(--soft-grey);
+    border-top: 5px solid var(--teal);
+    padding: 18px;
+    border-radius: 6px;
+}
+
+/* TABLES */
+.wcc-weekly table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+}
+
+.wcc-weekly th {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid var(--teal);
+    color: var(--navy) !important;
+}
+
+.wcc-weekly td {
+    padding: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* TIPS */
+.wcc-weekly .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 16px;
+}
+
+.wcc-weekly .tip {
+    background: var(--soft-grey);
+    border-top: 5px solid var(--teal);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* EVENTS */
+.wcc-weekly .event {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid #e2e6e7;
+}
+
+.wcc-weekly .event-date {
+    color: var(--red) !important;
+    font-weight: bold;
+}
+
+/* BUTTON */
+.wcc-weekly .button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--teal);
+    color: white !important;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* FOOTER */
+.wcc-weekly .wcc-newsletter-footer {
+    background: var(--dark-teal);
+    padding: 32px;
+    text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 760px) {
+    .wcc-weekly .hero { padding: 32px 22px; }
+    .wcc-weekly .hero h1 { font-size: 32px; }
+    .wcc-weekly .hero h2 { font-size: 20px; line-height: 1.45; }
+    .wcc-weekly .content { padding: 24px 18px; }
+    .wcc-weekly h2.section-title { font-size: 25px; }
+    .wcc-weekly .tips-grid,
+    .wcc-weekly .committee-grid { grid-template-columns: 1fr; }
+    .wcc-weekly .event { grid-template-columns: 1fr; gap: 3px; }
+    .wcc-weekly .rollup { padding: 18px; }
+}
+
+/* Reliable deep-link positioning when opened from the Resource Library. */
+.wcc-weekly [id^="wcc-"] {
+    scroll-margin-top: 150px;
+}
+
+</style>
+<div class="wcc-weekly" data-issue="010" data-publication="weekly-update" data-published="2026-08-10" data-url="https://warrnamboolcameraclub.zenfolio.com/weekly-newsletter-010">
+<div class="hero">
+<div class="hero-kicker">Warrnambool Camera Club</div>
+<h1>Weekly Update</h1>
+<h2>Issue 010 | Monday, 10 August 2026</h2>
+<div class="tagline">Learn • Create • Share • Inspire</div>
+</div>
+<div class="quick-links">
+<details class="issue-nav"><summary>In this issue</summary>
+<div class="issue-nav-links"><a href="#wcc-2026-010-editor">From the Editor</a> <a href="#wcc-2026-010-agm">AGM</a> <a href="#wcc-2026-010-committee">Committee</a> <a href="#wcc-2026-010-website-refresh">Website</a> <a href="#wcc-2026-010-craig-richards-presentation">Craig Richards</a> <a href="#wcc-2026-010-world-photography-week">Photography Week</a> <a href="#wcc-2026-010-members-on-the-move">Members on the Move</a> <a href="#wcc-2026-010-long-exposure-005">Long Exposure</a> <a href="#wcc-2026-010-lightroom-003">Editing Corner</a> <a href="#wcc-2026-010-photographers-tips">Tips</a> <a href="#wcc-2026-010-challenge-foreground">Challenge</a> <a href="#wcc-2026-010-coming-up">Coming Up</a></div>
+</details>
+</div>
+<div class="content">
+<section data-category="club-news" data-index="article" data-tags="weekly-update,agm,club-activities,website,member-communication" id="wcc-2026-010-editor">
+<h2 class="section-title">🏡 From the Editor</h2>
+<p class="lead">Welcome to <strong>Issue 010</strong> of the Warrnambool Camera Club Weekly Update.</p>
+<p>Ten issues already! What started as a way of keeping everyone informed about what was happening around the Club has quickly developed into something considerably bigger, and there's certainly no shortage of material to fill it each week.</p>
+<p>Thursday night was a particularly important one for the Club. Around <strong>16 members attended our Annual General Meeting</strong>, where we adopted our updated Club Rules and elected a significantly refreshed Committee, including a new President and four new faces.</p>
+<p>Following the AGM, we welcomed landscape photographer <strong>Craig Richards</strong>, whose presentation was extremely well received by members. A big thank you to Craig for sharing his photography, experiences and knowledge with us.</p>
+<p>And Craig isn't finished with us yet. This <strong>Saturday, 15 August</strong>, he'll be joining members again for a practical landscape photography workshop at Middle Island.</p>
+<p>We've also given the <strong>Club website a substantial refresh</strong>, World Photography Day is approaching, and our calendar is already filling with activities through September and October.</p>
+<p><strong>There's certainly plenty happening around the Club.</strong></p>
+</section>
+<section data-category="club-news" data-index="article" data-tags="agm,club-rules,ai-guidelines,governance,member-vote" id="wcc-2026-010-agm">
+<h2 class="section-title">🏛️ AGM Wrap-Up</h2>
+<h3>A New Chapter for the Club</h3>
+<p>Thank you to everyone who attended our <strong>Annual General Meeting on Thursday night</strong>.</p>
+<p>Around <strong>16 members attended</strong>, which was a great turnout for an important night in the Club calendar.</p>
+<p>One of the major items for consideration was the updated <strong>Warrnambool Camera Club Rules</strong>. These had been circulated beforehand to give members the opportunity to review the proposed changes and provide feedback.</p>
+<p>The revised Rules were <strong>accepted by all members in attendance</strong> and are now available on the Club website.</p>
+<p>Thank you to everyone who took the time to read through the proposed changes, provide feedback and participate in the process. Having a clear and contemporary set of Rules provides a strong foundation for the Club going forward.</p>
+<div class="feature-card navy">
+<h3>A Note About AI</h3>
+<p>It was also confirmed that the Club's <strong>AI guidelines will remain as guidance rather than forming part of the formal Club Rules</strong>.</p>
+<p>This provides members with direction around the appropriate use of AI while giving the Club flexibility to respond as the technology and its use within photography continue to evolve.</p>
+</div>
+</section>
+<section data-category="club-news" data-index="article" data-people="vivian-carter,jason-carter,richard-conway,stan-mccullagh,tania-jacobson,bob-artis,craig-homberg,debbie-iverach,lyn-mcconnell,chandika-lakmal" data-tags="committee,governance,president,club-leadership,agm" id="wcc-2026-010-committee">
+<h2 class="section-title">👥 Meet Your 2026–27 Committee</h2>
+<p>This year's AGM brought a significant refresh to the Club Committee, with <strong>four new faces joining the team</strong>.</p>
+<p>Perhaps the biggest surprise of the evening came with the election of <strong>Vivian Carter as our new President</strong>. It certainly wasn't something most of us saw coming!</p>
+<p>Congratulations Viv, and thank you for putting your hand up to take on the role.</p>
+<p>Viv is joined by three other members who are new to the Committee this year: <strong>Debbie Iverach, Lyn McConnell and Chandika Lakmal</strong>.</p>
+<div class="committee-grid">
+<div class="committee-card"><strong>President</strong><br/>
+Vivian Carter</div>
+<div class="committee-card"><strong>Vice President / Print Steward</strong><br/>
+Jason Carter</div>
+<div class="committee-card"><strong>Secretary</strong><br/>
+Richard Conway</div>
+<div class="committee-card"><strong>Treasurer</strong><br/>
+Stan McCullagh</div>
+<div class="committee-card"><strong>Event Coordinator</strong><br/>
+Tania Jacobson</div>
+<div class="committee-card"><strong>Committee Member</strong><br/>
+Bob Artis</div>
+<div class="committee-card"><strong>Committee Member</strong><br/>
+Craig Homberg</div>
+<div class="committee-card"><strong>Committee Member</strong><br/>
+Debbie Iverach</div>
+<div class="committee-card"><strong>Committee Member</strong><br/>
+Lyn McConnell</div>
+<div class="committee-card"><strong>Committee Member</strong><br/>
+Chandika Lakmal</div>
+</div>
+<p>Another particularly pleasing aspect of the new Committee is its increased female representation.</p>
+<p><strong>Viv, Tania, Debbie and Lyn mean four of our ten committee members are now women</strong>, a considerable change for a Club where historically we have sometimes had only one woman represented on the Committee.</p>
+<p>It's great to see the Committee becoming more representative of our membership while also bringing some new ideas, perspectives and energy into the running of the Club.</p>
+<div class="feature-card">
+<h3>Thank You, Bob</h3>
+<p>A special thank you must go to <strong>Bob Artis</strong>, who has stepped down as President.</p>
+<p>Fortunately, Bob isn't getting away that easily. He remains a Committee member and will continue contributing to the Club once we eventually get him back from his travels around Australia! 😊</p>
+<p>Thank you, Bob, for the time and effort you've put into leading the Club.</p>
+</div>
+<div class="feature-card navy">
+<h3>Thank You, Mark</h3>
+<p>We also sincerely thank <strong>Mark Kirby</strong>, who has stepped down from the Committee this year.</p>
+<p>Much of the work undertaken by committee members happens quietly behind the scenes, so we thank Mark for the time and contribution he has made during his time on the Committee.</p>
+</div>
+</section>
+<section data-category="club-news" data-index="article" data-tags="website,club-rules,member-resources,weekly-newsletter,club-activities" id="wcc-2026-010-website-refresh">
+<h2 class="section-title">🌐 Have You Seen Our Refreshed Website?</h2>
+<p>If you haven't visited the Warrnambool Camera Club website recently, it's worth taking another look.</p>
+<p>Over the past few weeks we've given the site a <strong>significant refresh</strong>, and what started as a bit of updating has turned into something considerably bigger.</p>
+<p>We've been working through the site page by page, updating information, improving the presentation and making it easier for both existing members and people discovering the Club for the first time to find what they're looking for.</p>
+<p>Importantly, the website now better reflects what the Club actually offers today.</p>
+<p>We're much more than competitions and monthly meetings. We now have <strong>guest speakers, workshops, outings, mat cutting nights, our weekly newsletter and an expanding range of activities and learning opportunities for members</strong>.</p>
+<p>The newly adopted <strong>Club Rules</strong> are also now available online following their approval at Thursday night's AGM.</p>
+<p>Like any website, it will continue to evolve as information and activities are added, but we're very pleased with just how much it has changed already.</p>
+<p><strong>So if you haven't visited for a while, have another look. You might be surprised by just how different it is.</strong></p>
+<p><strong>
+<zentobox height="411" preview="/img/s/v-10/p1579956978-6.jpg" width="752"><!--
+{
+  "type": "zf.zentobox.PhotoVideo",
+  "options": {
+    "click": {
+      "action": "0",
+      "newWindow": false,
+      "url": ""
+    },
+    "autoPlay": false,
+    "hoverAction": "0",
+    "hideWatermark": "false",
+    "anchorPoint": 4
+  },
+  "layout": {
+    "imageSize": "-1",
+    "customWidth": "800",
+    "customHeight": "630",
+    "browserScaling": "true",
+    "themeBorder": "true",
+    "fixedAlignment": "false",
+    "alignment": "1",
+    "hSpace": "10",
+    "vSpace": "10"
+  },
+  "content": {
+    "photoSetId": "gal432223651",
+    "ownerId": 440216720,
+    "photoId": "1579956978",
+    "isVideo": false
+  }
+}
+--></zentobox>
+</strong></p>
+<p><a class="button" href="https://warrnamboolcameraclub.zenfolio.com/">VISIT OUR WEBSITE →</a></p>
+<p> </p>
+<p> </p>
+<div class="feature-card red"><strong>Something Missing?</strong>
+<p>If you find something that's out of date, a link that doesn't work, or something you think would be useful to add, please let us know.</p>
+</div>
+</section>
+<section data-category="education" data-index="article" data-people="craig-richards" data-tags="landscape-photography,guest-speaker,presentation,workshop,middle-island" id="wcc-2026-010-craig-richards-presentation">
+<h2 class="section-title">🌄 A Great Night with Craig Richards</h2>
+<p>Following the AGM, we were delighted to welcome <strong>Craig Richards</strong> for his presentation on landscape photography.</p>
+<p>Craig's talk was <strong>extremely well received</strong>, with plenty of positive feedback from members afterwards.</p>
+<p>A big thank you to Craig for generously giving his time and sharing his photography, experiences and knowledge with us.</p>
+<p>We're hoping to bring you more from Craig in future editions of the Weekly Update.</p>
+<div class="feature-card" data-category="events" data-event-date="2026-08-15" data-event-status="confirmed" data-index="event" data-locations="middle-island,warrnambool,the-liebig,warrnambool" data-people="craig-richards" data-tags="landscape-photography,workshop,middle-island,guest-speaker,photography" id="wcc-event-2026-08-15-craig-richards-middle-island">
+<h3>📷 Craig's Workshop This Saturday</h3>
+<p>Craig will join members again this <strong>Saturday, 15 August</strong>, for our practical landscape photography workshop at <strong>Middle Island</strong>.</p>
+<p>It will be a great opportunity to get the cameras out, spend some time photographing alongside Craig and put some of the ideas from Thursday night's presentation into practice.</p>
+<p><strong>Meet at Middle Island at 4:00 PM on Saturday and later at The Liebig from 7:00 PM.</strong></p>
+</div>
+</section>
+<section data-category="feature" data-index="article" data-tags="world-photography-week,world-photography-day,photography,creativity,photographic-practice" id="wcc-2026-010-world-photography-week">
+<h2 class="section-title">🌏 World Photography Week is Almost Here</h2>
+<p>August provides photographers with an extra reason to get their cameras out, with <strong>World Photography Week running from 12–26 August</strong> and <strong>World Photography Day falling right in the middle on Wednesday, 19 August</strong>.</p>
+<p>Rather than thinking of it as simply one day on the calendar, World Photography Week gives us an opportunity to celebrate photography in all its forms and, perhaps more importantly, to actually get out and make some photographs.</p>
+<p>Whether you photograph landscapes, wildlife, sport, people, architecture, street scenes or simply everyday life, photography gives us a remarkable way of recording the world around us and sharing how we see it with others.</p>
+<div class="feature-card navy">
+<h3>📷 How About a Photograph During Photography Week?</h3>
+<p>We're encouraging members to make a point of getting their cameras out sometime during World Photography Week.</p>
+<p>It doesn't need to involve travelling somewhere spectacular. Photograph something around Warrnambool, go for a walk with your camera, try a technique you've been meaning to practise or simply photograph something that catches your eye.</p>
+<p>The important part is to <strong>make a photograph rather than simply scroll through old ones</strong>.</p>
+</div>
+<div class="feature-card red">
+<h3>🌎 World Photography Day – 19 August</h3>
+<p>World Photography Day falls on <strong>Wednesday, 19 August</strong>, just two days after our next Weekly Update.</p>
+<p>Next week's newsletter will take a closer look at <strong>why 19 August became World Photography Day</strong>, some of the history behind it and, most importantly, give you a little challenge for the day itself.</p>
+<p><strong>Save the date: Wednesday, 19 August.</strong></p>
+</div>
+</section>
+<section id="wcc-2026-010-members-on-the-move">
+<h2 class="section-title">✈️ Members on the Move</h2>
+<details data-category="members-on-the-move" data-index="article" data-locations="grundarfjordur,iceland,london,ireland,germany" data-people="craig-homberg,sharon-homberg" data-tags="travel,iceland,grundarfjordur,member-travel,photography" id="wcc-2026-010-travel-craig-sharon" open=""><summary>🇮🇸 Craig &amp; Sharon Reach Iceland</summary>
+<div class="rollup">
+<p>Craig and Sharon Homberg's European adventure has now taken them to <strong>Grundarfjörður in Iceland</strong>, following their travels through London, Ireland and Germany.</p>
+<p>Craig reports that Iceland hasn't exactly been making life easy for the photographer.</p>
+<p>Their first few days brought plenty of <strong>rain, cloud and constant strong winds</strong>, although fortunately the weather was finally beginning to improve when Craig sent through his latest update.</p>
+<p>He did manage to get the camera out and capture a couple of photographs, telling us he needed some <strong>"pictorial evidence I had been here."</strong> 😁</p>
+<p>Craig and Sharon were heading to a music festival next, so hopefully the improving conditions continue and we'll have more photographs from Iceland as their adventure unfolds.</p>
+<p>
+<zentobox height="271" preview="/img/s/v-10/p1579956964-6.jpg" width="362"><!--
+{
+  "type": "zf.zentobox.PhotoVideo",
+  "content": {
+    "ownerId": 440216720,
+    "photoSetId": "gal432223651",
+    "photoId": "1579956964",
+    "isVideo": false
+  },
+  "options": {
+    "click": {
+      "action": "0",
+      "newWindow": false,
+      "url": ""
+    },
+    "autoPlay": false,
+    "hoverAction": "0",
+    "hideWatermark": "false",
+    "anchorPoint": 4
+  },
+  "layout": {
+    "imageSize": "-1",
+    "customWidth": "800",
+    "customHeight": "630",
+    "browserScaling": "true",
+    "themeBorder": "true",
+    "fixedAlignment": "false",
+    "alignment": "1",
+    "hSpace": "10",
+    "vSpace": "10"
+  }
+}
+--></zentobox>
+<zentobox height="267" preview="/img/s/v-10/p1579960302-6.jpg" width="382"><!--
+{
+  "type": "zf.zentobox.PhotoVideo",
+  "options": {
+    "click": {
+      "action": "0",
+      "newWindow": false,
+      "url": ""
+    },
+    "autoPlay": false,
+    "hoverAction": "0",
+    "hideWatermark": "false",
+    "anchorPoint": 4
+  },
+  "layout": {
+    "imageSize": "-1",
+    "customWidth": "800",
+    "customHeight": "630",
+    "browserScaling": "true",
+    "themeBorder": "true",
+    "fixedAlignment": "false",
+    "alignment": "1",
+    "hSpace": "10",
+    "vSpace": "10"
+  },
+  "content": {
+    "photoSetId": "gal432223651",
+    "ownerId": 440216720,
+    "photoId": "1579960302",
+    "isVideo": false
+  }
+}
+--></zentobox>
+</p>
+</div>
+</details>
+<details data-category="members-on-the-move" data-index="article" data-locations="lightning-ridge,atherton-tablelands,cape-york,karumba,alice-springs" data-people="bob-artis,kerrie-artis" data-tags="travel,karumba,cape-york,alice-springs,member-travel" id="wcc-2026-010-travel-bob-kerrie" open=""><summary>🇦🇺 Bob &amp; Kerrie Keep Moving</summary>
+<div class="rollup">
+<p>Meanwhile, Bob and Kerrie's Australian adventure continues.</p>
+<p>After leaving Warrnambool, travelling through <strong>Lightning Ridge</strong> and making their way north to the <strong>Atherton Tablelands</strong>, they left the caravan behind and headed all the way to the <strong>Tip of Cape York</strong>.</p>
+<p>After <strong>18 nights in a tent</strong>, they returned to Atherton and were reunited with the caravan.</p>
+<p>Kerrie's verdict? <strong>The caravan was definitely luxury compared with the tent!</strong> 😊</p>
+<p>Bob, meanwhile, couldn't resist pointing out that the tent may actually have been a little more spacious.</p>
+<p>The journey to the Tip also left Bob contemplating whether all the technology in a modern four-wheel drive is necessarily a good thing. Apparently, watching another traveller tackle the conditions with <strong>three pedals and two gear levers</strong> was enough to make Bob just a little envious!</p>
+<p>They're now back with the caravan and making their way towards <strong>Karumba on the Gulf of Carpentaria</strong>.</p>
+<p>I may have had a little influence on that destination after suggesting they find some fish and chips, sit beside the Gulf and enjoy the unusual Queensland experience of watching the <strong>sun set over the water</strong>.</p>
+<p>Naturally, photographic evidence will be required. 📷🌅</p>
+<p>From Karumba they'll continue their journey towards <strong>Alice Springs</strong>, where they're heading for the Australian Native Plants Society's biennial conference later this month.</p>
+<p>Safe travels, Bob and Kerrie. We're waiting for that Karumba sunset!</p>
+</div>
+</details>
+</section>
+<section data-category="education" data-index="article" data-part="5" data-people="ian-van-der-wolde" data-series="mastering-long-exposure-photography" data-tags="long-exposure,nd-filters,filters,shutter-speed,landscape,light-leaks" id="wcc-2026-010-long-exposure-005">
+<h2 class="section-title">📷 Convention Corner</h2>
+<h3>Mastering Long Exposure Photography</h3>
+<h3>Part 5: Neutral Density Filters – Unlocking the Magic of Long Exposure</h3>
+<p><em>"An ND filter doesn't make you a better photographer. It simply gives you the creative freedom to use shutter speeds that would otherwise be impossible."</em></p>
+<p><strong>– Inspired by Ian van der Wolde's VAPS Convention presentation</strong></p>
+<p>By now we've explored why photographers are drawn to long exposure photography and the importance of a stable tripod. The next piece of the puzzle is understanding the tool that makes many of those beautiful daytime long exposures possible – the <strong>Neutral Density (ND) filter</strong>.</p>
+<p>If you've ever wondered how photographers create silky waterfalls, mist-like waves or clouds stretched across the sky in the middle of the day, the answer is usually an ND filter.</p>
+<details><summary>Read Part 5: Neutral Density Filters</summary>
+<div class="rollup">
+<h3>What is an ND Filter?</h3>
+<p>Think of an ND filter as a pair of sunglasses for your camera.</p>
+<p>It reduces the amount of light entering the lens without changing the colour of the scene. With less light reaching the camera sensor, you can use a much slower shutter speed while maintaining the correct exposure.</p>
+<p>For example, without an ND filter on a sunny day your camera might suggest ISO 100, f/11 and 1/125 second. Add a <strong>10-stop ND filter</strong>, and that same exposure becomes approximately ISO 100, f/11 and 8 seconds.</p>
+<p>Nothing else has changed except the shutter speed, and that changes the appearance of movement completely.</p>
+<h3>Why Use One?</h3>
+<p>The real purpose of an ND filter isn't simply to make longer exposures. It's to control how movement is recorded.</p>
+<p>Moving water becomes smooth. Waves merge into mist. Clouds stretch across the sky. Crowds disappear from busy streets. Even rough seas can take on a calm, peaceful appearance.</p>
+<p>Ian demonstrated this beautifully during his presentation, showing how a chaotic coastal scene filled with birds and choppy water was transformed into a quiet, minimalist landscape simply by extending the exposure.</p>
+<h3>Choosing Your First ND Filter</h3>
+<table>
+<tbody>
+<tr>
+<th>Filter</th>
+<th>Reduces Light By</th>
+<th>Typical Use</th>
+</tr>
+<tr>
+<td><strong>3 Stop (ND8)</strong></td>
+<td>3 stops</td>
+<td>Softening waterfalls, rivers and moving water in overcast conditions.</td>
+</tr>
+<tr>
+<td><strong>6 Stop (ND64)</strong></td>
+<td>6 stops</td>
+<td>A versatile choice for waterfalls, beaches and coastal photography.</td>
+</tr>
+<tr>
+<td><strong>10 Stop (ND1000)</strong></td>
+<td>10 stops</td>
+<td>The classic choice for dramatic long exposures during daylight.</td>
+</tr>
+<tr>
+<td><strong>15 Stop</strong></td>
+<td>15 stops</td>
+<td>Extremely long exposures, often several minutes in bright daylight.</td>
+</tr>
+</tbody>
+</table>
+<p>For most photographers starting out, Ian suggested that a <strong>10-stop ND filter</strong> provides the greatest creative flexibility.</p>
+<h3>Screw-In or Square Filters?</h3>
+<p><strong>Screw-In Filters</strong> are compact, affordable and quick to use, though you may need step-up rings or multiple sizes.</p>
+<p><strong>Square Filter Systems</strong> can be used across multiple lenses and make it easier to combine filters, though they are bulkier and more expensive.</p>
+<p>Ian mentioned that if using screw-in filters, it often makes sense to buy the filter size that fits your <strong>largest lens</strong> and then use inexpensive <strong>step-up rings</strong> for smaller lenses.</p>
+<h3>Filter Quality Matters</h3>
+<p>One of Ian's strongest pieces of advice was not to compromise on filter quality.</p>
+<p>Inferior filters can reduce sharpness, create colour casts or introduce unwanted reflections. While quality filters cost more initially, they are a long-term investment that can last for many years.</p>
+<h3>Don't Forget About Light Leaks</h3>
+<p>Long exposures reveal problems that normal photography often hides.</p>
+<p>Even tiny amounts of light entering around a filter holder can fog part of an image during a multi-minute exposure. Ian also reminded DSLR users to cover the rear viewfinder during long exposures, as light entering through the viewfinder can affect the final image.</p>
+<h3>Remember… Filters Don't Create Great Photographs</h3>
+<p>A long exposure should serve the image, not become the subject of the image.</p>
+<p>Sometimes a two-second exposure is perfect. Sometimes thirty seconds works better. Occasionally no ND filter is required at all.</p>
+<p>The photographer's job is to decide what best tells the story of the scene.</p>
+<div class="feature-card"><strong>Try It This Week</strong>
+<p>If you own an ND filter, visit a local beach, river or waterfall and photograph the same composition using several different shutter speeds.</p>
+<p>Try approximately 1 second, 5 seconds, 15 seconds and 30 seconds.</p>
+<p>Compare the images and ask yourself which exposure best suits the scene, when the water becomes too smooth, and whether the longer exposure improves the photograph or simply makes it different.</p>
+<p>If you don't yet own an ND filter, head out just before sunrise, after sunset or on an overcast day and experiment with naturally slower shutter speeds.</p>
+</div>
+<h3>Ian's Field Kit</h3>
+<ul>
+<li>Quality ND filters</li>
+<li>Step-up rings to fit multiple lenses</li>
+<li>Light-tight filter holder</li>
+<li>Remote release</li>
+<li>Lens cloth</li>
+</ul>
+<p><strong>Practical Tip:</strong> Buy one quality filter rather than several cheap ones. A good ND filter can serve you for many years and across multiple camera systems.</p>
+</div>
+</details>
+<p><strong>Coming Next:</strong> Next week we'll return to Kim Wormald's Ethical Bird Photography series for Part 5.</p>
+</section>
+<section data-category="editing" data-index="article" data-part="3" data-series="lightroom-basics" data-tags="lightroom,histogram,exposure,clipping,highlights,shadows" id="wcc-2026-010-lightroom-003">
+<h2 class="section-title">💻 Editing Corner</h2>
+<h3>Lightroom Basics — Part 3</h3>
+<h3>Understanding the Histogram</h3>
+<p>The histogram can look complicated when you first open Lightroom, but it is actually a very useful visual guide. It shows how the tones in your photograph are distributed, from the darkest areas through to the brightest.</p>
+<p>The important thing to remember is that <strong>there is no single “correct” histogram shape</strong>.</p>
+<details><summary>Read Understanding the Histogram</summary>
+<div class="rollup">
+<h3>How to Read the Histogram</h3>
+<p><strong>Left side</strong> = blacks and shadows<br/>
+<strong>Middle</strong> = midtones<br/>
+<strong>Right side</strong> = highlights and whites</p>
+<p>The height of the graph simply tells you how many pixels fall into each tonal range.</p>
+<h3>A Simple Lightroom Process</h3>
+<p><strong>1. Look at the photograph first</strong><br/>
+Ask whether the photograph appears too dark, too bright, or reasonably balanced. The histogram should help confirm what you are seeing rather than replace your judgement.</p>
+<p><strong>2. Read the histogram from left to right</strong><br/>
+If most of the graph is toward the left, the photograph contains a lot of darker tones. If most of it is toward the right, the photograph contains a lot of brighter tones.</p>
+<p><strong>3. Pay attention to the edges</strong><br/>
+The areas to watch most carefully are the extreme left and extreme right. Lightroom provides clipping indicators at the top corners of the histogram.</p>
+<p><strong>4. Turn on the clipping warning</strong><br/>
+Press <strong>J</strong> to show or hide the shadow and highlight clipping warnings. Blue indicates clipped shadows and red indicates clipped highlights.</p>
+<p><strong>5. Make your tonal adjustments</strong><br/>
+Use Exposure, Highlights, Shadows, Whites and Blacks while watching both the photograph and the histogram.</p>
+<h3>Don't Try to Make a Perfect Mountain</h3>
+<p>A common beginner mistake is trying to make every histogram evenly spread across the whole graph.</p>
+<p><strong>The histogram describes the photograph; it does not score it.</strong></p>
+<h3>When Clipping Can Be Okay</h3>
+<p>A photograph containing the sun, a bright reflection, or a completely black background may legitimately contain some areas with no recoverable detail.</p>
+<p>The question is whether <strong>important</strong> detail has been lost.</p>
+<h3>Final Check</h3>
+<ul>
+<li>Does the photograph look correctly exposed?</li>
+<li>Can I see detail where I expect to see it?</li>
+<li>Have important highlights become pure white?</li>
+<li>Have important shadows become completely black?</li>
+<li>Does the tonal range suit the scene?</li>
+</ul>
+<p><strong>Useful shortcut:</strong> <strong>J</strong> — Show or hide the shadow and highlight clipping warnings.</p>
+<p>Although we're demonstrating these techniques using <strong>Adobe Lightroom</strong>, the principles apply to many other photo-editing programs.</p>
+</div>
+</details>
+<a class="button teal" data-category="editing" data-index="resource" data-part="3" data-series="lightroom-basics" data-tags="lightroom,histogram,downloadable-guide,pdf" href="https://warrnamboolcameraclub.zenfolio.com/LR_003_histogram.pdf" id="wcc-resource-2026-010-lightroom-003-guide" style="display:block; width:100%; box-sizing:border-box; text-align:center;" target="_blank">
+   DOWNLOAD THIS WEEK'S GUIDE
+</a>
+<br/>
+</section>
+<section id="wcc-2026-010-photographers-tips">
+<h2 class="section-title">📸 Photographer's Tips</h2>
+<div class="tips-grid">
+<div class="tip" data-category="photography-tips" data-code="B006" data-index="tip" data-level="beginner" data-tags="shutter-speed,motion-blur,sharpness,camera-basics" id="wcc-tip-b006">
+<h3>🌱 Beginner Tip</h3>
+<strong>Check Your Shutter Speed</strong>
+<p>A photograph can be perfectly focused and still look soft if your shutter speed is too slow.</p>
+<p>As a simple exercise, photograph the same moving subject at several shutter speeds and compare the results.</p>
+</div>
+<div class="tip" data-category="photography-tips" data-code="I006" data-index="tip" data-level="intermediate" data-tags="negative-space,composition,subject-placement,simplicity" id="wcc-tip-i006">
+<h3>📷 Intermediate Tip</h3>
+<strong>Use Negative Space</strong>
+<p>Sometimes giving your subject <strong>more</strong> empty space can make it stronger.</p>
+<p>Try placing a small subject away from the centre of the frame and allowing the empty space to become part of the composition.</p>
+</div>
+<div class="tip" data-category="photography-tips" data-code="A006" data-index="tip" data-level="advanced" data-tags="brightness,visual-attention,composition,tonal-control" id="wcc-tip-a006">
+<h3>⭐ Advanced Tip</h3>
+<strong>Watch Where the Brightest Area Falls</strong>
+<p>The viewer's eye is naturally attracted to bright areas, particularly when they contrast strongly with their surroundings.</p>
+<p>Controlling brightness isn't simply about exposure. It's also about controlling <strong>where the viewer looks</strong>.</p>
+</div>
+</div>
+</section>
+<section data-category="challenge" data-index="article" data-tags="camera-challenge,foreground,landscape,composition,depth" id="wcc-2026-010-challenge-foreground">
+<h2 class="section-title">📷 This Week's Camera Challenge</h2>
+<h3>Find the Foreground</h3>
+<p>This week, when you're photographing a landscape, don't just concentrate on what's happening in the distance. Look at what's immediately in front of you.</p>
+<p>Find something that can become part of the composition, such as a rock, plant, pathway, fence, puddle, piece of driftwood or interesting texture, and use it to help lead the viewer into the photograph.</p>
+<div class="feature-card">
+<p><strong>Try taking two versions of the same scene:</strong></p>
+<ul>
+<li>One without anything significant in the foreground.</li>
+<li>One where you've deliberately incorporated a foreground element.</li>
+</ul>
+<p><strong>The challenge:</strong> Create a landscape where the foreground is an important part of the composition rather than something you happened to include.</p>
+<p>📸 <strong>Bonus challenge:</strong> If you're joining Craig's workshop at Middle Island on Saturday, it's the perfect opportunity to give this one a try.</p>
+</div>
+</section>
+<section id="wcc-2026-010-on-the-horizon">
+<h2 class="section-title">🔭 On the Horizon</h2>
+<p>August might already be busy, but there's plenty more happening over the next couple of months.</p>
+<div class="feature-card navy">
+<h3>September</h3>
+<p>Our September program includes competition judging with <strong>Johanna Botman</strong>, along with a <strong>Flash Trigger Workshop on Thursday, 24 September</strong>.</p>
+<p>The <strong>Warrnambool Marathon</strong> later in September should also provide plenty of photographic opportunities as the Club are again official photographers of the event.</p>
+</div>
+<div class="feature-card red">
+<h3>October</h3>
+<p>Looking further ahead, we're exploring a possible <strong>Club outing to Werribee Open Range Zoo</strong>.</p>
+<p>October also brings the <strong>Warrnambool Show Photography Competition</strong>, where Warrnambool Camera Club once again plays an important role by providing the <strong>Print Stewards</strong>.</p>
+<p>We'll have much more about all of these activities as they get closer.</p>
+</div>
+</section>
+<section id="wcc-2026-010-coming-up">
+<h2 class="section-title">📅 Coming Up</h2>
+<div class="event" data-category="feature" data-event-status="confirmed" id="wcc-event-2026-08-12-world-photography-week">
+<div class="event-date">12–26 August</div>
+<div><strong>📷 World Photography Week</strong></div>
+</div>
+<div class="event" data-category="events" data-event-date="2026-08-15" data-event-status="confirmed" id="wcc-event-2026-08-15-craig-richards-workshop-summary">
+<div class="event-date">Saturday, 15 August</div>
+<div><strong>🌄 Craig Richards Landscape Photography Workshop</strong><br/>
+Middle Island</div>
+</div>
+<div class="event" data-category="feature" data-event-date="2026-08-19" data-event-status="confirmed" data-index="event" data-tags="world-photography-day,photography,photography-history" id="wcc-event-2026-08-19-world-photography-day">
+<div class="event-date">Wednesday, 19 August</div>
+<div><strong>🌏 World Photography Day</strong></div>
+</div>
+<div class="event" data-category="competition" data-event-status="confirmed" data-index="event" data-people="johanna-botman" data-tags="competition,judging,johanna-botman,september" id="wcc-event-2026-09-judging-johanna-botman">
+<div class="event-date">September</div>
+<div><strong>🏆 Competition judging with Johanna Botman</strong></div>
+</div>
+<div class="event" data-category="community" data-event-date="2026-09-19" data-event-status="confirmed" data-index="event" data-locations="warrnambool" data-tags="warrnambool-marathon,community,official-photographers,photography" id="wcc-event-2026-09-19-warrnambool-marathon">
+<div class="event-date">19–20 September</div>
+<div><strong>🏃 Warrnambool Marathon</strong></div>
+</div>
+<div class="event" data-category="events" data-event-date="2026-09-24" data-event-status="confirmed" data-index="event" data-tags="flash,flash-triggers,off-camera-flash,workshop" id="wcc-event-2026-09-24-flash-trigger-workshop">
+<div class="event-date">Thursday, 24 September</div>
+<div><strong>⚡ Flash Trigger Workshop</strong></div>
+</div>
+<div class="event" data-category="events" data-event-status="planning" data-index="event" data-locations="werribee-open-range-zoo" data-tags="outing,werribee-open-range-zoo,wildlife,photography,club-outing" id="wcc-event-2026-10-werribee-zoo-planning">
+<div class="event-date">October</div>
+<div><strong>🦁 Potential Werribee Open Range Zoo outing</strong><br/>
+<em>Details to be confirmed</em></div>
+</div>
+<div class="event" data-category="competition" data-event-status="confirmed" data-index="event" data-locations="warrnambool" data-tags="warrnambool-show,photography-competition,print-stewards,competition" id="wcc-event-2026-10-warrnambool-show-photography">
+<div class="event-date">October</div>
+<div><strong>🎡 Warrnambool Show Photography Competition</strong><br/>
+<em>Warrnambool Camera Club providing the Print Stewards</em></div>
+</div>
+</section>
+<section>
+<div class="feature-card navy">
+<h3>📬 Have Something for the Weekly Update?</h3>
+<p>Have you been somewhere interesting with your camera? Captured an image you're particularly proud of? Won an award? Discovered a great photographic location? Learned something useful that other members might appreciate?</p>
+<p>Send it through.</p>
+<p>And judging by <strong>Members on the Move</strong>, if you're heading away on holidays, we'd love a photograph and a few words from your travels too.</p>
+<p>The Weekly Update is about more than telling members what's happening. It's also an opportunity to share what <strong>our members are doing, photographing and learning</strong>.</p>
+</div>
+</section>
+<section>
+<h2 class="section-title">Until Next Week</h2>
+<p>Until next week, enjoy your photography and have fun behind the camera.</p>
+<p><strong>Stan McCullagh</strong><br/>
+Treasurer / Newsletter Editor</p>
+</section>
+</div>
+<div class="wcc-newsletter-footer"><strong>Warrnambool Camera Club</strong><br/>
+Weekly Update | Issue 010<br/>
+<br/>
+Learn • Create • Share • Inspire</div>
+</div>
+
+<script>
+(function () {
+    function jumpToWeeklyAnchor() {
+        if (!window.location.hash) return;
+
+        var targetId;
+        try {
+            targetId = decodeURIComponent(window.location.hash.substring(1));
+        } catch (e) {
+            targetId = window.location.hash.substring(1);
+        }
+        if (!targetId) return;
+
+        var attempts = 0;
+        var maxAttempts = 40;
+
+        function tryScroll() {
+            var target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({behavior: "auto", block: "start"});
+                return;
+            }
+
+            attempts += 1;
+            if (attempts < maxAttempts) {
+                window.setTimeout(tryScroll, 150);
+            }
+        }
+
+        tryScroll();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
+            window.setTimeout(jumpToWeeklyAnchor, 100);
+        });
+    } else {
+        window.setTimeout(jumpToWeeklyAnchor, 100);
+    }
+
+    window.addEventListener("load", function () {
+        window.setTimeout(jumpToWeeklyAnchor, 200);
+    });
+
+    window.addEventListener("hashchange", function () {
+        window.setTimeout(jumpToWeeklyAnchor, 25);
+    });
+})();
+</script>
+
