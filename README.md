@@ -6,9 +6,9 @@ The canonical Weekly Update HTML files are the source of truth. The Resource Lib
 
 ## Current phase
 
-This initial repository package establishes the agreed architecture and provides source validation against Issues 001–012.
+Phase 2 is implemented: the repository now validates, normalises and generates the complete static Resource Library from Issues 001–012.
 
-GitHub Pages deployment is **not enabled yet**. The next implementation phase is the production parser/normaliser and renderer. Pages deployment should only be enabled after the generated catalogue has been reconciled against the current 172-record baseline.
+The production generator has been reconciled against all **172 baseline record identities**. GitHub Pages deployment is still **not enabled**; the GitHub Action builds `_site/`, runs the test suite and uploads the generated site as a preview artifact for review before publication.
 
 ## Source of truth
 
@@ -51,10 +51,10 @@ baseline/
   current-resource-library-index.html
   public-url-map.json
 
-templates/            Future generated-page templates
-assets/               Future generated-site CSS/JavaScript
+templates/            Generated-page templates
+assets/               Resource Library CSS/JavaScript
 scripts/              Validation/build entry points
-wcc_library/          Python parser/validator/generator modules
+wcc_library/          Python parser/validator/normaliser/renderer modules
 tests/                Automated tests
 .github/workflows/    GitHub Actions workflow
 
@@ -69,7 +69,15 @@ Install dependencies:
 python -m pip install -r requirements.txt
 ```
 
-Run validation:
+Build the complete static site:
+
+```bash
+python scripts/build_library.py
+```
+
+The generated site is written to `_site/`.
+
+Run source validation only:
 
 ```bash
 python scripts/validate_sources.py

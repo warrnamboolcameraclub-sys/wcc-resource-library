@@ -26,29 +26,38 @@ The baseline Resource Library is reference material for reconciliation and front
 
 ## Current repository state
 
-The repository contains:
+Phase 2 is complete. The repository contains:
 
 - canonical newsletter HTML
 - metadata standards and audits
-- agreed repository architecture
 - controlled validation configuration
-- a first-pass source parser/validator
-- automated source-validation tests
-- a GitHub Actions validation workflow
+- production parser, validator, normaliser and renderer
+- generated `library.json` logic
+- generated searchable Resource Library logic
+- automatic latest-12 edition navigation
+- generated `latest.html` and `previous.html`
+- direct resource-download preservation
+- deep-link resolution
+- build reports
+- automated reconciliation and generation tests
+- a GitHub Actions build workflow that uploads a preview artifact
 
-GitHub Pages deployment is intentionally not active in this initial package.
+GitHub Pages deployment is intentionally not active yet.
 
-## Next implementation phase
+## Current build
 
-Build the production normalisation and generation pipeline:
+Run:
 
-1. parse and normalise all indexed records
-2. resolve catalogue titles and visible deep-link anchors deterministically
-3. reconcile generated records against the 172-record baseline
-4. generate `library.json`
-5. generate the searchable Resource Library
-6. generate `latest.html` and `previous.html`
-7. generate a build report
-8. add GitHub Pages artifact deployment only after validation passes
+```bash
+python scripts/build_library.py
+```
+
+The complete disposable site is generated under `_site/`. The current migration set produces **172 catalogue records with zero blocking validation errors**.
+
+## Next phase
+
+Review the generated preview site, then add GitHub Pages deployment for `_site/`. After that, the normal weekly operation becomes:
+
+**Publish newsletter -> commit canonical HTML -> automation validates, rebuilds and publishes.**
 
 Do not create a second manually maintained article database.

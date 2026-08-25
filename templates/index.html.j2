@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ site_title }}</title>
+<meta name="description" content="Search the Warrnambool Camera Club Photography Resource Library across all indexed Weekly Updates.">
+<link rel="stylesheet" href="assets/library.css">
+</head>
+<body>
+<div class="wcc-library">
+<header class="hero">
+<div class="hero-kicker">Warrnambool Camera Club</div>
+<h1>Photography Resource Library</h1>
+<p>Search every indexed Weekly Update by topic, series, skill level, issue, event, photographer or location.</p>
+<div class="hero-tools">
+<span class="coverage">Complete archive indexed: {{ coverage }}</span>
+<div class="edition-jump">
+<label for="editionSelect">Browse Latest 12 Weekly Editions</label>
+<div class="edition-jump-row">
+<select id="editionSelect">
+<option value="">Choose an edition…</option>
+{% for item in recent_issues %}<option value="{{ item.public_url }}">Issue {{ item.issue }} · {{ display_date(item.published) }}</option>{% endfor %}
+</select>
+<button id="editionGoBtn" type="button">Go</button>
+</div>
+</div>
+</div>
+</header>
+
+<main class="content">
+<section class="stats" aria-label="Library statistics">
+<div class="stat"><strong id="statRecords">—</strong><span>Indexed items</span></div>
+<div class="stat"><strong id="statLearning">—</strong><span>Learning resources</span></div>
+<div class="stat"><strong id="statTips">—</strong><span>Photographer's tips</span></div>
+<div class="stat"><strong id="statIssues">—</strong><span>Weekly issues indexed</span></div>
+</section>
+
+<section>
+<h2 class="section-title">Browse Our Learning Series</h2>
+<div class="series-strip" id="seriesStrip"></div>
+</section>
+
+<section class="search-panel" id="librarySearch">
+<div class="search-grid">
+<input class="search-box" id="searchBox" type="search" placeholder="Search: birds, Lightroom, CAT judging, Karumba, ND filters…" aria-label="Search the Resource Library">
+<select id="categoryFilter"><option value="">All categories</option></select>
+<select id="seriesFilter"><option value="">All series</option></select>
+<select id="levelFilter"><option value="">All skill levels</option><option value="beginner">Beginner</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option></select>
+<select id="issueFilter"><option value="">All issues</option></select>
+<select id="typeFilter"><option value="">All item types</option><option value="article">Articles</option><option value="tip">Tips</option><option value="event">Events</option><option value="resource">Downloads</option></select>
+<button class="clear-btn" id="clearBtn" type="button">Clear</button>
+</div>
+<div class="quick-filters" id="quickFilters">
+<button class="active" data-quick="">Everything</button>
+<button data-quick="learning">Learning &amp; Tips</button>
+<button data-quick="club">Club &amp; Community</button>
+<button data-quick="events">Events</button>
+<button data-quick="travel">Members on the Move</button>
+<button data-quick="downloads">Downloads</button>
+</div>
+</section>
+
+<div class="results-head"><h2>Browse the Library</h2><div class="result-count" id="resultCount">Loading…</div></div>
+<section class="cards" id="cards"></section>
+<div class="empty" id="emptyState">No indexed items match those filters.</div>
+<noscript><div class="noscript">JavaScript is required for Resource Library search and filtering.</div></noscript>
+
+<div class="note"><strong>Archive complete:</strong> <span id="archiveNote">the indexed Weekly Updates are live-linked.</span> Search results open directly in the relevant newsletter, while downloadable resources retain their direct file links.</div>
+</main>
+
+<button class="return-search" id="returnSearchBtn" type="button">🔎 Search &amp; Filters ↑</button>
+<footer class="wcc-newsletter-footer"><strong>Warrnambool Camera Club</strong><br>Photography Resource Library · <span id="footerCoverage">archive indexed</span></footer>
+</div>
+<script src="assets/library.js" defer></script>
+</body>
+</html>

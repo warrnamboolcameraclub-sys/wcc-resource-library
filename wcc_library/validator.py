@@ -99,6 +99,14 @@ def validate_pages(pages: list[NewsletterPage], config: dict) -> list[Finding]:
                 global_anchor_sources[item.anchor_id].add(src)
                 record_ids[item.record_id] += 1
 
+            source_anchor = str(item.attrs.get("data-source-anchor") or "").strip()
+            if source_anchor and source_anchor not in set(page.all_html_ids):
+                findings.append(Finding("error", "invalid_source_anchor", f"{item.anchor_id} references missing data-source-anchor {source_anchor!r}.", src))
+
+            style = str(item.attrs.get("style") or "").replace(" ", "").lower()
+            if "display:none" in style and not source_anchor:
+                findings.append(Finding("warning", "hidden_item_without_source_anchor", f"Hidden indexed item {item.anchor_id} has no data-source-anchor; builder will use its nearest visible parent anchor.", src))
+
             series = str(item.attrs.get("data-series") or "").strip()
             if series and series not in known_series:
                 findings.append(Finding("warning", "unknown_series", f"Unknown series {series!r} on {item.anchor_id}.", src))

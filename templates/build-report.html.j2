@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WCC Resource Library Build Report</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;max-width:1000px;margin:40px auto;padding:0 20px;color:#253238;line-height:1.5}h1,h2{color:#10484d}.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.box{padding:15px;border:1px solid #d6e1e1;border-radius:7px;background:#f5f6f7}.box strong{display:block;font-size:24px;color:#176b6b}.finding{padding:10px 12px;margin:8px 0;border-left:4px solid #b88900;background:#fff8e7}.error{border-left-color:#b42318;background:#fff5f4}code{font-family:Consolas,monospace}@media(max-width:700px){.summary{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<h1>WCC Resource Library Build Report</h1>
+<p>Generated {{ report.generated_at }} from the canonical newsletter HTML source.</p>
+<div class="summary">
+<div class="box"><strong>{{ report.source_files }}</strong>Newsletter files</div>
+<div class="box"><strong>{{ report.records }}</strong>Catalogue records</div>
+<div class="box"><strong>{{ report.errors|length }}</strong>Blocking errors</div>
+<div class="box"><strong>{{ report.warnings|length }}</strong>Warnings</div>
+</div>
+<h2>Record Types</h2>
+<ul>{% for key,value in report.record_types.items() %}<li><strong>{{ key }}</strong>: {{ value }}</li>{% endfor %}</ul>
+<h2>Validation</h2>
+{% if report.errors %}{% for finding in report.errors %}<div class="finding error"><strong>{{ finding.code }}</strong>: {{ finding.message }}{% if finding.source %} <code>{{ finding.source }}</code>{% endif %}</div>{% endfor %}{% endif %}
+{% if report.warnings %}{% for finding in report.warnings %}<div class="finding"><strong>{{ finding.code }}</strong>: {{ finding.message }}{% if finding.source %} <code>{{ finding.source }}</code>{% endif %}</div>{% endfor %}{% endif %}
+{% if not report.errors and not report.warnings %}<p>No validation findings.</p>{% endif %}
+</body>
+</html>
