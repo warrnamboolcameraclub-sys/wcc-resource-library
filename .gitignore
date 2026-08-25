@@ -1,0 +1,21 @@
+# Generated GitHub Pages output
+_site/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Local tooling / editor files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local build/validation artefacts
+build-report.json
+source-validation.json
