@@ -1,4 +1,4 @@
-name: WCC Resource Library - Build Validation
+name: WCC Resource Library - Build and Deploy
 
 on:
   push:
@@ -28,10 +28,13 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
@@ -51,7 +54,7 @@ jobs:
       - name: Build Resource Library
         run: python scripts/build_library.py
 
-      - name: Upload preview site artifact
+      - name: Upload preview artifact
         uses: actions/upload-artifact@v7
         with:
           name: wcc-resource-library-preview
@@ -59,7 +62,30 @@ jobs:
           if-no-files-found: error
           retention-days: 7
 
-# GitHub Pages deployment remains deliberately disabled in Phase 2.
-# Once the generated site is reviewed, the final Pages deployment job will
-# publish the already-validated _site/ directory without introducing a second
-# source of truth.
+      - name: Configure GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site/
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
