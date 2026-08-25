@@ -80,6 +80,27 @@
     return "";
   }
 
+  /*
+   * Navigate using the same mechanism as the working
+   * Latest 12 Editions "Go" button.
+   *
+   * When the Resource Library is embedded in Zenfolio,
+   * this replaces the containing Zenfolio page in the
+   * current browser tab.
+   *
+   * When running standalone on GitHub Pages, it simply
+   * navigates the current page normally.
+   */
+  function navigateParent(url) {
+    if (!url) return;
+
+    if (window.parent !== window) {
+      window.parent.location.href = url;
+    } else {
+      window.location.href = url;
+    }
+  }
+
   function card(record) {
     const cls = ["tip", "event", "resource"].includes(record.item_type)
       ? record.item_type
@@ -94,10 +115,17 @@
       .map(t => `<span class="tag">${escapeHtml(t)}</span>`)
       .join("");
 
+    /*
+     * Downloads deliberately remain normal new-tab links.
+     *
+     * "Open in Issue" is now a button instead of an external
+     * iframe link. Its click event is attached in applyFilters()
+     * and calls navigateParent(), exactly like the Go button.
+     */
     const actions =
-  `${record.download_url ? `<a class="action download-link" href="${escapeHtml(record.download_url)}" target="_blank" rel="noopener">Download File</a>` : ""}` +
-  `<a class="action open-link" href="${escapeHtml(record.open_url)}" target="_parent">Open in Issue ${escapeHtml(record.issue)}</a>`;
-    
+      `${record.download_url ? `<a class="action download-link" href="${escapeHtml(record.download_url)}" target="_blank" rel="noopener">Download File</a>` : ""}` +
+      `<button class="action open-link" type="button" data-open-url="${escapeHtml(record.open_url)}">Open in Issue ${escapeHtml(record.issue)}</button>`;
+
     return `
       <article class="card">
         <div class="card-top">
@@ -234,6 +262,18 @@
       );
 
     $("cards").innerHTML = rows.map(card).join("");
+
+    /*
+     * Give every dynamically-created Open in Issue button
+     * exactly the same navigation behaviour as the Go button.
+     */
+    document
+      .querySelectorAll("[data-open-url]")
+      .forEach(button => {
+        button.addEventListener("click", () => {
+          navigateParent(button.dataset.openUrl);
+        });
+      });
 
     $("resultCount").textContent =
       `${rows.length} of ${state.data.records.length} indexed items`;
@@ -442,20 +482,9 @@
   });
 
   /*
-   * Navigate outside the embedded GitHub iframe,
-   * replacing the containing Zenfolio page in the
-   * current browser tab.
+   * Latest 12 Editions uses the same navigateParent()
+   * function as Open in Issue.
    */
-  function navigateParent(url) {
-    if (!url) return;
-
-    if (window.parent !== window) {
-      window.parent.location.href = url;
-    } else {
-      window.location.href = url;
-    }
-  }
-
   $("editionGoBtn").addEventListener("click", () => {
     navigateParent($("editionSelect").value);
   });
