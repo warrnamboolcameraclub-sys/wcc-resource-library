@@ -1,7 +1,8 @@
 from __future__ import annotations
 
+from copy import deepcopy
 from pathlib import Path
-import shutil
+import tempfile
 import sys
 import unittest
 
@@ -23,8 +24,14 @@ class RenderSiteTests(unittest.TestCase):
         records = normalise_pages(pages)
         findings = validate_pages(pages, config)
         report = make_build_report(pages, records, findings)
-        output = render_site(ROOT, pages, records, config, report)
-        try:
+
+        # Render into an isolated temporary directory so the test can never
+        # remove or overwrite the production _site/ build output.
+        with tempfile.TemporaryDirectory(dir=ROOT, prefix="_test_site_") as tmpdir:
+            test_config = deepcopy(config)
+            test_config["site"]["generated_output_dir"] = Path(tmpdir).name
+            output = render_site(ROOT, pages, records, test_config, report)
+
             for relative in ["index.html", "library.json", "latest.html", "previous.html", "build-report.json", "build-report.html", "assets/library.css", "assets/library.js"]:
                 self.assertTrue((output / relative).exists(), relative)
             latest = (output / "latest.html").read_text(encoding="utf-8")
@@ -33,9 +40,6 @@ class RenderSiteTests(unittest.TestCase):
             self.assertIn("weekly-newsletter-011", previous)
             index = (output / "index.html").read_text(encoding="utf-8")
             self.assertEqual(index.count("<option value=\"https://warrnamboolcameraclub.zenfolio.com/weekly-newsletter-"), 12)
-        finally:
-            if output.exists():
-                shutil.rmtree(output)
 
 
 if __name__ == "__main__":
