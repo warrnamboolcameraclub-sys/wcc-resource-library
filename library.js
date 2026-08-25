@@ -32,7 +32,7 @@
     const cls = ["tip","event","resource"].includes(record.item_type) ? record.item_type : "";
     const category = state.data.labels.categories[record.category] || humaniseSlug(record.category);
     const tags = (record.tags || []).slice(0, 6).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("");
-    const actions = `${record.download_url ? `<a class="action download-link" href="${escapeHtml(record.download_url)}" target="_blank" rel="noopener">Download File</a>` : ""}<a class="action open-link" href="${escapeHtml(record.open_url)}" target="_top">Open in Issue ${escapeHtml(record.issue)}</a>`;
+    const actions = `${record.download_url ? `<a class="action download-link" href="${escapeHtml(record.download_url)}" target="_blank" rel="noopener">Download File</a>` : ""}<a class="action open-link" href="${escapeHtml(record.open_url)}" target="_parent">Open in Issue ${escapeHtml(record.issue)}</a>`;
     return `<article class="card"><div class="card-top"><div class="badges"><span class="badge ${cls}">${escapeHtml(typeLabel(record))}</span>${record.item_type !== "article" && category ? `<span class="badge">${escapeHtml(category)}</span>` : ""}</div><span class="issue">Issue ${escapeHtml(record.issue)} · ${escapeHtml(displayDate(record.published))}</span></div><div class="series-line">${escapeHtml(secondaryLabel(record))}</div><h3>${escapeHtml(record.title)}</h3>${record.excerpt ? `<p>${escapeHtml(record.excerpt)}</p>` : ""}<div class="tags">${tags}</div><div class="card-foot"><span class="anchor">#${escapeHtml(record.open_anchor_id || record.anchor_id)}</span><div class="card-actions">${actions}</div></div></article>`;
   }
   function matchesQuick(record) {
@@ -101,17 +101,16 @@
     document.querySelectorAll("#quickFilters button").forEach((x,i) => x.classList.toggle("active", i === 0));
     applyFilters();
   });
-  function navigateTop(url) {
+  function navigateParent(url) {
     if (!url) return;
-    const link = document.createElement("a");
-    link.href = url;
-    link.target = "_top";
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
+    if (window.parent !== window) {
+      window.parent.location.href = url;
+    } else {
+      window.location.href = url;
+    }
   }
-  $("editionGoBtn").addEventListener("click", () => navigateTop($("editionSelect").value));
-  $("editionSelect").addEventListener("keydown", e => { if (e.key === "Enter") navigateTop($("editionSelect").value); });
+  $("editionGoBtn").addEventListener("click", () => navigateParent($("editionSelect").value));
+  $("editionSelect").addEventListener("keydown", e => { if (e.key === "Enter") navigateParent($("editionSelect").value); });
   function toggleReturn() { $("returnSearchBtn").classList.toggle("show", $("librarySearch").getBoundingClientRect().bottom < 0); }
   $("returnSearchBtn").addEventListener("click", () => { $("librarySearch").scrollIntoView({behavior:"smooth",block:"start"}); setTimeout(() => $("searchBox").focus({preventScroll:true}), 400); });
   addEventListener("scroll", toggleReturn, {passive:true}); addEventListener("resize", toggleReturn); toggleReturn();
