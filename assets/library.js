@@ -95,18 +95,9 @@
       .join("");
 
     const actions =
-      `${
-        record.download_url
-          ? `<a class="action download-link"
-                href="${escapeHtml(record.download_url)}"
-                target="_blank"
-                rel="noopener">Download File</a>`
-          : ""
-      }` +
-      `<a class="action open-link"
-          href="${escapeHtml(record.open_url)}"
-          target="_parent">Open in Issue ${escapeHtml(record.issue)}</a>`;
-
+  `${record.download_url ? `<a class="action download-link" href="${escapeHtml(record.download_url)}" target="_blank" rel="noopener">Download File</a>` : ""}` +
+  `<a class="action open-link" href="${escapeHtml(record.open_url)}" target="_parent">Open in Issue ${escapeHtml(record.issue)}</a>`;
+    
     return `
       <article class="card">
         <div class="card-top">
