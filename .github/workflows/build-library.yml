@@ -48,6 +48,9 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
+      - name: Validate newsletter metadata
+        run: python scripts/validate_sources.py
+
       - name: Run automated tests
         run: python -m unittest discover -s tests -v
 
