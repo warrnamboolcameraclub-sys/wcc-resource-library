@@ -1,0 +1,50 @@
+name: WCC Resource Library - Source Validation
+
+on:
+  push:
+    branches: ['main']
+    paths:
+      - 'content/**'
+      - 'config/**'
+      - 'scripts/**'
+      - 'wcc_library/**'
+      - 'tests/**'
+      - '.github/workflows/build-library.yml'
+  pull_request:
+    paths:
+      - 'content/**'
+      - 'config/**'
+      - 'scripts/**'
+      - 'wcc_library/**'
+      - 'tests/**'
+      - '.github/workflows/build-library.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Validate canonical newsletter sources
+        run: python scripts/validate_sources.py
+
+      - name: Run automated tests
+        run: python -m unittest discover -s tests -v
+
+# GitHub Pages deployment is deliberately not enabled in this initial package.
+# The deploy job will be added only after the production generator is reconciled
+# against the 172-record baseline and writes the complete public site to _site/.
