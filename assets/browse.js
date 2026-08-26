@@ -270,13 +270,36 @@
   });
 
   document.addEventListener("click", event => {
-    const pagerLink = event.target.closest("[data-prev-page], [data-next-page], [data-back-index]");
+    const pagerLink = event.target.closest(
+      "[data-prev-page], [data-next-page], [data-back-index]"
+    );
+
     if (!pagerLink) return;
 
+    const destination = pagerLink.href;
+    if (!destination) return;
+
+    /*
+     * Do not let the browser navigate immediately. On some browsers the
+     * postMessage can be lost when the iframe document is replaced at once.
+     * Give the Zenfolio parent a moment to receive the scroll request first.
+     */
+    event.preventDefault();
+
     requestParentScrollToFrameTop();
+
+    setTimeout(() => {
+      window.location.href = destination;
+    }, 100);
   });
 
-  requestParentScrollToFrameTop();
+  /*
+   * Ask again after the browse page has loaded. This makes page 3, 4, 5...
+   * behave the same way as the first move from the index to page 2.
+   */
+  window.addEventListener("load", () => {
+    setTimeout(requestParentScrollToFrameTop, 100);
+  });
 
   fetch("library.json", { cache: "no-store" })
     .then(response => {
