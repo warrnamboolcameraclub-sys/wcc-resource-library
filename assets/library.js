@@ -52,6 +52,15 @@
     }
   }
 
+  function requestParentScrollToFrameTop() {
+    if (window.parent === window) return;
+
+    window.parent.postMessage(
+      { type: "wcc-resource-library-scroll-top" },
+      "*"
+    );
+  }
+
   function scrollToResults() {
     const target = $("libraryResultsTop") || $("librarySearch");
     if (!target) return;
@@ -492,6 +501,7 @@
       const rows = getFilteredRows();
       if (rows.length <= MOBILE_PAGE_SIZE) return;
 
+      requestParentScrollToFrameTop();
       window.location.href = `browse.html?${currentBrowseParams(2)}`;
     });
   });

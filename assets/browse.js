@@ -34,6 +34,15 @@
     window.location.href = url;
   }
 
+  function requestParentScrollToFrameTop() {
+    if (window.parent === window) return;
+
+    window.parent.postMessage(
+      { type: "wcc-resource-library-scroll-top" },
+      "*"
+    );
+  }
+
   function navigateParent(url) {
     if (!url) return;
 
@@ -259,6 +268,15 @@
 
     navigateParent(button.dataset.openUrl);
   });
+
+  document.addEventListener("click", event => {
+    const pagerLink = event.target.closest("[data-prev-page], [data-next-page], [data-back-index]");
+    if (!pagerLink) return;
+
+    requestParentScrollToFrameTop();
+  });
+
+  requestParentScrollToFrameTop();
 
   fetch("library.json", { cache: "no-store" })
     .then(response => {
