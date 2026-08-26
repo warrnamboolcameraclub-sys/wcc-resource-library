@@ -3,14 +3,39 @@
 @media(max-width:1050px){.search-grid{grid-template-columns:1fr 1fr 1fr}.search-box{grid-column:1/-1}.series-strip{grid-template-columns:1fr}}
 @media(max-width:760px){.hero{padding:34px 24px 30px}.hero h1{font-size:31px}.hero-tools{flex-direction:column;align-items:stretch;gap:14px}.edition-jump{width:100%}.content{padding:24px 18px 34px}.stats{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr}.search-grid{grid-template-columns:1fr}.search-box{grid-column:auto}.results-head{flex-direction:column;align-items:flex-start;gap:3px}}
 
-/* Mobile result limiting for smoother Zenfolio iframe scrolling */
-.mobile-more-wrap{display:none;text-align:center;margin:18px 0 6px}
-.show-more-btn{border:0;border-radius:7px;background:var(--navy);color:#fff;padding:11px 18px;font-weight:bold;cursor:pointer}
-.show-more-btn[hidden]{display:none!important}
+/* Mobile paging keeps the Zenfolio iframe at a stable height. */
+.mobile-pager{display:none;align-items:center;justify-content:space-between;gap:10px;margin:14px 0 18px;padding:10px;border:1px solid var(--border);border-radius:8px;background:var(--soft-navy)}
+.pager-btn{border:0;border-radius:7px;background:var(--navy);color:#fff;padding:10px 12px;font-weight:bold;cursor:pointer;min-height:42px}
+.pager-btn:disabled{opacity:.38;cursor:default}
+.pager-status{display:flex;flex-direction:column;align-items:center;text-align:center;color:var(--muted);font-size:11px;line-height:1.25}
+.pager-status strong{color:var(--navy);font-size:12px}
 .open-link{border:0;cursor:pointer;font-family:inherit}
 @media(max-width:760px){
-  .mobile-more-wrap{display:block}
-  .show-more-btn:not([hidden]){display:inline-block}
+  /* Keep the useful totals, but make them a compact dashboard rather than four large cards. */
+  .stats{
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    margin:0 0 16px;
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .stat{
+    min-height:74px;
+    padding:10px 10px 9px;
+    background:transparent;
+    border:0;
+    border-radius:0;
+  }
+  .stat:nth-child(odd){border-right:1px solid var(--border)}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--border)}
+  .stat strong{font-size:22px;line-height:1}
+  .stat span{margin-top:4px;font-size:10px;line-height:1.25;letter-spacing:.25px}
+  .section-title{margin-bottom:10px;font-size:24px}
+  .series-strip{margin-bottom:22px}
+
+  .mobile-pager{display:flex}
+  .pager-btn{flex:1 1 0}
+  .pager-status{flex:0 0 82px}
   .card{box-shadow:none}
   .return-search{right:12px;bottom:12px}
 }

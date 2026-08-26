@@ -4,7 +4,7 @@
   const $ = (id) => document.getElementById(id);
   const MOBILE_BREAKPOINT = 760;
   const MOBILE_PAGE_SIZE = 10;
-  const state = { data: null, quick: "", mobileVisible: MOBILE_PAGE_SIZE, filteredRows: [] };
+  const state = { data: null, quick: "", mobilePage: 0, filteredRows: [] };
 
   function escapeHtml(value) {
     return String(value ?? "").replace(
@@ -144,26 +144,39 @@
   function renderRows() {
     const rows = state.filteredRows;
     const mobile = isMobile();
-    const visibleRows = mobile ? rows.slice(0, state.mobileVisible) : rows;
+    const total = rows.length;
+    const totalPages = Math.max(1, Math.ceil(total / MOBILE_PAGE_SIZE));
+
+    if (state.mobilePage >= totalPages) state.mobilePage = totalPages - 1;
+    if (state.mobilePage < 0) state.mobilePage = 0;
+
+    const start = mobile ? state.mobilePage * MOBILE_PAGE_SIZE : 0;
+    const end = mobile ? Math.min(start + MOBILE_PAGE_SIZE, total) : total;
+    const visibleRows = mobile ? rows.slice(start, end) : rows;
 
     $("cards").innerHTML = visibleRows.map(card).join("");
     bindOpenButtons();
 
-    const shown = visibleRows.length;
-    const total = rows.length;
-    $("resultCount").textContent = mobile && shown < total
-      ? `${shown} of ${total} matching items shown`
-      : `${total} of ${state.data.records.length} indexed items`;
+    if (mobile && total) {
+      $("resultCount").textContent = `${start + 1}–${end} of ${total} matching items`;
+    } else {
+      $("resultCount").textContent = `${total} of ${state.data.records.length} indexed items`;
+    }
 
     $("emptyState").style.display = total ? "none" : "block";
 
-    const showMore = $("showMoreBtn");
-    if (mobile && shown < total) {
-      showMore.hidden = false;
-      showMore.textContent = `Show 10 more (${total - shown} remaining)`;
-    } else {
-      showMore.hidden = true;
-    }
+    document.querySelectorAll("[data-mobile-prev]").forEach(button => {
+      button.disabled = !mobile || state.mobilePage === 0 || total === 0;
+    });
+    document.querySelectorAll("[data-mobile-next]").forEach(button => {
+      button.disabled = !mobile || state.mobilePage >= totalPages - 1 || total === 0;
+    });
+    document.querySelectorAll("[data-mobile-page]").forEach(label => {
+      label.textContent = total ? `Page ${state.mobilePage + 1} of ${totalPages}` : "No results";
+    });
+    document.querySelectorAll("[data-mobile-range]").forEach(label => {
+      label.textContent = total ? `${start + 1}–${end} of ${total}` : "0 results";
+    });
   }
 
   function applyFilters(resetMobile = true) {
@@ -209,7 +222,7 @@
           (a.title || "").localeCompare(b.title || "")
       );
 
-    if (resetMobile) state.mobileVisible = MOBILE_PAGE_SIZE;
+    if (resetMobile) state.mobilePage = 0;
     renderRows();
   }
 
@@ -284,9 +297,21 @@
     applyFilters(true);
   });
 
-  $("showMoreBtn").addEventListener("click", () => {
-    state.mobileVisible += MOBILE_PAGE_SIZE;
-    renderRows();
+  document.querySelectorAll("[data-mobile-prev]").forEach(button => {
+    button.addEventListener("click", () => {
+      if (state.mobilePage === 0) return;
+      state.mobilePage -= 1;
+      renderRows();
+    });
+  });
+
+  document.querySelectorAll("[data-mobile-next]").forEach(button => {
+    button.addEventListener("click", () => {
+      const totalPages = Math.max(1, Math.ceil(state.filteredRows.length / MOBILE_PAGE_SIZE));
+      if (state.mobilePage >= totalPages - 1) return;
+      state.mobilePage += 1;
+      renderRows();
+    });
   });
 
   $("editionGoBtn").addEventListener("click", () => {
@@ -302,7 +327,7 @@
     const nowMobile = isMobile();
     if (nowMobile !== lastMobileState) {
       lastMobileState = nowMobile;
-      state.mobileVisible = MOBILE_PAGE_SIZE;
+      state.mobilePage = 0;
       if (state.data) renderRows();
     }
     toggleReturn();
