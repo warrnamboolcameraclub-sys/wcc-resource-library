@@ -30,7 +30,7 @@ class MobileResultsTests(unittest.TestCase):
         self.assertIn("data-mobile-next", self.template)
 
     def test_next_page_opens_standalone_browse_page(self):
-        self.assertIn('navigateParent(`browse.html?${currentBrowseParams(2)}`);', self.script)
+        self.assertIn('window.location.href = `browse.html?${currentBrowseParams(2)}`;', self.script)
 
     def test_browse_page_reads_page_query_parameter(self):
         self.assertIn('params.get("page")', self.browse_script)
@@ -51,6 +51,9 @@ class MobileResultsTests(unittest.TestCase):
 
     def test_issue_navigation_from_index_uses_parent_navigation(self):
         self.assertIn("navigateParent(button.dataset.openUrl);", self.script)
+
+    def test_issue_navigation_from_browse_uses_parent_navigation(self):
+        self.assertIn("navigateParent(button.dataset.openUrl);", self.browse_script)
 
     def test_index_uses_first_ten_results_on_all_devices(self):
         self.assertIn("const displayedRows = rows.slice(0, MOBILE_PAGE_SIZE);", self.script)
