@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ site_title }} · Browse Results</title>
+<meta name="description" content="Browse Warrnambool Camera Club Photography Resource Library results.">
+<link rel="stylesheet" href="assets/library.css">
+</head>
+<body>
+<div class="wcc-library browse-page">
+
+<header class="browse-hero">
+  <div class="hero-kicker">Warrnambool Camera Club</div>
+  <h1>Photography Resource Library</h1>
+  <a class="browse-back" data-back-index href="index.html">← Back to Resource Library</a>
+</header>
+
+<main class="content browse-content">
+
+  <div class="browse-page-head">
+    <div>
+      <div class="browse-kicker">Browse Results</div>
+      <h2 id="browsePageTitle">Loading…</h2>
+      <div class="result-count" id="browseRange"></div>
+    </div>
+
+    <a class="browse-index-button" data-back-index href="index.html">
+      Search &amp; Filters
+    </a>
+  </div>
+
+  <nav class="browse-pager" aria-label="Result pages">
+    <a class="pager-btn browse-pager-link" data-prev-page href="index.html">← Previous 10</a>
+    <a class="pager-btn browse-pager-link" data-next-page href="#">Next 10 →</a>
+  </nav>
+
+  <section class="cards" id="browseCards"></section>
+
+  <div class="empty" id="browseEmpty">
+    No indexed items are available on this result page.
+  </div>
+
+  <nav class="browse-pager browse-pager-bottom" aria-label="Result pages">
+    <a class="pager-btn browse-pager-link" data-prev-page href="index.html">← Previous 10</a>
+    <a class="pager-btn browse-pager-link" data-next-page href="#">Next 10 →</a>
+  </nav>
+
+  <div class="browse-return-panel">
+    <strong>Want to search or change the filters?</strong>
+    <a data-back-index href="index.html">← Back to the Resource Library</a>
+  </div>
+
+</main>
+
+<footer class="wcc-newsletter-footer">
+  <strong>Warrnambool Camera Club</strong><br>
+  Photography Resource Library
+</footer>
+
+</div>
+
+<script src="assets/browse.js" defer></script>
+</body>
+</html>
