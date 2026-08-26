@@ -253,7 +253,7 @@
     const previousButtons = document.querySelectorAll("[data-mobile-prev]");
     const nextButtons = document.querySelectorAll("[data-mobile-next]");
 
-    if (!isMobile() || totalRows <= MOBILE_PAGE_SIZE) {
+    if (totalRows <= MOBILE_PAGE_SIZE) {
       document.querySelectorAll(".mobile-pager").forEach(pager => {
         pager.style.display = "none";
       });
@@ -287,20 +287,16 @@
     if (resetMobile) state.mobilePage = 0;
 
     const rows = getFilteredRows();
-    let displayedRows = rows;
-
-    if (isMobile()) {
-      displayedRows = rows.slice(0, MOBILE_PAGE_SIZE);
-    }
+    const displayedRows = rows.slice(0, MOBILE_PAGE_SIZE);
 
     $("cards").innerHTML = displayedRows.map(card).join("");
 
-    if (isMobile() && rows.length) {
+    if (rows.length) {
       $("resultCount").textContent =
         `1–${Math.min(displayedRows.length, rows.length)} of ${rows.length} indexed items`;
     } else {
       $("resultCount").textContent =
-        `${rows.length} of ${state.data.records.length} indexed items`;
+        `0 of ${state.data.records.length} indexed items`;
     }
 
     $("emptyState").style.display = rows.length ? "none" : "block";
@@ -531,20 +527,8 @@
 
   addEventListener("scroll", toggleReturn, { passive: true });
 
-  let lastMobileState = isMobile();
-
   addEventListener("resize", () => {
     toggleReturn();
-
-    const currentMobileState = isMobile();
-
-    if (currentMobileState !== lastMobileState) {
-      lastMobileState = currentMobileState;
-
-      if (state.data) {
-        applyFilters();
-      }
-    }
   });
 
   toggleReturn();

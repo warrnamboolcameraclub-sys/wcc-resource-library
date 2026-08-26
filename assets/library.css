@@ -127,3 +127,23 @@
   .browse-pager{margin:12px 0 16px}
   .browse-pager-link{flex:1 1 0;padding:10px 8px}
 }
+
+
+/* Paging is now used on desktop as well as mobile to keep the Zenfolio iframe compact. */
+.mobile-pager{
+  width:100%;
+}
+@media(min-width:761px){
+  .mobile-pager{
+    display:none;
+    max-width:720px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .pager-btn{
+    min-width:150px;
+  }
+  .pager-status{
+    flex:1 1 auto;
+  }
+}
