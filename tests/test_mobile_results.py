@@ -52,9 +52,9 @@ class MobileResultsTests(unittest.TestCase):
     def test_issue_navigation_from_index_uses_parent_navigation(self):
         self.assertIn("navigateParent(button.dataset.openUrl);", self.script)
 
-    def test_desktop_retains_full_results(self):
-        self.assertIn("let displayedRows = rows;", self.script)
-        self.assertIn("if (isMobile())", self.script)
+    def test_index_uses_first_ten_results_on_all_devices(self):
+        self.assertIn("const displayedRows = rows.slice(0, MOBILE_PAGE_SIZE);", self.script)
+        self.assertNotIn("let displayedRows = rows;", self.script)
 
 
 if __name__ == "__main__":
