@@ -2,7 +2,9 @@
   "use strict";
 
   const $ = (id) => document.getElementById(id);
-  const state = { data: null, quick: "" };
+  const MOBILE_BREAKPOINT = 760;
+  const MOBILE_PAGE_SIZE = 10;
+  const state = { data: null, quick: "", mobileVisible: MOBILE_PAGE_SIZE, filteredRows: [] };
 
   function escapeHtml(value) {
     return String(value ?? "").replace(
@@ -19,15 +21,11 @@
 
   function displayDate(value) {
     if (!value) return "";
-
-    return new Date(value + "T00:00:00").toLocaleDateString(
-      "en-AU",
-      {
-        day: "numeric",
-        month: "short",
-        year: "numeric"
-      }
-    );
+    return new Date(value + "T00:00:00").toLocaleDateString("en-AU", {
+      day: "numeric",
+      month: "short",
+      year: "numeric"
+    });
   }
 
   function humaniseSlug(value) {
@@ -38,21 +36,18 @@
       .join(" ");
   }
 
-  function typeLabel(record) {
-    if (record.item_type === "tip") {
-      return record.code || "Tip";
-    }
+  function isMobile() {
+    return window.innerWidth <= MOBILE_BREAKPOINT;
+  }
 
+  function typeLabel(record) {
+    if (record.item_type === "tip") return record.code || "Tip";
     if (record.item_type === "event") {
       return record.event_status
         ? `Event · ${humaniseSlug(record.event_status)}`
         : "Event";
     }
-
-    if (record.item_type === "resource") {
-      return "Download";
-    }
-
+    if (record.item_type === "resource") return "Download";
     return (
       state.data.labels.categories[record.category] ||
       humaniseSlug(record.category) ||
@@ -65,35 +60,17 @@
       const name =
         state.data.labels.series[record.series] ||
         humaniseSlug(record.series);
-
       return name + (record.part ? ` · Part ${record.part}` : "");
     }
-
     if (record.item_type === "tip" && record.level) {
       return `${humaniseSlug(record.level)} level`;
     }
-
-    if (record.event_date) {
-      return displayDate(record.event_date);
-    }
-
+    if (record.event_date) return displayDate(record.event_date);
     return "";
   }
 
-  /*
-   * Navigate using the same mechanism as the working
-   * Latest 12 Editions "Go" button.
-   *
-   * When the Resource Library is embedded in Zenfolio,
-   * this replaces the containing Zenfolio page in the
-   * current browser tab.
-   *
-   * When running standalone on GitHub Pages, it simply
-   * navigates the current page normally.
-   */
   function navigateParent(url) {
     if (!url) return;
-
     if (window.parent !== window) {
       window.parent.location.href = url;
     } else {
@@ -115,13 +92,6 @@
       .map(t => `<span class="tag">${escapeHtml(t)}</span>`)
       .join("");
 
-    /*
-     * Downloads deliberately remain normal new-tab links.
-     *
-     * "Open in Issue" is now a button instead of an external
-     * iframe link. Its click event is attached in applyFilters()
-     * and calls navigateParent(), exactly like the Go button.
-     */
     const actions =
       `${record.download_url ? `<a class="action download-link" href="${escapeHtml(record.download_url)}" target="_blank" rel="noopener">Download File</a>` : ""}` +
       `<button class="action open-link" type="button" data-open-url="${escapeHtml(record.open_url)}">Open in Issue ${escapeHtml(record.issue)}</button>`;
@@ -130,47 +100,18 @@
       <article class="card">
         <div class="card-top">
           <div class="badges">
-            <span class="badge ${cls}">
-              ${escapeHtml(typeLabel(record))}
-            </span>
-
-            ${
-              record.item_type !== "article" && category
-                ? `<span class="badge">${escapeHtml(category)}</span>`
-                : ""
-            }
+            <span class="badge ${cls}">${escapeHtml(typeLabel(record))}</span>
+            ${record.item_type !== "article" && category ? `<span class="badge">${escapeHtml(category)}</span>` : ""}
           </div>
-
-          <span class="issue">
-            Issue ${escapeHtml(record.issue)} ·
-            ${escapeHtml(displayDate(record.published))}
-          </span>
+          <span class="issue">Issue ${escapeHtml(record.issue)} · ${escapeHtml(displayDate(record.published))}</span>
         </div>
-
-        <div class="series-line">
-          ${escapeHtml(secondaryLabel(record))}
-        </div>
-
+        <div class="series-line">${escapeHtml(secondaryLabel(record))}</div>
         <h3>${escapeHtml(record.title)}</h3>
-
-        ${
-          record.excerpt
-            ? `<p>${escapeHtml(record.excerpt)}</p>`
-            : ""
-        }
-
+        ${record.excerpt ? `<p>${escapeHtml(record.excerpt)}</p>` : ""}
         <div class="tags">${tags}</div>
-
         <div class="card-foot">
-          <span class="anchor">
-            #${escapeHtml(
-              record.open_anchor_id || record.anchor_id
-            )}
-          </span>
-
-          <div class="card-actions">
-            ${actions}
-          </div>
+          <span class="anchor">#${escapeHtml(record.open_anchor_id || record.anchor_id)}</span>
+          <div class="card-actions">${actions}</div>
         </div>
       </article>
     `;
@@ -178,47 +119,54 @@
 
   function matchesQuick(record) {
     const q = state.quick;
-
     if (!q) return true;
-
     if (q === "learning") {
-      return [
-        "education",
-        "editing",
-        "photography-tips",
-        "challenge"
-      ].includes(record.category);
+      return ["education", "editing", "photography-tips", "challenge"].includes(record.category);
     }
-
     if (q === "club") {
-      return [
-        "club-news",
-        "community",
-        "competition",
-        "feature"
-      ].includes(record.category) &&
+      return ["club-news", "community", "competition", "feature"].includes(record.category) &&
         record.item_type !== "event";
     }
-
-    if (q === "events") {
-      return (
-        record.item_type === "event" ||
-        record.category === "events"
-      );
-    }
-
-    if (q === "travel") {
-      return record.category === "members-on-the-move";
-    }
-
-    if (q === "downloads") {
-      return record.item_type === "resource";
-    }
-
+    if (q === "events") return record.item_type === "event" || record.category === "events";
+    if (q === "travel") return record.category === "members-on-the-move";
+    if (q === "downloads") return record.item_type === "resource";
     return true;
   }
 
-  function applyFilters() {
+  function bindOpenButtons() {
+    document.querySelectorAll("[data-open-url]").forEach(button => {
+      button.addEventListener("click", () => {
+        navigateParent(button.dataset.openUrl);
+      });
+    });
+  }
+
+  function renderRows() {
+    const rows = state.filteredRows;
+    const mobile = isMobile();
+    const visibleRows = mobile ? rows.slice(0, state.mobileVisible) : rows;
+
+    $("cards").innerHTML = visibleRows.map(card).join("");
+    bindOpenButtons();
+
+    const shown = visibleRows.length;
+    const total = rows.length;
+    $("resultCount").textContent = mobile && shown < total
+      ? `${shown} of ${total} matching items shown`
+      : `${total} of ${state.data.records.length} indexed items`;
+
+    $("emptyState").style.display = total ? "none" : "block";
+
+    const showMore = $("showMoreBtn");
+    if (mobile && shown < total) {
+      showMore.hidden = false;
+      showMore.textContent = `Show 10 more (${total - shown} remaining)`;
+    } else {
+      showMore.hidden = true;
+    }
+  }
+
+  function applyFilters(resetMobile = true) {
     const q = $("searchBox").value.trim().toLowerCase();
     const category = $("categoryFilter").value;
     const series = $("seriesFilter").value;
@@ -226,7 +174,7 @@
     const issue = $("issueFilter").value;
     const type = $("typeFilter").value;
 
-    const rows = state.data.records
+    state.filteredRows = state.data.records
       .filter(record => {
         const haystack = [
           record.title,
@@ -261,37 +209,15 @@
           (a.title || "").localeCompare(b.title || "")
       );
 
-    $("cards").innerHTML = rows.map(card).join("");
-
-    /*
-     * Give every dynamically-created Open in Issue button
-     * exactly the same navigation behaviour as the Go button.
-     */
-    document
-      .querySelectorAll("[data-open-url]")
-      .forEach(button => {
-        button.addEventListener("click", () => {
-          navigateParent(button.dataset.openUrl);
-        });
-      });
-
-    $("resultCount").textContent =
-      `${rows.length} of ${state.data.records.length} indexed items`;
-
-    $("emptyState").style.display =
-      rows.length ? "none" : "block";
+    if (resetMobile) state.mobileVisible = MOBILE_PAGE_SIZE;
+    renderRows();
   }
 
   function fillSelect(select, values, labels, prefix = "") {
     values.forEach(value => {
       select.insertAdjacentHTML(
         "beforeend",
-        `<option value="${escapeHtml(value)}">
-          ${escapeHtml(
-            prefix +
-            (labels?.[value] || humaniseSlug(value))
-          )}
-        </option>`
+        `<option value="${escapeHtml(value)}">${escapeHtml(prefix + (labels?.[value] || humaniseSlug(value)))}</option>`
       );
     });
   }
@@ -299,265 +225,115 @@
   function initialise(data) {
     state.data = data;
 
-    $("statRecords").textContent =
-      data.summary.records;
+    $("statRecords").textContent = data.summary.records;
+    $("statLearning").textContent = data.summary.learning_resources;
+    $("statTips").textContent = data.summary.tips;
+    $("statIssues").textContent = data.summary.issues;
+    $("archiveNote").textContent = `all ${data.summary.issues} Weekly Updates are indexed and live-linked.`;
+    $("footerCoverage").textContent = `${data.summary.issues} issues indexed`;
 
-    $("statLearning").textContent =
-      data.summary.learning_resources;
+    const categories = [...new Set(data.records.map(r => r.category).filter(Boolean))]
+      .sort((a, b) => (data.labels.categories[a] || a).localeCompare(data.labels.categories[b] || b));
+    const series = [...new Set(data.records.map(r => r.series).filter(Boolean))]
+      .sort((a, b) => (data.labels.series[a] || a).localeCompare(data.labels.series[b] || b));
+    const issues = data.issues.map(i => i.issue);
 
-    $("statTips").textContent =
-      data.summary.tips;
+    fillSelect($("categoryFilter"), categories, data.labels.categories);
+    fillSelect($("seriesFilter"), series, data.labels.series);
+    fillSelect($("issueFilter"), issues, null, "Issue ");
 
-    $("statIssues").textContent =
-      data.summary.issues;
+    $("seriesStrip").innerHTML = data.series.map(s => `
+      <button class="series-card" type="button" data-series-jump="${escapeHtml(s.id)}">
+        <span class="series-name">${escapeHtml(s.name)}</span>
+        <span class="series-meta">${s.article_count} indexed article${s.article_count === 1 ? "" : "s"}</span>
+        <span class="series-link">View series →</span>
+      </button>
+    `).join("");
 
-    $("archiveNote").textContent =
-      `all ${data.summary.issues} Weekly Updates are indexed and live-linked.`;
-
-    $("footerCoverage").textContent =
-      `${data.summary.issues} issues indexed`;
-
-    const categories = [
-      ...new Set(
-        data.records
-          .map(r => r.category)
-          .filter(Boolean)
-      )
-    ].sort((a, b) =>
-      (data.labels.categories[a] || a)
-        .localeCompare(
-          data.labels.categories[b] || b
-        )
-    );
-
-    const series = [
-      ...new Set(
-        data.records
-          .map(r => r.series)
-          .filter(Boolean)
-      )
-    ].sort((a, b) =>
-      (data.labels.series[a] || a)
-        .localeCompare(
-          data.labels.series[b] || b
-        )
-    );
-
-    const issues =
-      data.issues.map(i => i.issue);
-
-    fillSelect(
-      $("categoryFilter"),
-      categories,
-      data.labels.categories
-    );
-
-    fillSelect(
-      $("seriesFilter"),
-      series,
-      data.labels.series
-    );
-
-    fillSelect(
-      $("issueFilter"),
-      issues,
-      null,
-      "Issue "
-    );
-
-    $("seriesStrip").innerHTML =
-      data.series
-        .map(
-          s => `
-            <button
-              class="series-card"
-              type="button"
-              data-series-jump="${escapeHtml(s.id)}"
-            >
-              <span class="series-name">
-                ${escapeHtml(s.name)}
-              </span>
-
-              <span class="series-meta">
-                ${s.article_count}
-                indexed article${s.article_count === 1 ? "" : "s"}
-              </span>
-
-              <span class="series-link">
-                View series →
-              </span>
-            </button>
-          `
-        )
-        .join("");
-
-    document
-      .querySelectorAll("[data-series-jump]")
-      .forEach(button => {
-        button.addEventListener("click", () => {
-          $("seriesFilter").value =
-            button.dataset.seriesJump;
-
-          state.quick = "";
-
-          document
-            .querySelectorAll("#quickFilters button")
-            .forEach((x, i) =>
-              x.classList.toggle(
-                "active",
-                i === 0
-              )
-            );
-
-          applyFilters();
-
-          $("librarySearch").scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-        });
+    document.querySelectorAll("[data-series-jump]").forEach(button => {
+      button.addEventListener("click", () => {
+        $("seriesFilter").value = button.dataset.seriesJump;
+        state.quick = "";
+        document.querySelectorAll("#quickFilters button").forEach((x, i) => x.classList.toggle("active", i === 0));
+        applyFilters(true);
+        $("librarySearch").scrollIntoView({ behavior: "smooth", block: "start" });
       });
+    });
 
-    applyFilters();
+    applyFilters(true);
   }
 
-  [
-    "searchBox",
-    "categoryFilter",
-    "seriesFilter",
-    "levelFilter",
-    "issueFilter",
-    "typeFilter"
-  ].forEach(id => {
-    $(id).addEventListener(
-      id === "searchBox" ? "input" : "change",
-      applyFilters
-    );
+  ["searchBox", "categoryFilter", "seriesFilter", "levelFilter", "issueFilter", "typeFilter"].forEach(id => {
+    $(id).addEventListener(id === "searchBox" ? "input" : "change", () => applyFilters(true));
   });
 
-  document
-    .querySelectorAll("#quickFilters button")
-    .forEach(button => {
-      button.addEventListener("click", () => {
-        state.quick =
-          button.dataset.quick;
-
-        document
-          .querySelectorAll("#quickFilters button")
-          .forEach(x =>
-            x.classList.toggle(
-              "active",
-              x === button
-            )
-          );
-
-        applyFilters();
-      });
+  document.querySelectorAll("#quickFilters button").forEach(button => {
+    button.addEventListener("click", () => {
+      state.quick = button.dataset.quick;
+      document.querySelectorAll("#quickFilters button").forEach(x => x.classList.toggle("active", x === button));
+      applyFilters(true);
     });
+  });
 
   $("clearBtn").addEventListener("click", () => {
-    [
-      "searchBox",
-      "categoryFilter",
-      "seriesFilter",
-      "levelFilter",
-      "issueFilter",
-      "typeFilter"
-    ].forEach(id => {
+    ["searchBox", "categoryFilter", "seriesFilter", "levelFilter", "issueFilter", "typeFilter"].forEach(id => {
       $(id).value = "";
     });
-
     state.quick = "";
-
-    document
-      .querySelectorAll("#quickFilters button")
-      .forEach((x, i) =>
-        x.classList.toggle(
-          "active",
-          i === 0
-        )
-      );
-
-    applyFilters();
+    document.querySelectorAll("#quickFilters button").forEach((x, i) => x.classList.toggle("active", i === 0));
+    applyFilters(true);
   });
 
-  /*
-   * Latest 12 Editions uses the same navigateParent()
-   * function as Open in Issue.
-   */
+  $("showMoreBtn").addEventListener("click", () => {
+    state.mobileVisible += MOBILE_PAGE_SIZE;
+    renderRows();
+  });
+
   $("editionGoBtn").addEventListener("click", () => {
     navigateParent($("editionSelect").value);
   });
 
   $("editionSelect").addEventListener("keydown", e => {
-    if (e.key === "Enter") {
-      navigateParent($("editionSelect").value);
+    if (e.key === "Enter") navigateParent($("editionSelect").value);
+  });
+
+  let lastMobileState = isMobile();
+  addEventListener("resize", () => {
+    const nowMobile = isMobile();
+    if (nowMobile !== lastMobileState) {
+      lastMobileState = nowMobile;
+      state.mobileVisible = MOBILE_PAGE_SIZE;
+      if (state.data) renderRows();
     }
+    toggleReturn();
   });
 
   function toggleReturn() {
     $("returnSearchBtn").classList.toggle(
       "show",
-      $("librarySearch")
-        .getBoundingClientRect()
-        .bottom < 0
+      $("librarySearch").getBoundingClientRect().bottom < 0
     );
   }
 
-  $("returnSearchBtn").addEventListener(
-    "click",
-    () => {
-      $("librarySearch").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+  $("returnSearchBtn").addEventListener("click", () => {
+    $("librarySearch").scrollIntoView({ behavior: "smooth", block: "start" });
+    setTimeout(() => $("searchBox").focus({ preventScroll: true }), 400);
+  });
 
-      setTimeout(
-        () =>
-          $("searchBox").focus({
-            preventScroll: true
-          }),
-        400
-      );
-    }
-  );
-
-  addEventListener(
-    "scroll",
-    toggleReturn,
-    { passive: true }
-  );
-
-  addEventListener(
-    "resize",
-    toggleReturn
-  );
-
+  addEventListener("scroll", toggleReturn, { passive: true });
   toggleReturn();
 
-  fetch("library.json", {
-    cache: "no-store"
-  })
+  fetch("library.json", { cache: "no-store" })
     .then(response => {
-      if (!response.ok) {
-        throw new Error(
-          `HTTP ${response.status}`
-        );
-      }
-
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
     })
     .then(initialise)
     .catch(error => {
-      console.error(
-        "Resource Library load failed",
-        error
-      );
-
+      console.error("Resource Library load failed", error);
       $("cards").innerHTML = `
         <div class="load-error">
-          The Resource Library data could not be loaded.
-          Please refresh the page.
+          The Resource Library data could not be loaded. Please refresh the page.
         </div>
       `;
     });
