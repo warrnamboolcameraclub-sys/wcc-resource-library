@@ -39,3 +39,91 @@
   .card{box-shadow:none}
   .return-search{right:12px;bottom:12px}
 }
+
+
+/* Standalone result pages used after Page 1 on mobile. */
+.browse-hero{
+  background:linear-gradient(135deg,var(--dark-teal),var(--teal));
+  color:#fff;
+  padding:28px 36px 24px;
+  border-bottom:7px solid var(--red)
+}
+.browse-hero *{color:#fff}
+.browse-hero h1{margin:5px 0 12px;font-size:31px;line-height:1.08}
+.browse-back{
+  display:inline-block;
+  color:#fff!important;
+  font-size:13px;
+  font-weight:bold;
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.55)
+}
+.browse-content{padding-top:24px}
+.browse-page-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:16px;
+  padding-bottom:12px;
+  margin-bottom:14px;
+  border-bottom:3px solid var(--teal)
+}
+.browse-kicker{
+  color:var(--teal);
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1px;
+  text-transform:uppercase
+}
+.browse-page-head h2{
+  margin:2px 0 3px;
+  color:var(--dark-teal);
+  font-size:28px
+}
+.browse-index-button{
+  display:inline-block;
+  padding:9px 13px;
+  border-radius:6px;
+  background:var(--navy);
+  color:#fff!important;
+  font-weight:bold;
+  font-size:12px;
+  text-decoration:none
+}
+.browse-pager{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin:14px 0 18px
+}
+.browse-pager-link{
+  display:inline-block;
+  flex:0 1 180px;
+  text-align:center;
+  text-decoration:none
+}
+.browse-pager-bottom{margin-top:20px}
+.browse-return-panel{
+  margin-top:25px;
+  padding:16px 18px;
+  background:var(--soft-teal);
+  border-left:5px solid var(--teal);
+  border-radius:6px;
+  color:#42575d;
+  font-size:14px
+}
+.browse-return-panel strong{display:block;margin-bottom:4px}
+.browse-return-panel a{
+  color:var(--navy);
+  font-weight:bold;
+  text-decoration:none
+}
+
+@media(max-width:760px){
+  .browse-hero{padding:24px 18px 21px}
+  .browse-hero h1{font-size:27px}
+  .browse-page-head{align-items:flex-start;flex-direction:column}
+  .browse-index-button{width:100%;text-align:center}
+  .browse-pager{margin:12px 0 16px}
+  .browse-pager-link{flex:1 1 0;padding:10px 8px}
+}

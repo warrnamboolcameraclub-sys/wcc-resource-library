@@ -12,19 +12,17 @@
     mobilePage: 0
   };
 
-  function escapeHtml(value) {
-    return String(value ?? "").replace(/[&<>"']/g, c => ({
+  const escapeHtml = value =>
+    String(value ?? "").replace(/[&<>"']/g, c => ({
       "&": "&amp;",
       "<": "&lt;",
       ">": "&gt;",
       '"': "&quot;",
       "'": "&#039;"
     })[c]);
-  }
 
   function displayDate(value) {
     if (!value) return "";
-
     return new Date(value + "T00:00:00").toLocaleDateString("en-AU", {
       day: "numeric",
       month: "short",
@@ -65,9 +63,7 @@
   }
 
   function typeLabel(record) {
-    if (record.item_type === "tip") {
-      return record.code || "Tip";
-    }
+    if (record.item_type === "tip") return record.code || "Tip";
 
     if (record.item_type === "event") {
       return record.event_status
@@ -75,9 +71,7 @@
         : "Event";
     }
 
-    if (record.item_type === "resource") {
-      return "Download";
-    }
+    if (record.item_type === "resource") return "Download";
 
     return (
       state.data.labels.categories[record.category] ||
@@ -99,9 +93,7 @@
       return `${humaniseSlug(record.level)} level`;
     }
 
-    if (record.event_date) {
-      return displayDate(record.event_date);
-    }
+    if (record.event_date) return displayDate(record.event_date);
 
     return "";
   }
@@ -135,25 +127,20 @@
                 : ""
             }
           </div>
-
           <span class="issue">
             Issue ${escapeHtml(record.issue)} · ${escapeHtml(displayDate(record.published))}
           </span>
         </div>
 
         <div class="series-line">${escapeHtml(secondaryLabel(record))}</div>
-
         <h3>${escapeHtml(record.title)}</h3>
-
         ${record.excerpt ? `<p>${escapeHtml(record.excerpt)}</p>` : ""}
-
         <div class="tags">${tags}</div>
 
         <div class="card-foot">
           <span class="anchor">
             #${escapeHtml(record.open_anchor_id || record.anchor_id)}
           </span>
-
           <div class="card-actions">${actions}</div>
         </div>
       </article>
@@ -162,7 +149,6 @@
 
   function matchesQuick(record) {
     const q = state.quick;
-
     if (!q) return true;
 
     if (q === "learning") {
@@ -190,13 +176,8 @@
       return record.item_type === "event" || record.category === "events";
     }
 
-    if (q === "travel") {
-      return record.category === "members-on-the-move";
-    }
-
-    if (q === "downloads") {
-      return record.item_type === "resource";
-    }
+    if (q === "travel") return record.category === "members-on-the-move";
+    if (q === "downloads") return record.item_type === "resource";
 
     return true;
   }
@@ -245,10 +226,25 @@
       );
   }
 
-  function setPagerVisibility(show) {
-    document.querySelectorAll(".mobile-pager").forEach(pager => {
-      pager.style.display = show ? "flex" : "none";
+  function currentBrowseParams(page) {
+    const params = new URLSearchParams();
+    params.set("page", String(page));
+
+    const values = {
+      q: $("searchBox").value.trim(),
+      category: $("categoryFilter").value,
+      series: $("seriesFilter").value,
+      level: $("levelFilter").value,
+      issue: $("issueFilter").value,
+      type: $("typeFilter").value,
+      quick: state.quick
+    };
+
+    Object.entries(values).forEach(([key, value]) => {
+      if (value) params.set(key, value);
     });
+
+    return params.toString();
   }
 
   function updatePager(totalRows) {
@@ -258,71 +254,56 @@
     const nextButtons = document.querySelectorAll("[data-mobile-next]");
 
     if (!isMobile() || totalRows <= MOBILE_PAGE_SIZE) {
-      setPagerVisibility(false);
+      document.querySelectorAll(".mobile-pager").forEach(pager => {
+        pager.style.display = "none";
+      });
       return;
     }
 
     const totalPages = Math.ceil(totalRows / MOBILE_PAGE_SIZE);
 
-    if (state.mobilePage >= totalPages) {
-      state.mobilePage = Math.max(0, totalPages - 1);
-    }
-
-    const firstResult = state.mobilePage * MOBILE_PAGE_SIZE + 1;
-    const lastResult = Math.min(
-      firstResult + MOBILE_PAGE_SIZE - 1,
-      totalRows
-    );
-
     pageLabels.forEach(label => {
-      label.textContent = `Page ${state.mobilePage + 1} of ${totalPages}`;
+      label.textContent = `Page 1 of ${totalPages}`;
     });
 
     rangeLabels.forEach(label => {
-      label.textContent = `${firstResult}–${lastResult} of ${totalRows}`;
+      label.textContent = `1–${Math.min(MOBILE_PAGE_SIZE, totalRows)} of ${totalRows}`;
     });
 
     previousButtons.forEach(button => {
-      button.disabled = state.mobilePage === 0;
+      button.disabled = true;
     });
 
     nextButtons.forEach(button => {
-      button.disabled = state.mobilePage >= totalPages - 1;
+      button.disabled = false;
     });
 
-    setPagerVisibility(true);
+    document.querySelectorAll(".mobile-pager").forEach(pager => {
+      pager.style.display = "flex";
+    });
   }
 
   function applyFilters(resetMobile = false) {
     if (resetMobile) state.mobilePage = 0;
 
     const rows = getFilteredRows();
-
     let displayedRows = rows;
 
     if (isMobile()) {
-      const start = state.mobilePage * MOBILE_PAGE_SIZE;
-      displayedRows = rows.slice(start, start + MOBILE_PAGE_SIZE);
+      displayedRows = rows.slice(0, MOBILE_PAGE_SIZE);
     }
 
     $("cards").innerHTML = displayedRows.map(card).join("");
 
     if (isMobile() && rows.length) {
-      const firstResult = state.mobilePage * MOBILE_PAGE_SIZE + 1;
-      const lastResult = Math.min(
-        firstResult + displayedRows.length - 1,
-        rows.length
-      );
-
       $("resultCount").textContent =
-        `${firstResult}–${lastResult} of ${rows.length} indexed items`;
+        `1–${Math.min(displayedRows.length, rows.length)} of ${rows.length} indexed items`;
     } else {
       $("resultCount").textContent =
         `${rows.length} of ${state.data.records.length} indexed items`;
     }
 
     $("emptyState").style.display = rows.length ? "none" : "block";
-
     updatePager(rows.length);
   }
 
@@ -335,6 +316,35 @@
         )}</option>`
       );
     });
+  }
+
+  function restoreFiltersFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+
+    const mapping = {
+      q: "searchBox",
+      category: "categoryFilter",
+      series: "seriesFilter",
+      level: "levelFilter",
+      issue: "issueFilter",
+      type: "typeFilter"
+    };
+
+    Object.entries(mapping).forEach(([param, id]) => {
+      const value = params.get(param);
+      if (value) $(id).value = value;
+    });
+
+    state.quick = params.get("quick") || "";
+
+    document
+      .querySelectorAll("#quickFilters button")
+      .forEach(button => {
+        button.classList.toggle(
+          "active",
+          button.dataset.quick === state.quick
+        );
+      });
   }
 
   function initialise(data) {
@@ -369,24 +379,9 @@
 
     const issues = data.issues.map(i => i.issue);
 
-    fillSelect(
-      $("categoryFilter"),
-      categories,
-      data.labels.categories
-    );
-
-    fillSelect(
-      $("seriesFilter"),
-      series,
-      data.labels.series
-    );
-
-    fillSelect(
-      $("issueFilter"),
-      issues,
-      null,
-      "Issue "
-    );
+    fillSelect($("categoryFilter"), categories, data.labels.categories);
+    fillSelect($("seriesFilter"), series, data.labels.series);
+    fillSelect($("issueFilter"), issues, null, "Issue ");
 
     $("seriesStrip").innerHTML =
       data.series
@@ -408,13 +403,14 @@
         )
         .join("");
 
+    restoreFiltersFromUrl();
+
     document
       .querySelectorAll("[data-series-jump]")
       .forEach(button => {
         button.addEventListener("click", () => {
           $("seriesFilter").value = button.dataset.seriesJump;
           state.quick = "";
-          state.mobilePage = 0;
 
           document
             .querySelectorAll("#quickFilters button")
@@ -422,7 +418,7 @@
               x.classList.toggle("active", i === 0)
             );
 
-          applyFilters();
+          applyFilters(true);
           scrollToResults();
         });
       });
@@ -449,7 +445,6 @@
     .forEach(button => {
       button.addEventListener("click", () => {
         state.quick = button.dataset.quick;
-        state.mobilePage = 0;
 
         document
           .querySelectorAll("#quickFilters button")
@@ -457,7 +452,7 @@
             x.classList.toggle("active", x === button)
           );
 
-        applyFilters();
+        applyFilters(true);
       });
     });
 
@@ -474,7 +469,6 @@
     });
 
     state.quick = "";
-    state.mobilePage = 0;
 
     document
       .querySelectorAll("#quickFilters button")
@@ -482,36 +476,27 @@
         x.classList.toggle("active", i === 0)
       );
 
-    applyFilters();
+    applyFilters(true);
   });
 
   $("cards").addEventListener("click", event => {
     const button = event.target.closest("[data-open-url]");
     if (!button) return;
-
     navigateParent(button.dataset.openUrl);
   });
 
   document.querySelectorAll("[data-mobile-prev]").forEach(button => {
     button.addEventListener("click", () => {
-      if (state.mobilePage === 0) return;
-
-      state.mobilePage -= 1;
-      applyFilters(false);
-      scrollToResults();
+      // Page 1 has no previous page.
     });
   });
 
   document.querySelectorAll("[data-mobile-next]").forEach(button => {
     button.addEventListener("click", () => {
       const rows = getFilteredRows();
-      const totalPages = Math.ceil(rows.length / MOBILE_PAGE_SIZE);
+      if (rows.length <= MOBILE_PAGE_SIZE) return;
 
-      if (state.mobilePage >= totalPages - 1) return;
-
-      state.mobilePage += 1;
-      applyFilters(false);
-      scrollToResults();
+      navigateParent(`browse.html?${currentBrowseParams(2)}`);
     });
   });
 
@@ -539,17 +524,12 @@
     });
 
     setTimeout(
-      () =>
-        $("searchBox").focus({
-          preventScroll: true
-        }),
+      () => $("searchBox").focus({ preventScroll: true }),
       400
     );
   });
 
-  addEventListener("scroll", toggleReturn, {
-    passive: true
-  });
+  addEventListener("scroll", toggleReturn, { passive: true });
 
   let lastMobileState = isMobile();
 
@@ -560,7 +540,6 @@
 
     if (currentMobileState !== lastMobileState) {
       lastMobileState = currentMobileState;
-      state.mobilePage = 0;
 
       if (state.data) {
         applyFilters();
@@ -570,20 +549,14 @@
 
   toggleReturn();
 
-  fetch("library.json", {
-    cache: "no-store"
-  })
+  fetch("library.json", { cache: "no-store" })
     .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
     })
     .then(initialise)
     .catch(error => {
       console.error("Resource Library load failed", error);
-
       $("cards").innerHTML = `
         <div class="load-error">
           The Resource Library data could not be loaded.
