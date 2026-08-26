@@ -103,6 +103,7 @@ def render_site(root: Path, pages: list[NewsletterPage], records: list[Catalogue
         lstrip_blocks=True,
     )
     index_template = env.get_template("index.html.j2")
+    browse_template = env.get_template("browse.html.j2")
     redirect_template = env.get_template("redirect.html.j2")
     report_template = env.get_template("build-report.html.j2")
 
@@ -119,6 +120,11 @@ def render_site(root: Path, pages: list[NewsletterPage], records: list[Catalogue
         encoding="utf-8",
     )
 
+    (output / "browse.html").write_text(
+        browse_template.render(site_title=config["site"]["title"]),
+        encoding="utf-8",
+    )
+
     (output / "build-report.html").write_text(report_template.render(report=report), encoding="utf-8")
 
     if issues:
@@ -128,4 +134,5 @@ def render_site(root: Path, pages: list[NewsletterPage], records: list[Catalogue
 
     shutil.copy2(root / "assets" / "library.css", output / "assets" / "library.css")
     shutil.copy2(root / "assets" / "library.js", output / "assets" / "library.js")
+    shutil.copy2(root / "assets" / "browse.js", output / "assets" / "browse.js")
     return output
