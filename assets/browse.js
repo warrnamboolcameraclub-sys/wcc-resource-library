@@ -34,6 +34,16 @@
     window.location.href = url;
   }
 
+  function navigateParent(url) {
+    if (!url) return;
+
+    if (window.parent !== window) {
+      window.parent.location.href = url;
+    } else {
+      window.location.href = url;
+    }
+  }
+
   function card(record, data) {
     const cls = ["tip", "event", "resource"].includes(record.item_type)
       ? record.item_type
@@ -74,7 +84,7 @@
 
     const actions =
       `${record.download_url ? `<a class="action download-link" href="${escapeHtml(record.download_url)}" target="_blank" rel="noopener">Download File</a>` : ""}` +
-      `<a class="action open-link" href="${escapeHtml(record.open_url)}">Open in Issue ${escapeHtml(record.issue)}</a>`;
+      `<button class="action open-link" type="button" data-open-url="${escapeHtml(record.open_url)}">Open in Issue ${escapeHtml(record.issue)}</button>`;
 
     return `
       <article class="card">
@@ -242,6 +252,13 @@
       }
     });
   }
+
+  $("browseCards").addEventListener("click", event => {
+    const button = event.target.closest("[data-open-url]");
+    if (!button) return;
+
+    navigateParent(button.dataset.openUrl);
+  });
 
   fetch("library.json", { cache: "no-store" })
     .then(response => {

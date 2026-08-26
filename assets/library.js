@@ -492,7 +492,7 @@
       const rows = getFilteredRows();
       if (rows.length <= MOBILE_PAGE_SIZE) return;
 
-      navigateParent(`browse.html?${currentBrowseParams(2)}`);
+      window.location.href = `browse.html?${currentBrowseParams(2)}`;
     });
   });
 
