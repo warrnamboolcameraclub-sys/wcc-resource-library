@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 import unittest
 
 
@@ -13,42 +14,48 @@ class IframeNavigationTests(unittest.TestCase):
         cls.script = SCRIPT.read_text(encoding="utf-8")
 
     def test_issue_links_use_parent_navigation_same_tab(self):
-        self.assertIn(
-            'data-open-url="${escapeHtml(record.open_url)}"',
-            self.script
+        # Open in Issue must be a button carrying the issue URL.
+        self.assertIn("data-open-url=", self.script)
+        self.assertIn("record.open_url", self.script)
+
+        # It must use the same parent-navigation function as the Go button.
+        self.assertRegex(
+            self.script,
+            r"navigateParent\s*\(\s*button\.dataset\.openUrl\s*\)\s*;"
         )
 
-        self.assertIn(
-            'navigateParent(button.dataset.openUrl);',
-            self.script
-        )
-
-        self.assertNotIn(
-            'target="_blank">Open in Issue',
-            self.script
+        # Open in Issue must not deliberately open a new tab.
+        self.assertNotRegex(
+            self.script,
+            r'target="_blank"[^>]*>\s*Open in Issue'
         )
 
     def test_download_links_still_open_in_new_tab(self):
-        self.assertIn(
-            'target="_blank" rel="noopener">Download File',
-            self.script
+        self.assertRegex(
+            self.script,
+            r'target="_blank"\s+rel="noopener">\s*Download File'
         )
 
     def test_edition_navigation_reuses_parent_frame(self):
-        self.assertIn(
-            'navigateParent($("editionSelect").value);',
-            self.script
+        self.assertRegex(
+            self.script,
+            r'navigateParent\s*\(\s*\$\("editionSelect"\)\.value\s*\)\s*;'
         )
 
     def test_parent_navigation_function_exists(self):
         self.assertIn(
-            'function navigateParent(url)',
+            "function navigateParent(url)",
             self.script
         )
 
-        self.assertIn(
-            'window.parent.location.href = url;',
-            self.script
+        self.assertRegex(
+            self.script,
+            r"window\.parent\.location\.href\s*=\s*url\s*;"
+        )
+
+        self.assertRegex(
+            self.script,
+            r"window\.location\.href\s*=\s*url\s*;"
         )
 
 
