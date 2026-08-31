@@ -1,0 +1,1156 @@
+<style type="text/css">
+.wcc-weekly {
+    --teal:#176b6b;
+    --dark-teal:#10484d;
+    --navy:#183f70;
+    --red:#b42318;
+    --text:#253238;
+    --muted:#5f7075;
+    --soft-teal:#edf7f6;
+    --soft-red:#fff5f4;
+    --soft-grey:#f5f6f7;
+    --border:#d6e1e1;
+    --white:#ffffff;
+    max-width:1100px;
+    margin:0 auto;
+    background:var(--white);
+    color:var(--text)!important;
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.65;
+}
+.wcc-weekly p,
+.wcc-weekly li,
+.wcc-weekly td,
+.wcc-weekly div,
+.wcc-weekly span {
+    color:var(--text)!important;
+}
+.wcc-weekly a { color:var(--navy); }
+.wcc-weekly .hero {
+    background:linear-gradient(135deg,var(--dark-teal),var(--teal));
+    color:#fff!important;
+    padding:46px 40px 40px;
+    border-bottom:7px solid var(--red);
+}
+.wcc-weekly .hero * { color:#fff!important; }
+.wcc-weekly .hero-kicker {
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:14px;
+    font-weight:bold;
+    opacity:.9;
+}
+.wcc-weekly .hero h1 {
+    margin:5px 0;
+    font-size:42px;
+    line-height:1.1;
+}
+.wcc-weekly .hero h2 {
+    margin:4px 0 14px;
+    font-size:22px;
+    font-weight:normal;
+}
+.wcc-weekly .tagline {
+    font-size:17px;
+    font-weight:bold;
+}
+.wcc-weekly .quick-links {
+    background:var(--soft-teal);
+    padding:12px 28px;
+    border-bottom:1px solid var(--border);
+}
+.wcc-weekly .quick-links details {
+    border:0;
+    margin:0;
+    background:transparent;
+    overflow:visible;
+}
+.wcc-weekly .quick-links summary {
+    cursor:pointer;
+    padding:8px 0;
+    background:transparent;
+    color:var(--dark-teal)!important;
+    font-size:16px;
+    font-weight:bold;
+    list-style:none;
+}
+.wcc-weekly .quick-links summary::-webkit-details-marker { display:none; }
+.wcc-weekly .quick-links summary:before {
+    content:"+";
+    color:var(--red);
+    font-size:19px;
+    font-weight:bold;
+    display:inline-block;
+    width:22px;
+}
+.wcc-weekly .quick-links details[open] summary:before { content:"−"; }
+.wcc-weekly .issue-nav-links { padding:8px 0 12px 22px; }
+.wcc-weekly .issue-nav-links a {
+    display:inline-block;
+    margin:5px 18px 5px 0;
+    color:var(--navy)!important;
+    font-size:14px;
+    font-weight:bold;
+    text-decoration:none;
+}
+.wcc-weekly .content { padding:32px 36px; }
+.wcc-weekly section { margin:0 0 42px; }
+.wcc-weekly h2.section-title {
+    color:var(--dark-teal)!important;
+    font-size:28px;
+    line-height:1.25;
+    margin:0 0 18px;
+    padding-bottom:8px;
+    border-bottom:3px solid var(--teal);
+}
+.wcc-weekly h3 {
+    color:var(--navy)!important;
+    margin-top:20px;
+}
+.wcc-weekly h4 {
+    color:var(--navy)!important;
+    margin-bottom:6px;
+}
+.wcc-weekly .lead {
+    font-size:18px;
+    color:#41555b!important;
+}
+.wcc-weekly .feature-card {
+    background:var(--soft-teal);
+    border-left:6px solid var(--teal);
+    padding:22px 25px;
+    margin:20px 0;
+    border-radius:5px;
+    color:var(--text)!important;
+}
+.wcc-weekly .feature-card.red {
+    background:var(--soft-red);
+    border-left-color:var(--red);
+}
+.wcc-weekly .feature-card.navy {
+    background:#f1f5fa;
+    border-left-color:var(--navy);
+}
+.wcc-weekly .feature-card * { color:var(--text)!important; }
+.wcc-weekly details {
+    border:1px solid var(--border);
+    border-radius:6px;
+    overflow:hidden;
+    margin:18px 0;
+    background:#fff;
+}
+.wcc-weekly summary {
+    cursor:pointer;
+    padding:16px 20px;
+    background:var(--soft-teal);
+    color:var(--dark-teal)!important;
+    font-weight:bold;
+    list-style:none;
+}
+.wcc-weekly summary::-webkit-details-marker { display:none; }
+.wcc-weekly summary:before {
+    content:"+";
+    color:var(--red);
+    font-size:20px;
+    font-weight:bold;
+    display:inline-block;
+    width:24px;
+}
+.wcc-weekly details[open] summary:before { content:"−"; }
+.wcc-weekly .rollup { padding:22px 24px; }
+.wcc-weekly .photo-grid {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+    margin:22px 0;
+    align-items:start;
+}
+.wcc-weekly .photo-grid.two {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+}
+.wcc-weekly .photo-card {
+    background:var(--soft-grey);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:12px;
+    box-sizing:border-box;
+    min-width:0;
+    overflow:hidden;
+}
+.wcc-weekly .photo-card img,
+.wcc-weekly .rollup img,
+.wcc-weekly section img {
+    display:block!important;
+    width:auto!important;
+    max-width:100%!important;
+    height:auto!important;
+    max-height:none!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+    margin:0 auto 10px!important;
+    box-sizing:border-box!important;
+}
+.wcc-weekly .caption {
+    color:var(--muted)!important;
+    font-size:13px;
+}
+.wcc-weekly .tips-grid {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+}
+.wcc-weekly .tip {
+    border:1px solid var(--border);
+    background:var(--soft-grey);
+    border-radius:6px;
+    padding:18px;
+}
+.wcc-weekly .tip h3 {
+    margin:0 0 6px;
+    font-size:18px;
+}
+.wcc-weekly ul,
+.wcc-weekly ol { padding-left:24px; }
+.wcc-weekly .button {
+    display:block;
+    width:100%;
+    box-sizing:border-box;
+    margin:14px 0 22px;
+    padding:15px 20px;
+    border-radius:5px;
+    background:var(--navy);
+    color:#fff!important;
+    text-align:center;
+    text-decoration:none!important;
+    font-weight:bold;
+}
+.wcc-weekly .button.teal { background:var(--teal); }
+.wcc-weekly .map-frame {
+    margin:18px 0;
+    border:1px solid var(--border);
+    border-radius:6px;
+    overflow:hidden;
+    background:var(--soft-grey);
+}
+.wcc-weekly .map-frame iframe {
+    display:block;
+    width:100%;
+    height:520px;
+    border:0;
+}
+.wcc-weekly .wcc-newsletter-footer {
+    display:block!important;
+    width:100%!important;
+    box-sizing:border-box!important;
+    background:var(--dark-teal)!important;
+    color:#fff!important;
+    padding:32px!important;
+    margin:0!important;
+    text-align:center!important;
+}
+.wcc-weekly .wcc-newsletter-footer,
+.wcc-weekly .wcc-newsletter-footer * {
+    color:#fff!important;
+}
+.wcc-weekly [id^="wcc-"] { scroll-margin-top:150px; }
+
+@media(max-width:760px) {
+    .wcc-weekly .hero { padding:34px 22px 30px; }
+    .wcc-weekly .hero h1 { font-size:34px; }
+    .wcc-weekly .content { padding:26px 18px; }
+    .wcc-weekly h2.section-title { font-size:24px; }
+    .wcc-weekly .tips-grid,
+    .wcc-weekly .photo-grid,
+    .wcc-weekly .photo-grid.two {
+        grid-template-columns:1fr;
+    }
+    .wcc-weekly .photo-card img,
+    .wcc-weekly .rollup img,
+    .wcc-weekly section img {
+        display:block!important;
+        width:auto!important;
+        max-width:100%!important;
+        height:auto!important;
+        max-height:none!important;
+        object-fit:contain!important;
+        object-position:center center!important;
+        margin:0 auto 10px!important;
+        box-sizing:border-box!important;
+    }
+    .wcc-weekly .map-frame iframe { height:400px; }
+}
+</style>
+
+<div class="wcc-weekly"
+     data-publication="weekly-update"
+     data-issue="013"
+     data-published="2026-08-31"
+     data-url="https://warrnamboolcameraclub.zenfolio.com/weekly-newsletter-013">
+
+<div class="hero">
+<div class="hero-kicker">Warrnambool Camera Club</div>
+<h1>Weekly Update</h1>
+<h2>Issue 013 | Monday, 31 August 2026</h2>
+<div class="tagline">Learn • Create • Share • Inspire</div>
+</div>
+
+<div class="quick-links">
+<details>
+<summary>In this issue</summary>
+<div class="issue-nav-links">
+<a href="#wcc-2026-013-editor">From the Editor</a>
+<a href="#wcc-2026-013-survey">Member Survey</a>
+<a href="#wcc-2026-013-world-photography-week">World Photography Week</a>
+<a href="#wcc-event-2026-10-24-werribee-zoo">Werribee Zoo</a>
+<a href="#wcc-2026-013-long-exposure-007">Convention Corner</a>
+<a href="#wcc-2026-013-lightroom-006">Editing Corner</a>
+<a href="#wcc-2026-013-tips">Photographer's Tips</a>
+<a href="#wcc-2026-013-challenge">Camera Challenge</a>
+<a href="#wcc-2026-013-members-on-the-move">Members on the Move</a>
+<a href="#wcc-2026-013-coming-up">What's Coming Up</a>
+<a href="#wcc-2026-013-contributions">Contributions</a>
+<a href="#wcc-2026-013-until-next-week">Until Next Week</a>
+</div>
+</details>
+</div>
+
+<div class="content">
+
+<section id="wcc-2026-013-editor"
+         data-index="article"
+         data-category="club-news"
+         data-title="From the Editor"
+         data-tags="weekly-update,member-survey,resource-library,werribee-zoo,judging-night">
+<h2 class="section-title">🏡 From the Editor</h2>
+
+<p>Welcome to Issue 013 of the Warrnambool Camera Club Weekly Update.</p>
+
+<p>One of the most pleasing things this week is being able to report back on our recent member survey. The Committee worked through the responses last Thursday, and two practical ideas are already moving ahead.</p>
+
+<p>We’ll begin making better use of the Club’s existing private Facebook group so members can let others know when they’re heading out with the camera, and we have now developed a searchable Photography Resource Library to make the growing collection of Weekly Update articles, tutorials and tips much easier to find again.</p>
+
+<p>We also have confirmation from Tania that our Werribee Open Range Zoo trip on Saturday, 24 October is going ahead, with the RSVP, deposit and bus details included in this week’s issue.</p>
+
+<p>This Thursday, 3 September is our September Judging Night with Johanna Botman, while our educational series continue with Long Exposure Part 7: Exposure and the Histogram – Don’t Trust Your Screen and Lightroom Basics Part 6: Noise Reduction Without Losing Detail.</p>
+
+<p>Plenty to read, and hopefully something useful to take away and try with the camera this week.</p>
+
+<p>Stan</p>
+</section>
+
+<section id="wcc-2026-013-survey"
+         data-index="article"
+         data-category="club-news"
+         data-title="You Spoke – We Listened: Our 2027 Member Survey"
+         data-tags="2027-member-survey,member-feedback,photo-walks,facebook-group,competition-subjects,workshops,resource-library,name-badges">
+<h2 class="section-title">📋 You Spoke – We Listened: Our 2027 Member Survey</h2>
+
+<p class="lead">A big thank you to everyone who took the time to complete our 2027 Member Survey.</p>
+
+<p>The response has given the committee a great deal of useful information about what members enjoy, what you would like to see more of and where we can continue to improve.</p>
+
+<p>The overall feedback was very positive, but just as importantly, there were plenty of constructive ideas that we can put to practical use.</p>
+
+<p>We didn't conduct the survey simply to collect numbers. Your feedback will help shape what we do during 2027.</p>
+
+<details>
+<summary>More Opportunities to Get Out With Our Cameras</summary>
+<div class="rollup">
+<p>One of the clearest messages was that members enjoy the social side of photography.</p>
+<p>When members described what they enjoy about our social activities, recurring themes included friendship, connecting with other members, visiting new places and learning new genres and techniques together.</p>
+<p>And when we asked what you would like more of, photo walks came out on top, followed closely by guest speakers and weekend workshops.</p>
+<p>That's a message we've heard loud and clear.</p>
+<p>We will be looking for more opportunities during 2027 to get out with our cameras, both through organised Club activities and through more informal opportunities for members to photograph together.</p>
+</div>
+</details>
+
+<details>
+<summary>Our Private Facebook Group Will Have a New Purpose</summary>
+<div class="rollup">
+<p>The Club already has a private Facebook group that was set up some years ago, but it has never really been used and most members would not even know it exists.</p>
+<p>We now plan to put it to practical use.</p>
+<p>Importantly, this will not become another place where you have to look for official Club information. The weekly newsletter will remain our primary way of keeping members informed.</p>
+<p>Instead, think of the private Facebook group as an informal members’ clubhouse.</p>
+<p>If you’re heading out with your camera and wouldn’t mind some company, put up a post:</p>
+<div class="feature-card"><p>“I’m heading down to Thunder Point for sunset tonight. Anyone interested in joining me?”</p></div>
+<p>Perhaps you’ve heard there are whales at Logans Beach, you’re heading to Tower Hill for some wildlife photography, there’s an interesting event happening around town, or you’re simply going for a walk with your camera.</p>
+<p>Let other members know. Someone else might be thinking exactly the same thing.</p>
+<p>These do not have to be organised Camera Club outings. There does not need to be a committee member involved and nobody needs to prepare an itinerary.</p>
+<p>It is simply about making it easier for members to get together and enjoy photography.</p>
+<p>The group will be private and restricted to Club members. We’ll explain more about how it will work, how to join and how to manage notifications at this week’s Club gathering.</p>
+<p>We’ll also be sending invitations to members where we can, but there may be a few people we miss. If you would like to join the group and haven’t received an invitation, please let us know so we can add you.</p>
+</div>
+</details>
+
+<details>
+<summary>What Do We Like Photographing?</summary>
+<div class="rollup">
+<p>The survey showed just how diverse our photographic interests are.</p>
+<p>Landscape Photography was the most popular, followed by Seascape, but there was also strong interest in Macro, Street Photography, Sports and Action, Wildlife and Birds, Night Photography and Astrophotography.</p>
+<p>That's useful information when we're planning outings, workshops, guest speakers and other activities.</p>
+<p>There were also plenty of suggestions for places to visit, from local beaches, Tower Hill and Port Fairy through to the Grampians, Otways and Melbourne for street, architectural and zoo photography.</p>
+<p>We're certainly not short of ideas.</p>
+</div>
+</details>
+
+<details>
+<summary>Competition Set Subjects</summary>
+<div class="rollup">
+<p>We gave you a very large selection of possible competition subjects, and you certainly made use of it.</p>
+<p>Some of the strongest choices included:</p>
+<div class="feature-card"><p><strong>Fog and Mist • Long Exposure • Wildlife • Reflections • Sunrise or Sunset • Industrial/Architecture</strong></p></div>
+<p>There were plenty of other subjects close behind, which gives us a great pool of possibilities for future competitions.</p>
+<p>We also received some thoughtful comments about making sure we have a broad range of subjects that members with different levels of experience and confidence can tackle.</p>
+<p>That's something the committee will take into consideration when planning future set subjects.</p>
+</div>
+</details>
+
+<details>
+<summary>What Would You Like to Learn?</summary>
+<div class="rollup">
+<p>Another strong message was that members want opportunities to keep learning.</p>
+<p>The leading workshop interests included:</p>
+<ul>
+<li>Astrophotography</li>
+<li>Photoshop</li>
+<li>Landscape Photography</li>
+<li>Macro Photography</li>
+<li>Printing &amp; Matting</li>
+<li>Guest Speakers</li>
+</ul>
+<p>There were also some excellent suggestions for other topics, including monitor calibration, analogue/darkroom photography and assistance with MyPhotoClub.</p>
+<p>Not everything needs to be a major workshop either. Some of these topics could lend themselves perfectly to shorter demonstrations, presentations or practical sessions during the year.</p>
+</div>
+</details>
+
+<details>
+<summary>The Weekly Newsletter</summary>
+<div class="rollup">
+<p>The feedback about our weekly newsletter was particularly encouraging.</p>
+<p>Every member who answered the satisfaction question rated the newsletter either Satisfied or Very Satisfied.</p>
+<p>Members told us they particularly value the photography and editing tips, learning material, regular information and reminders about what is happening around the Club.</p>
+<p>There were also some useful suggestions.</p>
+<p>These included providing some information about upcoming competition judges, reminding members about forthcoming set subjects, keeping some articles a little shorter and possibly introducing a regular photo challenge.</p>
+<p>We'll be looking at all of those ideas.</p>
+</div>
+</details>
+
+<details>
+<summary>Making Our Articles Easier to Find</summary>
+<div class="rollup">
+<p>Our Weekly Updates are now available on the Warrnambool Camera Club website.</p>
+<p>Over time, the newsletter has become much more than a list of Club announcements. We now have a growing collection of photography tips, Lightroom and Photoshop articles, camera guides, tutorials and other educational material.</p>
+<p>The problem is that if you remember reading something useful three or six months ago, finding that particular article buried amongst old emails isn't particularly easy.</p>
+<p>We want to fix that.</p>
+<p>The newsletters now have a permanent home on the website, and we have developed a searchable Photography Resource Library that makes it much easier to find individual articles by topic.</p>
+<p>Want to find that article about White Balance? Or Long Exposure Photography? Or something about Lightroom?</p>
+<p>Rather than searching through months of emails, the aim is that you'll be able to go to the website and find it directly.</p>
+<p>Previous Weekly Updates are also being progressively added to the online archive, so members will be able to browse earlier editions as well as find individual articles and tutorials.</p>
+<p>The weekly email newsletter isn't going anywhere. You'll continue receiving it just as you do now.</p>
+<p>The website simply gives all that useful material a permanent home where you can find it again when you need it.</p>
+</div>
+</details>
+
+<details>
+<summary>Communication Is Working – So We're Building On It</summary>
+<div class="rollup">
+<p>It was also pleasing to see that members feel well informed about what is happening around the Club.</p>
+<p>Everyone who answered the question about being kept informed about social events selected either Always or Most of the time.</p>
+<p>That's important because we're not looking to replace something that's already working.</p>
+<p>The newsletter will continue to provide regular Club information, while the website will make our growing library of information easier to find and the private Facebook group will provide a more immediate, informal way for members to connect with one another.</p>
+<p>Each has a different job.</p>
+</div>
+</details>
+
+<details>
+<summary>A Few Smaller Ideas Matter Too</summary>
+<div class="rollup">
+<p>Not every useful suggestion requires a new workshop or outing.</p>
+<p>Name badges were mentioned more than once in the survey, and we’ve already followed that one up.</p>
+<p>We have contacted Neil Smith, who originally produced the Club name badges, and he is still able to make them for us.</p>
+<p>If you do not currently have a name badge, or you have lost your original one, we’ll be collecting names at this Thursday night’s gathering.</p>
+<p>The cost will be $10 per badge.</p>
+<p>It is a relatively small thing, but particularly useful for newer members who are still getting to know everyone, and it is a good example of how even the smaller survey suggestions can lead to something practical.</p>
+</div>
+</details>
+
+<details>
+<summary>Where Do We Go From Here?</summary>
+<div class="rollup">
+<p>The committee now has plenty to work with as we put together our plans for 2027.</p>
+<p>We'll be looking particularly at:</p>
+<ul>
+<li>More photo walks and practical photography opportunities</li>
+<li>Outings to some new locations</li>
+<li>Workshops based on the subjects you've told us interest you</li>
+<li>A varied selection of competition set subjects</li>
+<li>More guest speakers</li>
+<li>Making it easier for members to organise informal photography opportunities together</li>
+<li>Continuing to develop the weekly newsletter</li>
+<li>Building a useful archive of newsletters, articles and photography resources on our website</li>
+<li>Putting the private members’ Facebook group to practical use</li>
+</ul>
+<p>You won't necessarily see everything happen immediately, and not every suggestion will be practical, but the survey results will directly influence our planning for 2027.</p>
+</div>
+</details>
+
+<details>
+<summary>And Finally – Thank You</summary>
+<div class="rollup">
+<p>Perhaps the most encouraging thing to come through the survey wasn't a particular workshop, competition subject or outing destination.</p>
+<p>It was how often members talked about friendship, connecting with other people, learning from each other and simply getting out together with our cameras.</p>
+<p>Photography may be what brings us together, but clearly the Club provides something more than competitions and meetings.</p>
+<p>Thank you to everyone who contributed.</p>
+<p>Now it's our job to put your feedback to work.</p>
+</div>
+</details>
+</section>
+
+<section id="wcc-2026-013-world-photography-week"
+         data-index="article"
+         data-category="feature"
+         data-title="World Photography Week – A Few More from Jason"
+         data-tags="world-photography-week,jason-carter,member-images,waterdrop,chicken,mushroom"
+         data-people="jason-carter">
+<h2 class="section-title">📸 World Photography Week – A Few More from Jason</h2>
+<p>We missed a few of Jason’s photographs from World Photography Week in the previous issue, so we’re making up for it this week.</p>
+<p>Jason sent through several images from the week, and rather than let them disappear into the inbox, we thought we’d share a few of them here.</p>
+
+<div class="photo-grid">
+<div class="photo-card">
+<img src="/img/s/v-10/p1592700773-3.jpg" alt="waterdrop by Jason Carter" loading="lazy" decoding="async" />
+<div class="caption">waterdrop — Jason Carter</div>
+</div>
+<div class="photo-card">
+<img src="/img/s/v-10/p1592700781-3.jpg" alt="chicken by Jason Carter" loading="lazy" decoding="async" />
+<div class="caption">chicken — Jason Carter</div>
+</div>
+<div class="photo-card">
+<img src="/img/s/v-10/p1592700782-3.jpg" alt="mushroom by Jason Carter" loading="lazy" decoding="async" />
+<div class="caption">mushroom — Jason Carter</div>
+</div>
+</div>
+
+<p>Thanks, Jason, and apologies for missing them last time.</p>
+</section>
+
+<section id="wcc-event-2026-10-24-werribee-zoo"
+         data-index="event"
+         data-category="events"
+         data-title="Werribee Open Range Zoo – It’s Going Ahead!"
+         data-event-date="2026-10-24"
+         data-event-status="confirmed"
+         data-tags="werribee-open-range-zoo,wildlife,bus-trip,rsvp,deposit,cashless,deluxe-safari"
+         data-people="tania-jacobson"
+         data-locations="werribee-open-range-zoo,werribee">
+<h2 class="section-title">🦒 Werribee Open Range Zoo – It’s Going Ahead!</h2>
+<p class="lead">A note from our Event Coordinator, Tania:</p>
+
+<div class="feature-card">
+<p>Hi Members,</p>
+<p>We’re pleased to let you know that our Warrnambool Camera Club trip to Werribee Open Range Zoo is going ahead on Saturday, 24 October.</p>
+<p>Departure time and location, entry fees and detailed arrangements will be provided shortly.</p>
+<p>We will be travelling by bus with limited seats available, so it is important that if you’d like to come along, you let us know no later than 24 September by either emailing Tania or by text message.</p>
+<p>To confirm your seat, members will be asked to pay a $40 deposit. This deposit will be reimbursed as part of your entry fee into Werribee Open Range Zoo.</p>
+<p>As a thank you to all our members for your contributions during the year there will be no charge for Camera Club members for the bus. For non-members travelling on the bus a fee of $25 is payable.</p>
+<p>We look forward to a great day of wildlife, photography and fun! 📸🦒</p>
+<p>Kind regards,<br>Tania</p>
+</div>
+
+<p>There are also two practical things worth knowing before the day: the Zoo is cashless, and there is an optional Deluxe Safari Adventure for anyone wanting a closer photographic experience.</p>
+
+<details>
+<summary>💳 Important: Werribee Open Range Zoo is Cashless</summary>
+<div class="rollup">
+<p>Werribee Open Range Zoo is a cashless venue, so please make sure you bring a debit or credit card, or have a suitable digital payment option available on your phone.</p>
+<p>Cash is not accepted for purchases at the Zoo, including food, drinks and other on-site purchases.</p>
+</div>
+</details>
+
+<details>
+<summary>🚙 Optional Deluxe Safari Adventure</summary>
+<div class="rollup">
+<p>For members who want to get a little closer to the animals and potentially create some different photographic opportunities, Werribee Open Range Zoo also offers a Deluxe Safari Adventure.</p>
+<p>The experience is a 75-minute small-group safari with a personal guide, travelling across the open plains to see animals including rhinos, giraffes, zebras and antelopes.</p>
+<p>Unlike the general Safari Bus, the Deluxe Safari allows more time to stop, observe and photograph from closer viewpoints.</p>
+<p>The current listed price is $60 per person, or $54 for Zoo Members, in addition to normal zoo entry. Capacity is limited, so anyone interested should book separately and preferably well before the day.</p>
+<p>Details are available on the Werribee Open Range Zoo website:</p>
+<a class="button teal" href="https://www.zoo.org.au/werribee/whats-on/animal-experiences/deluxe-safari-adventure/" target="_blank" rel="noopener">VIEW DELUXE SAFARI ADVENTURE</a>
+</div>
+</details>
+
+<div class="feature-card navy">
+<h3>From the Club</h3>
+<p>This trip is now confirmed, so if you are interested in coming along, please make sure you register with Tania by 24 September.</p>
+<p>With limited seats on the bus, early confirmation is encouraged.</p>
+<p>Further details, including departure time, departure location and zoo entry costs, will be included in a future Weekly Update as soon as they are finalised.</p>
+</div>
+</section>
+
+<section id="wcc-2026-013-long-exposure-007"
+         data-index="article"
+         data-category="education"
+         data-title="Exposure and the Histogram – Don’t Trust Your Screen"
+         data-series="mastering-long-exposure-photography"
+         data-part="7"
+         data-tags="long-exposure,histogram,exposure,ettr,raw,highlight-warning,nd-filter"
+         data-people="ian-van-der-wolde">
+<h2 class="section-title">📷 Convention Corner</h2>
+<h3>Mastering Long Exposure Photography</h3>
+<h3>Part 7: Exposure and the Histogram – Don’t Trust Your Screen</h3>
+
+<p class="lead">You’ve composed the photograph, carefully focused the camera, fitted your ND filter and made the exposure. The photograph appears on the back of the camera. It looks great.</p>
+<p><strong>But is it correctly exposed?</strong></p>
+<p>During his VAPS Convention presentation, Ian van der Wolde made an important point about something almost every photographer does: judging exposure by looking at the photograph on the camera’s rear screen.</p>
+<p>The problem is that our eyes are easily fooled.</p>
+<p><strong>The histogram gives us much more useful information.</strong></p>
+
+<details>
+<summary>Why Your Camera Screen Can Mislead You</summary>
+<div class="rollup">
+<p>Imagine photographing a long exposure on a beach in bright daylight. You look at the rear LCD and the photograph appears quite dark.</p>
+<p>Later that evening, you look at exactly the same photograph in a dark room and suddenly it appears bright.</p>
+<p>The file hasn’t changed. Your viewing environment has.</p>
+<p>That is why judging exposure purely by whether the photograph “looks right” on the rear LCD is not particularly reliable.</p>
+</div>
+</details>
+
+<details>
+<summary>Meet the Histogram</summary>
+<div class="rollup">
+<p>The histogram is a graphical representation of the brightness values contained within your photograph.</p>
+<p>The left side represents darker tones. The right side represents brighter tones. Everything between represents the tonal range captured in the image.</p>
+<p>A histogram weighted towards the left does not automatically mean a photograph is underexposed, just as a histogram weighted towards the right does not automatically mean it is overexposed.</p>
+<p>There is no single perfect histogram shape.</p>
+<p>What matters is whether the histogram represents the scene and whether you have retained the information you need.</p>
+</div>
+</details>
+
+<details>
+<summary>Watch the Edges</summary>
+<div class="rollup">
+<p>The areas that deserve particular attention are the extreme ends of the histogram.</p>
+<p>If important information is pushed hard against the right edge, highlights may be clipped. Once highlight information is completely lost, recovering it later may be impossible.</p>
+<p>At the opposite end, if important shadow detail is crushed against the left edge, those areas may contain very little usable information.</p>
+</div>
+</details>
+
+<details>
+<summary>Why Ian Likes to “Expose to the Right”</summary>
+<div class="rollup">
+<p>Ian discussed a technique commonly known as ETTR – Expose To The Right.</p>
+<p>The idea is to give the RAW file as much exposure as practical without clipping important highlights.</p>
+<p>Digital sensors generally record cleaner information when given more light. If an image is significantly underexposed and you later brighten the shadows, noise can become much more obvious.</p>
+<p>But there is an important qualification:</p>
+<p><strong>Expose to the right does not mean overexpose the photograph.</strong></p>
+<p>If important highlights are clipping, you have gone too far.</p>
+</div>
+</details>
+
+<details>
+<summary>Why This Matters for Long Exposures</summary>
+<div class="rollup">
+<p>Long exposure photographs can contain enormous differences in brightness.</p>
+<p>A sunset seascape may have a relatively bright sky while rocks in the foreground are becoming very dark. A pier at night may contain bright lights surrounded by deep shadows.</p>
+<p>Instead of asking:</p>
+<p>“Does this look bright enough?”</p>
+<p>Ask:</p>
+<p>“Where is the information in my file?”</p>
+</div>
+</details>
+
+<details>
+<summary>Take a Test Exposure First</summary>
+<div class="rollup">
+<p>Ian recommended making a normal exposure before fitting a strong ND filter.</p>
+<p>This allows you to check:</p>
+<ul>
+<li>Composition</li>
+<li>Focus</li>
+<li>Exposure</li>
+<li>Histogram</li>
+<li>Highlights</li>
+<li>Shadows</li>
+</ul>
+<p>Once you are happy with that starting exposure, calculate the longer exposure required when the ND filter is added.</p>
+<p><strong>Get the photograph right first. Then make it long.</strong></p>
+</div>
+</details>
+
+<details>
+<summary>Highlight Warnings, RAW and One Important Limitation</summary>
+<div class="rollup">
+<p>Many cameras offer a highlight warning, sometimes affectionately known as the “blinkies”. Areas that may be overexposed flash on the rear display.</p>
+<p>A tiny specular highlight on water or a streetlight clipping may not matter. A large section of an important sunset sky flashing probably does.</p>
+<p>Ian also strongly recommended shooting RAW because it gives much greater flexibility when adjusting highlights, shadows, white balance and colour later.</p>
+<p>One thing to remember is that the histogram displayed by the camera is generally based on the processed preview, not directly on the RAW data, so picture styles and contrast settings can influence what you see.</p>
+<p>Treat the histogram as an extremely useful field guide rather than an infallible laboratory measurement.</p>
+</div>
+</details>
+
+<div class="feature-card navy">
+<h3>Ian’s Basic Exposure Workflow</h3>
+<p><strong>Compose → Focus → Make a Test Exposure → Check Histogram → Check Highlights → Adjust Exposure → Add ND Filter → Calculate Long Exposure → Shoot</strong></p>
+<p>That test photograph might take only a few seconds. It could save you from wasting ten minutes on an incorrectly exposed long exposure.</p>
+</div>
+
+<details>
+<summary>Try It This Week</summary>
+<div class="rollup">
+<p>Find a scene containing both bright and dark areas and take three photographs:</p>
+<ul>
+<li>One deliberately underexposed</li>
+<li>One at the exposure you think is correct</li>
+<li>One deliberately overexposed</li>
+</ul>
+<p>Now ignore how bright or dark the photographs appear on the rear screen and look at their histograms instead.</p>
+<p>Notice how the information moves from left to right as exposure increases.</p>
+<p>Then compare the files later in Lightroom or your preferred RAW processor.</p>
+</div>
+</details>
+
+<div class="feature-card">
+<h3>Quick Tip</h3>
+<p>Don’t ask whether the photograph looks bright enough on the camera screen.</p>
+<p>Ask whether you have captured the tonal information you need.</p>
+</div>
+
+<p><strong>Coming next:</strong> Part 8 – Base ISO: Why Lower Can Be Better for Long Exposures.</p>
+</section>
+
+<section id="wcc-2026-013-lightroom-006"
+         data-index="article"
+         data-category="editing"
+         data-title="Noise Reduction Without Losing Detail"
+         data-series="lightroom-basics"
+         data-part="6"
+         data-tags="lightroom,noise-reduction,ai-denoise,luminance-noise,colour-noise,detail,sharpening">
+<h2 class="section-title">💻 Editing Corner</h2>
+<h3>Lightroom Basics – Part 6</h3>
+<h3>Noise Reduction Without Losing Detail</h3>
+
+<p class="lead">Noise is something every photographer encounters eventually, particularly when shooting at high ISO, in poor light, or when lifting dark areas during editing.</p>
+
+<p>In Lightroom, noise generally appears in two forms:</p>
+<ul>
+<li>Luminance noise – the grainy, speckled look that affects brightness</li>
+<li>Colour noise – small unwanted red, green, blue or purple speckles</li>
+</ul>
+<p>The challenge is not simply removing noise.</p>
+<p><strong>The real goal is to reduce the noise while keeping as much genuine detail as possible.</strong></p>
+
+<details>
+<summary>1. Zoom In Before You Start</summary>
+<div class="rollup">
+<p>Open the photograph in Lightroom Classic’s Develop module and zoom to around 100% or 1:1.</p>
+<p>Noise reduction can be difficult to judge when the whole photograph is fitted to the screen.</p>
+<p>Look particularly at dark backgrounds, shadows, smooth skies, skin, fur and feathers.</p>
+</div>
+</details>
+
+<details>
+<summary>2. Two Ways to Reduce Noise</summary>
+<div class="rollup">
+<p>Lightroom gives you two main approaches.</p>
+<p>Traditional noise reduction uses the sliders in the Detail panel.</p>
+<p>AI Denoise uses Adobe’s newer processing to reduce noise while attempting to preserve fine detail.</p>
+<p>It is worth understanding both rather than assuming one method is always best.</p>
+</div>
+</details>
+
+<details>
+<summary>3. Start With Luminance Noise</summary>
+<div class="rollup">
+<p>The Luminance slider deals with the grainy brightness variations we usually think of as digital noise.</p>
+<p>Move it gradually to the right and watch the grain begin to disappear.</p>
+<p>The catch is that the photograph becomes smoother as you increase the setting.</p>
+<p><strong>Beginner rule: stop before feathers, fur, skin or fine texture start looking plastic.</strong></p>
+</div>
+</details>
+
+<details>
+<summary>4. Detail, Contrast and Colour Noise</summary>
+<div class="rollup">
+<p>The Detail control determines how much fine detail Lightroom tries to preserve.</p>
+<p>Higher settings retain more detail but may leave more visible noise. Lower settings produce a smoother result but can remove fine texture.</p>
+<p>Colour noise reduction deals with unwanted coloured speckles and is often easier to remove without damaging image detail.</p>
+</div>
+</details>
+
+<details>
+<summary>5. Try AI Denoise</summary>
+<div class="rollup">
+<p>For suitable RAW files, Lightroom’s AI Denoise can produce very good results.</p>
+<p>It is particularly useful for high ISO photographs where conventional luminance reduction would need to be pushed quite hard.</p>
+<p>But the same rule applies: judge the final photograph, not simply how clean the background looks.</p>
+</div>
+</details>
+
+<details>
+<summary>6. Don’t Remove Every Trace of Noise</summary>
+<div class="rollup">
+<p>This is one of the biggest beginner traps.</p>
+<p>A small amount of fine noise is often far less objectionable than a photograph that has been smoothed until all the texture disappears.</p>
+<p>A bird photograph with a little grain in the background but beautifully detailed feathers will usually look far better than completely smooth noise accompanied by waxy feathers.</p>
+</div>
+</details>
+
+<details>
+<summary>7. Noise Reduction and Sharpening Work Together</summary>
+<div class="rollup">
+<p>Remember Part 5 of our Lightroom Basics series.</p>
+<p>Sharpening and noise reduction both operate on fine image detail.</p>
+<p>Too much sharpening can make noise more visible. Too much noise reduction can remove the detail you are trying to sharpen.</p>
+<p>The two adjustments therefore need to be judged together.</p>
+</div>
+</details>
+
+<div class="feature-card navy">
+<h3>A Simple Beginner Method</h3>
+<ul>
+<li>Zoom to 100%.</li>
+<li>Open the Detail panel.</li>
+<li>Identify whether the problem is grain, colour speckles or both.</li>
+<li>Try Denoise if working with a suitable RAW file.</li>
+<li>Otherwise increase Luminance gradually.</li>
+<li>Adjust Detail only as much as necessary.</li>
+<li>Check Colour noise reduction.</li>
+<li>Recheck your sharpening.</li>
+<li>Compare the photograph before and after.</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<p><strong>Remember:</strong></p>
+<p>A little noise is usually better than a lot of lost detail.</p>
+<p>Noise reduction should clean the photograph, not erase its texture.</p>
+</div>
+
+<a class="button teal"
+   id="wcc-resource-2026-013-lightroom-noise-reduction"
+   data-index="resource"
+   data-category="editing"
+   data-title="Noise Reduction Editing Corner Article"
+   data-series="lightroom-basics"
+   data-part="6"
+   data-tags="lightroom,noise-reduction,editing-corner,resource"
+   href="https://warrnamboolcameraclub.zenfolio.com/lr_006_noise_reduction.pdf"
+   target="_blank"
+   rel="noopener">OPEN THE NOISE REDUCTION EDITING CORNER ARTICLE</a>
+</section>
+
+<section id="wcc-2026-013-tips">
+<h2 class="section-title">📸 Photographer’s Tips</h2>
+<div class="tips-grid">
+
+<div class="tip"
+     id="wcc-tip-b009"
+     data-index="tip"
+     data-category="photography-tips"
+     data-title="Fill the Frame"
+     data-level="beginner"
+     data-code="B009"
+     data-tags="composition,fill-the-frame,cropping,subject">
+<h3>🌱 Beginner Tip – B009</h3>
+<h4>Fill the Frame</h4>
+<p>If your subject is the reason for taking the photograph, make sure it has enough presence in the frame.</p>
+<p>Before pressing the shutter, ask whether there is empty or distracting space that adds nothing to the photograph. If it is safe and practical, move closer or choose a longer focal length rather than relying on a heavy crop later.</p>
+<p>Filling the frame does not mean every photograph must be tight. It simply means making a deliberate decision about how much space your subject needs.</p>
+</div>
+
+<div class="tip"
+     id="wcc-tip-i009"
+     data-index="tip"
+     data-category="photography-tips"
+     data-title="Use Reflections as Part of the Composition"
+     data-level="intermediate"
+     data-code="I009"
+     data-tags="reflections,composition,symmetry,viewpoint">
+<h3>📷 Intermediate Tip – I009</h3>
+<h4>Use Reflections as Part of the Composition</h4>
+<p>When you find a reflection, do not treat it as an accidental extra. Decide how much of it belongs in the photograph.</p>
+<p>A complete reflection can create strong symmetry, while cutting through a reflection deliberately can produce a more dynamic composition.</p>
+<p>Move your camera higher or lower and watch how the relationship between the subject and its reflection changes. A small change in viewpoint can completely alter the balance of the image.</p>
+</div>
+
+<div class="tip"
+     id="wcc-tip-a009"
+     data-index="tip"
+     data-category="photography-tips"
+     data-title="Use Repetition, Then Break the Pattern"
+     data-level="advanced"
+     data-code="A009"
+     data-tags="repetition,patterns,visual-rhythm,composition,focal-point">
+<h3>⭐ Advanced Tip – A009</h3>
+<h4>Use Repetition, Then Break the Pattern</h4>
+<p>Repeated shapes, colours, lines or objects create visual rhythm and can make a photograph immediately satisfying to look at.</p>
+<p>But repetition becomes even stronger when one element is different.</p>
+<p>Look for the red chair among blue chairs, the one bird facing the other way, the single open window in a row of closed ones, or a person entering an otherwise regular pattern.</p>
+<p>The repeated elements establish the structure. The break in the pattern gives the viewer somewhere to look.</p>
+</div>
+
+</div>
+</section>
+
+<section id="wcc-2026-013-challenge"
+         data-index="article"
+         data-category="challenge"
+         data-title="One Subject, Three Interpretations"
+         data-tags="camera-challenge,one-subject,three-interpretations,composition,creativity">
+<h2 class="section-title">📷 This Week’s Camera Challenge</h2>
+<h3>One Subject, Three Interpretations</h3>
+<p>Choose one subject and make three photographs that look genuinely different from one another.</p>
+<p>Try:</p>
+<ul>
+<li>A wider environmental photograph showing where the subject is</li>
+<li>A tighter composition concentrating on the subject itself</li>
+<li>A detail or abstract interpretation that someone might not immediately recognise</li>
+</ul>
+<p>You can use different focal lengths, camera heights, angles, apertures or distances, but the subject must remain the same.</p>
+<p>The aim is to remind ourselves that finding a subject is only the beginning. The real creative decision is how we choose to show it.</p>
+</section>
+
+<section id="wcc-2026-013-members-on-the-move"
+         data-index="article"
+         data-category="members-on-the-move"
+         data-title="Members on the Move"
+         data-tags="member-travel,alice-springs,europe,travel-updates">
+<h2 class="section-title">✈️ Members on the Move</h2>
+
+<p class="lead">The travel baton continues to move through the Club. Bob and Kerrie are still exploring around Alice Springs, Craig and Sharon are now home from Europe, and Lyn and Phil are about to become our next overseas travellers.</p>
+
+<details id="wcc-2026-013-bob-kerrie"
+         data-index="article"
+         data-category="members-on-the-move"
+         data-title="Bob & Kerrie – Still in Alice Springs"
+         data-tags="bob-artis,kerrie-artis,alice-springs,mckenzie-ranges,travel"
+         data-people="bob-artis,kerrie-artis"
+         data-locations="alice-springs,mckenize-ranges">
+<summary>🇦🇺 Bob &amp; Kerrie – Still in Alice Springs</summary>
+<div class="rollup">
+<p>Bob and Kerrie are still in Alice Springs and have sent through a couple of new photographs from their travels.</p>
+<p>Their journey through Queensland and the Northern Territory has already taken them through some remarkable country, and it is good to see the camera is still getting plenty of use along the way.</p>
+
+<div class="photo-grid two">
+<div class="photo-card">
+<img src="/img/s/v-10/p1592700760-3.jpg" alt="ghost gum over 100 years old at Mckenize Ranges Alice Springs" loading="lazy" decoding="async" />
+<div class="caption">ghost gum over 100 years old at Mckenize Ranges Alice Springs — Bob Artis</div>
+</div>
+<div class="photo-card">
+<img src="/img/s/v-10/p1592700770-3.jpg" alt="eagle in flight at Mckenize Ranges Alice Springs" loading="lazy" decoding="async" />
+<div class="caption">eagle in flight at Mckenize Ranges Alice Springs — Bob Artis</div>
+</div>
+</div>
+</div>
+</details>
+
+<details id="wcc-2026-013-craig-sharon"
+         data-index="article"
+         data-category="members-on-the-move"
+         data-title="Craig & Sharon – Back Home"
+         data-tags="craig-homberg,sharon-homberg,europe,london,ireland,germany,iceland,travel"
+         data-people="craig-homberg,sharon-homberg"
+         data-locations="london,ireland,germany,iceland">
+<summary>🇪🇺 Craig &amp; Sharon – Back Home</summary>
+<div class="rollup">
+<p>Our intrepid European travellers, Craig and Sharon, are now safely back home after their extended overseas adventure.</p>
+<p>They covered plenty of ground along the way, including London, Ireland, Germany and Iceland, and gave us some great updates for Members on the Move.</p>
+<p>Craig is apparently still paying the price for all that travelling and is suffering a touch of jet lag.</p>
+<p>Welcome home to you both.</p>
+</div>
+</details>
+
+<details id="wcc-2026-013-lyn-phil-handover"
+         data-index="article"
+         data-category="members-on-the-move"
+         data-title="And the baton passes on..."
+         data-tags="lyn,phil,overseas-travel,travel-handover">
+<summary>✈️ And the baton passes on...</summary>
+<div class="rollup">
+<p>With Craig and Sharon back home, Lyn and Phil are about to become our next overseas travellers.</p>
+<p>We’re hoping to get a better idea of where they’re heading and what they have planned before next week’s issue.</p>
+<p>Of course, we also fully expect that they’ll be far too busy enjoying themselves to worry too much about keeping us updated 😁</p>
+<p>If we get the occasional photo or travel snippet, we’ll happily share it.</p>
+</div>
+</details>
+</section>
+
+<section id="wcc-2026-013-coming-up"
+         data-index="article"
+         data-category="club-news"
+         data-title="What’s Coming Up"
+         data-tags="judging-night,running-festival,flash-trigger,high-key,werribee-zoo">
+<h2 class="section-title">📅 What’s Coming Up</h2>
+
+<div id="wcc-event-2026-09-03-judging"
+     data-index="event"
+     data-category="competition"
+     data-title="Thursday, 3 September – September Judging Night"
+     data-event-date="2026-09-03"
+     data-event-status="confirmed"
+     data-tags="competition,judging,johanna-botman,september"
+     data-people="johanna-botman">
+<h3>🏆 Thursday, 3 September – September Judging Night</h3>
+<p>Our next Club meeting is this Thursday, 3 September, when we’ll hold our September Competition Judging Night.</p>
+<p>We’ll be welcoming Johanna Botman from the Bacchus Marsh and Districts Photography Club as our judge for the evening.</p>
+<p>As always, judging night is about much more than scores or awards. Listening to an experienced judge discuss composition, technique, impact and possible improvements is one of the best learning opportunities our Club provides.</p>
+</div>
+
+<div id="wcc-event-2026-09-19-running-festival"
+     data-index="event"
+     data-category="community"
+     data-title="Warrnambool Running Festival – Volunteers Needed"
+     data-event-date="2026-09-19"
+     data-event-status="confirmed"
+     data-tags="warrnambool-running-festival,volunteers,fundraising,action-photography,marathon"
+     data-locations="warrnambool,lake-pertobe,foreshore">
+<h3>🏃 Warrnambool Running Festival – Volunteers Needed</h3>
+
+<p>The Warrnambool Running Festival is coming up on Saturday, 19 and Sunday, 20 September, and it is one of the Club’s major fundraisers.</p>
+<p>The money we raise from events like this helps us keep membership fees down and also helps fund other Club activities, workshops and opportunities throughout the year.</p>
+<p>We will be asking for volunteers at this Thursday night’s gathering.</p>
+
+<p>If you have never photographed a running event before, don’t let that put you off. The full details below explain the Saturday and Sunday requirements, how we pair less experienced members with others, and why you do not need a long lens.</p>
+
+<details>
+<summary>Saturday and Sunday Photography Requirements</summary>
+<div class="rollup">
+<h3>Saturday</h3>
+<p>Saturday features the 2 km and 4 km events.</p>
+<p>We will need at least four photographers for a couple of hours, roughly from 2:30 PM until 5:00 PM.</p>
+
+<h3>Sunday</h3>
+<p>Sunday is the major photography day, with the:</p>
+<ul>
+<li>Marathon</li>
+<li>Half Marathon</li>
+<li>10 km</li>
+<li>6 km</li>
+</ul>
+<p>We will need around 8–10 photographers to cover the course properly.</p>
+<p>The marathon course extends across a considerable part of Warrnambool, including the foreshore, Lake Pertobe and surrounding areas. Because runners reach different parts of the course at different times, not every photographer needs to be in position at 7:00 AM.</p>
+<p>Some locations will need photographers from around 7:00 AM, while photographers stationed further around the course may not need to be in position until closer to 8:00 AM, even allowing for some fairly serious running speeds.</p>
+
+<div class="map-frame">
+<iframe src="https://www.plotaroute.com/routeplayer/2739212?units=km" title="Warrnambool Running Festival 42 km marathon course map" loading="lazy"></iframe>
+</div>
+
+<a class="button teal" href="https://www.plotaroute.com/route/2739212?units=km" target="_blank" rel="noopener">VIEW THE MARATHON COURSE ONLINE</a>
+
+<p><strong>Never photographed a running event before?</strong></p>
+<p>Don’t be afraid to give it a go.</p>
+<p>We always try to pair members who haven’t photographed an event like this before with someone more experienced, so you won’t simply be dropped somewhere and expected to work everything out yourself.</p>
+<p>And you do not need a long lens.</p>
+<p>At many locations the runners will pass relatively close to you, and some of the best photographs are about expressions, effort, interaction, atmosphere and showing the event in its surroundings.</p>
+<p>It is a great opportunity to practise action photography, spend some time shooting alongside other members and, importantly, help raise money that directly benefits the Club.</p>
+<p>We’ll be looking for names on Thursday night.</p>
+</div>
+</details>
+</div>
+
+<div id="wcc-event-2026-09-24-flash-trigger"
+     data-index="event"
+     data-category="education"
+     data-title="Thursday, 24 September – Flash Trigger Workshop"
+     data-event-date="2026-09-24"
+     data-event-status="confirmed"
+     data-tags="flash-trigger,workshop,lighting,education">
+<h3>⚡ Thursday, 24 September – Flash Trigger Workshop</h3>
+<p>Our practical session on getting to know the Club’s flash trigger equipment is scheduled for Thursday, 24 September.</p>
+<p>More details will be provided closer to the evening.</p>
+</div>
+
+<div id="wcc-event-2026-10-01-high-key-flash"
+     data-index="event"
+     data-category="education"
+     data-title="Thursday, 1 October – High Key Flash Workshop"
+     data-event-date="2026-10-01"
+     data-event-status="confirmed"
+     data-tags="high-key,flash,workshop,lighting,education">
+<h3>💡 Thursday, 1 October – High Key Flash Workshop</h3>
+<p>Our High Key Flash Workshop is planned for Thursday, 1 October.</p>
+<p>Further details will be included in a future Weekly Update.</p>
+</div>
+
+<div id="wcc-event-2026-10-24-werribee-zoo-reminder"
+     data-index="event"
+     data-category="events"
+     data-title="Saturday, 24 October – Werribee Open Range Zoo"
+     data-event-date="2026-10-24"
+     data-event-status="confirmed"
+     data-tags="werribee-zoo,rsvp,bus-trip,wildlife">
+<h3>🦒 Saturday, 24 October – Werribee Open Range Zoo</h3>
+<p>Our Club outing is confirmed.</p>
+<p>Members interested in travelling on the bus need to register with Tania by 24 September.</p>
+</div>
+</section>
+
+<section id="wcc-2026-013-contributions"
+         data-index="article"
+         data-category="club-news"
+         data-title="Contributions Welcome"
+         data-tags="contributions,members,photography-stories,club-news">
+<h2 class="section-title">📬 Contributions Welcome</h2>
+<p>The Weekly Update works best when it’s about our members, not simply the Committee telling everyone what’s happening.</p>
+<p>If you’ve been somewhere interesting, captured an image you’re particularly pleased with, discovered a great photographic location, learned something worth sharing, tried some interesting equipment, won an award or simply have a good photography story, send it through.</p>
+<p>The more members contribute, the more the Weekly Update becomes a reflection of the photography and people that make up the Warrnambool Camera Club.</p>
+</section>
+
+<section id="wcc-2026-013-until-next-week"
+         data-index="article"
+         data-category="club-news"
+         data-title="Until Next Week"
+         data-tags="closing,weekly-update">
+<h2 class="section-title">Until Next Week</h2>
+<p>Thanks for reading, and we’ll see many of you at Thursday night’s judging.</p>
+<p>Until next week, keep learning, keep creating and keep enjoying your photography.</p>
+</section>
+
+</div>
+
+<div class="wcc-newsletter-footer">
+<strong>Warrnambool Camera Club</strong><br>
+Weekly Update | Issue 013<br><br>
+<strong>Compiled &amp; edited by Stan McCullagh</strong><br><br>
+Learn • Create • Share • Inspire
+</div>
+</div>
+
+<script>
+(function(){
+function jumpToWeeklyAnchor(){
+    if(!window.location.hash) return;
+    var targetId;
+    try { targetId=decodeURIComponent(window.location.hash.substring(1)); }
+    catch(e) { targetId=window.location.hash.substring(1); }
+    if(!targetId) return;
+
+    var attempts=0, maxAttempts=40;
+    function tryScroll(){
+        var target=document.getElementById(targetId);
+        if(target){
+            if(target.tagName && target.tagName.toLowerCase()==="details") {
+                target.open=true;
+            }
+            var parent=target.parentElement;
+            while(parent){
+                if(parent.tagName && parent.tagName.toLowerCase()==="details") parent.open=true;
+                parent=parent.parentElement;
+            }
+            target.scrollIntoView({behavior:"auto",block:"start"});
+            return;
+        }
+        attempts+=1;
+        if(attempts<maxAttempts) window.setTimeout(tryScroll,150);
+    }
+    tryScroll();
+}
+if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",function(){window.setTimeout(jumpToWeeklyAnchor,100);});
+} else {
+    window.setTimeout(jumpToWeeklyAnchor,100);
+}
+window.addEventListener("load",function(){window.setTimeout(jumpToWeeklyAnchor,200);});
+window.addEventListener("hashchange",function(){window.setTimeout(jumpToWeeklyAnchor,25);});
+})();
+</script>
