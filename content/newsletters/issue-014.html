@@ -1,0 +1,1145 @@
+<style type="text/css">.wcc-weekly {
+    --teal:#176b6b;
+    --dark-teal:#10484d;
+    --navy:#183f70;
+    --red:#b42318;
+    --text:#253238;
+    --muted:#5f7075;
+    --soft-teal:#edf7f6;
+    --soft-red:#fff5f4;
+    --soft-grey:#f5f6f7;
+    --border:#d6e1e1;
+    --white:#ffffff;
+    max-width:1100px;
+    margin:0 auto;
+    background:var(--white);
+    color:var(--text)!important;
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.65;
+}
+.wcc-weekly p,
+.wcc-weekly li,
+.wcc-weekly td,
+.wcc-weekly div,
+.wcc-weekly span {
+    color:var(--text)!important;
+}
+.wcc-weekly a { color:var(--navy); }
+.wcc-weekly .hero {
+    background:linear-gradient(135deg,var(--dark-teal),var(--teal));
+    color:#fff!important;
+    padding:46px 40px 40px;
+    border-bottom:7px solid var(--red);
+}
+.wcc-weekly .hero * { color:#fff!important; }
+.wcc-weekly .hero-kicker {
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:14px;
+    font-weight:bold;
+    opacity:.9;
+}
+.wcc-weekly .hero h1 {
+    margin:5px 0;
+    font-size:42px;
+    line-height:1.1;
+}
+.wcc-weekly .hero h2 {
+    margin:4px 0 14px;
+    font-size:22px;
+    font-weight:normal;
+}
+.wcc-weekly .tagline {
+    font-size:17px;
+    font-weight:bold;
+}
+.wcc-weekly .quick-links {
+    background:var(--soft-teal);
+    padding:12px 28px;
+    border-bottom:1px solid var(--border);
+}
+.wcc-weekly .quick-links details {
+    border:0;
+    margin:0;
+    background:transparent;
+    overflow:visible;
+}
+.wcc-weekly .quick-links summary {
+    cursor:pointer;
+    padding:8px 0;
+    background:transparent;
+    color:var(--dark-teal)!important;
+    font-size:16px;
+    font-weight:bold;
+    list-style:none;
+}
+.wcc-weekly .quick-links summary::-webkit-details-marker { display:none; }
+.wcc-weekly .quick-links summary:before {
+    content:"+";
+    color:var(--red);
+    font-size:19px;
+    font-weight:bold;
+    display:inline-block;
+    width:22px;
+}
+.wcc-weekly .quick-links details[open] > summary:before { content:"−"; }
+.wcc-weekly .issue-nav-links { padding:8px 0 12px 22px; }
+.wcc-weekly .issue-nav-links a {
+    display:inline-block;
+    margin:5px 18px 5px 0;
+    color:var(--navy)!important;
+    font-size:14px;
+    font-weight:bold;
+    text-decoration:none;
+}
+.wcc-weekly .content { padding:32px 36px; }
+.wcc-weekly section { margin:0 0 42px; }
+.wcc-weekly h2.section-title {
+    color:var(--dark-teal)!important;
+    font-size:28px;
+    line-height:1.25;
+    margin:0 0 18px;
+    padding-bottom:8px;
+    border-bottom:3px solid var(--teal);
+}
+.wcc-weekly h3 {
+    color:var(--navy)!important;
+    margin-top:20px;
+}
+.wcc-weekly h4 {
+    color:var(--navy)!important;
+    margin-bottom:6px;
+}
+.wcc-weekly .lead {
+    font-size:18px;
+    color:#41555b!important;
+}
+.wcc-weekly .feature-card {
+    background:var(--soft-teal);
+    border-left:6px solid var(--teal);
+    padding:22px 25px;
+    margin:20px 0;
+    border-radius:5px;
+    color:var(--text)!important;
+}
+.wcc-weekly .feature-card.red {
+    background:var(--soft-red);
+    border-left-color:var(--red);
+}
+.wcc-weekly .feature-card.navy {
+    background:#f1f5fa;
+    border-left-color:var(--navy);
+}
+.wcc-weekly .feature-card * { color:var(--text)!important; }
+.wcc-weekly details {
+    border:1px solid var(--border);
+    border-radius:6px;
+    overflow:hidden;
+    margin:18px 0;
+    background:#fff;
+}
+.wcc-weekly summary {
+    cursor:pointer;
+    padding:16px 20px;
+    background:var(--soft-teal);
+    color:var(--dark-teal)!important;
+    font-weight:bold;
+    list-style:none;
+}
+.wcc-weekly summary::-webkit-details-marker { display:none; }
+.wcc-weekly summary:before {
+    content:"+";
+    color:var(--red);
+    font-size:20px;
+    font-weight:bold;
+    display:inline-block;
+    width:24px;
+}
+.wcc-weekly details[open] > summary:before { content:"−"; }
+.wcc-weekly .rollup { padding:22px 24px; }
+.wcc-weekly .photo-grid {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+    margin:22px 0;
+    align-items:start;
+}
+.wcc-weekly .photo-grid.two {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+}
+.wcc-weekly .photo-card {
+    background:var(--soft-grey);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:12px;
+    box-sizing:border-box;
+    min-width:0;
+    overflow:hidden;
+}
+.wcc-weekly .competition-first {
+    width:64%;
+    max-width:680px;
+    margin:20px auto 24px;
+    background:#fff;
+    border:2px solid var(--teal);
+    border-radius:8px;
+    padding:14px;
+    box-sizing:border-box;
+}
+.wcc-weekly .competition-first img {
+    display:block!important;
+    width:auto!important;
+    max-width:100%!important;
+    height:auto!important;
+    max-height:560px!important;
+    object-fit:contain!important;
+    margin:0 auto 12px!important;
+}
+.wcc-weekly .competition-first .caption {
+    font-size:15px;
+    text-align:center;
+}
+.wcc-weekly .competition-first .place {
+    display:inline-block;
+    margin-bottom:5px;
+    color:var(--red)!important;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+.wcc-weekly .competition-awards-grid,
+.wcc-weekly .competition-other-grid {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px;
+    margin:18px 0 22px;
+    align-items:start;
+}
+.wcc-weekly .competition-awards-grid .photo-card img,
+.wcc-weekly .competition-other-grid .photo-card img {
+    max-height:430px!important;
+}
+.wcc-weekly .competition-other-grid .photo-card:last-child:nth-child(odd) {
+    grid-column:1 / -1;
+    width:calc(50% - 9px);
+    justify-self:center;
+}
+.wcc-weekly .competition-section-note {
+    margin:4px 0 16px;
+    color:var(--muted)!important;
+    font-size:14px;
+}
+.wcc-weekly .photo-card img,
+.wcc-weekly .rollup img,
+.wcc-weekly section img {
+    display:block!important;
+    width:auto!important;
+    max-width:100%!important;
+    height:auto!important;
+    max-height:none!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+    margin:0 auto 10px!important;
+    box-sizing:border-box!important;
+}
+.wcc-weekly .caption {
+    color:var(--muted)!important;
+    font-size:13px;
+}
+.wcc-weekly .tips-grid {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+}
+.wcc-weekly .tip {
+    border:1px solid var(--border);
+    background:var(--soft-grey);
+    border-radius:6px;
+    padding:18px;
+}
+.wcc-weekly .tip h3 {
+    margin:0 0 6px;
+    font-size:18px;
+}
+.wcc-weekly ul,
+.wcc-weekly ol { padding-left:24px; }
+.wcc-weekly .button {
+    display:block;
+    width:100%;
+    box-sizing:border-box;
+    margin:14px 0 22px;
+    padding:15px 20px;
+    border-radius:5px;
+    background:var(--navy);
+    color:#fff!important;
+    text-align:center;
+    text-decoration:none!important;
+    font-weight:bold;
+}
+.wcc-weekly .button.teal { background:var(--teal); }
+.wcc-weekly .map-frame {
+    margin:18px 0;
+    border:1px solid var(--border);
+    border-radius:6px;
+    overflow:hidden;
+    background:var(--soft-grey);
+}
+.wcc-weekly .map-frame iframe {
+    display:block;
+    width:100%;
+    height:520px;
+    border:0;
+}
+.wcc-weekly .wcc-newsletter-footer {
+    display:block!important;
+    width:100%!important;
+    box-sizing:border-box!important;
+    background:var(--dark-teal)!important;
+    color:#fff!important;
+    padding:32px!important;
+    margin:0!important;
+    text-align:center!important;
+}
+.wcc-weekly .wcc-newsletter-footer,
+.wcc-weekly .wcc-newsletter-footer * {
+    color:#fff!important;
+}
+.wcc-weekly [id^="wcc-"] { scroll-margin-top:150px; }
+
+
+.wcc-weekly details.article-rollup {
+    border:2px solid var(--teal);
+    margin:20px 0;
+}
+.wcc-weekly details.article-rollup > summary {
+    background:var(--dark-teal);
+    color:#fff!important;
+    font-size:18px;
+    padding:18px 20px;
+}
+.wcc-weekly details.article-rollup > summary:before {
+    color:#fff;
+}
+.wcc-weekly details.article-rollup > .article-rollup-body {
+    padding:22px 24px 26px;
+}
+.wcc-weekly details.article-rollup .article-rollup-body > details {
+    margin:12px 0;
+}
+.wcc-weekly details.article-rollup .article-rollup-body > details > summary {
+    font-size:15px;
+    padding:13px 16px;
+}
+
+@media(max-width:760px) {
+    .wcc-weekly .hero { padding:34px 22px 30px; }
+    .wcc-weekly .hero h1 { font-size:34px; }
+    .wcc-weekly .content { padding:26px 18px; }
+    .wcc-weekly h2.section-title { font-size:24px; }
+    .wcc-weekly .tips-grid,
+    .wcc-weekly .photo-grid,
+    .wcc-weekly .photo-grid.two,
+    .wcc-weekly .competition-awards-grid,
+    .wcc-weekly .competition-other-grid {
+        grid-template-columns:1fr;
+    }
+    .wcc-weekly .competition-first {
+        width:100%;
+        max-width:none;
+    }
+    .wcc-weekly .competition-other-grid .photo-card:last-child:nth-child(odd) {
+        grid-column:auto;
+        width:auto;
+        justify-self:stretch;
+    }
+    .wcc-weekly .photo-card img,
+    .wcc-weekly .rollup img,
+    .wcc-weekly section img {
+        display:block!important;
+        width:auto!important;
+        max-width:100%!important;
+        height:auto!important;
+        max-height:none!important;
+        object-fit:contain!important;
+        object-position:center center!important;
+        margin:0 auto 10px!important;
+        box-sizing:border-box!important;
+    }
+    .wcc-weekly .map-frame iframe { height:400px; }
+}
+
+.wcc-weekly .data-table {
+    width:100%;
+    border-collapse:collapse;
+    margin:18px 0;
+    background:#fff;
+}
+.wcc-weekly .data-table th,
+.wcc-weekly .data-table td {
+    border:1px solid var(--border);
+    padding:10px 12px;
+    text-align:left;
+}
+.wcc-weekly .data-table th {
+    background:var(--soft-teal);
+    color:var(--dark-teal)!important;
+}
+.wcc-weekly .small-note {
+    font-size:13px;
+    color:var(--muted)!important;
+}
+.wcc-weekly .price-callout {
+    font-size:24px;
+    font-weight:bold;
+    color:var(--dark-teal)!important;
+    margin:6px 0 10px;
+}
+.wcc-weekly .wcc-issue-meta { display:none!important; }
+</style>
+<div class="wcc-weekly" data-issue="014" data-publication="weekly-update" data-published="2026-09-07" data-url="https://warrnamboolcameraclub.zenfolio.com/weekly-newsletter-014">
+<div class="wcc-issue-meta" data-issue="014" data-date="2026-09-07" data-display-date="Monday, 7 September 2026" data-library-title="Weekly Update 014"></div>
+<div class="hero">
+<div class="hero-kicker">Warrnambool Camera Club</div>
+<h1>Weekly Update</h1>
+<h2>Issue 014 | Monday, 7 September 2026</h2>
+<div class="tagline">Learn &bull; Create &bull; Share &bull; Inspire</div>
+</div>
+
+<div class="quick-links">
+<details><summary>In this issue</summary>
+<div class="issue-nav-links">
+<a href="#wcc-2026-014-editor">From the Editor</a>
+<a href="#wcc-2026-014-september-results">September Results</a>
+<a href="#wcc-event-2026-09-19-running-festival">Running Festival</a>
+<a href="#wcc-2026-014-running-guide">Running Photography Guide</a>
+<a href="#wcc-2026-014-2027-program">2027 Program</a>
+<a href="#wcc-2026-014-warrnambool-show">Warrnambool Show</a>
+<a href="#wcc-2026-014-for-sale">For Sale</a>
+<a href="#wcc-2026-014-long-exposure-008">Convention Corner</a>
+<a href="#wcc-2026-014-lightroom-007">Editing Corner</a>
+<a href="#wcc-2026-014-tips">Photographer&#39;s Tips</a>
+<a href="#wcc-2026-014-challenge">Camera Challenge</a>
+<a href="#wcc-2026-014-members-on-the-move">Members on the Move</a>
+<a href="#wcc-event-2026-10-24-werribee-zoo">Werribee Zoo</a>
+<a href="#wcc-2026-014-coming-up">What&#39;s Coming Up</a>
+<a href="#wcc-2026-014-contributions">Contributions</a>
+<a href="#wcc-2026-014-until-next-week">Until Next Week</a>
+</div>
+</details>
+</div>
+
+<div class="content">
+<section data-category="club-news" data-index="article" data-library="yes" data-tags="weekly-update,september-judging,running-festival,2027-program,warrnambool-show" data-title="From the Editor" id="wcc-2026-014-editor">
+<h2 class="section-title">🏡 From the Editor</h2>
+<p>Welcome to Issue 014 of the Warrnambool Camera Club Weekly Update.</p>
+<p>We had a terrific night of judging last Thursday with Johanna Botman and around 85 images for her to work through. That is a lot of photography to discuss in one evening, but Johanna gave us plenty of thoughtful comments along the way and I hope everyone who attended came away with something useful.</p>
+<p>Paid-up members have also been sent a PDF copy of Johanna&rsquo;s comments, including those who could not make it on the night, so there is another opportunity to go back through the images and learn from what she had to say.</p>
+<p>Planning for 2027 is progressing well too. We expect to have next year&rsquo;s syllabus and competition set subjects finalised shortly. Once they are ready, we&rsquo;ll publish them here in the Weekly Update, make them available on the Club website and send members a separate email so everyone has the information.</p>
+<p>Entries are also now open for the Warrnambool Show Photography Competition, so if you have prints you would like to enter, now is the time to start making your selections.</p>
+<p>And, of course, we still need photographers for the Warrnambool Running Festival on 19 and 20 September. This is one of our important Club fundraisers, so if you can help, please put your hand up.</p>
+<p>Plenty to get involved in over the next few weeks.</p>
+<p>Stan</p>
+</section>
+
+<section data-category="competition" data-index="article" data-library="yes" data-people="johanna-botman" data-tags="september-competition,judging,johanna-botman,awards,member-images" data-title="September Competition Results" id="wcc-2026-014-september-results">
+<h2 class="section-title">🏆 September Competition Results</h2>
+<p class="lead">Congratulations to everyone recognised in our September competition, and thank you to Johanna Botman for a great night of judging.</p>
+<p>With around 85 photographs to get through, Johanna had a substantial task ahead of her, but she provided plenty of constructive comments, observations and suggestions throughout the evening.</p>
+<p>Judging nights are one of the Club&rsquo;s best learning opportunities. Listening to a judge discuss why an image works, where their eye is drawn, what distracts them and what might strengthen a photograph can be useful even when they are discussing someone else&rsquo;s image.</p>
+<p>Paid-up members have also been sent a PDF copy of Johanna&rsquo;s comments so everyone has the opportunity to revisit the feedback.</p>
+<p>The competition sections below are open when the page first loads so the recognised images are immediately visible. First Place is shown on its own, only modestly larger than the other awards. Second and Third Place sit together on the next line, followed by any Highly Commended or Merit images.</p>
+
+<details open><summary>🖥️ EDPI Set &ndash; Low Key Monochrome</summary>
+<div class="rollup">
+<div class="competition-first">
+<img alt="Serenity by Richard Conway" decoding="async" loading="lazy" src="/img/s/v-10/p1597303167-3.jpg" />
+<div class="caption"><span class="place">1st Place</span><br /><strong>Serenity</strong> &ndash; Richard Conway</div>
+</div>
+<div class="competition-awards-grid">
+<div class="photo-card"><img alt="Wooden Cross by Phillip Morris" decoding="async" loading="lazy" src="/img/s/v-10/p1597303173-3.jpg" /><div class="caption"><strong>Wooden Cross</strong> &ndash; Phillip Morris<br />2nd Place</div></div>
+<div class="photo-card"><img alt="Fading Into Darkness by Phillip Morris" decoding="async" loading="lazy" src="/img/s/v-10/p1597303179-3.jpg" /><div class="caption"><strong>Fading Into Darkness</strong> &ndash; Phillip Morris<br />3rd Place</div></div>
+</div>
+<div class="competition-other-grid">
+<div class="photo-card"><img alt="Firefly by Debbie Iverach" decoding="async" loading="lazy" src="/img/s/v-10/p1597313089-3.jpg" /><div class="caption"><strong>Firefly</strong> &ndash; Debbie Iverach<br />Highly Commended</div></div>
+<div class="photo-card"><img alt="Sailors Guide by Jason Carter" decoding="async" loading="lazy" src="/img/s/v-10/p1597313083-3.jpg" /><div class="caption"><strong>Sailors Guide</strong> &ndash; Jason Carter<br />Highly Commended</div></div>
+<div class="photo-card"><img alt="A Glimpse of Light by Jason Carter" decoding="async" loading="lazy" src="/img/s/v-10/p1597313109-3.jpg" /><div class="caption"><strong>A Glimpse of Light</strong> &ndash; Jason Carter<br />Merit</div></div>
+</div>
+</div>
+</details>
+
+<details open><summary>🖼️ Print Set &ndash; Low Key Monochrome</summary>
+<div class="rollup">
+<div class="competition-first">
+<img alt="Silver Beard by Phillip Morris" decoding="async" loading="lazy" src="/img/s/v-10/p1597303149-3.jpg" />
+<div class="caption"><span class="place">1st Place</span><br /><strong>Silver Beard</strong> &ndash; Phillip Morris</div>
+</div>
+<div class="competition-awards-grid">
+<div class="photo-card"><img alt="Ethereal Falls by Jason Carter" decoding="async" loading="lazy" src="/img/s/v-10/p1597303162-3.jpg" /><div class="caption"><strong>Ethereal Falls</strong> &ndash; Jason Carter<br />2nd Place</div></div>
+<div class="photo-card"><img alt="Loyal Companion by Tania Jacobson" decoding="async" loading="lazy" src="/img/s/v-10/p1597303205-3.jpg" /><div class="caption"><strong>Loyal Companion</strong> &ndash; Tania Jacobson<br />3rd Place</div></div>
+</div>
+</div>
+</details>
+
+<details open><summary>💻 EDPI &ndash; Colour Open</summary>
+<div class="rollup">
+<div class="competition-first">
+<img alt="Weathered by Phillip Morris" decoding="async" loading="lazy" src="/img/s/v-10/p1597303137-3.jpg" />
+<div class="caption"><span class="place">1st Place</span><br /><strong>Weathered</strong> &ndash; Phillip Morris</div>
+</div>
+<div class="competition-awards-grid">
+<div class="photo-card"><img alt="Bowing Gracefully by Tania Jacobson" decoding="async" loading="lazy" src="/img/s/v-10/p1597303133-3.jpg" /><div class="caption"><strong>Bowing Gracefully</strong> &ndash; Tania Jacobson<br />2nd Place</div></div>
+<div class="photo-card"><img alt="Light Beyond the Alley by Tania Jacobson" decoding="async" loading="lazy" src="/img/s/v-10/p1597303152-3.jpg" /><div class="caption"><strong>Light Beyond the Alley</strong> &ndash; Tania Jacobson<br />3rd Place</div></div>
+</div>
+<div class="competition-other-grid">
+<div class="photo-card"><img alt="Reflective Elephant by Vivian Carter" decoding="async" loading="lazy" src="/img/s/v-10/p1597313116-3.jpg" /><div class="caption"><strong>Reflective Elephant</strong> &ndash; Vivian Carter<br />Highly Commended</div></div>
+<div class="photo-card"><img alt="Looking Up by Phillip Morris" decoding="async" loading="lazy" src="/img/s/v-10/p1597313113-3.jpg" /><div class="caption"><strong>Looking Up</strong> &ndash; Phillip Morris<br />Highly Commended</div></div>
+</div>
+</div>
+</details>
+
+<details open><summary>🖼️ Print &ndash; Colour Open</summary>
+<div class="rollup">
+<div class="competition-first">
+<img alt="The One Among Many by Tania Jacobson" decoding="async" loading="lazy" src="/img/s/v-10/p1597303138-3.jpg" />
+<div class="caption"><span class="place">1st Place</span><br /><strong>The One Among Many</strong> &ndash; Tania Jacobson</div>
+</div>
+<div class="competition-awards-grid">
+<div class="photo-card"><img alt="Cats Of Chefchaouen by Phillip Morris" decoding="async" loading="lazy" src="/img/s/v-10/p1597303127-3.jpg" /><div class="caption"><strong>Cats Of Chefchaouen</strong> &ndash; Phillip Morris<br />2nd Place</div></div>
+<div class="photo-card"><img alt="Kimberly Colours by Jason Carter" decoding="async" loading="lazy" src="/img/s/v-10/p1597303126-3.jpg" /><div class="caption"><strong>Kimberly Colours</strong> &ndash; Jason Carter<br />3rd Place</div></div>
+</div>
+<div class="competition-other-grid">
+<div class="photo-card"><img alt="CC Koroit by Graham Dixon" decoding="async" loading="lazy" src="/img/s/v-10/p1597313100-3.jpg" /><div class="caption"><strong>CC Koroit</strong> &ndash; Graham Dixon<br />Highly Commended</div></div>
+</div>
+</div>
+</details>
+</section>
+
+<section data-category="community" data-event-date="2026-09-19" data-event-status="confirmed" data-index="event" data-locations="warrnambool,logans-beach,pickering-point" data-tags="warrnambool-running-festival,volunteers,fundraising,action-photography,marathon" data-title="Warrnambool Running Festival – Volunteers Needed" id="wcc-event-2026-09-19-running-festival">
+<h2 class="section-title">🏃 Warrnambool Running Festival &ndash; We Need Your Help</h2>
+<p class="lead">The Warrnambool Running Festival is coming up on Saturday, 19 and Sunday, 20 September, and we need Club members to help photograph the event.</p>
+<div class="feature-card red">
+<p><strong>This is one of the Club&rsquo;s major fundraisers.</strong></p>
+<p>The money raised helps keep membership fees down and helps fund Club activities, workshops and opportunities throughout the year.</p>
+</div>
+<h3>Saturday, 19 September</h3>
+<p>The Saturday afternoon program includes the 2 km and 4 km events. We need at least four photographers, with coverage roughly from 2:30 PM until 5:00 PM.</p>
+<h3>Sunday, 20 September</h3>
+<p>Sunday includes the Marathon, Half Marathon, 10 km and 6 km events. We are looking for around 8&ndash;10 photographers positioned around the course.</p>
+<p>Some positions will need photographers from around 7:00 AM, while other locations may not need coverage until closer to 8:00 AM depending on where they are on the course and when the runners reach them.</p>
+<details><summary>Where Will We Be Photographing?</summary>
+<div class="rollup">
+<p>The Sunday course uses a 20 km loop, with photographers placed around the course. Known locations include:</p>
+<ul>
+<li>Start / Finish area</li>
+<li>Logans Beach Lookout</li>
+<li>The boardwalk coming down from Pickering Point toward the beach</li>
+<li>Other positions around the loop</li>
+</ul>
+<div class="map-frame"><iframe loading="lazy" src="https://www.plotaroute.com/routeplayer/2739212?units=km" title="Warrnambool Running Festival marathon course map"></iframe></div>
+<a class="button teal" href="https://www.plotaroute.com/route/2739212?units=km" rel="noopener" target="_blank">VIEW THE MARATHON COURSE ONLINE</a>
+</div>
+</details>
+<details><summary>Never Photographed a Running Event Before?</summary>
+<div class="rollup">
+<p>Don&rsquo;t let that stop you volunteering.</p>
+<p>Less experienced members can be paired with experienced photographers, so you will not simply be dropped somewhere and expected to work everything out yourself.</p>
+<p>You also do not need a long lens. At many locations the runners will pass relatively close to you, and some of the strongest photographs will show expression, effort, atmosphere and the Warrnambool environment around the runner.</p>
+</div>
+</details>
+<div class="feature-card navy">
+<h3>Can You Help?</h3>
+<p>If you can photograph on either day, or want to know more, contact Stan on <a href="tel:0407836043">0407 836 043</a>.</p>
+</div>
+</section>
+
+<section data-category="education" data-index="article" data-library="yes" data-tags="running-photography,action-photography,camera-settings,time-sync,jpeg,autofocus,safety" data-title="Running Festival Photography Guide" id="wcc-2026-014-running-guide">
+<h2 class="section-title">📷 Running Festival Photography Guide</h2>
+<p class="lead">We have developed a mobile field guide for Club photographers positioned around the Running Festival course.</p>
+<p>The idea is to give everyone a simple reference they can use before the weekend and while they are out on the course.</p>
+<details><summary>Practice This Week</summary><div class="rollup">
+<p>Warrnambool parkrun at Lake Pertobe on Saturday morning is an ideal opportunity to practise runners coming toward the camera.</p>
+<p>Try staying in one position, working in short bursts, shooting both horizontal and vertical frames and paying attention to the background.</p>
+</div></details>
+<details><summary>Recommended Starting Settings</summary><div class="rollup">
+<ul>
+<li>Manual mode</li>
+<li>1/1000 sec</li>
+<li>f/8</li>
+<li>Auto ISO</li>
+<li>Continuous autofocus</li>
+<li>Tracking / Zone / Wide AF</li>
+<li>Continuous Low or Medium drive</li>
+<li>Auto White Balance</li>
+<li>Evaluative / Matrix / Multi metering</li>
+<li>Stabilisation On if available</li>
+</ul>
+<p>These are starting points, not rules. The aim is to give photographers a dependable setup that can then be adjusted for the conditions and their own camera.</p>
+</div></details>
+<details><summary>Why f/8?</summary><div class="rollup">
+<p>f/8 gives useful depth of field, helps with groups and provides some tolerance if autofocus is slightly behind a runner approaching the camera. Many lenses also perform very strongly around this aperture.</p>
+</div></details>
+<details><summary>File Format and Time Sync</summary><div class="rollup">
+<p>For this event we want <strong>JPEG only</strong>, not RAW and not RAW + JPEG. Use Medium JPEG, Fine / High Quality and sRGB.</p>
+<p>With many photographers potentially producing thousands of files, this makes copying, uploading and sorting much quicker and avoids a RAW-processing step.</p>
+<p>Also make sure your camera date and time are synchronised to your phone or watch as closely as practical, ideally within one second. This allows files from multiple photographers to be merged chronologically later.</p>
+</div></details>
+<details><summary>Shooting Tips</summary><div class="rollup">
+<ul>
+<li>Track the runner early.</li>
+<li>Use short bursts of around 2&ndash;4 frames.</li>
+<li>Leave some space in front of the runner.</li>
+<li>Watch the background.</li>
+<li>Look for faces and expression.</li>
+<li>Vary singles, pairs and groups.</li>
+<li>Use the environment and tell the story of the event.</li>
+<li>If continuous AF struggles, pre-focus on a fixed point and photograph the runner as they reach it.</li>
+<li>Once you have safe sharp shots, you can experiment with panning around 1/60&ndash;1/125 sec.</li>
+</ul>
+</div></details>
+<div class="feature-card red">
+<h3>Safety Comes First</h3>
+<p><strong>The runner always has right of way. Never step into the course to get a photograph.</strong></p>
+</div>
+<div class="feature-card">
+<h3>Think Beyond the Tight Action Shot</h3>
+<p>Not every photograph needs to fill the frame with a runner. At the right location, aim for <strong>runner + course + Warrnambool</strong>. Those environmental photographs help tell the story of where the event took place.</p>
+</div>
+</section>
+
+<section data-category="club-news" data-index="article" data-tags="2027-program,syllabus,set-subjects,member-survey" data-title="2027 Program Nearly Ready" id="wcc-2026-014-2027-program">
+<h2 class="section-title">📅 2027 Program Nearly Ready</h2>
+<p>Work on the Club&rsquo;s 2027 program is now well advanced.</p>
+<p>We expect to have both the 2027 syllabus and next year&rsquo;s competition set subjects finalised shortly.</p>
+<p>Once everything is confirmed, members will receive the information in several ways:</p>
+<ul>
+<li>Here in the Weekly Update</li>
+<li>On the Warrnambool Camera Club website</li>
+<li>In a separate email to members</li>
+</ul>
+<p>That should give everyone plenty of notice to start thinking about next year&rsquo;s competitions, workshops and activities.</p>
+</section>
+
+<section data-category="competition" data-index="article" data-tags="warrnambool-show,photography,print-competition,showday,section-j" data-title="Warrnambool Show Photography Entries Are Open" id="wcc-2026-014-warrnambool-show">
+<h2 class="section-title">🎡 Warrnambool Show Photography Entries Are Open</h2>
+<p class="lead">Entries are now open for the 2026 Warrnambool Show, including Section J &ndash; Photography.</p>
+<p>If you already prepare mounted prints for our Camera Club competitions, entering the Show should feel very familiar. You are still preparing and mounting a physical print rather than learning a completely different presentation system.</p>
+<p>The important thing is to check the requirements for the particular Show class you are entering because the size limits are not identical across every class.</p>
+<div class="feature-card">
+<p>For example, the VAS Senior Photography Competition specifies a print no larger than <strong>20 cm &times; 30 cm</strong> and requires it to be mounted on thick card.</p>
+<p>Rather than relying on your usual Club dimensions, check the 2026 Photography Schedule before printing or mounting your entry.</p>
+</div>
+<p>The Warrnambool Show itself will be held on <strong>Saturday, 31 October 2026</strong>.</p>
+<a class="button teal" href="https://warrnamboolshow.com.au/wp-content/uploads/2026/08/photography-Schedule-26.pdf" rel="noopener" target="_blank">VIEW THE 2026 PHOTOGRAPHY SCHEDULE</a>
+<a class="button" href="https://showday.online/show/warrnambool" rel="noopener" target="_blank">ENTER ONLINE THROUGH SHOWDAY</a>
+</section>
+
+<section data-category="club-news" data-index="article" data-people="terri-hayes" data-tags="for-sale,photography-equipment,manfrotto,tripod,monopod,member-sale" data-title="For Sale – Manfrotto Tripod &amp; Monopod" id="wcc-2026-014-for-sale">
+<h2 class="section-title">📷 For Sale &ndash; Manfrotto Tripod &amp; Monopod</h2>
+<p>Terri Hayes is selling a Manfrotto tripod and monopod that she simply no longer uses. Both have been <strong>barely used since new and are in excellent condition</strong>.</p>
+
+<div class="photo-grid">
+<div class="photo-card"><img alt="Manfrotto tripod and monopod for sale by Terri Hayes" decoding="async" loading="lazy" src="/img/s/v-10/p1600632187-3.jpg" /></div>
+<div class="photo-card"><img alt="Manfrotto tripod and monopod for sale by Terri Hayes" decoding="async" loading="lazy" src="/img/s/v-10/p1600632189-3.jpg" /></div>
+<div class="photo-card"><img alt="Manfrotto tripod and monopod for sale by Terri Hayes" decoding="async" loading="lazy" src="/img/s/v-10/p1600632197-3.jpg" /></div>
+</div>
+
+<div class="feature-card">
+<h3>Manfrotto MPMXPROA3 XPRO Aluminium Monopod</h3>
+<ul>
+<li>Weight: 700 g</li>
+<li>Maximum safety payload: 10 kg</li>
+<li>Maximum height: 160 cm</li>
+<li>Closed length: 62 cm</li>
+<li>3-section aluminium construction</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<h3>Manfrotto MKCOMPACTLT-BK Compact Light Tripod with Ball Head</h3>
+<ul>
+<li>Weight: 840 g</li>
+<li>Maximum safety payload: 1.5 kg</li>
+<li>Maximum height: 131 cm</li>
+<li>Closed length: 39.8 cm</li>
+<li>4-section aluminium legs with integrated ball head</li>
+</ul>
+</div>
+
+<div class="feature-card navy">
+<p class="price-callout">$160 for the pair</p>
+<p>If you are interested, please contact Stan.</p>
+</div>
+</section>
+
+<section data-category="education" data-index="article" data-library="yes" data-part="8" data-people="ian-van-der-wolde" data-series="mastering-long-exposure-photography" data-tags="long-exposure,base-iso,iso,nd-filter,histogram,shutter-speed,movement" data-title="Base ISO – Why Lower Can Be Better for Long Exposures" id="wcc-2026-014-long-exposure-008">
+<h2 class="section-title">📷 Convention Corner</h2>
+<p class="lead">This week in Mastering Long Exposure Photography, Ian van der Wolde explains why starting around your camera&rsquo;s base ISO can improve image quality while helping you achieve the longer shutter speeds you are deliberately looking for.</p>
+
+<details class="article-rollup"><summary>Mastering Long Exposure Photography &ndash; Part 8: Base ISO &ndash; Why Lower Can Be Better for Long Exposures</summary>
+<div class="rollup article-rollup-body">
+<h3>Mastering Long Exposure Photography</h3>
+<h3>Part 8: Base ISO &ndash; Why Lower Can Be Better for Long Exposures</h3>
+<p class="lead">You&rsquo;re standing beside the ocean as the light begins to fade.</p>
+<p>Your shutter speed is getting longer. For everyday photography, the instinct might be to increase the ISO so you can keep shooting at a faster shutter speed.</p>
+<p>But during his VAPS Convention presentation, <strong>Ian van der Wolde suggested thinking in exactly the opposite direction when shooting long exposures.</strong></p>
+<p>After all, if we&rsquo;re deliberately trying to make the exposure longer, why increase the ISO to make it shorter?</p>
+<p>For Ian, the starting point is generally the camera&rsquo;s <strong>base ISO</strong>, giving him excellent image quality while allowing the shutter to stay open longer.</p>
+
+<details><summary>First Things First &ndash; What Does ISO Mean?</summary><div class="rollup">
+<p>ISO, pronounced <strong>&ldquo;eye-so&rdquo;</strong>, takes its name from the <strong>International Organization for Standardization</strong>, the body responsible for international standards covering thousands of products and processes.</p>
+<p>Interestingly, ISO isn&rsquo;t an acronym formed from the organisation&rsquo;s English name. <strong>ISO</strong> was chosen as its universal short name, derived from the Greek word <em>isos</em>, meaning <strong>equal</strong>.</p>
+<p>So when we&rsquo;re talking photography, you would normally say:</p>
+<div class="feature-card"><p><strong>&ldquo;eye-so one hundred&rdquo;</strong></p></div>
+<p>rather than spelling out &ldquo;I-S-O one hundred&rdquo;.</p>
+<p>In photography, ISO numbers form part of a standardised system for expressing photographic sensitivity/exposure response. On a digital camera, changing the ISO affects how the camera uses the signal captured by the sensor.</p>
+<p>For photographers, the practical effect is straightforward:</p>
+<p><strong>Raise the ISO and you can use a faster shutter speed. Lower the ISO and, all else being equal, you need a longer shutter speed.</strong></p>
+<p>And that second option is particularly interesting for long exposure photography.</p>
+</div></details>
+
+<details><summary>What is Base ISO?</summary><div class="rollup">
+<p>Your camera has a <strong>base ISO</strong> at which its sensor and electronics provide their fundamental performance characteristics.</p>
+<p>Depending on the camera, this might be ISO 64, ISO 100, ISO 200 or another value.</p>
+<p>Ian stressed the importance of knowing your own camera rather than simply following a generic setting.</p>
+<p>There&rsquo;s another little trap here.</p>
+<p><strong>Base ISO isn&rsquo;t necessarily the lowest ISO number your camera allows you to select.</strong></p>
+<p>Some cameras offer extended settings such as LOW or ISO 50 even though their base ISO may be ISO 100.</p>
+<p>So don&rsquo;t simply turn the ISO dial as low as it will go.</p>
+<p><strong>Find out the base ISO for your particular camera.</strong></p>
+</div></details>
+
+<details><summary>Why Start at Base ISO?</summary><div class="rollup">
+<p>There are two particularly good reasons when shooting long exposures.</p>
+<p>The first is <strong>image quality</strong>.</p>
+<p>Working around base ISO generally gives you excellent image quality and strong dynamic-range performance. That&rsquo;s particularly useful in landscape photography, where we may be trying to retain information from a relatively bright sky right through to a much darker foreground.</p>
+<p>The second reason is just as important:</p>
+<p><strong>Lower ISO helps us achieve longer shutter speeds.</strong></p>
+<p>And that&rsquo;s precisely what we&rsquo;re trying to do.</p>
+</div></details>
+
+<details><summary>Let&rsquo;s See What Happens</summary><div class="rollup">
+<p>Suppose our starting exposure is:</p>
+<p><strong>ISO 400 &bull; f/11 &bull; 1 second</strong></p>
+<p>Reduce the ISO by one stop and compensate by doubling the exposure time:</p>
+<p><strong>ISO 200 &bull; f/11 &bull; 2 seconds</strong></p>
+<p>Reduce it another stop:</p>
+<p><strong>ISO 100 &bull; f/11 &bull; 4 seconds</strong></p>
+<p>The overall exposure remains equivalent, but something important has changed.</p>
+<p><strong>Time.</strong></p>
+<p>Anything moving through the photograph now has longer to move. Water becomes smoother. Waves begin to blur together. Clouds travel further across the frame. Moving people may become increasingly blurred.</p>
+<p>We&rsquo;ve used ISO as part of our <strong>creative control over movement</strong>.</p>
+</div></details>
+
+<details><summary>But Aren&rsquo;t Modern Cameras Brilliant at High ISO?</summary><div class="rollup">
+<p>They are.</p>
+<p>Modern cameras can produce remarkably good photographs at ISO settings that would have been problematic with earlier digital cameras.</p>
+<p>There&rsquo;s nothing inherently wrong with using ISO 800, 1600 or considerably higher when the photograph requires it.</p>
+<p>If you&rsquo;re photographing sport, wildlife or anything else where you need a fast shutter speed, increasing ISO can be exactly the right decision.</p>
+<p>But long exposure photography is different.</p>
+<p>The camera is normally securely mounted on a tripod and we&rsquo;re deliberately allowing movement to occur.</p>
+<p>We don&rsquo;t need the higher ISO to give us a fast shutter speed.</p>
+<p><strong>We actually want the opposite.</strong></p>
+</div></details>
+
+<details><summary>Don&rsquo;t Confuse Low ISO with Correct Exposure</summary><div class="rollup">
+<p>There&rsquo;s an important connection here with <strong>Part 7 and our Understanding the Histogram tip sheet</strong>.</p>
+<p>Selecting ISO 100 doesn&rsquo;t automatically guarantee a clean, high-quality photograph.</p>
+<p>If you badly underexpose the image and then try to recover very dark shadows during processing, noise can still become visible.</p>
+<p>That&rsquo;s why Ian&rsquo;s advice about watching the histogram remains important.</p>
+<p>We&rsquo;re trying to capture a well-exposed RAW file containing as much useful information as practical while protecting important highlights.</p>
+<p>So the rule isn&rsquo;t:</p>
+<p><strong>Always use the lowest ISO.</strong></p>
+<p>A much better approach is:</p>
+<p><strong>Start around your camera&rsquo;s base ISO and make a technically sound exposure.</strong></p>
+</div></details>
+
+<details><summary>Now Add the ND Filter</summary><div class="rollup">
+<p>This is where several lessons from our Long Exposure series begin fitting together.</p>
+<p>We&rsquo;ve:</p>
+<ul>
+<li>Mounted the camera securely on our tripod</li>
+<li>Composed the photograph</li>
+<li>Focused before fitting the filter</li>
+<li>Selected our base ISO</li>
+<li>Chosen an appropriate aperture</li>
+<li>Made a test exposure</li>
+<li>Checked the histogram</li>
+</ul>
+<p>Now we can introduce the <strong>ND filter</strong> we discussed in Part 5.</p>
+<p>Suppose our correct unfiltered exposure at ISO 100 and f/11 is <strong>1/125 second</strong>.</p>
+<p>Add a <strong>10-stop ND filter</strong> and the equivalent exposure becomes approximately <strong>8 seconds</strong>.</p>
+<p>We&rsquo;ve gone from an almost instantaneous exposure to one capable of dramatically changing the appearance of moving water.</p>
+<p>And if the natural light is already lower, our exposure can quickly extend into tens of seconds or several minutes.</p>
+</div></details>
+
+<details><summary>Longer Isn&rsquo;t Automatically Better</summary><div class="rollup">
+<p>This was another important message running through Ian&rsquo;s presentation.</p>
+<p>Long exposure photography isn&rsquo;t a competition to see who can leave their shutter open the longest.</p>
+<p>A two-second exposure may create beautiful texture in moving water. Thirty seconds might turn it into something completely different. Five minutes could remove virtually all of that texture.</p>
+<p>None is automatically better than the others.</p>
+<p><strong>The shutter speed should serve the photograph.</strong></p>
+<p>Ian&rsquo;s work demonstrates just how dramatically controlling time can change the mood of an image, but the creative decision still belongs to the photographer.</p>
+</div></details>
+
+<details><summary>Know Your Camera Before You Leave Home</summary><div class="rollup">
+<p>Ian repeatedly stressed the importance of becoming familiar with your equipment.</p>
+<p>Long exposure photography frequently happens in darkness, cold weather or rapidly changing light. That&rsquo;s not when you want to discover that you don&rsquo;t know how to change a setting.</p>
+<p>Before your next outing, find the answers to these questions:</p>
+<ul>
+<li>What is my camera&rsquo;s base ISO?</li>
+<li>Does it have extended LOW ISO settings?</li>
+<li>How quickly can I change ISO?</li>
+<li>How does changing ISO affect my shutter speed in Manual mode?</li>
+<li>How do I display the histogram?</li>
+<li>How do I activate highlight warnings?</li>
+</ul>
+<p>Learning those controls at home makes life considerably easier when you&rsquo;re standing beside the ocean in the dark.</p>
+</div></details>
+
+<details><summary>📷 Try It This Week</summary><div class="rollup">
+<p>You need only a tripod and something that moves for this exercise. Running water is ideal, although moving clouds, traffic or people can also work.</p>
+<p>Set the camera to Manual exposure and choose an aperture such as <strong>f/8 or f/11</strong>.</p>
+<p>Establish a correct exposure at ISO 800. Take a photograph. Now reduce the ISO one stop and double the shutter speed each time to maintain equivalent exposure.</p>
+<table class="data-table"><thead><tr><th>ISO</th><th>Shutter Speed</th></tr></thead><tbody>
+<tr><td>800</td><td>&frac12; second</td></tr>
+<tr><td>400</td><td>1 second</td></tr>
+<tr><td>200</td><td>2 seconds</td></tr>
+<tr><td>100</td><td>4 seconds</td></tr>
+</tbody></table>
+<p>Your actual starting shutter speed will depend on the available light, but the relationship remains the same.</p>
+<p>Now compare the photographs.</p>
+<p>Don&rsquo;t concentrate solely on noise or sharpness. <strong>Look at the movement.</strong></p>
+<p>What happened to the water? What happened to the clouds? Did people begin to blur or disappear? Which shutter speed created the photograph you actually prefer?</p>
+<p>That&rsquo;s the important question.</p>
+<p>You&rsquo;ve now used ISO not merely as a technical camera setting, but as part of your creative control over <strong>time and movement</strong>.</p>
+</div></details>
+
+<div class="feature-card">
+<h3>💡 Quick Tip</h3>
+<p><strong>For long exposure photography, start around your camera&rsquo;s base ISO rather than automatically increasing ISO because it&rsquo;s getting dark.</strong></p>
+<p>Higher ISO helps us obtain faster shutter speeds. Base ISO allows us to retain excellent image quality while encouraging the longer shutter speeds we&rsquo;re deliberately trying to achieve.</p>
+<p>And remember: <strong>ISO is pronounced &ldquo;eye-so&rdquo;.</strong></p>
+</div>
+<div class="feature-card navy">
+<h3>📅 Coming Next Week</h3>
+<p><strong>Part 9 &ndash; Light Leaks, Vibration and the Problems You Don&rsquo;t See Coming</strong></p>
+<p>You&rsquo;ve carefully composed the photograph, focused correctly, selected base ISO and calculated a five-minute exposure. Then you wait.</p>
+<p>Five minutes later, you discover a strange streak across the photograph, or the entire image is inexplicably soft.</p>
+<p>Next week we&rsquo;ll look at some of the small problems Ian highlighted that can ruin a long exposure, including light entering through DSLR viewfinders, leaks around filter holders, wind, loose remote-release cables and camera movement.</p>
+</div>
+
+</div>
+</details>
+</section>
+
+<section data-category="editing" data-index="article" data-library="yes" data-part="7" data-series="lightroom-basics" data-tags="lightroom,masking,local-adjustments,select-subject,select-sky,select-background,brush,linear-gradient,radial-gradient" data-title="Local Adjustments: Brushes &amp; Masks" id="wcc-2026-014-lightroom-007">
+<h2 class="section-title">💻 Editing Corner</h2>
+<p class="lead">This week in Lightroom Basics we move from adjustments that affect the whole photograph to <strong>local adjustments</strong>, using masks to change only the area that needs attention.</p>
+
+<details class="article-rollup"><summary>Lightroom Basics &ndash; Part 7: Local Adjustments &ndash; Brushes &amp; Masks</summary>
+<div class="rollup article-rollup-body">
+<h3>Local Adjustments: Brushes &amp; Masks</h3>
+<p>So far in this Lightroom Basics series, most of the adjustments we have looked at affect the <strong>whole photograph</strong>.</p>
+<p>But what if only one part of the image needs changing?</p>
+<p>Perhaps the subject needs to be a little brighter, the sky is too bright, or the background is competing with the main subject.</p>
+<p>This is where <strong>Masks</strong> become extremely useful.</p>
+<p>The important beginner principle is simple:</p>
+<div class="feature-card"><p><strong>Use a mask when you want to change one part of the photograph without changing everything else.</strong></p></div>
+
+<details><summary>1. Open the Masking Panel</summary><div class="rollup">
+<ol>
+<li>Open the photograph in the <strong>Develop</strong> module.</li>
+<li>Select <strong>Masking</strong> from the tool strip.</li>
+<li>Choose the type of mask you want to create.</li>
+</ol>
+<p>Lightroom displays the selected area as an overlay, usually red, so you can see exactly which part of the photograph will be affected.</p>
+</div></details>
+
+<details><summary>Start With Select Subject</summary><div class="rollup">
+<p>For beginners, <strong>Select Subject</strong> is one of the easiest masking tools to understand.</p>
+<p>Choose <strong>Masking &rarr; Select Subject</strong>.</p>
+<p>Lightroom analyses the photograph and attempts to identify the main subject automatically.</p>
+<p>For example, if you have photographed a bird against a darker background, Lightroom may create a mask covering just the bird.</p>
+<p>You could then:</p>
+<ul><li>Increase Exposure slightly</li><li>Open the Shadows</li><li>Add a little Texture</li><li>Adjust colour</li><li>Make the subject slightly warmer or cooler</li></ul>
+<p>The background remains unchanged. This is often much more effective than brightening the entire photograph.</p>
+</div></details>
+
+<details><summary>Select Sky</summary><div class="rollup">
+<p>For landscape photography, <strong>Select Sky</strong> can save a considerable amount of time.</p>
+<p>Choose <strong>Masking &rarr; Select Sky</strong>.</p>
+<p>Lightroom automatically analyses the photograph and creates a mask over the sky.</p>
+<p>You might then reduce Exposure or Highlights, add a little Dehaze, adjust colour temperature, or change saturation.</p>
+<div class="feature-card red"><p><strong>Beginner warning:</strong> A dramatic sky does not necessarily mean a better photograph. If the sky begins looking much darker or more colourful than the rest of the scene, reduce the adjustment.</p></div>
+</div></details>
+
+<details><summary>Select Background</summary><div class="rollup">
+<p>Lightroom can also automatically identify the <strong>Background</strong>.</p>
+<p>This can be useful when you want to separate the subject from its surroundings. You might slightly darken the background, reduce its saturation, reduce Texture or Clarity, or cool the background slightly.</p>
+<p>Again, subtlety is important. The viewer should notice the subject, not the fact that you darkened everything around it.</p>
+</div></details>
+
+<details><summary>Using the Brush</summary><div class="rollup">
+<p>Sometimes Lightroom&rsquo;s automatic selections do not cover exactly what you need. That is where the <strong>Brush</strong> becomes useful.</p>
+<p>Choose <strong>Masking &rarr; Brush</strong>, then paint over the area you want to adjust.</p>
+<p>Adobe provides four main Brush controls:</p>
+<ul>
+<li><strong>Size</strong> &ndash; controls the diameter of the brush</li>
+<li><strong>Feather</strong> &ndash; controls how soft the edge of the brush is</li>
+<li><strong>Flow</strong> &ndash; controls how quickly the adjustment builds as you paint</li>
+<li><strong>Density</strong> &ndash; limits the maximum strength of the brush stroke</li>
+</ul>
+<p>For beginners, a reasonably soft feather usually helps the adjustment blend naturally into the surrounding photograph.</p>
+</div></details>
+
+<details><summary>Add and Subtract</summary><div class="rollup">
+<p>Automatic masks are remarkably good, but they are not always perfect.</p>
+<p>If <strong>Select Subject</strong> missed part of the subject, choose <strong>Add &rarr; Brush</strong> and paint that area into the mask.</p>
+<p>If Lightroom selected something that you do not want included, choose <strong>Subtract &rarr; Brush</strong> and remove it.</p>
+<p>This is one of the most useful concepts to understand. You do not have to accept Lightroom&rsquo;s first selection.</p>
+</div></details>
+
+<details><summary>Use the Overlay</summary><div class="rollup">
+<p>When creating or refining a mask, keep an eye on the coloured overlay. It shows the area currently included in the mask.</p>
+<p>If the red overlay covers your bird but also covers part of the background, you know the mask needs refinement.</p>
+<p>Lightroom Classic also provides different overlay display modes, including colour overlays and black-and-white views, which can make complicated masks easier to inspect. For a beginner, the standard coloured overlay is usually enough.</p>
+</div></details>
+
+<details><summary>Linear Gradient</summary><div class="rollup">
+<p>A <strong>Linear Gradient</strong> is useful when you want an adjustment to fade gradually across part of the photograph.</p>
+<p>A classic example is a bright sky. Rather than applying a hard adjustment to the entire sky, drag a Linear Gradient down from the top of the image so the adjustment gradually fades out rather than stopping abruptly.</p>
+<p>It can also work well for bright foregrounds, dark edges, light entering from one side, or gradually darkening an unimportant part of the frame.</p>
+</div></details>
+
+<details><summary>Radial Gradient</summary><div class="rollup">
+<p>The <strong>Radial Gradient</strong> creates an oval or circular selection and can be useful when you want to gently draw attention toward a subject.</p>
+<p>For example, place a large radial mask around a person&rsquo;s face or a bird, then make a very small Exposure increase. Alternatively, invert the mask and slightly darken the surrounding area.</p>
+<p>The key word here is <strong>slightly</strong>. If the viewer can clearly see the oval-shaped edit, it is too strong.</p>
+</div></details>
+
+<details><summary>A Simple Beginner Example</summary><div class="rollup">
+<p>Imagine a bird sitting against a dark background. The photograph is reasonably exposed, but the bird needs a little more presence.</p>
+<ol>
+<li>Choose <strong>Masking</strong></li>
+<li>Select <strong>Subject</strong></li>
+<li>Check the red overlay</li>
+<li>Add or subtract areas if necessary</li>
+<li>Increase Exposure slightly</li>
+<li>Open the Shadows a little</li>
+<li>Add a small amount of Texture if needed</li>
+<li>Turn the mask visibility off temporarily and compare</li>
+</ol>
+<p>You may find that a very small adjustment is enough. The objective is not to make the bird obviously brighter. It is simply to guide the viewer&rsquo;s eye toward it.</p>
+</div></details>
+
+<details><summary>Don&rsquo;t Create the &ldquo;Cut-Out&rdquo; Look</summary><div class="rollup">
+<p>One of the most common problems with local adjustments is making the subject look as though it has been pasted onto the photograph.</p>
+<p>This happens when the subject becomes much brighter than the background, much sharper than everything else, excessively saturated, or surrounded by an obvious halo.</p>
+<p>If this happens, reduce the adjustment. The subject still needs to belong naturally within the light of the original photograph.</p>
+</div></details>
+
+<details><summary>Masks Are Non-Destructive</summary><div class="rollup">
+<p>Like Lightroom Classic&rsquo;s other Develop adjustments, masking is <strong>non-destructive</strong>. Your original photograph is not permanently altered by these edits.</p>
+<p>That means you can experiment. If a mask does not work, change the settings, refine the selection, hide it temporarily, delete it or start again.</p>
+</div></details>
+
+<div class="feature-card navy">
+<h3>A Simple Beginner Workflow</h3>
+<ol>
+<li>Ask <strong>what part of the photograph actually needs changing?</strong></li>
+<li>Open <strong>Masking</strong></li>
+<li>Try <strong>Select Subject, Sky or Background</strong> first</li>
+<li>Check the overlay</li>
+<li>Use <strong>Add or Subtract</strong> if necessary</li>
+<li>Make a small adjustment</li>
+<li>Turn the mask on and off to compare</li>
+<li>Reduce the adjustment if it looks obvious</li>
+</ol>
+</div>
+
+<details><summary>Final Check</summary><div class="rollup">
+<ul>
+<li>Is the mask selecting the correct area?</li>
+<li>Does the adjustment help the main subject?</li>
+<li>Does the photograph still look natural?</li>
+<li>Are there halos around the edge of the mask?</li>
+<li>Has the subject become unnaturally bright?</li>
+<li>Would the photograph still work with a slightly weaker adjustment?</li>
+</ul>
+<p>If you are unsure, reduce the strength.</p>
+<p><strong>Local adjustments should guide the viewer, not announce themselves.</strong></p>
+</div></details>
+
+<p><em>The accompanying Lightroom Basics PDF provides a quick visual guide to Select Subject, Select Sky, the Brush, Add/Subtract and simple local adjustments.</em></p>
+<a class="button teal" data-category="editing" data-index="resource" data-part="7" data-series="lightroom-basics" data-tags="lightroom,local-adjustments,masking,editing-corner,resource" data-title="Local Adjustments Editing Corner Article" href="https://warrnamboolcameraclub.zenfolio.com/lr_007_local_adjustments.pdf" id="wcc-resource-2026-014-lightroom-local-adjustments" rel="noopener" target="_blank">OPEN THE LOCAL ADJUSTMENTS EDITING CORNER ARTICLE</a>
+</div>
+</details>
+</section>
+
+<section id="wcc-2026-014-tips" data-category="photography-tips" data-index="article" data-library="yes" data-tags="photographer-tips,iso,backlighting,composition,negative-space">
+<h2 class="section-title">📸 Photographer&rsquo;s Tips</h2>
+<div class="tips-grid">
+<div class="tip" data-category="photography-tips" data-code="B010" data-tip-code="B010" data-index="tip" data-library="yes" data-level="Beginner" data-tags="iso,shutter-speed,sharpness,low-light" data-title="Know When to Raise Your ISO" id="wcc-tip-b010">
+<h3>🌱 Beginner Tip &ndash; B010</h3>
+<h4>Know When to Raise Your ISO</h4>
+<p>A low ISO can give excellent image quality, but keeping ISO too low can sometimes result in a blurred photograph.</p>
+<p>If the light is fading or your subject is moving, don&rsquo;t be afraid to increase the ISO so your camera can use a faster shutter speed.</p>
+<p>Modern cameras can produce very good results at higher ISO settings, and some noise can usually be reduced later. Motion blur from an accidentally slow shutter speed is much harder to fix.</p>
+<p>The important lesson is simple: <strong>don&rsquo;t sacrifice a sharp photograph just to keep the ISO at 100.</strong></p>
+</div>
+<div class="tip" data-category="photography-tips" data-code="I010" data-tip-code="I010" data-index="tip" data-library="yes" data-level="Intermediate" data-tags="backlighting,light,rim-light,flare,exposure" data-title="Try Backlighting Your Subject" id="wcc-tip-i010">
+<h3>📷 Intermediate Tip &ndash; I010</h3>
+<h4>Try Backlighting Your Subject</h4>
+<p>We often position ourselves so the light falls onto the front of our subject. Sometimes, however, the more interesting photograph is found by shooting towards the light.</p>
+<p>With the light behind your subject, you can create glowing edges around hair, feathers, leaves or grasses. Translucent subjects can become particularly striking when illuminated from behind.</p>
+<p>Watch your exposure carefully and change your position to control bright highlights and flare.</p>
+<p>Next time you&rsquo;re photographing near sunrise or sunset, walk around your subject and see what happens when the light comes from behind rather than in front.</p>
+</div>
+<div class="tip" data-category="photography-tips" data-code="A010" data-tip-code="A010" data-index="tip" data-library="yes" data-level="Advanced" data-tags="composition,separation,negative-space,tangents,visual-relationships" data-title="Pay Attention to the Space Between Things" id="wcc-tip-a010">
+<h3>⭐ Advanced Tip &ndash; A010</h3>
+<h4>Pay Attention to the Space Between Things</h4>
+<p>Composition isn&rsquo;t only about the objects within the frame. The spaces between them matter too.</p>
+<p>Look at the gaps between people, trees, buildings or other important elements. If those gaps become too small, objects can appear to merge or create awkward visual tangents.</p>
+<p>Moving the camera only a few centimetres can change these relationships completely.</p>
+<p>Before pressing the shutter, stop looking at the subjects themselves for a moment and examine the <strong>spaces between them</strong>. Clean separation can turn a cluttered composition into one that feels deliberate and resolved.</p>
+</div>
+</div>
+</section>
+
+<section data-category="challenge" data-index="article" data-library="yes" data-tags="camera-challenge,shadows,light,composition,patterns,observation" data-title="Make the Shadow the Subject" id="wcc-2026-014-challenge">
+<h2 class="section-title">📷 This Week&rsquo;s Camera Challenge</h2>
+<h3>Make the Shadow the Subject</h3>
+<p>This week, forget about photographing the object itself and concentrate on the shadow it creates.</p>
+<p>Look for strong directional light from the sun, a window, streetlight or other light source, then build your composition around the shape, pattern or texture of the shadow.</p>
+<p>Try photographing:</p>
+<ul>
+<li>A person without showing the person</li>
+<li>Railings or fences casting repeating patterns</li>
+<li>Trees or leaves creating shapes on a wall</li>
+<li>Everyday objects transformed by their shadows</li>
+<li>Long shadows near sunrise or sunset</li>
+</ul>
+<p>You can include part of the object creating the shadow, but the shadow should be the main reason for taking the photograph.</p>
+<p>The challenge is to stop looking only at what the light illuminates and start noticing what the light leaves behind.</p>
+<div class="feature-card"><p><strong>Bonus challenge:</strong> Make one photograph where someone looking at it cannot immediately tell what created the shadow.</p></div>
+</section>
+
+<section data-category="members-on-the-move" data-index="article" data-library="yes" data-locations="alice-springs" data-people="bob-artis,kerrie-artis" data-tags="bob-artis,kerrie-artis,alice-springs,red-centrenats,burnouts,travel" data-title="Members on the Move – Bob &amp; Kerrie" id="wcc-2026-014-members-on-the-move">
+<h2 class="section-title">✈️ Members on the Move</h2>
+<h3>Bob &amp; Kerrie &ndash; Still Chilling in Alice</h3>
+<p>Bob and Kerrie are still in Alice Springs for a little longer while Kerrie waits for a follow-up specialist appointment, so for the moment they are simply taking the opportunity to chill out in Alice.</p>
+<p>Of course, give Bob some spare time and a camera and he is unlikely to sit still for too long.</p>
+<p>This weekend he headed along to Red CentreNATS 12 and spent some time photographing the burnouts. Bob reckons the power these cars can put through the rear tyres, and the amount of smoke they can produce, is something to see.</p>
+<p>No engines exploded while he was watching, although one car did catch fire!</p>
+<p>As Bob put it, the amount of money involved in some of these cars is &ldquo;insane&rdquo;.</p>
+<div class="photo-grid two">
+<div class="photo-card"><img alt="Burnout with smoke at Red CentreNATS by Bob Artis" decoding="async" loading="lazy" src="/img/s/v-10/p1600627574-3.jpg" />
+<div class="caption">This thing has some real power &hellip; and smoke! &ndash; Bob Artis</div></div>
+<div class="photo-card"><img alt="Suzuki ute burnout at Red CentreNATS by Bob Artis" decoding="async" loading="lazy" src="/img/s/v-10/p1600627575-3.jpg" />
+<div class="caption">Suzuki ute with a BIG motor and blower. It caught fire after this photograph was taken. &ndash; Bob Artis</div></div>
+</div>
+<p>There is a rodeo in Alice Springs next Saturday, so Bob is thinking of heading along to that as well. At this rate we may have another instalment from Alice before Bob and Kerrie finally move on.</p>
+</section>
+
+<section data-category="events" data-event-date="2026-10-24" data-event-status="confirmed" data-index="event" data-locations="werribee-open-range-zoo,werribee" data-people="tania-jacobson" data-tags="werribee-open-range-zoo,wildlife,bus-trip,rsvp,deposit,payment" data-title="Werribee Open Range Zoo – Reminder" id="wcc-event-2026-10-24-werribee-zoo">
+<h2 class="section-title">🦒 Werribee Open Range Zoo</h2>
+<p class="lead">Don&rsquo;t forget our Club outing to Werribee Open Range Zoo on Saturday, 24 October.</p>
+<p>There is no charge for the bus for Camera Club members. The bus cost for non-members is $25.</p>
+<p>A <strong>$40 deposit</strong> is required and will be reimbursed as part of the zoo entry fee.</p>
+<div class="feature-card navy">
+<h3>Payment Details</h3>
+<p><strong>PayID</strong><br /><a href="mailto:warrnamboolcameraclub@gmail.com">warrnamboolcameraclub@gmail.com</a></p>
+<p><strong>Bank Transfer</strong><br />Warrnambool Camera Club<br />BSB: 633-000<br />A/C No: 116 399 114</p>
+</div>
+<p>RSVPs are required by <strong>24 September</strong>, so if you are planning to join us, make sure you have your name down with Tania.</p>
+<p>Werribee Open Range Zoo is cashless, so remember to bring a debit or credit card, or have a suitable digital payment option available on your phone.</p>
+</section>
+
+<section data-category="club-news" data-index="article" data-tags="running-festival,flash-trigger,high-key,werribee-zoo,warrnambool-show" data-title="What’s Coming Up" id="wcc-2026-014-coming-up">
+<h2 class="section-title">📅 What&rsquo;s Coming Up</h2>
+<div data-category="community" data-event-date="2026-09-19" data-event-status="confirmed" data-index="event" data-tags="running-festival,volunteers" data-title="Saturday, 19 September – Running Festival Saturday">
+<h3>🏃 Saturday, 19 September &ndash; Running Festival Saturday Events</h3>
+<p>2 km and 4 km events. We need around four photographers, with coverage roughly from 2:30 PM to 5:00 PM.</p>
+</div>
+<div data-category="community" data-event-date="2026-09-20" data-event-status="confirmed" data-index="event" data-tags="running-festival,marathon,volunteers" data-title="Sunday, 20 September – Running Festival Sunday">
+<h3>🏃 Sunday, 20 September &ndash; Running Festival Sunday Events</h3>
+<p>Marathon, Half Marathon, 10 km and 6 km. We need around 8&ndash;10 photographers around the course.</p>
+</div>
+<div data-category="education" data-event-date="2026-09-24" data-event-status="confirmed" data-index="event" data-tags="flash-trigger,workshop,lighting" data-title="Thursday, 24 September – Flash Trigger Workshop">
+<h3>⚡ Thursday, 24 September &ndash; Flash Trigger Workshop</h3>
+<p>Our practical session on getting to know the Club&rsquo;s flash trigger equipment.</p>
+</div>
+<div data-category="education" data-event-date="2026-10-01" data-event-status="confirmed" data-index="event" data-tags="high-key,flash,workshop,lighting" data-title="Thursday, 1 October – High Key Flash Workshop">
+<h3>💡 Thursday, 1 October &ndash; High Key Flash Workshop</h3>
+<p>Our High Key Flash Workshop is planned for Thursday, 1 October.</p>
+</div>
+<div data-category="events" data-event-date="2026-10-24" data-event-status="confirmed" data-index="event" data-tags="werribee-zoo,rsvp,bus-trip,wildlife" data-title="Saturday, 24 October – Werribee Open Range Zoo">
+<h3>🦒 Saturday, 24 October &ndash; Werribee Open Range Zoo</h3>
+<p>Our Club outing is confirmed. Members travelling on the bus need to register with Tania by 24 September.</p>
+</div>
+<div data-category="competition" data-event-date="2026-10-31" data-event-status="confirmed" data-index="event" data-tags="warrnambool-show,photography,competition" data-title="Saturday, 31 October – Warrnambool Show">
+<h3>🎡 Saturday, 31 October &ndash; Warrnambool Show</h3>
+<p>Photography entries are now open. Check the 2026 Photography Schedule for the class and presentation requirements before submitting your entry.</p>
+</div>
+</section>
+
+<section data-category="club-news" data-index="article" data-tags="contributions,members,photography-stories,club-news" data-title="Contributions Welcome" id="wcc-2026-014-contributions">
+<h2 class="section-title">📬 Contributions Welcome</h2>
+<p>The Weekly Update works best when it&rsquo;s about our members, not simply the Committee telling everyone what&rsquo;s happening.</p>
+<p>If you&rsquo;ve been somewhere interesting, captured an image you&rsquo;re particularly pleased with, discovered a great photographic location, learned something worth sharing, tried some interesting equipment, won an award or simply have a good photography story, send it through.</p>
+<p>The more members contribute, the more the Weekly Update becomes a reflection of the photography and people that make up the Warrnambool Camera Club.</p>
+</section>
+
+<section data-category="club-news" data-index="article" data-tags="closing,weekly-update" data-title="Until Next Week" id="wcc-2026-014-until-next-week">
+<h2 class="section-title">Until Next Week</h2>
+<p>Thanks for reading.</p>
+<p>There is plenty happening over the next few weeks, from the Running Festival and workshops through to Werribee and the Warrnambool Show, so keep an eye on the Weekly Update and Club communications for the latest details.</p>
+<p>Until next week, keep learning, keep creating and keep enjoying your photography.</p>
+</section>
+</div>
+
+<div class="wcc-newsletter-footer"><strong>Warrnambool Camera Club</strong><br />
+Weekly Update | Issue 014<br />
+<br />
+<strong>Compiled &amp; edited by Stan McCullagh</strong><br />
+<br />
+Learn &bull; Create &bull; Share &bull; Inspire</div>
+</div>
+<script>
+(function(){
+function jumpToWeeklyAnchor(){
+    if(!window.location.hash) return;
+    var targetId;
+    try { targetId=decodeURIComponent(window.location.hash.substring(1)); }
+    catch(e) { targetId=window.location.hash.substring(1); }
+    if(!targetId) return;
+
+    var attempts=0, maxAttempts=40;
+    function tryScroll(){
+        var target=document.getElementById(targetId);
+        if(target){
+            if(target.tagName && target.tagName.toLowerCase()==="details") {
+                target.open=true;
+            }
+            var parent=target.parentElement;
+            while(parent){
+                if(parent.tagName && parent.tagName.toLowerCase()==="details") parent.open=true;
+                parent=parent.parentElement;
+            }
+            target.scrollIntoView({behavior:"auto",block:"start"});
+            return;
+        }
+        attempts+=1;
+        if(attempts<maxAttempts) window.setTimeout(tryScroll,150);
+    }
+    tryScroll();
+}
+if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",function(){window.setTimeout(jumpToWeeklyAnchor,100);});
+} else {
+    window.setTimeout(jumpToWeeklyAnchor,100);
+}
+window.addEventListener("load",function(){window.setTimeout(jumpToWeeklyAnchor,200);});
+window.addEventListener("hashchange",function(){window.setTimeout(jumpToWeeklyAnchor,25);});
+})();
+</script>
