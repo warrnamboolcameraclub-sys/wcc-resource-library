@@ -942,5 +942,145 @@ window.addEventListener("hashchange",function(){window.setTimeout(jumpToWeeklyAn
 })();
 </script>
 
+
+<script id="wcc-zenfolio-bridge">
+(function () {
+  var ZENFOLIO_ORIGIN = "https://warrnamboolcameraclub.zenfolio.com";
+  var embedded = window.parent && window.parent !== window;
+
+  if (!embedded) return;
+
+  function post(type, payload) {
+    var data = payload || {};
+    data.source = "wcc-weekly-embed";
+    data.type = type;
+    window.parent.postMessage(data, ZENFOLIO_ORIGIN);
+  }
+
+  function pageHeight() {
+    return Math.max(
+      document.documentElement.scrollHeight || 0,
+      document.body ? document.body.scrollHeight : 0
+    );
+  }
+
+  function sendHeight() {
+    post("height", { height: Math.ceil(pageHeight()) });
+  }
+
+  function openParentDetails(target) {
+    if (!target) return;
+    if (target.tagName && target.tagName.toLowerCase() === "details") {
+      target.open = true;
+    }
+    var parent = target.parentElement;
+    while (parent) {
+      if (parent.tagName && parent.tagName.toLowerCase() === "details") {
+        parent.open = true;
+      }
+      parent = parent.parentElement;
+    }
+  }
+
+  function sendAnchorPosition(id) {
+    if (!id) return;
+    var target = document.getElementById(id);
+    if (!target) return;
+
+    openParentDetails(target);
+
+    window.setTimeout(function () {
+      var top = target.getBoundingClientRect().top + window.pageYOffset;
+      post("anchor-position", { id: id, top: Math.max(0, Math.round(top)) });
+      sendHeight();
+    }, 60);
+  }
+
+  function currentHashId() {
+    if (!window.location.hash) return "";
+    try {
+      return decodeURIComponent(window.location.hash.substring(1));
+    } catch (e) {
+      return window.location.hash.substring(1);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (event.origin !== ZENFOLIO_ORIGIN) return;
+    var data = event.data || {};
+    if (data.source !== "wcc-weekly-parent") return;
+
+    if (data.type === "go-to-anchor" && data.id) {
+      var encoded = "#" + encodeURIComponent(data.id);
+      if (window.location.hash !== encoded) {
+        history.replaceState(null, "", encoded);
+      }
+      sendAnchorPosition(data.id);
+    }
+  });
+
+  /*
+    When embedded, hand photo enlargement to the Zenfolio parent.
+    The normal GitHub lightbox continues to work when this issue is opened directly.
+  */
+  document.addEventListener("click", function (event) {
+    var link = event.target.closest ? event.target.closest("a.photo-enlarge") : null;
+    if (!link) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+    if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+
+    var image = link.querySelector("img");
+    post("open-photo", {
+      href: link.getAttribute("href") || "",
+      alt: image ? (image.getAttribute("alt") || "") : "",
+      title: link.getAttribute("data-lightbox-title") || "",
+      subtitle: link.getAttribute("data-lightbox-subtitle") || "",
+      caption: link.getAttribute("data-lightbox-caption") || "",
+      credit: link.getAttribute("data-lightbox-credit") || ""
+    });
+  }, true);
+
+  window.addEventListener("hashchange", function () {
+    var id = currentHashId();
+    if (!id) return;
+    post("hash-changed", { id: id });
+    sendAnchorPosition(id);
+  });
+
+  if ("ResizeObserver" in window) {
+    var resizeObserver = new ResizeObserver(function () {
+      sendHeight();
+    });
+    resizeObserver.observe(document.documentElement);
+    if (document.body) resizeObserver.observe(document.body);
+  }
+
+  document.addEventListener("toggle", function () {
+    window.setTimeout(sendHeight, 30);
+  }, true);
+
+  function initialise() {
+    sendHeight();
+    var id = currentHashId();
+    if (id) {
+      post("hash-changed", { id: id });
+      sendAnchorPosition(id);
+    }
+    window.setTimeout(sendHeight, 200);
+    window.setTimeout(sendHeight, 700);
+    window.setTimeout(sendHeight, 1500);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initialise);
+  } else {
+    initialise();
+  }
+  window.addEventListener("load", initialise);
+})();
+</script>
+
 </body>
 </html>
