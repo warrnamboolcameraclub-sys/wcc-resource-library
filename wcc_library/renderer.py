@@ -132,6 +132,12 @@ def render_site(root: Path, pages: list[NewsletterPage], records: list[Catalogue
     if len(issues) > 1:
         _write_redirect(output / "previous.html", issues[1].public_url, f"Previous Issue {issues[1].issue}", redirect_template)
 
+    # Publish the canonical newsletter HTML files alongside the generated library.
+    # This makes each source issue directly available through GitHub Pages while
+    # keeping content/newsletters/ as the single source of truth.
+    for page in pages:
+        shutil.copy2(page.source_path, output / page.source_path.name)
+
     shutil.copy2(root / "assets" / "library.css", output / "assets" / "library.css")
     shutil.copy2(root / "assets" / "library.js", output / "assets" / "library.js")
     shutil.copy2(root / "assets" / "browse.js", output / "assets" / "browse.js")
