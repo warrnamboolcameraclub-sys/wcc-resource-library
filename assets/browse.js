@@ -15,6 +15,7 @@
 
   function displayDate(value) {
     if (!value) return "";
+
     return new Date(value + "T00:00:00").toLocaleDateString("en-AU", {
       day: "numeric",
       month: "short",
@@ -64,13 +65,19 @@
 
     let label = category || "Article";
 
-    if (record.item_type === "tip") label = record.code || "Tip";
+    if (record.item_type === "tip") {
+      label = record.code || "Tip";
+    }
+
     if (record.item_type === "event") {
       label = record.event_status
         ? `Event · ${humaniseSlug(record.event_status)}`
         : "Event";
     }
-    if (record.item_type === "resource") label = "Download";
+
+    if (record.item_type === "resource") {
+      label = "Download";
+    }
 
     let secondary = "";
 
@@ -78,9 +85,14 @@
       const seriesName =
         data.labels.series[record.series] ||
         humaniseSlug(record.series);
+
       secondary =
-        seriesName + (record.part ? ` · Part ${record.part}` : "");
-    } else if (record.item_type === "tip" && record.level) {
+        seriesName +
+        (record.part ? ` · Part ${record.part}` : "");
+    } else if (
+      record.item_type === "tip" &&
+      record.level
+    ) {
       secondary = `${humaniseSlug(record.level)} level`;
     } else if (record.event_date) {
       secondary = displayDate(record.event_date);
@@ -97,31 +109,59 @@
 
     return `
       <article class="card">
+
         <div class="card-top">
+
           <div class="badges">
-            <span class="badge ${cls}">${escapeHtml(label)}</span>
+            <span class="badge ${cls}">
+              ${escapeHtml(label)}
+            </span>
+
             ${
               record.item_type !== "article" && category
                 ? `<span class="badge">${escapeHtml(category)}</span>`
                 : ""
             }
           </div>
+
           <span class="issue">
-            Issue ${escapeHtml(record.issue)} · ${escapeHtml(displayDate(record.published))}
+            Issue ${escapeHtml(record.issue)} ·
+            ${escapeHtml(displayDate(record.published))}
           </span>
+
         </div>
 
-        <div class="series-line">${escapeHtml(secondary)}</div>
+        <div class="series-line">
+          ${escapeHtml(secondary)}
+        </div>
+
         <h3>${escapeHtml(record.title)}</h3>
-        ${record.excerpt ? `<p>${escapeHtml(record.excerpt)}</p>` : ""}
-        <div class="tags">${tags}</div>
+
+        ${
+          record.excerpt
+            ? `<p>${escapeHtml(record.excerpt)}</p>`
+            : ""
+        }
+
+        <div class="tags">
+          ${tags}
+        </div>
 
         <div class="card-foot">
+
           <span class="anchor">
-            #${escapeHtml(record.open_anchor_id || record.anchor_id)}
+            #${escapeHtml(
+              record.open_anchor_id ||
+              record.anchor_id
+            )}
           </span>
-          <div class="card-actions">${actions}</div>
+
+          <div class="card-actions">
+            ${actions}
+          </div>
+
         </div>
+
       </article>
     `;
   }
@@ -151,23 +191,49 @@
     }
 
     if (quick === "events") {
-      return record.item_type === "event" || record.category === "events";
+      return (
+        record.item_type === "event" ||
+        record.category === "events"
+      );
     }
 
-    if (quick === "travel") return record.category === "members-on-the-move";
-    if (quick === "downloads") return record.item_type === "resource";
+    if (quick === "travel") {
+      return record.category === "members-on-the-move";
+    }
+
+    if (quick === "downloads") {
+      return record.item_type === "resource";
+    }
 
     return true;
   }
 
   function filteredRows(data, params) {
-    const q = (params.get("q") || "").trim().toLowerCase();
-    const category = params.get("category") || "";
-    const series = params.get("series") || "";
-    const level = params.get("level") || "";
-    const issue = params.get("issue") || "";
-    const type = params.get("type") || "";
-    const quick = params.get("quick") || "";
+    const q =
+      (params.get("q") || "")
+        .trim()
+        .toLowerCase();
+
+    const category =
+      params.get("category") || "";
+
+    const series =
+      params.get("series") || "";
+
+    const level =
+      params.get("level") || "";
+
+    const issue =
+      params.get("issue") || "";
+
+    const type =
+      params.get("type") || "";
+
+    const quick =
+      params.get("quick") || "";
+
+    const sort =
+      params.get("sort") || "latest";
 
     return data.records
       .filter(record => {
@@ -198,68 +264,149 @@
           matchesQuick(record, quick)
         );
       })
-      .sort(
-        (a, b) =>
-          (b.published || "").localeCompare(a.published || "") ||
-          (a.title || "").localeCompare(b.title || "")
-      );
+      .sort((a, b) => {
+        const dateCompare =
+          sort === "earliest"
+            ? (a.published || "").localeCompare(
+                b.published || ""
+              )
+            : (b.published || "").localeCompare(
+                a.published || ""
+              );
+
+        return (
+          dateCompare ||
+          (a.title || "").localeCompare(
+            b.title || ""
+          )
+        );
+      });
   }
 
   function urlFor(page, params) {
     const next = new URLSearchParams(params);
+
     next.set("page", String(page));
+
     return `browse.html?${next.toString()}`;
   }
 
   function indexUrl(params) {
     const next = new URLSearchParams(params);
+
     next.delete("page");
+
     const query = next.toString();
-    return query ? `index.html?${query}` : "index.html";
+
+    return query
+      ? `index.html?${query}`
+      : "index.html";
   }
 
   function render(data) {
-    const params = new URLSearchParams(window.location.search);
-    const rows = filteredRows(data, params);
+    const params =
+      new URLSearchParams(window.location.search);
 
-    const totalPages = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
-    let page = Number.parseInt(params.get("page") || "2", 10);
+    const rows =
+      filteredRows(data, params);
 
-    if (!Number.isFinite(page)) page = 2;
-    page = Math.max(2, Math.min(page, totalPages));
+    const totalPages =
+      Math.max(
+        1,
+        Math.ceil(rows.length / PAGE_SIZE)
+      );
 
-    const start = (page - 1) * PAGE_SIZE;
-    const displayedRows = rows.slice(start, start + PAGE_SIZE);
+    let page =
+      Number.parseInt(
+        params.get("page") || "2",
+        10
+      );
 
-    const firstResult = rows.length ? start + 1 : 0;
-    const lastResult = Math.min(start + displayedRows.length, rows.length);
-
-    $("browsePageTitle").textContent = `Page ${page} of ${totalPages}`;
-    $("browseRange").textContent =
-      `${firstResult}–${lastResult} of ${rows.length} indexed items`;
-    $("browseCards").innerHTML = displayedRows.map(r => card(r, data)).join("");
-
-    if (!rows.length || !displayedRows.length) {
-      $("browseEmpty").style.display = "block";
+    if (!Number.isFinite(page)) {
+      page = 2;
     }
 
-    const backUrl = indexUrl(params);
-    document.querySelectorAll("[data-back-index]").forEach(link => {
-      link.href = backUrl;
-    });
+    page =
+      Math.max(
+        2,
+        Math.min(page, totalPages)
+      );
 
-    document.querySelectorAll("[data-prev-page]").forEach(link => {
-      link.href = page <= 2 ? backUrl : urlFor(page - 1, params);
-      link.textContent = page <= 2 ? "← Back to Page 1" : "← Previous 10";
-    });
+    const start =
+      (page - 1) * PAGE_SIZE;
 
-    document.querySelectorAll("[data-next-page]").forEach(link => {
-      if (page >= totalPages) {
-        link.style.display = "none";
-      } else {
-        link.href = urlFor(page + 1, params);
-      }
-    });
+    const displayedRows = rows.slice(start, start + PAGE_SIZE);
+
+    const firstResult =
+      rows.length
+        ? start + 1
+        : 0;
+
+    const lastResult =
+      Math.min(
+        start + displayedRows.length,
+        rows.length
+      );
+
+    $("browsePageTitle").textContent =
+      `Page ${page} of ${totalPages}`;
+
+    $("browseRange").textContent =
+      `${firstResult}–${lastResult} of ${rows.length} indexed items`;
+
+    $("browseCards").innerHTML =
+      displayedRows
+        .map(r => card(r, data))
+        .join("");
+
+    if (
+      !rows.length ||
+      !displayedRows.length
+    ) {
+      $("browseEmpty").style.display =
+        "block";
+    }
+
+    const backUrl =
+      indexUrl(params);
+
+    document
+      .querySelectorAll("[data-back-index]")
+      .forEach(link => {
+        link.href = backUrl;
+      });
+
+    document
+      .querySelectorAll("[data-prev-page]")
+      .forEach(link => {
+        link.href =
+          page <= 2
+            ? backUrl
+            : urlFor(
+                page - 1,
+                params
+              );
+
+        link.textContent =
+          page <= 2
+            ? "← Back to Page 1"
+            : "← Previous 10";
+      });
+
+    document
+      .querySelectorAll("[data-next-page]")
+      .forEach(link => {
+        if (page >= totalPages) {
+          link.style.display =
+            "none";
+        } else {
+          link.href =
+            urlFor(
+              page + 1,
+              params
+            );
+        }
+      });
   }
 
   $("browseCards").addEventListener("click", event => {
@@ -270,45 +417,62 @@
   });
 
   document.addEventListener("click", event => {
-    const pagerLink = event.target.closest(
-      "[data-prev-page], [data-next-page], [data-back-index]"
-    );
+    const pagerLink =
+      event.target.closest(
+        "[data-prev-page], [data-next-page], [data-back-index]"
+      );
 
     if (!pagerLink) return;
 
-    const destination = pagerLink.href;
+    const destination =
+      pagerLink.href;
+
     if (!destination) return;
 
     /*
-     * Do not let the browser navigate immediately. On some browsers the
-     * postMessage can be lost when the iframe document is replaced at once.
-     * Give the Zenfolio parent a moment to receive the scroll request first.
+     * Do not let the browser navigate immediately.
+     * Give the Zenfolio parent a moment to receive
+     * the scroll request before the iframe changes page.
      */
     event.preventDefault();
 
     requestParentScrollToFrameTop();
 
     setTimeout(() => {
-      window.location.href = destination;
+      window.location.href =
+        destination;
     }, 100);
   });
 
   /*
-   * Ask again after the browse page has loaded. This makes page 3, 4, 5...
-   * behave the same way as the first move from the index to page 2.
+   * Ask again after the browse page has loaded.
+   * This keeps page 3, 4, 5 etc aligned correctly
+   * inside the Zenfolio iframe.
    */
   window.addEventListener("load", () => {
-    setTimeout(requestParentScrollToFrameTop, 100);
+    setTimeout(
+      requestParentScrollToFrameTop,
+      100
+    );
   });
 
   fetch("library.json", { cache: "no-store" })
     .then(response => {
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      if (!response.ok) {
+        throw new Error(
+          `HTTP ${response.status}`
+        );
+      }
+
       return response.json();
     })
     .then(render)
     .catch(error => {
-      console.error("Resource Library browse page load failed", error);
+      console.error(
+        "Resource Library browse page load failed",
+        error
+      );
+
       $("browseCards").innerHTML = `
         <div class="load-error">
           The Resource Library data could not be loaded.
@@ -316,4 +480,5 @@
         </div>
       `;
     });
+
 })();
