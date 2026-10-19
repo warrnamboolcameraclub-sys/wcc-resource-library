@@ -15,7 +15,7 @@ SERIES_NAMES = {
     "ethical-bird-photography": "Ethical Bird Photography",
     "mastering-long-exposure-photography": "Mastering Long Exposure Photography",
     "lightroom-basics": "Lightroom Basics",
-    "using-your-camera": "Using Your Camera",
+    "protecting-your-photos": "Protecting Your Photos",
 }
 
 _GENERIC_HEADINGS = {
