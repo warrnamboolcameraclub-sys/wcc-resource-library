@@ -23,6 +23,7 @@
 
   function displayDate(value) {
     if (!value) return "";
+
     return new Date(value + "T00:00:00").toLocaleDateString("en-AU", {
       day: "numeric",
       month: "short",
@@ -72,7 +73,9 @@
   }
 
   function typeLabel(record) {
-    if (record.item_type === "tip") return record.code || "Tip";
+    if (record.item_type === "tip") {
+      return record.code || "Tip";
+    }
 
     if (record.item_type === "event") {
       return record.event_status
@@ -80,7 +83,9 @@
         : "Event";
     }
 
-    if (record.item_type === "resource") return "Download";
+    if (record.item_type === "resource") {
+      return "Download";
+    }
 
     return (
       state.data.labels.categories[record.category] ||
@@ -102,7 +107,9 @@
       return `${humaniseSlug(record.level)} level`;
     }
 
-    if (record.event_date) return displayDate(record.event_date);
+    if (record.event_date) {
+      return displayDate(record.event_date);
+    }
 
     return "";
   }
@@ -122,43 +129,85 @@
       .join("");
 
     const actions =
-      `${record.download_url ? `<a class="action download-link" href="${escapeHtml(record.download_url)}" target="_blank" rel="noopener">Download File</a>` : ""}` +
-      `<button class="action open-link" type="button" data-open-url="${escapeHtml(record.open_url)}">Open in Issue ${escapeHtml(record.issue)}</button>`;
+      `${
+        record.download_url
+          ? `<a class="action download-link"
+               href="${escapeHtml(record.download_url)}"
+               target="_blank"
+               rel="noopener">Download File</a>`
+          : ""
+      }` +
+      `<button
+         class="action open-link"
+         type="button"
+         data-open-url="${escapeHtml(record.open_url)}">
+         Open in Issue ${escapeHtml(record.issue)}
+       </button>`;
 
     return `
       <article class="card">
+
         <div class="card-top">
+
           <div class="badges">
-            <span class="badge ${cls}">${escapeHtml(typeLabel(record))}</span>
+            <span class="badge ${cls}">
+              ${escapeHtml(typeLabel(record))}
+            </span>
+
             ${
               record.item_type !== "article" && category
                 ? `<span class="badge">${escapeHtml(category)}</span>`
                 : ""
             }
           </div>
+
           <span class="issue">
-            Issue ${escapeHtml(record.issue)} · ${escapeHtml(displayDate(record.published))}
+            Issue ${escapeHtml(record.issue)} ·
+            ${escapeHtml(displayDate(record.published))}
           </span>
+
         </div>
 
-        <div class="series-line">${escapeHtml(secondaryLabel(record))}</div>
+        <div class="series-line">
+          ${escapeHtml(secondaryLabel(record))}
+        </div>
+
         <h3>${escapeHtml(record.title)}</h3>
-        ${record.excerpt ? `<p>${escapeHtml(record.excerpt)}</p>` : ""}
-        <div class="tags">${tags}</div>
+
+        ${
+          record.excerpt
+            ? `<p>${escapeHtml(record.excerpt)}</p>`
+            : ""
+        }
+
+        <div class="tags">
+          ${tags}
+        </div>
 
         <div class="card-foot">
+
           <span class="anchor">
-            #${escapeHtml(record.open_anchor_id || record.anchor_id)}
+            #${escapeHtml(
+              record.open_anchor_id || record.anchor_id
+            )}
           </span>
-          <div class="card-actions">${actions}</div>
+
+          <div class="card-actions">
+            ${actions}
+          </div>
+
         </div>
+
       </article>
     `;
   }
 
   function matchesQuick(record) {
     const q = state.quick;
-    if (!q) return true;
+
+    if (!q) {
+      return true;
+    }
 
     if (q === "learning") {
       return [
@@ -182,11 +231,19 @@
     }
 
     if (q === "events") {
-      return record.item_type === "event" || record.category === "events";
+      return (
+        record.item_type === "event" ||
+        record.category === "events"
+      );
     }
 
-    if (q === "travel") return record.category === "members-on-the-move";
-    if (q === "downloads") return record.item_type === "resource";
+    if (q === "travel") {
+      return record.category === "members-on-the-move";
+    }
+
+    if (q === "downloads") {
+      return record.item_type === "resource";
+    }
 
     return true;
   }
@@ -198,6 +255,7 @@
     const level = $("levelFilter").value;
     const issue = $("issueFilter").value;
     const type = $("typeFilter").value;
+    const sort = $("sortFilter").value;
 
     return state.data.records
       .filter(record => {
@@ -228,15 +286,26 @@
           matchesQuick(record)
         );
       })
-      .sort(
-        (a, b) =>
-          (b.published || "").localeCompare(a.published || "") ||
+      .sort((a, b) => {
+        const dateCompare =
+          sort === "earliest"
+            ? (a.published || "").localeCompare(
+                b.published || ""
+              )
+            : (b.published || "").localeCompare(
+                a.published || ""
+              );
+
+        return (
+          dateCompare ||
           (a.title || "").localeCompare(b.title || "")
-      );
+        );
+      });
   }
 
   function currentBrowseParams(page) {
     const params = new URLSearchParams();
+
     params.set("page", String(page));
 
     const values = {
@@ -246,37 +315,56 @@
       level: $("levelFilter").value,
       issue: $("issueFilter").value,
       type: $("typeFilter").value,
+      sort: $("sortFilter").value,
       quick: state.quick
     };
 
     Object.entries(values).forEach(([key, value]) => {
-      if (value) params.set(key, value);
+      if (value) {
+        params.set(key, value);
+      }
     });
 
     return params.toString();
   }
 
   function updatePager(totalRows) {
-    const pageLabels = document.querySelectorAll("[data-mobile-page]");
-    const rangeLabels = document.querySelectorAll("[data-mobile-range]");
-    const previousButtons = document.querySelectorAll("[data-mobile-prev]");
-    const nextButtons = document.querySelectorAll("[data-mobile-next]");
+    const pageLabels =
+      document.querySelectorAll("[data-mobile-page]");
+
+    const rangeLabels =
+      document.querySelectorAll("[data-mobile-range]");
+
+    const previousButtons =
+      document.querySelectorAll("[data-mobile-prev]");
+
+    const nextButtons =
+      document.querySelectorAll("[data-mobile-next]");
 
     if (totalRows <= MOBILE_PAGE_SIZE) {
-      document.querySelectorAll(".mobile-pager").forEach(pager => {
-        pager.style.display = "none";
-      });
+      document
+        .querySelectorAll(".mobile-pager")
+        .forEach(pager => {
+          pager.style.display = "none";
+        });
+
       return;
     }
 
-    const totalPages = Math.ceil(totalRows / MOBILE_PAGE_SIZE);
+    const totalPages =
+      Math.ceil(totalRows / MOBILE_PAGE_SIZE);
 
     pageLabels.forEach(label => {
-      label.textContent = `Page 1 of ${totalPages}`;
+      label.textContent =
+        `Page 1 of ${totalPages}`;
     });
 
     rangeLabels.forEach(label => {
-      label.textContent = `1–${Math.min(MOBILE_PAGE_SIZE, totalRows)} of ${totalRows}`;
+      label.textContent =
+        `1–${Math.min(
+          MOBILE_PAGE_SIZE,
+          totalRows
+        )} of ${totalRows}`;
     });
 
     previousButtons.forEach(button => {
@@ -287,44 +375,65 @@
       button.disabled = false;
     });
 
-    document.querySelectorAll(".mobile-pager").forEach(pager => {
-      pager.style.display = "flex";
-    });
+    document
+      .querySelectorAll(".mobile-pager")
+      .forEach(pager => {
+        pager.style.display = "flex";
+      });
   }
 
   function applyFilters(resetMobile = false) {
-    if (resetMobile) state.mobilePage = 0;
+    if (resetMobile) {
+      state.mobilePage = 0;
+    }
 
     const rows = getFilteredRows();
-    const displayedRows = rows.slice(0, MOBILE_PAGE_SIZE);
 
-    $("cards").innerHTML = displayedRows.map(card).join("");
+    const displayedRows =
+      rows.slice(0, MOBILE_PAGE_SIZE);
+
+    $("cards").innerHTML =
+      displayedRows.map(card).join("");
 
     if (rows.length) {
       $("resultCount").textContent =
-        `1–${Math.min(displayedRows.length, rows.length)} of ${rows.length} indexed items`;
+        `1–${Math.min(
+          displayedRows.length,
+          rows.length
+        )} of ${rows.length} indexed items`;
     } else {
       $("resultCount").textContent =
         `0 of ${state.data.records.length} indexed items`;
     }
 
-    $("emptyState").style.display = rows.length ? "none" : "block";
+    $("emptyState").style.display =
+      rows.length ? "none" : "block";
+
     updatePager(rows.length);
   }
 
-  function fillSelect(select, values, labels, prefix = "") {
+  function fillSelect(
+    select,
+    values,
+    labels,
+    prefix = ""
+  ) {
     values.forEach(value => {
       select.insertAdjacentHTML(
         "beforeend",
-        `<option value="${escapeHtml(value)}">${escapeHtml(
-          prefix + (labels?.[value] || humaniseSlug(value))
-        )}</option>`
+        `<option value="${escapeHtml(value)}">
+          ${escapeHtml(
+            prefix +
+            (labels?.[value] || humaniseSlug(value))
+          )}
+        </option>`
       );
     });
   }
 
   function restoreFiltersFromUrl() {
-    const params = new URLSearchParams(window.location.search);
+    const params =
+      new URLSearchParams(window.location.search);
 
     const mapping = {
       q: "searchBox",
@@ -332,15 +441,22 @@
       series: "seriesFilter",
       level: "levelFilter",
       issue: "issueFilter",
-      type: "typeFilter"
+      type: "typeFilter",
+      sort: "sortFilter"
     };
 
-    Object.entries(mapping).forEach(([param, id]) => {
-      const value = params.get(param);
-      if (value) $(id).value = value;
-    });
+    Object.entries(mapping).forEach(
+      ([param, id]) => {
+        const value = params.get(param);
 
-    state.quick = params.get("quick") || "";
+        if (value) {
+          $(id).value = value;
+        }
+      }
+    );
+
+    state.quick =
+      params.get("quick") || "";
 
     document
       .querySelectorAll("#quickFilters button")
@@ -355,10 +471,17 @@
   function initialise(data) {
     state.data = data;
 
-    $("statRecords").textContent = data.summary.records;
-    $("statLearning").textContent = data.summary.learning_resources;
-    $("statTips").textContent = data.summary.tips;
-    $("statIssues").textContent = data.summary.issues;
+    $("statRecords").textContent =
+      data.summary.records;
+
+    $("statLearning").textContent =
+      data.summary.learning_resources;
+
+    $("statTips").textContent =
+      data.summary.tips;
+
+    $("statIssues").textContent =
+      data.summary.issues;
 
     $("archiveNote").textContent =
       `all ${data.summary.issues} Weekly Updates are indexed and live-linked.`;
@@ -367,26 +490,54 @@
       `${data.summary.issues} issues indexed`;
 
     const categories = [
-      ...new Set(data.records.map(r => r.category).filter(Boolean))
+      ...new Set(
+        data.records
+          .map(r => r.category)
+          .filter(Boolean)
+      )
     ].sort((a, b) =>
-      (data.labels.categories[a] || a).localeCompare(
+      (
+        data.labels.categories[a] || a
+      ).localeCompare(
         data.labels.categories[b] || b
       )
     );
 
     const series = [
-      ...new Set(data.records.map(r => r.series).filter(Boolean))
+      ...new Set(
+        data.records
+          .map(r => r.series)
+          .filter(Boolean)
+      )
     ].sort((a, b) =>
-      (data.labels.series[a] || a).localeCompare(
+      (
+        data.labels.series[a] || a
+      ).localeCompare(
         data.labels.series[b] || b
       )
     );
 
-    const issues = data.issues.map(i => i.issue);
+    const issues =
+      data.issues.map(i => i.issue);
 
-    fillSelect($("categoryFilter"), categories, data.labels.categories);
-    fillSelect($("seriesFilter"), series, data.labels.series);
-    fillSelect($("issueFilter"), issues, null, "Issue ");
+    fillSelect(
+      $("categoryFilter"),
+      categories,
+      data.labels.categories
+    );
+
+    fillSelect(
+      $("seriesFilter"),
+      series,
+      data.labels.series
+    );
+
+    fillSelect(
+      $("issueFilter"),
+      issues,
+      null,
+      "Issue "
+    );
 
     $("seriesStrip").innerHTML =
       data.series
@@ -397,12 +548,20 @@
               type="button"
               data-series-jump="${escapeHtml(s.id)}"
             >
-              <span class="series-name">${escapeHtml(s.name)}</span>
+              <span class="series-name">
+                ${escapeHtml(s.name)}
+              </span>
+
               <span class="series-meta">
                 ${s.article_count}
-                indexed article${s.article_count === 1 ? "" : "s"}
+                indexed article${
+                  s.article_count === 1 ? "" : "s"
+                }
               </span>
-              <span class="series-link">View series →</span>
+
+              <span class="series-link">
+                View series →
+              </span>
             </button>
           `
         )
@@ -413,19 +572,29 @@
     document
       .querySelectorAll("[data-series-jump]")
       .forEach(button => {
-        button.addEventListener("click", () => {
-          $("seriesFilter").value = button.dataset.seriesJump;
-          state.quick = "";
+        button.addEventListener(
+          "click",
+          () => {
+            $("seriesFilter").value =
+              button.dataset.seriesJump;
 
-          document
-            .querySelectorAll("#quickFilters button")
-            .forEach((x, i) =>
-              x.classList.toggle("active", i === 0)
-            );
+            state.quick = "";
 
-          applyFilters(true);
-          scrollToResults();
-        });
+            document
+              .querySelectorAll(
+                "#quickFilters button"
+              )
+              .forEach((x, i) =>
+                x.classList.toggle(
+                  "active",
+                  i === 0
+                )
+              );
+
+            applyFilters(true);
+            scrollToResults();
+          }
+        );
       });
 
     applyFilters();
@@ -437,10 +606,13 @@
     "seriesFilter",
     "levelFilter",
     "issueFilter",
-    "typeFilter"
+    "typeFilter",
+    "sortFilter"
   ].forEach(id => {
     $(id).addEventListener(
-      id === "searchBox" ? "input" : "change",
+      id === "searchBox"
+        ? "input"
+        : "change",
       () => applyFilters(true)
     );
   });
@@ -448,109 +620,202 @@
   document
     .querySelectorAll("#quickFilters button")
     .forEach(button => {
-      button.addEventListener("click", () => {
-        state.quick = button.dataset.quick;
+      button.addEventListener(
+        "click",
+        () => {
+          state.quick =
+            button.dataset.quick;
 
-        document
-          .querySelectorAll("#quickFilters button")
-          .forEach(x =>
-            x.classList.toggle("active", x === button)
-          );
+          document
+            .querySelectorAll(
+              "#quickFilters button"
+            )
+            .forEach(x =>
+              x.classList.toggle(
+                "active",
+                x === button
+              )
+            );
 
-        applyFilters(true);
-      });
-    });
-
-  $("clearBtn").addEventListener("click", () => {
-    [
-      "searchBox",
-      "categoryFilter",
-      "seriesFilter",
-      "levelFilter",
-      "issueFilter",
-      "typeFilter"
-    ].forEach(id => {
-      $(id).value = "";
-    });
-
-    state.quick = "";
-
-    document
-      .querySelectorAll("#quickFilters button")
-      .forEach((x, i) =>
-        x.classList.toggle("active", i === 0)
+          applyFilters(true);
+        }
       );
-
-    applyFilters(true);
-  });
-
-  $("cards").addEventListener("click", event => {
-    const button = event.target.closest("[data-open-url]");
-    if (!button) return;
-    navigateParent(button.dataset.openUrl);
-  });
-
-  document.querySelectorAll("[data-mobile-prev]").forEach(button => {
-    button.addEventListener("click", () => {
-      // Page 1 has no previous page.
     });
-  });
 
-  document.querySelectorAll("[data-mobile-next]").forEach(button => {
-    button.addEventListener("click", () => {
-      const rows = getFilteredRows();
-      if (rows.length <= MOBILE_PAGE_SIZE) return;
+  $("clearBtn").addEventListener(
+    "click",
+    () => {
+      [
+        "searchBox",
+        "categoryFilter",
+        "seriesFilter",
+        "levelFilter",
+        "issueFilter",
+        "typeFilter",
+        "sortFilter"
+      ].forEach(id => {
+        $(id).value = "";
+      });
 
-      requestParentScrollToFrameTop();
-      window.location.href = `browse.html?${currentBrowseParams(2)}`;
-    });
-  });
+      $("sortFilter").value = "latest";
 
-  $("editionGoBtn").addEventListener("click", () => {
-    navigateParent($("editionSelect").value);
-  });
+      state.quick = "";
 
-  $("editionSelect").addEventListener("keydown", event => {
-    if (event.key === "Enter") {
-      navigateParent($("editionSelect").value);
+      document
+        .querySelectorAll(
+          "#quickFilters button"
+        )
+        .forEach((x, i) =>
+          x.classList.toggle(
+            "active",
+            i === 0
+          )
+        );
+
+      applyFilters(true);
     }
-  });
+  );
+
+  $("cards").addEventListener(
+    "click",
+    event => {
+      const button =
+        event.target.closest(
+          "[data-open-url]"
+        );
+
+      if (!button) return;
+
+      navigateParent(
+        button.dataset.openUrl
+      );
+    }
+  );
+
+  document
+    .querySelectorAll(
+      "[data-mobile-prev]"
+    )
+    .forEach(button => {
+      button.addEventListener(
+        "click",
+        () => {
+          // Page 1 has no previous page.
+        }
+      );
+    });
+
+  document
+    .querySelectorAll(
+      "[data-mobile-next]"
+    )
+    .forEach(button => {
+      button.addEventListener(
+        "click",
+        () => {
+          const rows =
+            getFilteredRows();
+
+          if (
+            rows.length <=
+            MOBILE_PAGE_SIZE
+          ) {
+            return;
+          }
+
+          requestParentScrollToFrameTop();
+
+          window.location.href =
+            `browse.html?${currentBrowseParams(2)}`;
+        }
+      );
+    });
+
+  $("editionGoBtn").addEventListener(
+    "click",
+    () => {
+      navigateParent(
+        $("editionSelect").value
+      );
+    }
+  );
+
+  $("editionSelect").addEventListener(
+    "keydown",
+    event => {
+      if (event.key === "Enter") {
+        navigateParent(
+          $("editionSelect").value
+        );
+      }
+    }
+  );
 
   function toggleReturn() {
-    $("returnSearchBtn").classList.toggle(
-      "show",
-      $("librarySearch").getBoundingClientRect().bottom < 0
-    );
+    $("returnSearchBtn")
+      .classList.toggle(
+        "show",
+        $("librarySearch")
+          .getBoundingClientRect()
+          .bottom < 0
+      );
   }
 
-  $("returnSearchBtn").addEventListener("click", () => {
-    $("librarySearch").scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+  $("returnSearchBtn")
+    .addEventListener(
+      "click",
+      () => {
+        $("librarySearch")
+          .scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
 
-    setTimeout(
-      () => $("searchBox").focus({ preventScroll: true }),
-      400
+        setTimeout(
+          () =>
+            $("searchBox").focus({
+              preventScroll: true
+            }),
+          400
+        );
+      }
     );
-  });
 
-  addEventListener("scroll", toggleReturn, { passive: true });
+  addEventListener(
+    "scroll",
+    toggleReturn,
+    { passive: true }
+  );
 
-  addEventListener("resize", () => {
-    toggleReturn();
-  });
+  addEventListener(
+    "resize",
+    () => {
+      toggleReturn();
+    }
+  );
 
   toggleReturn();
 
-  fetch("library.json", { cache: "no-store" })
+  fetch(
+    "library.json",
+    { cache: "no-store" }
+  )
     .then(response => {
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      if (!response.ok) {
+        throw new Error(
+          `HTTP ${response.status}`
+        );
+      }
+
       return response.json();
     })
     .then(initialise)
     .catch(error => {
-      console.error("Resource Library load failed", error);
+      console.error(
+        "Resource Library load failed",
+        error
+      );
+
       $("cards").innerHTML = `
         <div class="load-error">
           The Resource Library data could not be loaded.
@@ -558,4 +823,5 @@
         </div>
       `;
     });
+
 })();
